@@ -165,11 +165,12 @@ GameObject:
   - component: {fileID: 2995870946313539643}
   - component: {fileID: 6625497254608316040}
   - component: {fileID: 7257556536899034871}
-  - component: {fileID: 606012994647968026}
   - component: {fileID: 1970964648955281889}
   - component: {fileID: 7919400956232576425}
   - component: {fileID: 2002143872722067239}
   - component: {fileID: 5334205625236289241}
+  - component: {fileID: 8629011595027792919}
+  - component: {fileID: 5897772681187681755}
   m_Layer: 0
   m_Name: Samurai
   m_TagString: Ally
@@ -272,7 +273,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6942214797493291131}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -291,27 +292,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4166666, y: 1.4583334}
   m_EdgeRadius: 0
---- !u!50 &606012994647968026
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6942214797493291131}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!82 &1970964648955281889
 AudioSource:
   m_ObjectHideFlags: 0
@@ -434,16 +414,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e597f4ebc044bf4967eb3b0019fdbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
   _health: 50
+  _speed: 2
+  _attackSpeed: 2
+  _dame: 15
+  _rangeAttack: 2
+  _rangeDetecting: 2
   _animator: {fileID: 6625497254608316040}
   _healthBar: {fileID: 7919400956232576425}
   _spriteRenderer: {fileID: 2995870946313539643}
   _killedSound: {fileID: 1970964648955281889}
+  _initRotate: 0
+  _listCharacter: []
+  _weapon: {fileID: 0}
+  _hurtBlood: {fileID: 133798936192239942, guid: 0e4ec2e3b798645b1be30a58fcbc7f67, type: 3}
+  _rangedType: 0
   _isDie: 0
-  _listEnemy: []
+  _target: {fileID: 0}
+  _meleeCompetitorCounter: 0
+  _rangedCompetitorCounter: 0
+  _isMoving: 0
+  _movingType: 0
+  _isAttack: 0
+  _attackAnimatorDelay: 0
+  _isHurt: 0
+  _timeReviveCounter: 0
 --- !u!58 &5334205625236289241
 CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942214797493291131}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.2
+--- !u!50 &8629011595027792919
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942214797493291131}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &5897772681187681755
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -456,8 +490,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1.4166666, y: 1.4583334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &8791798376118795294
 GameObject:
   m_ObjectHideFlags: 0

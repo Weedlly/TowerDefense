@@ -113,10 +113,10 @@ GameObject:
   - component: {fileID: 1871334571312731748}
   - component: {fileID: 7753323368391074007}
   - component: {fileID: 1987651290092527616}
-  - component: {fileID: 6112278699699083432}
   - component: {fileID: 4036304692801507141}
   - component: {fileID: -7889785909112865636}
   - component: {fileID: 3407959532546400331}
+  - component: {fileID: -8047089350134966883}
   m_Layer: 0
   m_Name: GiantFlam
   m_TagString: Enemy
@@ -224,41 +224,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f6840e9efee46a88701a6e4a7c7155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
   _health: 50
+  _speed: 1
+  _attackSpeed: 3
+  _dame: 5
+  _rangeAttack: 10
+  _rangeDetecting: 10
   _animator: {fileID: 7753323368391074007}
   _healthBar: {fileID: 3407959532546400331}
   _spriteRenderer: {fileID: 1871334571312731748}
   _killedSound: {fileID: -7889785909112865636}
+  _initRotate: 0
+  _listCharacter: []
+  _weapon: {fileID: 1658588024478317389, guid: aea0eae0e03c34824b0a49f5b7221f3e, type: 3}
+  _hurtBlood: {fileID: 133798936192239942, guid: 0e4ec2e3b798645b1be30a58fcbc7f67, type: 3}
+  _rangedType: 1
   _isDie: 0
+  _target: {fileID: 0}
+  _meleeCompetitorCounter: 0
+  _rangedCompetitorCounter: 0
+  _isMoving: 0
+  _movingType: 0
+  _isAttack: 0
+  _attackAnimatorDelay: 0
+  _isHurt: 0
   _route: {fileID: 3186849768095137997, guid: c30aa551d4eea4f5388d4762b4102094, type: 3}
   _earningCoin: 10
---- !u!61 &6112278699699083432
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5781667217689153060}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5625, y: 1.5625}
-    newSize: {x: 1.4166666, y: 1.4583334}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.4166666, y: 1.4583334}
-  m_EdgeRadius: 0
 --- !u!50 &4036304692801507141
 Rigidbody2D:
   serializedVersion: 4
@@ -390,6 +381,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBarImage: {fileID: 7769616690880182403}
   _maxHealth: 50
+--- !u!58 &-8047089350134966883
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5781667217689153060}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1 &7328899836439253349
 GameObject:
   m_ObjectHideFlags: 0

@@ -341,6 +341,7 @@ MonoBehaviour:
   _attackDame: 15
   _enemys: []
   _animator: {fileID: 582240416850541749}
+  _rangeTower: {fileID: 1252593551426037322}
   _prefab: {fileID: 516113290266491758, guid: 2a11cff1d53da4eeb937a6bce9786465, type: 3}
 --- !u!58 &1397659677465537111
 CircleCollider2D:
@@ -349,7 +350,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4047236609183798755}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -470,6 +471,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1646987680646617335}
   - component: {fileID: 7716180071566079328}
+  - component: {fileID: 1252593551426037322}
+  - component: {fileID: 5354917837061635257}
   m_Layer: 0
   m_Name: Range
   m_TagString: Untagged
@@ -544,6 +547,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1252593551426037322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343993795011088040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0bf992bbc434e78a7e88801ad4c719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemys: []
+  _range: 0
+--- !u!58 &5354917837061635257
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343993795011088040}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &7093394354393954915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,11 +614,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_LocalPosition.x

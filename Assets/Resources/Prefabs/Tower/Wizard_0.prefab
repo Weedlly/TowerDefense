@@ -202,13 +202,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rangeToFire: 6
-  _attackSpeed: 1.5
-  _attackDame: 20
   _towerPrice: 35
-  _enemys: []
-  _animator: {fileID: 6813407164068755842}
   _updateAndSelllButton: {fileID: 5948419903642244611}
   _updateAndSelllContainer: {fileID: 348023105216823588}
+  _attackSpeed: 2
+  _attackDame: 20
+  _enemys: []
+  _animator: {fileID: 6813407164068755842}
+  _rangeTower: {fileID: 403235043628545349}
   _prefab: {fileID: 7603238587850337173, guid: 938c00803ef004255af422501805ae5d, type: 3}
 --- !u!95 &6813407164068755842
 Animator:
@@ -220,7 +221,7 @@ Animator:
   m_GameObject: {fileID: 2480959171893343057}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 96379031ad8384e14a245f1f3d9bfd70, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0e8a6728e09e2423a9b2a38c330acd8a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -256,6 +257,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7979117499868209536}
   - component: {fileID: 2785383561993442828}
+  - component: {fileID: 403235043628545349}
+  - component: {fileID: 3235055210469683165}
   m_Layer: 0
   m_Name: Range
   m_TagString: Untagged
@@ -330,6 +333,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &403235043628545349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934771364942431212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0bf992bbc434e78a7e88801ad4c719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemys: []
+  _range: 0
+--- !u!58 &3235055210469683165
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934771364942431212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &8440617310674896061
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,11 +614,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_LocalPosition.x

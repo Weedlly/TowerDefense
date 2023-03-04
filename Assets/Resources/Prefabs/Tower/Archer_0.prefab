@@ -436,13 +436,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rangeToFire: 7
-  _attackSpeed: 1
-  _attackDame: 10
   _towerPrice: 30
-  _enemys: []
-  _animator: {fileID: 2908929514955078256}
   _updateAndSelllButton: {fileID: 447155501677397072}
   _updateAndSelllContainer: {fileID: 5019490388854831636}
+  _attackSpeed: 1
+  _attackDame: 10
+  _enemys: []
+  _animator: {fileID: 2908929514955078256}
+  _rangeTower: {fileID: 7322927242122739750}
   _prefab: {fileID: 4010030370413351632, guid: 230d9bf9c2eef44398b2990e6e4c2762, type: 3}
 --- !u!58 &6552647576534576605
 CircleCollider2D:
@@ -451,7 +452,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756600843208020774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -470,6 +471,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1773731029859975382}
   - component: {fileID: 2543921914083688239}
+  - component: {fileID: 7322927242122739750}
+  - component: {fileID: 7348245703675942756}
   m_Layer: 0
   m_Name: Range
   m_TagString: Untagged
@@ -544,6 +547,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7322927242122739750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939235518130453923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0bf992bbc434e78a7e88801ad4c719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemys: []
+  _range: 0
+--- !u!58 &7348245703675942756
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939235518130453923}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &3698655640086581702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,11 +614,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_LocalPosition.x
