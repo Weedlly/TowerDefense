@@ -40,7 +40,19 @@ public class Spawner : MonoBehaviour
     void SpawnerEnemy(){
        GameObject newInstance = _pooler.GetInstanceFromPool();
        newInstance.SetActive(true);
+       EnemyMelee enemy1 = newInstance.GetComponent<EnemyMelee>();
+       EnemyRange enemy2 = newInstance.GetComponent<EnemyRange>();
+       
        Enemy enemy = newInstance.GetComponent<Enemy>();
-       enemy.SetRoute(_route);
+       if(enemy != null){
+            enemy.SetRoute(_route);
+       }
+       if(enemy1 != null){
+            enemy1.SetRoute(_route);
+       }
+       if(enemy2 != null){
+            enemy2.SetRoute(_route);
+       }
+
     }
 }

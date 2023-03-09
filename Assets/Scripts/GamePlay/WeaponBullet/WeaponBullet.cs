@@ -10,9 +10,6 @@ public abstract class WeaponBullet : MonoBehaviour
     [SerializeField] protected Enemy _target;
     [SerializeField] protected float _movingSpeed;
     [SerializeField] protected Animator _animator;
-    [SerializeField] protected AudioSource _hitSound;
-    
-
 
     protected float _dame;
 
@@ -50,16 +47,12 @@ public abstract class WeaponBullet : MonoBehaviour
 
     public virtual void Hitting(){
         _target.HealthReduce(_dame);
-        PlayHittingSound();
         Destroy(this.gameObject);
     }
     protected void SelfDestroy(){
         if(_isTargetExist == true && _target == null){
             Destroy(this.gameObject);
         }
-    }
-    protected void PlayHittingSound(){
-        _hitSound.Play();
     }
     public void SetTarget(Enemy enemy){
         _target = enemy;

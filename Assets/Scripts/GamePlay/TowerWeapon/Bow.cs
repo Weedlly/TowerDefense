@@ -20,6 +20,7 @@ public class Bow : TowerWeapon
         Arrow arrow = Instantiate(_prefab,transform.position,Quaternion.identity);
         arrow.SetTarget(_enemys[0]);
         arrow.SetDamage(_attackDame);
+        _audioSound.PlayOneShot(_attackSound);
     }
 
     

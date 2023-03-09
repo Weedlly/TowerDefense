@@ -9,7 +9,9 @@ public abstract class TowerWeapon : Tower
     [SerializeField] protected float _attackDame;
     [SerializeField] protected List<Enemy> _enemys;
     [SerializeField] protected Animator _animator;
-
+    [SerializeField] protected AudioSource _audioSound;
+    [SerializeField] protected AudioClip _attackSound;
+    [SerializeField] protected RangeTower _rangeTower;
 
     protected bool _isAttack = false;
     protected float _waitTime;
@@ -17,10 +19,10 @@ public abstract class TowerWeapon : Tower
     protected float _delayPerShot;
     protected float _angle;
     protected float _timeToAttack;
-    [SerializeField] protected RangeTower _rangeTower;
+   
 
-    protected const float TIME_ATTACK = 0.4f / GameControler.GAME_SPEED;
-    protected const float WAIT_SHOT_ANIMATION = TIME_ATTACK   / (2f * GameControler.GAME_SPEED);
+    protected const float TIME_ATTACK = 0.4f / 1;
+    protected const float WAIT_SHOT_ANIMATION = TIME_ATTACK   / (2f * 1);
 
     protected new void Start()
     {
@@ -31,7 +33,7 @@ public abstract class TowerWeapon : Tower
     }
 
     protected void SetTimeAttack(){
-        _delayPerShot = _attackSpeed /  GameControler.GAME_SPEED;
+        _delayPerShot = _attackSpeed /  1;
 
         _timeToAttack = TIME_ATTACK;
 

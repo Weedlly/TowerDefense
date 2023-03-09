@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class Tower : MonoBehaviour
+public class Tower : MonoBehaviour
 {
     [SerializeField] protected float _rangeToFire;
     [SerializeField] protected int _towerPrice;
@@ -19,7 +19,6 @@ public abstract class Tower : MonoBehaviour
     protected void Start()
     {
         _updateAndSelllButton.onClick.AddListener(OpenUpdateAndSell);
-        SetTowerRange();
         SetupPrice();
     }
     void OpenUpdateAndSell(){
@@ -39,11 +38,6 @@ public abstract class Tower : MonoBehaviour
         _currentPrice = _towerPrice;
     }
     
-
-    protected void SetTowerRange(){
-        CircleCollider2D instance = GetComponent<CircleCollider2D>();
-        instance.radius = _rangeToFire;
-    }
 
 
 

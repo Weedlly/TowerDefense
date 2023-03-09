@@ -3,10 +3,7 @@ guid: 0725a005448ad42ac8a71d8d1ca17da8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - bulletSpawnPos: {fileID: 6254047610698553762, guid: cd3ae1acbf92f47d7ae97956917fb473, type: 3}
-  - animator: {fileID: 6062311541872234780, guid: c83c7068963e14f9bb12610da469adfa, type: 3}
-  - fireball: {fileID: 6254047610698553760, guid: cd3ae1acbf92f47d7ae97956917fb473, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
