@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 3868674462873789852}
   - component: {fileID: 7020697652475849161}
   - component: {fileID: 6685732095292121545}
-  - component: {fileID: 4912837426897662244}
   - component: {fileID: 1806016827985975134}
   m_Layer: 0
   m_Name: SamuraiTower_0
@@ -198,7 +197,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2317184903999449882}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 96379031ad8384e14a245f1f3d9bfd70, type: 2}
   m_CullingMode: 0
@@ -210,22 +209,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &4912837426897662244
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2317184903999449882}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 6
 --- !u!114 &1806016827985975134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,8 +226,8 @@ MonoBehaviour:
   _updateAndSelllButton: {fileID: 5821852765198896712}
   _updateAndSelllContainer: {fileID: 3568592351861500958}
   _numberAllys: 3
-  _prefab: {fileID: 2002143872722067239, guid: e53abc3849b554949aa7351a041a5b63, type: 3}
-  _allyList: []
+  _prefab: {fileID: 7479922049894973432, guid: e53abc3849b554949aa7351a041a5b63, type: 3}
+  _allies: []
   _assemblePoint: {fileID: 3425950836748813339}
   _timeRevive: 2
   _settingAssemblePoint: 0

@@ -38,7 +38,6 @@ public class Stone : WeaponBullet
             Enemy enemy = item.GetComponent<Enemy>();
             if(Vector2.Distance(enemy.transform.position,transform.position) < _rangeExplore){
                 enemy._health -= _dame;
-                PlayHittingSound();
             }
             if(enemy._health <= 0f){
                 enemy.SelfDestroy();

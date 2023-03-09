@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4737689624818092283}
   - component: {fileID: 169918806183635867}
   - component: {fileID: 4576834967088327164}
-  - component: {fileID: 1658588024478317389}
   - component: {fileID: 6151028728721733204}
+  - component: {fileID: 2381271772722385752}
   m_Layer: 0
   m_Name: GiantFlamFireSpriteSheet_1
   m_TagString: Untagged
@@ -107,22 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1658588024478317389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110511299497074359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e79fc60d404f74cf09c43e73a4598128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _movingSpeed: 2
-  _animator: {fileID: 4576834967088327164}
-  _hitSound: {fileID: 6151028728721733204}
 --- !u!82 &6151028728721733204
 AudioSource:
   m_ObjectHideFlags: 0
@@ -219,3 +203,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2381271772722385752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110511299497074359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad776036dffe4d94989965441efb259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  _movingSpeed: 1
+  _animator: {fileID: 4576834967088327164}
+  _hitSound: {fileID: 6151028728721733204}

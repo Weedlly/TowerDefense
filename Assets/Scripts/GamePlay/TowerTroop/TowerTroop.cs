@@ -10,12 +10,12 @@ public class TowerTroop : Tower
     // [SerializeField] private float _allyAttackSpeed;
     // [SerializeField] private float _allyHealth;
     // [SerializeField] private float _allyDame;
-    [SerializeField] private Ally _prefab;
-    [SerializeField] private List<Ally> _allyList;
+    [SerializeField] private AllyMelee _prefab;
+    [SerializeField] private List<AllyMelee> _allies;
     
     [SerializeField] private GameObject _assemblePoint;
 
-    public float _timeRevive = 2f;
+    public float _timeRevive = 5f;
     
 
     public bool _settingAssemblePoint = false;
@@ -24,37 +24,59 @@ public class TowerTroop : Tower
     new void Start()
     {
         base.Start();
-        InitTroop();
-        SetTroopAssemblePoint();
+        InitAlly();
+        SetAllyAssemblePoint();
         _assemblePoint.transform.position = transform.position;
     }
-    void SetTroopAssemblePoint(){
-        for (int i = 0; i < _allyList.Count; i++)
+    void SetAllyAssemblePoint(){
+        for (int i = 0; i < _allies.Count; i++)
         {
-            _allyList[i]._assemblePoint =  new Vector2(
-                    _assemblePoint.transform.position.x + Random.value * 2,
-                    _assemblePoint.transform.position.y + Random.value * 2
-                );
+            _allies[i]._assemblePoint =  new Vector2(
+                _assemblePoint.transform.position.x + Random.value * 2,
+                _assemblePoint.transform.position.y + Random.value * 2
+            );
         }
     }
-    void InitTroop(){
-        _allyList = new List<Ally>();
+  
+    void InitAlly(){
+        _allies = new List<AllyMelee>();
         for (int i = 0; i < _numberAllys; i++)
         {
-            _allyList.Add(Instantiate(_prefab));
-            _allyList[i].transform.position = transform.position;
-            
+            _allies.Add(Instantiate(_prefab));
+            _allies[i].transform.position = transform.position;
         }
     }
     // Update is called once per frame
     void Update()
     {
-       if(_settingAssemblePoint == true){
+        if(_settingAssemblePoint == true){
             SetAssemblePoint();
-       }
+        }
+        RunReviveProcess();
 
     }
 
+
+    void RunReviveProcess(){
+        foreach (var item in _allies)
+        {
+            if(item._isDie == true){
+                item._timeReviveCounter -= Time.deltaTime;
+            }
+            if(item._timeReviveCounter <= 0){
+                SetupAfterRevive(item);
+            }
+        }
+    }
+  
+    void SetupAfterRevive(Ally ally){
+        ally.gameObject.SetActive(true);
+        ally._isDie = false;
+        ally._health = 50f;
+        ally._timeReviveCounter = _timeRevive;
+        ally.transform.position = transform.position;
+    }
+    
     private void SetAssemblePoint(){
         // Debug.Log(curMousePoint);
         if (Input.GetMouseButton(0))
@@ -64,7 +86,7 @@ public class TowerTroop : Tower
             if(Vector2.Distance(transform.position,curMousePoint) < _rangeToFire){
                 _assemblePoint.transform.position = curMousePoint;
                 _settingAssemblePoint = false;
-                SetTroopAssemblePoint();
+                SetAllyAssemblePoint();
                 Debug.Log(curMousePoint);
             }
         }

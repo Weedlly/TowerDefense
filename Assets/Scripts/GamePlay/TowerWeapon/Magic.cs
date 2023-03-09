@@ -20,5 +20,6 @@ public class Magic : TowerWeapon
         Bolt bolt = Instantiate(_prefab,transform.position,Quaternion.identity);
         bolt.SetTarget(_enemys[0]);
         bolt.SetDamage(_attackDame);
+        _audioSound.PlayOneShot(_attackSound);
     }
 }
