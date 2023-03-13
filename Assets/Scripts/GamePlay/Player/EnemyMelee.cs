@@ -40,6 +40,7 @@ public class EnemyMelee : Enemy
         {
             case (int)UnitType.Melee:{
                 _isMoving = false;
+                _animator.SetFloat("movingSpeed",-0.5f);
                 break;
             }
             // case (int)UnitType.Range:{

@@ -15,13 +15,16 @@ public class Player : MonoBehaviour
     [SerializeField] protected Animator _animator;
     [SerializeField] protected HealthBar _healthBar;
     [SerializeField] protected SpriteRenderer _spriteRenderer;
-    [SerializeField] protected AudioSource _killedSound;
+    // [SerializeField] protected AudioSource _killedSound;
     
 
-    [SerializeField] protected PlayerWeapon _weapon;
+    [SerializeField] protected RangeWeapon _weapon;
     [SerializeField] protected GameObject _hurtBlood;
+    [SerializeField] protected GameObject _dieSmoke;
     [SerializeField] protected bool _initRotate;
     [SerializeField] protected List<Player> _players;
+
+    [SerializeField] protected PlayerWeapon _playerWeapon;
     
 
     [Header("Control atribute")]
@@ -54,7 +57,7 @@ public class Player : MonoBehaviour
         _isMoving = true;
         _movingType = (int)MovingType.MoveDefault;
 
-        SetAudioVolume();
+
 
         SetRange();
 
@@ -67,9 +70,7 @@ public class Player : MonoBehaviour
         _healthBar = GetComponent<HealthBar>();
         // _animator.speed = 1.2f;
     }
-    void SetAudioVolume(){
-        _killedSound.volume = 0.25f;
-    }
+    
     void SetRange(){
         CircleCollider2D rangeDetect = GetComponent<CircleCollider2D>();
         rangeDetect.radius = _rangeDetecting;
@@ -105,14 +106,13 @@ public class Player : MonoBehaviour
 
 
     #endregion Set up for start
-
     #region Flow control
     protected void Update() {
         if(_isDie == false){
             Rotate();
             NextTarget();
-            if(_healthBar.CurrentHealth > _health){
-                Destroy(Instantiate(_hurtBlood,_currentPosition,Quaternion.identity),0.25f);
+            if(_healthBar.CurrentHealth > _health && _health > 0){
+                CreateHurtObject();
             }
             _healthBar.CurrentHealth = _health;
             if(_health <= 0){
@@ -182,6 +182,7 @@ public class Player : MonoBehaviour
 
         // Delay attack  animator 
         if(_timeToAttack <= 0){
+            _playerWeapon.Default();
             _attackAnimatorDelay = false;
             _animator.SetBool("isAttack",_isAttack);
             _timeToAttack = TIME_ATTACK;
@@ -200,6 +201,7 @@ public class Player : MonoBehaviour
             _waitShotAnimation -= Time.deltaTime;
             if(_waitShotAnimation <= 0 ){
                 Attack();
+                
                 _waitShotAnimation = WAIT_SHOT_ANIMATION;
                 _waitTime = _delayPerShot - WAIT_SHOT_ANIMATION;
             }
@@ -215,15 +217,16 @@ public class Player : MonoBehaviour
                     _target._meleeCompetitorCounter = 0;
                     _meleeCompetitorCounter = 0;
                 }
+                _playerWeapon.Attack(_spriteRenderer.flipX);
                 _target.HealthReduce(_dame);
                 break;
             }
-            case (int)UnitType.Range:{
-                PlayerWeapon instance = Instantiate(_weapon,_currentPosition,Quaternion.identity);
-                instance.SetTarget(_target);
-                instance.SetDamage(_dame);
-                break;
-            }
+            // case (int)UnitType.Range:{
+            //     PlayerWeapon instance = Instantiate(_weapon,_currentPosition,Quaternion.identity);
+            //     instance.SetTarget(_target);
+            //     instance.SetDamage(_dame);
+            //     break;
+            // }
         }
     }
     
@@ -236,9 +239,18 @@ public class Player : MonoBehaviour
 
    
     virtual public void SelfDestroy(){
-        // do something
+        CreateDieObject();
     }       
 
+    void CreateDieObject(){
+        GameObject instance = Instantiate(_dieSmoke,transform.position,Quaternion.identity);
+        Destroy(instance,0.25f);
+    }
+    void CreateHurtObject(){
+        GameObject instance = Instantiate(_hurtBlood,_currentPosition,Quaternion.identity);
+        Destroy(instance,0.25f);
+    }
+    
     protected void Rotate(){
         
         if(transform.position.x < _targetPositon.x){

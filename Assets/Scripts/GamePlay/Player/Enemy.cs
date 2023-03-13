@@ -38,29 +38,16 @@ public class Enemy : Player
     
 
     override public void SelfDestroy(){
-
-        GameObject dieInstance = Instantiate(gameObject);
-        
-        // Create new instance to perform destroy
-        PlayDead(dieInstance.GetComponent<Enemy>());
+        base.SelfDestroy();
 
         // Put back to pool
         ObjectPooler.ReturnToPool(gameObject);
 
         _currentPositionIndex = 0; // reset position
         _health =  _healthBar._maxHealth;
-        
-    }       
-    
-    protected void PlayDead(Enemy enemy){
-        GameControl.IncreaseCoin(_earningCoin);
-        enemy._isDie = true;
-        enemy._animator.SetBool("isDie",true);
- 
-        enemy._killedSound.Play();
-        enemy._meleeCompetitorCounter = 1;
 
-        Destroy(enemy.gameObject,0.25f);
-    }
+        //Earning Coin
+        GameControl.IncreaseCoin(_earningCoin);
+    }       
     
 }

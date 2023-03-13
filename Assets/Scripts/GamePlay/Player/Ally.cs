@@ -13,17 +13,14 @@ public class Ally : Player
     }
    
     override protected void MoveDefault(){
-        _animator.SetFloat("movingSpeed",0.5f);
+        _animator.SetFloat("movingSpeed",-0.5f);
         transform.position = Vector2.MoveTowards(transform.position,_assemblePoint,Time.deltaTime * _speed);
     }
 
     
    
     override public void SelfDestroy(){
-
-        GameObject dieInstance = Instantiate(gameObject);
-        
-        PlayDead(dieInstance.GetComponent<Ally>());
+        base.SelfDestroy();
 
         _isDie = true;
         _isAttack = false;
@@ -33,13 +30,4 @@ public class Ally : Player
         _movingType = (int)MovingType.MoveDefault;
         gameObject.SetActive(false);
     }       
-    
-    protected void PlayDead(Ally ally){
-        ally._isDie = true;
-        ally._animator.SetBool("isDie",true);
-        ally._meleeCompetitorCounter = 1;
-        ally._killedSound.Play();
-
-        Destroy(ally.gameObject,0.25f);
-    }
 }
