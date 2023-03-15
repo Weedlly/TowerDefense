@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4080323447274242627
+--- !u!1 &3939900620595740465
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4395953153046905578}
-  - component: {fileID: 3186849768095137997}
-  - component: {fileID: 5258888028568875993}
-  - component: {fileID: 506189649088715321}
-  - component: {fileID: 2084050489595242271}
+  - component: {fileID: 3678594451981680536}
+  - component: {fileID: 2464762886683196863}
   m_Layer: 0
   m_Name: Route1
   m_TagString: Untagged
@@ -20,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4395953153046905578
+--- !u!4 &3678594451981680536
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080323447274242627}
+  m_GameObject: {fileID: 3939900620595740465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!120 &3186849768095137997
+--- !u!120 &2464762886683196863
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080323447274242627}
+  m_GameObject: {fileID: 3939900620595740465}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
@@ -150,46 +147,3 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
---- !u!114 &5258888028568875993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080323447274242627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caf251340f5284766bc81f56f9baf8ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyCount: 10
-  _delaySpawnerTime: 2
-  _route: {fileID: 3186849768095137997}
-  _pooler: {fileID: 506189649088715321}
---- !u!114 &506189649088715321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080323447274242627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aae3b81d839c465aa0af2a66db79bd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 4315807807676941660, guid: df7df9791a4b148d3a6f4eaf77805a9f, type: 3}
-  _poolSize: 10
---- !u!114 &2084050489595242271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080323447274242627}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d29ff362134f4461a998a7020271a4bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sr: {fileID: 2510081731341544388, guid: 942aa96bfd4494da8bd1f014cae2c55d, type: 3}

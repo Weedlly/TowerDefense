@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - TowerDame
   - Map
+  - Human
+  - Enemy
+  - Evil
   - Ally
   layers:
   - Default

@@ -5,17 +5,22 @@ using UnityEngine;
 public class ObjectPooler : MonoBehaviour
 {
     [SerializeField] private GameObject _prefab;
-    [SerializeField] private int _poolSize = 2;
+    [SerializeField] private int _poolSize = 10;
 
-    private List<GameObject> _pool;
-    private GameObject _poolContainer;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        
-        _pool = new List<GameObject>();
-        _poolContainer = new GameObject($"Pool - {_prefab.name}");
+    private List<GameObject> _pool = new List<GameObject>();
+    // [SerializeField] private GameObject _poolContainer;
+   
+    // public void SetUpObjectPooler(GameObject prefab, int poolSize){
+    //     _prefab = prefab;
+    //     _poolSize = poolSize;
+    // }
+    // public void CreatePoolerContainer(){
+    //     _pool = new List<GameObject>();
+    //     _poolContainer = new GameObject($"Pool - {_prefab.name}");
+    //     CreatePooler();
+    // }
+    private void Awake(){        
+        // _poolContainer = new GameObject($"Pool - {_prefab.name}");
         CreatePooler();
     }
     private void CreatePooler(){
@@ -27,7 +32,7 @@ public class ObjectPooler : MonoBehaviour
     private GameObject CreateInstance(){
         GameObject newInstance = Instantiate(_prefab);
        
-        newInstance.transform.SetParent(_poolContainer.transform);
+        newInstance.transform.SetParent(transform);
         newInstance.SetActive(false);
         return newInstance;
     }

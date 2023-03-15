@@ -7,7 +7,7 @@ public abstract class TowerWeapon : Tower
 {
     [SerializeField] protected float _attackSpeed;
     [SerializeField] protected float _attackDame;
-    [SerializeField] protected List<Enemy> _enemys;
+    [SerializeField] protected List<Human> _humans;
     [SerializeField] protected Animator _animator;
     [SerializeField] protected AudioSource _audioSound;
     [SerializeField] protected AudioClip _attackSound;
@@ -28,7 +28,7 @@ public abstract class TowerWeapon : Tower
     {
         base.Start();
         SetTimeAttack();
-        _rangeTower._enemys = _enemys;
+        _rangeTower._humans = _humans;
         _rangeTower._range = _rangeToFire;
     }
 
@@ -49,8 +49,8 @@ public abstract class TowerWeapon : Tower
 
     // Atack controller : start
     protected void AttackControler(){
-        if(_enemys.Count != 0){
-            if(_enemys[0] != null && _rangeTower.IsTargetInRange()){
+        if(_humans.Count != 0){
+            if(_humans[0] != null && _rangeTower.IsTargetInRange()){
                 if(_isAttack == true){
                     _timeToAttack-=Time.deltaTime;
                 }
@@ -64,7 +64,7 @@ public abstract class TowerWeapon : Tower
 
                 if (_waitTime <= 0f)
                 {
-                    if(_enemys[0]._health >= 0){
+                    if(_humans[0]._health >= 0){
                         if(_isAttack == false){
                             _isAttack = true;
                             _animator.SetBool("isAttack",_isAttack);
@@ -82,7 +82,7 @@ public abstract class TowerWeapon : Tower
 
             }
             else{
-                _enemys.RemoveAt(0);
+                _humans.RemoveAt(0);
             }
         }
         else{
@@ -98,7 +98,7 @@ public abstract class TowerWeapon : Tower
     }
 
     protected virtual void Rotate(){
-        Vector3 line = _enemys[0].transform.position - transform.position;
+        Vector3 line = _humans[0].transform.position - transform.position;
         _angle = Vector3.SignedAngle(transform.up,line,transform.forward);
         transform.Rotate(0f,0f,_angle); 
     }
@@ -110,9 +110,9 @@ public abstract class TowerWeapon : Tower
     //     Debug.Log(other.transform.position);
     //     Debug.Log(Vector2.Distance(transform.parent.position,other.transform.position));
     //     if(Vector2.Distance(transform.parent.position,other.transform.position) <= _rangeToFire){
-    //         Enemy enemy = other.GetComponent<Enemy>();
-    //         if(other.CompareTag("Enemy") && !_enemys.Contains(enemy)){
-    //             _enemys.Add(enemy);
+    //         human human = other.GetComponent<human>();
+    //         if(other.CompareTag("human") && !_humans.Contains(human)){
+    //             _humans.Add(human);
     //         }
     //     }
     // }
@@ -120,17 +120,17 @@ public abstract class TowerWeapon : Tower
     //     Debug.Log(other.transform.position);
     //     Debug.Log(Vector2.Distance(transform.parent.position,other.transform.position));
     //     if(Vector2.Distance(transform.parent.position,other.transform.position) <= _rangeToFire){
-    //         Enemy enemy = other.GetComponent<Enemy>();
-    //         if(other.CompareTag("Enemy") && !_enemys.Contains(enemy)){
-    //             _enemys.Add(enemy);
+    //         human human = other.GetComponent<human>();
+    //         if(other.CompareTag("human") && !_humans.Contains(human)){
+    //             _humans.Add(human);
     //         }
     //     }
     // }
     // private void OnTriggerExit2D(Collider2D other){
-    //     if(other.CompareTag("Enemy")){
-    //         Enemy enemy = other.GetComponent<Enemy>();
-    //         if(_enemys.Contains(enemy)){
-    //             _enemys.Remove(enemy);
+    //     if(other.CompareTag("human")){
+    //         human human = other.GetComponent<human>();
+    //         if(_humans.Contains(human)){
+    //             _humans.Remove(human);
     //         }
     //     }
     // }

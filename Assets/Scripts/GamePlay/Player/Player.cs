@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerAction{
+    Idle = 0,
+    Attack = 1,
+    Walk = 2
+}
 public class Player : MonoBehaviour
 {   
     [Header("Player atribute")]
@@ -15,13 +20,13 @@ public class Player : MonoBehaviour
     [SerializeField] protected Animator _animator;
     [SerializeField] protected HealthBar _healthBar;
     [SerializeField] protected SpriteRenderer _spriteRenderer;
-    [SerializeField] protected AudioSource _killedSound;
-    
 
-    [SerializeField] protected PlayerWeapon _weapon;
+    [SerializeField] protected RangeWeapon _weapon;
     [SerializeField] protected GameObject _hurtBlood;
-    [SerializeField] protected bool _initRotate;
-    [SerializeField] protected List<Player> _players;
+    [SerializeField] protected GameObject _dieSmoke;
+   
+
+    [SerializeField] protected PlayerWeapon _playerWeapon;
     
 
     [Header("Control atribute")]
@@ -29,19 +34,15 @@ public class Player : MonoBehaviour
     public bool _isDie = false;
     public Player _target;
 
-    [Header("Runtime Debug atribute")]
-    [SerializeField] protected bool _isMoving;
-    [SerializeField] protected int _movingType;
-    [SerializeField] protected bool _isAttack;
-    [SerializeField] protected bool _attackAnimatorDelay;
+    protected float _attackAnimationTime = 0.85f;
+    protected float _idleAnimationTime = 0.85f;
+    protected float _walkAnimationTime = 0.85f;
+    protected float _waitingTime = 0f;
+    protected int _playerAction = 0;
 
-    protected float _waitTime;
-    protected float _waitShotAnimation;
-    protected float _delayPerShot;
-    protected float _timeToAttack;
 
     protected Vector2 _targetPositon;
-    protected Vector2 _currentPosition;
+    protected Vector2 _lastPosition;
 
     protected const float TIME_ATTACK = 0.4f / 1;
     protected const float WAIT_SHOT_ANIMATION = TIME_ATTACK   / (2f * 1);
@@ -51,30 +52,74 @@ public class Player : MonoBehaviour
 
     protected void Start()
     {
-        _isMoving = true;
-        _movingType = (int)MovingType.MoveDefault;
-
-        SetAudioVolume();
-
-        SetRange();
 
         SetUpPlayerSide();
 
         SetUpUnitType();
 
-        SetTimeAttack();
-
         _healthBar = GetComponent<HealthBar>();
         // _animator.speed = 1.2f;
     }
-    void SetAudioVolume(){
-        _killedSound.volume = 0.25f;
+    public void SetTarget(Player target){
+        _target = target;
     }
-    void SetRange(){
-        CircleCollider2D rangeDetect = GetComponent<CircleCollider2D>();
-        rangeDetect.radius = _rangeDetecting;
+
+    protected void Update(){
+        // Attack or Moving to target
+        if(HealthControl() == false ){
+            SelfDestroy();
+        }
+        else{
+            Rotate();
+            if(IsTargetActive()){
+                AttackTargetProcess();
+            }
+            // Moving default or listen tower troop control following assemble point
+            else{
+                _animator.SetBool("isAttack",false);
+                if(transform.hasChanged){
+                    transform.hasChanged = false;
+                    _animator.SetFloat("movingSpeed",0.5f);
+                }
+                else{
+                    _animator.SetFloat("movingSpeed",-0.5f);
+                }
+                
+                MoveDefault();
+            }
+        }
         
     }
+    bool IsTargetActive(){
+        
+        if(_target == null || _target.gameObject.activeSelf == false ){
+            _target = null;
+            return false;
+        }
+        return true;
+    }
+    bool HealthControl(){
+        if(_healthBar.CurrentHealth > _health && _health > 0){
+            CreateHurtObject();
+        }
+        _healthBar.CurrentHealth = _health;
+        if(_health <= 0){
+            return false;
+        }
+        return true;
+    }
+    void AttackTargetProcess(){
+        if(Vector2.Distance(this.transform.position,_target.transform.position) > _rangeAttack){
+            _animator.SetBool("isAttack",false);
+            MoveToTarget();
+        }
+        else{
+            
+            AttackAnimator();
+        }
+    }
+
+    #region Set up on start
     void SetUpUnitType(){
         if(_weapon != null){
             _unitType = (int)UnitType.Range;
@@ -92,139 +137,47 @@ public class Player : MonoBehaviour
             _playerSide = (int)PlayerSide.Ally;
         }
     }
-    #region Set up on start
-    protected void SetTimeAttack(){
-        _delayPerShot = _attackSpeed /  1;
-
-        _timeToAttack = TIME_ATTACK;
-
-        _waitShotAnimation = _timeToAttack / 2f;
-
-        _waitTime = 0f;
-    }
 
 
     #endregion Set up for start
 
-    #region Flow control
-    protected void Update() {
-        if(_isDie == false){
-            Rotate();
-            NextTarget();
-            if(_healthBar.CurrentHealth > _health){
-                Destroy(Instantiate(_hurtBlood,_currentPosition,Quaternion.identity),0.25f);
-            }
-            _healthBar.CurrentHealth = _health;
-            if(_health <= 0){
-                SelfDestroy();
-            }
-            else if(_isAttack == true){
-                AttackTargetProcess();
-            }
-            else if(_isMoving == true){
-                switch (_movingType)
-                {
-                    case (int)MovingType.MoveDefault: {
-                        MoveDefault();
-                        break;
-                    }
-                    case (int)MovingType.MoveToTarget: {
-                        MoveToTarget();
-                        break;
-                    }
-                    // case (int)MovingType.WaitTargetArrived: {
-                    //     WaitTargetArrived();
-                    //     break;
-                    // }
-
-                }
-            }
-            _currentPosition = transform.position;
-        }
-    }
-
-    #endregion Flow control
-    virtual protected void NextTarget(){
-
-    }
-
-    #region Moving control
     protected void MoveToTarget(){
-        if(Vector2.Distance(_targetPositon,transform.position) > _rangeAttack){
-            
-            //Set attack animator
-            _animator.SetBool("isAttack",false);
-            _animator.SetFloat("movingSpeed",0.5f);
-            // _isAttack = false;
-            // MoveTowards
-            transform.position = Vector2.MoveTowards(transform.position,_targetPositon,Time.deltaTime * _speed);
-        }
-        else{
-            // Arrived range to attack
-            _isMoving = false;
-
-            _target._isAttack = true;
-            _isAttack = true;
-        }
+        _animator.SetFloat("movingSpeed",0.5f);
+        transform.position = Vector2.MoveTowards(transform.position,_target.transform.position,Time.deltaTime * _speed);
     }
  
     virtual protected void MoveDefault(){
 
     }
-    #endregion Moving control
+  
 
     #region Acttack control 
 
-    protected void AttackTargetProcess(){
-        if(_attackAnimatorDelay == true){
-            _timeToAttack-=Time.deltaTime;
-        }
+    protected void AttackAnimator(){
+        _animator.SetFloat("movingSpeed",-0.5f);
 
-        // Delay attack  animator 
-        if(_timeToAttack <= 0){
-            _attackAnimatorDelay = false;
-            _animator.SetBool("isAttack",_isAttack);
-            _timeToAttack = TIME_ATTACK;
-        }
-
-        _waitTime -= Time.deltaTime;
-
-         // Delay attack 
-        if (_waitTime <= 0f)
-        {
-            if(_attackAnimatorDelay == false){
-                _attackAnimatorDelay = true;
-                _animator.SetFloat("movingSpeed",-0.5f);
-                _animator.SetBool("isAttack",_attackAnimatorDelay);
+        _waitingTime -= Time.deltaTime;
+        if(_waitingTime <= _attackAnimationTime + _idleAnimationTime && _waitingTime > _idleAnimationTime){
+            if(_playerAction != (int)PlayerAction.Attack){
+                _playerAction = (int)PlayerAction.Attack;
+                _animator.SetBool("isAttack",true);
+                
             }
-            _waitShotAnimation -= Time.deltaTime;
-            if(_waitShotAnimation <= 0 ){
+        }
+        else if(_waitingTime <= _idleAnimationTime && _waitingTime > 0){
+            if(_playerAction != (int)PlayerAction.Idle){
                 Attack();
-                _waitShotAnimation = WAIT_SHOT_ANIMATION;
-                _waitTime = _delayPerShot - WAIT_SHOT_ANIMATION;
+                _playerAction = (int)PlayerAction.Idle;
+                _animator.SetBool("isAttack",false);
             }
         }
-    
+        else{
+            _waitingTime = _attackAnimationTime + _idleAnimationTime;
+        }
     }
   
     void Attack(){
-        switch (_unitType)
-        {
-            case (int)UnitType.Melee:{
-                if(_target._health <= _dame){
-                    _target._meleeCompetitorCounter = 0;
-                    _meleeCompetitorCounter = 0;
-                }
-                _target.HealthReduce(_dame);
-                break;
-            }
-            case (int)UnitType.Range:{
-                PlayerWeapon instance = Instantiate(_weapon,_currentPosition,Quaternion.identity);
-                instance.SetTarget(_target);
-                instance.SetDamage(_dame);
-                break;
-            }
-        }
+        _target.HealthReduce(_dame);
     }
     
     
@@ -236,59 +189,32 @@ public class Player : MonoBehaviour
 
    
     virtual public void SelfDestroy(){
-        // do something
+        CreateDieObject();
+        ResetPlayer();
     }       
 
+    void CreateDieObject(){
+        GameObject instance = Instantiate(_dieSmoke,transform.position,Quaternion.identity);
+        Destroy(instance,0.25f);
+    }
+    void CreateHurtObject(){
+        GameObject instance = Instantiate(_hurtBlood,this.transform.position,Quaternion.identity);
+        Destroy(instance,0.25f);
+    }
+    
     protected void Rotate(){
-        
-        if(transform.position.x < _targetPositon.x){
-            _spriteRenderer.flipX = !_initRotate;
+        if(transform.position.x > _lastPosition.x){
+            _spriteRenderer.flipX = false;
         }
         else{
-            _spriteRenderer.flipX = !_initRotate;
+            _spriteRenderer.flipX = true;
         }
+        _lastPosition = this.transform.position;
     }
+    private void ResetPlayer(){
+        _target = null;
+        _health = _healthBar._maxHealth;;
+    }
+ 
 
-    #region Trigger control
-    protected void OnTriggerStay2D(Collider2D other) {
-        
-        if(Vector2.Distance(_currentPosition,other.transform.position) <= _rangeDetecting){
-            if(_playerSide == (int)PlayerSide.Ally){
-                if(other.CompareTag("Enemy")){
-                    Player instance = other.GetComponent<Player>();
-                    if(!_players.Contains(instance) && !instance._isDie){
-                        _players.Add(instance);
-                    }
-                }
-            }      
-            else if(_playerSide == (int)PlayerSide.Enemy){
-                if(other.CompareTag("Ally")){
-                    Player instance = other.GetComponent<Player>();
-                    if(!_players.Contains(instance) && !instance._isDie){
-                        _players.Add(instance);
-                    }
-                }   
-            }
-        }
-    }
-    protected void OnTriggerExit2D(Collider2D other) {
-        if(_playerSide == (int)PlayerSide.Ally){
-            if(other.CompareTag("Enemy")){
-                Player instance = other.GetComponent<Player>();
-                if(_players.Contains(instance)){
-                    _players.Remove(instance);
-                }
-            }
-        }      
-        else if(_playerSide == (int)PlayerSide.Enemy){
-            if(other.CompareTag("Ally")){
-                Player instance = other.GetComponent<Player>();
-                if(_players.Contains(instance)){
-                    _players.Remove(instance);
-                }
-            } 
-        }
-    }
-
-    #endregion Trigger control
 }

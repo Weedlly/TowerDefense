@@ -4,27 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class RangeTower : MonoBehaviour{
-    public List<Enemy> _enemys;
+    public List<Human> _humans;
     public float _range;
     // Focus the target and remove target : start
     private void OnTriggerStay2D(Collider2D other){
         if(Vector2.Distance(transform.position,other.transform.position) <= _range){
-            Enemy enemy = other.GetComponent<Enemy>();
-            if(other.CompareTag("Enemy") && !_enemys.Contains(enemy)){
-                _enemys.Add(enemy);
+            Human human = other.GetComponent<Human>();
+            if(other.CompareTag("Human") && !_humans.Contains(human)){
+                _humans.Add(human);
             }
         }
     }
     private void OnTriggerEnter2D(Collider2D other){
         if(Vector2.Distance(transform.position,other.transform.position) <= _range){
-            Enemy enemy = other.GetComponent<Enemy>();
-            if(other.CompareTag("Enemy") && !_enemys.Contains(enemy)){
-                _enemys.Add(enemy);
+            Human human = other.GetComponent<Human>();
+            if(other.CompareTag("Human") && !_humans.Contains(human)){
+                _humans.Add(human);
             }
         }
     }
     public bool IsTargetInRange(){
-        if(_enemys[0] != null && Vector2.Distance(transform.position,_enemys[0].transform.position) <= _range){
+        if(_humans[0] != null && Vector2.Distance(transform.position,_humans[0].transform.position) <= _range){
             return true;
         }
         else{
@@ -32,10 +32,10 @@ public class RangeTower : MonoBehaviour{
         }
     }
     private void OnTriggerExit2D(Collider2D other){
-        if(other.CompareTag("Enemy")){
-            Enemy enemy = other.GetComponent<Enemy>();
-            if(_enemys.Contains(enemy)){
-                _enemys.Remove(enemy);
+        if(other.CompareTag("Human")){
+            Human human = other.GetComponent<Human>();
+            if(_humans.Contains(human)){
+                _humans.Remove(human);
             }
         }
     }

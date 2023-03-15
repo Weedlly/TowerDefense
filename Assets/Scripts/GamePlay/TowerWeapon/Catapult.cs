@@ -18,7 +18,7 @@ public class Catapult : TowerWeapon
     }
     protected override void Shoot(){
         Stone stone = Instantiate(_prefab,transform.position,Quaternion.identity);
-        stone.SetTarget(_enemys[0]);
+        stone.SetTarget(_humans[0]);
         stone.SetDamage(_attackDame);
         _audioSound.PlayOneShot(_attackSound);
     }

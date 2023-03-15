@@ -32,15 +32,15 @@ public class Stone : WeaponBullet
     }
 
     private void DameByExplored(){
-        GameObject[] instanceList = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] instanceList = GameObject.FindGameObjectsWithTag("Human");
         foreach (GameObject item in instanceList)
         {
-            Enemy enemy = item.GetComponent<Enemy>();
-            if(Vector2.Distance(enemy.transform.position,transform.position) < _rangeExplore){
-                enemy._health -= _dame;
+            Human human = item.GetComponent<Human>();
+            if(Vector2.Distance(human.transform.position,transform.position) < _rangeExplore){
+                human._health -= _dame;
             }
-            if(enemy._health <= 0f){
-                enemy.SelfDestroy();
+            if(human._health <= 0f){
+                human.SelfDestroy();
             }
         }
     }

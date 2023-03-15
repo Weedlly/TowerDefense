@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class TowerTroop : Tower
 {
-    [SerializeField] private int _numberAllys;
+    [SerializeField] private int _numberEvils;
     // [SerializeField] private float _allyAttackRange;
     // [SerializeField] private float _allyAttackSpeed;
     // [SerializeField] private float _allyHealth;
     // [SerializeField] private float _allyDame;
-    [SerializeField] private AllyMelee _prefab;
-    [SerializeField] private List<AllyMelee> _allies;
+    [SerializeField] private Evil _prefab;
+    [SerializeField] private List<Evil> _evils = new List<Evil>();
     
     [SerializeField] private GameObject _assemblePoint;
 
@@ -24,26 +24,27 @@ public class TowerTroop : Tower
     new void Start()
     {
         base.Start();
-        InitAlly();
-        SetAllyAssemblePoint();
+        Debug.Log(_prefab);
+        InitEvil();
+        SetEvilAssemblePoint();
         _assemblePoint.transform.position = transform.position;
     }
-    void SetAllyAssemblePoint(){
-        for (int i = 0; i < _allies.Count; i++)
+    void SetEvilAssemblePoint(){
+        for (int i = 0; i < _evils.Count; i++)
         {
-            _allies[i]._assemblePoint =  new Vector2(
+            _evils[i]._assemblePoint =  new Vector2(
                 _assemblePoint.transform.position.x + Random.value * 2,
                 _assemblePoint.transform.position.y + Random.value * 2
             );
         }
     }
   
-    void InitAlly(){
-        _allies = new List<AllyMelee>();
-        for (int i = 0; i < _numberAllys; i++)
+    void InitEvil(){
+        
+        for (int i = 0; i < _numberEvils; i++)
         {
-            _allies.Add(Instantiate(_prefab));
-            _allies[i].transform.position = transform.position;
+            _evils.Add(Instantiate(_prefab));
+            _evils[i].transform.position = transform.position;
         }
     }
     // Update is called once per frame
@@ -58,7 +59,7 @@ public class TowerTroop : Tower
 
 
     void RunReviveProcess(){
-        foreach (var item in _allies)
+        foreach (var item in _evils)
         {
             if(item._isDie == true){
                 item._timeReviveCounter -= Time.deltaTime;
@@ -69,12 +70,13 @@ public class TowerTroop : Tower
         }
     }
   
-    void SetupAfterRevive(Ally ally){
-        ally.gameObject.SetActive(true);
-        ally._isDie = false;
-        ally._health = 50f;
-        ally._timeReviveCounter = _timeRevive;
-        ally.transform.position = transform.position;
+    void SetupAfterRevive(Evil evil){
+        
+        evil.gameObject.SetActive(true);
+        evil._isDie = false;
+        evil._timeReviveCounter = _timeRevive;
+        evil.transform.position = transform.position;
+        BattleControler.AddEvil(evil);
     }
     
     private void SetAssemblePoint(){
@@ -86,7 +88,7 @@ public class TowerTroop : Tower
             if(Vector2.Distance(transform.position,curMousePoint) < _rangeToFire){
                 _assemblePoint.transform.position = curMousePoint;
                 _settingAssemblePoint = false;
-                SetAllyAssemblePoint();
+                SetEvilAssemblePoint();
                 Debug.Log(curMousePoint);
             }
         }

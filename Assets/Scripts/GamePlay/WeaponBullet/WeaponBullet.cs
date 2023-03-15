@@ -7,7 +7,7 @@ public abstract class WeaponBullet : MonoBehaviour
     // Start is called before the first frame update
     // [SerializeField] private AudioSource FireAudio;
 
-    [SerializeField] protected Enemy _target;
+    [SerializeField] protected Human _target;
     [SerializeField] protected float _movingSpeed;
     [SerializeField] protected Animator _animator;
 
@@ -54,8 +54,8 @@ public abstract class WeaponBullet : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    public void SetTarget(Enemy enemy){
-        _target = enemy;
+    public void SetTarget(Human human){
+        _target = human;
     }
     public void SetDamage(float damage){
         _dame = damage;
