@@ -6,16 +6,11 @@ using UnityEngine.UI;
 public class GameSpeedController : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Button _gameSpeedBt;
-    void Start()
-    {
-        _gameSpeedBt = GetComponent<Button>();
-        _gameSpeedBt.onClick.AddListener(ChangeGameSpeed);
-    }
-    void ChangeGameSpeed(){
+    public void ChangeGameSpeed(){
         switch(GameControler.GAME_SPEED){
             case (float)GameSpeed.Default:{
                 GameControler.GAME_SPEED = (float)GameSpeed.Double;
+                // this.gameObject.text = "x2";
                 break;
             }
             case (float)GameSpeed.Double:{

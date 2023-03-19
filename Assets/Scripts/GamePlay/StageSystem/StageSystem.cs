@@ -7,9 +7,11 @@ public class StageSystem : MonoBehaviour
 {
    
     [SerializeField] private  List<GameObject> _playerTypeInBattle;
-    [SerializeField] private  int _waveCount;
+    [SerializeField] private  int _maxWave;
+
     [SerializeField] private  List<int> _numbers;
-    [SerializeField] private  List<LineRenderer> _gates;
+    private  List<LineRenderer> _gates;
+    [SerializeField] private  RouteSet _routeSet;
     
     [SerializeField] private Button _callWaveBt;
 
@@ -18,9 +20,12 @@ public class StageSystem : MonoBehaviour
 
     [SerializeField] private List<ObjectPooler> _poolers = new List<ObjectPooler>();
 
-    // private int _currentWave = 0;
+    bool isWaitingStart = true;
     private bool _enableSpawn = true;
     private void Start() {
+        GameControl.CurrentWave = 1;
+        GameControl.MaxWave = _maxWave;
+        _gates = _routeSet.GetGates();
         _callWaveBt.onClick.AddListener(CallWave);
     }
    
@@ -33,12 +38,19 @@ public class StageSystem : MonoBehaviour
         }
     }
     void CallWave(){
+        if( isWaitingStart == false){
+            GameControl.CurrentWave ++;
+        }
+
+        isWaitingStart = false;
+        
         StartCoroutine(SpawnWaveOfStages());
     }
     IEnumerator SpawnWaveOfStages(){
-        int numberWave = Random.Range(2,6);
-        for (int i = 0; i < numberWave; i++)
+        
+        for (int i = 0; i < _maxWave; i++)
         {
+            
             _enableSpawn = false;
             StartCoroutine(SpawnTurnOfWave());
             yield return new WaitForSeconds(_spawnWaveInterval);
@@ -64,6 +76,9 @@ public class StageSystem : MonoBehaviour
     }
      
     private void Update() {
+        if(GameControl.CurrentWave == GameControl.MaxWave){
+            _enableSpawn = false;
+        }
         ShowCallWaveButton();
     }
 }

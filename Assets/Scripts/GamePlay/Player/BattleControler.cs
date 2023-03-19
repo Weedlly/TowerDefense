@@ -15,7 +15,10 @@ public class BattleControler : MonoBehaviour {
         Player target = null;
         float  dis = float.MaxValue;
         foreach (var player in listPlayer)
-        {
+        {   
+            // if(player._meleeCompetitorCounter ){
+                
+            // }
             float currentDis = Vector2.Distance(searcher.transform.position,player.transform.position);
             if(currentDis < searcher._rangeDetecting && currentDis < dis){
                 dis = currentDis;
@@ -34,7 +37,7 @@ public class BattleControler : MonoBehaviour {
         
     }
     bool IsPlayerDeadActive(Player player){
-        if(player.gameObject.activeSelf == false){
+        if(player != null && player.gameObject.activeSelf == false){
             return true;
         }
         return false;

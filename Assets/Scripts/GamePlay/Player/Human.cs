@@ -10,6 +10,7 @@ public class Human : Player
     private int _lengthOfPath;
     new void Start() {
         base.Start();
+        _maxMeleeCompetitor = 1; 
        _currentPositionIndex = 0;
         _lengthOfPath = _route.positionCount; 
         BattleControler.AddHuman(this);

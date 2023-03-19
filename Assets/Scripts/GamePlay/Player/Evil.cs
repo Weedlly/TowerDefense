@@ -9,6 +9,7 @@ public class Evil : Player
 
     new void Start() {
         base.Start();
+        _maxMeleeCompetitor = 1;
         BattleControler.AddEvil(this);
     }
     override protected void MoveDefault(){
