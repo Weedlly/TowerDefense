@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 2101222451224739849}
   - component: {fileID: 6017821564486035624}
   - component: {fileID: 2441688438186941979}
-  - component: {fileID: 2209267556452197988}
   - component: {fileID: 1622364154828007552}
   - component: {fileID: 5733490937164861142}
   - component: {fileID: 6431050460299277230}
@@ -212,32 +211,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &2209267556452197988
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893574009027752168}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.6875, y: 4.6875}
-    newSize: {x: 1.4166666, y: 1.4583334}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.4166666, y: 1.4583334}
-  m_EdgeRadius: 0
 --- !u!114 &1622364154828007552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,16 +286,11 @@ MonoBehaviour:
   _weapon: {fileID: 0}
   _hurtBlood: {fileID: 133798936192239942, guid: 0e4ec2e3b798645b1be30a58fcbc7f67, type: 3}
   _dieSmoke: {fileID: 8177676253926904881, guid: 71477f488518e4dd28c29eeb3cb71a02, type: 3}
-  _initRotate: 0
-  _players: []
   _playerWeapon: {fileID: 0}
   _unitType: 0
   _isDie: 0
   _target: {fileID: 0}
-  _isMoving: 0
-  _movingType: 0
-  _isAttack: 0
-  _attackAnimatorDelay: 0
+  _maxMeleeCompetitor: 0
   _meleeCompetitorCounter: 0
   _route: {fileID: 0}
   _earningCoin: 0

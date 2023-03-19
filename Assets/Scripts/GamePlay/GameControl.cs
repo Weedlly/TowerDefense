@@ -10,18 +10,35 @@ public class GameControl : MonoBehaviour
    
     private static int _healthPoint;
     private static int _coinPoint;
+    private static int _currentWave ;
+    private static int _maxWave;
 
-    [SerializeField]
-    private Text _currentHeathPoint;
+    [SerializeField] private Text _currentHeathPoint;
+    [SerializeField] private Text _currentCoinPoint;
+    [SerializeField] private Text _waveCount;
 
-    [SerializeField]
-    private Text _currentCoinPoint;
+    [SerializeField] private int _healthPointMax;
+    [SerializeField] private int _coinPointMax;  
+    [SerializeField] private string _wave;
 
-    [SerializeField]
-    private int _healthPointMax;
+    public static int CurrentWave 
+    { 
+        get {
+            return _currentWave;
+            } 
+        set {
+            _currentWave = value;
+        }
+    }
+    public static int MaxWave 
+    { 
+        get{ return _maxWave;}
+        set {
+            _maxWave = value;
+        }
+    }
 
-    [SerializeField]
-    private int _coinPointMax;
+
 
     void Start()
     {
@@ -39,6 +56,7 @@ public class GameControl : MonoBehaviour
     {
         _currentHeathPoint.text = _healthPoint.ToString();
         _currentCoinPoint.text = _coinPoint.ToString();
+        _waveCount.text = WaveFormat();
         GameOver();
     }
     public static void ReduceHealth(){
@@ -56,6 +74,9 @@ public class GameControl : MonoBehaviour
     }
     public static void IncreaseCoin(int coin){
         _coinPoint+=coin;
+    }
+    string WaveFormat(){
+        return _currentWave.ToString() + "/" + _maxWave.ToString();
     }
     void GameOver(){
         if(_healthPoint <= 0){

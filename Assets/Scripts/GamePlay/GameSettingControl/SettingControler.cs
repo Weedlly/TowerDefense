@@ -2,31 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SettingControler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Button _pauseBt;
     public Image _settingWindow;
     public Button _exitSettingWindowBt;
+    [SerializeField] private TMP_Text _gameSpeedTxt;
+
     void Start()
     {
-        _pauseBt.onClick.AddListener(OpenSettingWindow);
         _exitSettingWindowBt.onClick.AddListener(TurnoffSettingWindow);
     }
-    void OpenSettingWindow(){
-       
+    public void OpenSettingWindow(){
         Time.timeScale = 0;
         _settingWindow.gameObject.SetActive(true);
     }
-    void TurnoffSettingWindow(){
+    public void TurnoffSettingWindow(){
         Time.timeScale = 1;
         _settingWindow.gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void RestartStage(){
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void QuitStage(){
+        Time.timeScale = 1;
+        SceneManager.LoadScene("StageSelectScene");
+    }
+    public void ChangeGameSpeed(){
+        switch(GameControler.GAME_SPEED){
+            case (float)GameSpeed.Default:{
+                
+                GameControler.GAME_SPEED = (float)GameSpeed.Double;
+                _gameSpeedTxt.text = "X" + ((int)GameControler.GAME_SPEED).ToString();
+                break;
+            }
+            case (float)GameSpeed.Double:{
+                GameControler.GAME_SPEED = (float)GameSpeed.Default;
+                _gameSpeedTxt.text = "X" + ((int)GameControler.GAME_SPEED).ToString();
+                break;
+            }
+        }
+        Time.timeScale = GameControler.GAME_SPEED;
     }
 }

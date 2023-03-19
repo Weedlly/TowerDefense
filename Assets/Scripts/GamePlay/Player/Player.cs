@@ -24,8 +24,6 @@ public class Player : MonoBehaviour
     [SerializeField] protected RangeWeapon _weapon;
     [SerializeField] protected GameObject _hurtBlood;
     [SerializeField] protected GameObject _dieSmoke;
-   
-
     [SerializeField] protected PlayerWeapon _playerWeapon;
     
 
@@ -47,6 +45,7 @@ public class Player : MonoBehaviour
     protected const float TIME_ATTACK = 0.4f / 1;
     protected const float WAIT_SHOT_ANIMATION = TIME_ATTACK   / (2f * 1);
 
+    public int _maxMeleeCompetitor;
     public int _meleeCompetitorCounter = 0;
     protected int _playerSide;
 
@@ -206,7 +205,7 @@ public class Player : MonoBehaviour
         if(transform.position.x > _lastPosition.x){
             _spriteRenderer.flipX = false;
         }
-        else{
+        else if(transform.position.x < _lastPosition.x){
             _spriteRenderer.flipX = true;
         }
         _lastPosition = this.transform.position;

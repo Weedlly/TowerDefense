@@ -229,7 +229,7 @@ MonoBehaviour:
   _prefab: {fileID: 3294451137776983209, guid: 3d20a919de5134304b7c81cfecd669c7, type: 3}
   _evils: []
   _assemblePoint: {fileID: 3425950836748813339}
-  _timeRevive: 2
+  _timeRevive: 10
   _settingAssemblePoint: 0
 --- !u!1 &3425950836748813339
 GameObject:
