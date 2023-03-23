@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
-public class MainScreenController : MonoBehaviour
+public class StageSelectController: MonoBehaviour
 {
-
-    [SerializeField] GameObject _settingPanel;
+    User user;
 
     // Start is called before the first frame update
     void Start()
     {
-        _settingPanel.gameObject.SetActive(false);
-    }
+        user = User.Instance;
+        user.saveUserData();
+    } 
 
     // Update is called once per frame
     void Update()
     {
-        
+
+       
     }
 }

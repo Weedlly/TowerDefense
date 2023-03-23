@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class SettingController : MonoBehaviour
+public class SettingPanelController : MonoBehaviour
 {
     [SerializeField] TMP_Text _title;
     [SerializeField] TMP_Text _quitBtnText;
@@ -13,11 +13,19 @@ public class SettingController : MonoBehaviour
         Application.Quit();
     }    
 
+    public void MuteAll(){
+        AudioListener.volume = 0;
+    }
+
+    public void UnMuteAll(){
+        AudioListener.volume = 1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         _title.text = UIString.Instance.settingTitle;
-        _quitBtnText.text = UIString.Instance.quitBtnText;
+        //_quitBtnText.text = UIString.Instance.quitBtnText;
     }
 
     // Update is called once per frame
