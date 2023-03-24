@@ -22,7 +22,5 @@ public class Catapult : TowerWeapon
         stone.SetDamage(_attackDame);
         _audioSound.PlayOneShot(_attackSound);
     }
-
-    
     
 }

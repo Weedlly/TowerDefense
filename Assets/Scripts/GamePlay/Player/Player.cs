@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
         }
         else{
             Rotate();
+            
             if(IsTargetActive()){
                 AttackTargetProcess();
             }
@@ -178,6 +179,11 @@ public class Player : MonoBehaviour
   
     void Attack(){
         _target.HealthReduce(_dame);
+    }
+
+    virtual protected void EmploySkill()
+    {
+
     }
     
     

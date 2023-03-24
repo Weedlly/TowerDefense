@@ -20,8 +20,6 @@ public class Stone : WeaponBullet
     }
     public override void Hitting()
     {
-        
-
         if(_isExplored == false){
             DameByExplored();
         }
