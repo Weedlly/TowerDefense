@@ -15,13 +15,13 @@ public class BossMelee : Human
     private bool attackBlocked;
     new void Update()
     {     
+        base.Update();
         if(_health <= 0){
-           
             attackBlocked = false;
             _isBossEmploySkill = false; 
-            SelfDestroy();
+           
         }
-        else if(_health <= 800)
+        else if(_health <= 800 && _target != null)
         {
             if (attackBlocked) 
                 return;
@@ -33,7 +33,7 @@ public class BossMelee : Human
             //Rotate();
             EmploySkill();   
         }
-        base.Update();
+        
     }
 
     protected override void EmploySkill()

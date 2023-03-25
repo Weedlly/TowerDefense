@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NightBorneSkill : MonoBehaviour
-{
-    
-    
+{ 
     [SerializeField] private HellFire _prefab;
     [SerializeField] protected Player _target;
     [SerializeField] private Animator _animator;
 
     public bool IsDeloySkill { get; private set; }
-    
-     
 
     public Transform circleOrigin;
     public float radius;
@@ -32,8 +28,6 @@ public class NightBorneSkill : MonoBehaviour
         if (!IsDeloySkill)
             return;
         // Vector2 direction = _pointerPosition ;
-        
-
         
         
         if (_target != null && BossMelee._isBossEmploySkill == true)
