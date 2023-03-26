@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<User>
+    <TotalStar>Tổng số sao thu thập được từ các màn chơi</TotalStar>
+    <CompletetedStageList>
+        <Stage id="StageID">
+            <Star>Số sao đánh giá</Star>
+        </Stage>
+    </StageList>
+    
+	<TơwerList>
+	    <Tower id="TowerID">
+			<Name>Tên của tháp</Name>
+			<Attribute>Thuộc tính chi tiết của tháp</Attribute>
+		</Tower>
+		<!-- Các Tower tiếp theo -->
+	</TơwerList>
+
+	<ChampionList>
+	    <Champion id="ChampionID">
+			<Name>Tên của tướng</Name>
+			<Level>Cấp tướng</Level>
+			<Attribute>Thuộc tính chi tiết của tướng (Dame, tầm đánh,..)</Attribute>
+		</Champion>
+		<!-- Các Champion tiếp theo -->
+	</ChampionList>
+</User>

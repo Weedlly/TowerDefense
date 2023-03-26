@@ -8,6 +8,8 @@ public class RouteSet : MonoBehaviour
     [SerializeField] private  List<LineRenderer> _gates;
     [SerializeField] private  SpriteRenderer sr;
     
+    private static List<LineRenderer> gates;
+
     public List<LineRenderer> GetGates(){
 
         float worldScreenHeight = Camera.main.orthographicSize * 2;
@@ -28,6 +30,23 @@ public class RouteSet : MonoBehaviour
                 item.SetPosition(i,tmp);
             }
         }
+        gates = _gates;
         return _gates;
+    }
+    public static Vector2 FindNearestPoint(Vector2 point){
+        Vector2 nearstPoint = new Vector2(0f,0f);
+        float dis = float.MaxValue;
+        foreach (var item in gates)
+        {
+            for (int i = 0; i < item.positionCount; i++)
+            {
+                float tmpDis = Vector2.Distance(item.GetPosition(i),point);
+                if(tmpDis< dis){
+                    dis = tmpDis;
+                    nearstPoint = item.GetPosition(i);;
+                }
+            }
+        }
+        return nearstPoint;
     }
 }
