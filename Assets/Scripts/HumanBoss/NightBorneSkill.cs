@@ -9,6 +9,8 @@ public class NightBorneSkill : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     public bool IsDeloySkill { get; private set; }
+    [SerializeField] private SpriteRenderer _characterRenderer, _skillRenderer;
+    [SerializeField] private Vector2 _pointerPosition { get; set; }
 
     public Transform circleOrigin;
     public float radius;
@@ -28,6 +30,34 @@ public class NightBorneSkill : MonoBehaviour
         if (!IsDeloySkill)
             return;
         // Vector2 direction = _pointerPosition ;
+
+        Vector2 direction = (_pointerPosition - (Vector2)transform.position).normalized;
+            transform.right = direction;
+
+
+        Vector2 scale = transform.localScale;
+        if (direction.x < 0)
+        {
+            Debug.Log("Left face");
+            scale.y = -1;
+        }
+
+        else if (direction.x > 0)
+        {
+            Debug.Log("right face");
+            scale.y = 1;
+        }
+        transform.localScale = scale;
+
+        if(transform.eulerAngles.z > 0 && transform.eulerAngles.z < 180)
+        {
+            Debug.Log("Left face pos");
+            _skillRenderer.sortingOrder = _characterRenderer.sortingOrder - 1;
+
+        }else{
+            Debug.Log("Right face pos");
+            _skillRenderer.sortingOrder = _characterRenderer.sortingOrder + 1; 
+        }  
         
         
         if (_target != null && BossMelee._isBossEmploySkill == true)

@@ -7,7 +7,7 @@ public class BossMelee : Human
 {
     [SerializeField] private InputActionReference _movingSpeed, _attack, _pointerPosition;
     [SerializeField] private NightBorneSkill _skill_1;
-    // [SerializeField] protected List<Evil> _evils;
+    
     private Vector2 _pointerInput, _movementInput;
     public static bool _isBossEmploySkill;
 
@@ -19,6 +19,7 @@ public class BossMelee : Human
         if(_health <= 0){
             attackBlocked = false;
             _isBossEmploySkill = false; 
+            
            
         }
         else if(_health <= 800 && _target != null)

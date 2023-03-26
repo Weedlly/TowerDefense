@@ -193,7 +193,6 @@ public class Player : MonoBehaviour
         _health -= healthReduce;
     }
 
-   
     virtual public void SelfDestroy(){
         CreateDieObject();
         ResetPlayer();
