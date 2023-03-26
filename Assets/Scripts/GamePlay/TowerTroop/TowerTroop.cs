@@ -6,28 +6,22 @@ using UnityEngine.UI;
 public class TowerTroop : Tower
 {
     [SerializeField] private int _numberEvils;
-    // [SerializeField] private float _allyAttackRange;
-    // [SerializeField] private float _allyAttackSpeed;
-    // [SerializeField] private float _allyHealth;
-    // [SerializeField] private float _allyDame;
     [SerializeField] private Evil _prefab;
     [SerializeField] private List<Evil> _evils = new List<Evil>();
     
-    [SerializeField] private GameObject _assemblePoint;
-
+    [SerializeField] private AssemblePoint _assemblePoint;
+    [SerializeField] protected RangeTower _rangeTower;
+    private Vector2 _currentAssemblePoint;
     public float _timeRevive = 5f;
-    
-
     public bool _settingAssemblePoint = false;
    
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
-        Debug.Log(_prefab);
         InitEvil();
         SetEvilAssemblePoint();
-        _assemblePoint.transform.position = transform.position;
+        _rangeTower._range = _rangeToFire;
     }
     void SetEvilAssemblePoint(){
         for (int i = 0; i < _evils.Count; i++)
@@ -50,11 +44,12 @@ public class TowerTroop : Tower
     // Update is called once per frame
     void Update()
     {
-        if(_settingAssemblePoint == true){
-            SetAssemblePoint();
+        _assemblePoint._rangeToFire = this._rangeToFire;
+        if(_currentAssemblePoint != new Vector2(_assemblePoint.transform.position.x,_assemblePoint.transform.position.y)){
+            _currentAssemblePoint =_assemblePoint.transform.position;
+            SetEvilAssemblePoint();
         }
         RunReviveProcess();
-
     }
 
 
@@ -79,19 +74,4 @@ public class TowerTroop : Tower
         BattleControler.AddEvil(evil);
     }
     
-    private void SetAssemblePoint(){
-        // Debug.Log(curMousePoint);
-        if (Input.GetMouseButton(0))
-        {
-            Vector2 curMousePoint =Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
-            if(Vector2.Distance(transform.position,curMousePoint) < _rangeToFire){
-                _assemblePoint.transform.position = curMousePoint;
-                _settingAssemblePoint = false;
-                SetEvilAssemblePoint();
-                Debug.Log(curMousePoint);
-            }
-        }
-        
-    }
 }

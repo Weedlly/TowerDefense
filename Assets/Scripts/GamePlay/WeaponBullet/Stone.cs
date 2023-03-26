@@ -18,6 +18,9 @@ public class Stone : WeaponBullet
     {
         base.Update();
     }
+    override protected void Rotate(){
+        // do nothing
+    }
     public override void Hitting()
     {
         

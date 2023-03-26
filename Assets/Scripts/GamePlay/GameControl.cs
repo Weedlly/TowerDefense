@@ -21,6 +21,9 @@ public class GameControl : MonoBehaviour
     [SerializeField] private int _coinPointMax;  
     [SerializeField] private string _wave;
 
+    [SerializeField] private GameObject _defeatContainer;
+    [SerializeField] private GameObject _winContainer;
+
     public static int CurrentWave 
     { 
         get {
@@ -41,23 +44,20 @@ public class GameControl : MonoBehaviour
 
 
     void Start()
-    {
-        // SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
-        // SceneManager.SetActiveScene(
-        //     SceneManager.GetSceneByName("SampleScene")
-        // );
-        
+    {      
+        Time.timeScale = 1;
         _healthPoint = _healthPointMax;
         _coinPoint = _coinPointMax;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         _currentHeathPoint.text = _healthPoint.ToString();
         _currentCoinPoint.text = _coinPoint.ToString();
         _waveCount.text = WaveFormat();
-        GameOver();
+
+        CheckDefeat();
+        CheckWinning();
     }
     public static void ReduceHealth(){
         _healthPoint--;
@@ -78,10 +78,25 @@ public class GameControl : MonoBehaviour
     string WaveFormat(){
         return _currentWave.ToString() + "/" + _maxWave.ToString();
     }
-    void GameOver(){
+    void CheckDefeat(){
         if(_healthPoint <= 0){
-            Debug.Log("GameOver");
+            PlayDefeat();
         }
+    }
+    void PlayDefeat(){
+        Time.timeScale = 0;
+        _defeatContainer.SetActive(true);
+    }
+    void CheckWinning(){
+        if(_currentWave == _maxWave){
+            if(GameObject.FindWithTag("Human") == null){
+                PlayWinning();
+            }
+        }
+    }
+    void PlayWinning(){
+        Time.timeScale = 0;
+        _winContainer.SetActive(true);
     }
 
 }

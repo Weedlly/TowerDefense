@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TowerDame
   - Map
   - Human
-  - Enemy
   - Evil
-  - Ally
   layers:
   - Default
   - TransparentFX
@@ -35,7 +32,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - gg
   - 
   - 
   - 
@@ -46,4 +43,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Invisible
+    uniqueID: 463921499
+    locked: 0
+  - name: MapGround
+    uniqueID: 3244169161
+    locked: 0
+  - name: MapObject
+    uniqueID: 44165901
+    locked: 0
+  - name: GameObject
+    uniqueID: 4016723089
+    locked: 0
+  - name: Bullet
+    uniqueID: 2060961249
+    locked: 0
+  - name: UI
+    uniqueID: 2790104403
     locked: 0
