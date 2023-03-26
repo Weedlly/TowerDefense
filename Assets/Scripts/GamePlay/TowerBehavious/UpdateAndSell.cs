@@ -10,6 +10,7 @@ public class UpdateAndSell : MonoBehaviour
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _assembleButton;
     [SerializeField] private GameObject _currentTower;
+    [SerializeField] private AssemblePoint _assemblePoint;
 
 
 
@@ -32,7 +33,7 @@ public class UpdateAndSell : MonoBehaviour
     }
 
     
-    void SellTower(){
+    public void SellTower(){
        
         BuidingPlaceController.ActiveInstance(transform);
         
@@ -45,9 +46,7 @@ public class UpdateAndSell : MonoBehaviour
     }
 
     void AssemblePoint(){
-        TowerTroop instance = _currentTower.GetComponentInChildren<TowerTroop>();
-
-        instance._settingAssemblePoint = true;
+        _assemblePoint._settingAssemblePoint = true;
         SetActive(false);
     }
     void SetActive(bool isActive){

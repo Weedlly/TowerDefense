@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2140857166, guid: a8f24677934ac414ba442f269ea013be, type: 3}
+  m_Sprite: {fileID: 1902583494, guid: a87a4ac90dd204e99a5f7226bc79fa1b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -196,8 +196,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: 44165901
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &6848114870629012801
 MonoBehaviour:

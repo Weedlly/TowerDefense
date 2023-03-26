@@ -36,7 +36,7 @@ public abstract class WeaponBullet : MonoBehaviour
         Vector3 line = _target.transform.position - transform.position;
         // Debug.Log(transform.up);
         _angle = Vector3.SignedAngle(transform.up,line,transform.forward);
-        transform.Rotate(0f,0f,_angle); 
+        Rotate();
 
         if(Vector2.Distance(transform.position,_target.transform.position) < 0.5f){
             Hitting();
@@ -45,6 +45,9 @@ public abstract class WeaponBullet : MonoBehaviour
         _movingSpeed += _movingSpeed * 0.01f;
     }
 
+    virtual protected void Rotate(){
+        transform.Rotate(0f,0f,_angle); 
+    }
     public virtual void Hitting(){
         _target.HealthReduce(_dame);
         Destroy(this.gameObject);

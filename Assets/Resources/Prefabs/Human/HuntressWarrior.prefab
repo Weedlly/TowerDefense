@@ -132,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 1893574009027752168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -33.08, y: 3.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5772058310936515721}
@@ -177,9 +177,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: -278244207
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1595545657, guid: 42207d6f4d1574561a63f78f54a5c656, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBarImage: {fileID: 2425453398539830863}
+  _healthObject: {fileID: 1796301989242085260}
   _maxHealth: 50
 --- !u!58 &5733490937164861142
 CircleCollider2D:
@@ -293,7 +294,7 @@ MonoBehaviour:
   _maxMeleeCompetitor: 0
   _meleeCompetitorCounter: 0
   _route: {fileID: 0}
-  _earningCoin: 0
+  _earningCoin: 20
 --- !u!1 &3444888293928447913
 GameObject:
   m_ObjectHideFlags: 0
