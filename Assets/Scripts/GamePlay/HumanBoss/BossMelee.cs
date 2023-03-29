@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using Unity.Jobs;
 using UnityEngine.Jobs;
 
 public class BossMelee : Human 
@@ -16,36 +15,47 @@ public class BossMelee : Human
     public static bool _isBossEmployInsticSkill;
     public static bool _isBossEmployActiveSkill;
 
-    public static float delay = 1f;
+    public static float delay = 2f;
     private bool attackBlocked;
+
+    private float minHealth = 0;
+    private float healthToDesploySkill = 300;
+
     new void Update()
     {     
         base.Update();
-        if(_health <= 0){
+        
+        if(_health <= minHealth){
             _isBossEmployActiveSkill = false;
-
-            _isBossEmploySkill = true; 
-            _isBossEmployInsticSkill = true;
-            
-            EmploySkill();
-
-            _isBossEmployInsticSkill = false;
-            _isBossEmploySkill = false;
-
-            _animator.SetBool("isDie", true);
-             
-        }
-        else if((_health <= 900 && _health >= 0) && _target != null)
-        {
             if (attackBlocked) 
                 return;
 
             attackBlocked = true;
-            _animator.SetBool("isAttack",false);
 
+            _isBossEmploySkill = true; 
+            _isBossEmployInsticSkill = true;
+            this._animator.SetBool("isAttack",false);
+
+            EmploySkill();
+
+            // _isBossEmployInsticSkill = false;
+            // _isBossEmploySkill = false;
+
+            //SelfDestroy();
+             
+        }
+        else if((_health <= healthToDesploySkill && _health > minHealth) && _target != null)
+        {
+            if (attackBlocked) 
+                return;
+
+            Debug.Log("boss turn skill");
+            attackBlocked = true;
+                       
             _isBossEmploySkill = true; 
             _isBossEmployActiveSkill = true;
 
+            this._animator.SetBool("isAttack",false);
             EmploySkill();   
         } 
     }
@@ -57,14 +67,13 @@ public class BossMelee : Human
             NightBorneSkill nbSkill = Instantiate(_skill, transform.position, Quaternion.identity);
             nbSkill.SetTarget(this._target); //boss target   
             if (_isBossEmployActiveSkill){
+                // nbSkill.game
                 nbSkill.SetTypeSkill(SkillTypeEnum.ActiveSkill);
             }
-            else{
+            else if(_isBossEmployInsticSkill){
                 nbSkill.SetTypeSkill(SkillTypeEnum.InsticSkill);
             }
-            
-                      
-            
+                     
             StartCoroutine(DelayAttack()); 
             Destroy(nbSkill.gameObject, 1f);
         }            

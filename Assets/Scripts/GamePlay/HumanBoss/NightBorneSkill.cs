@@ -35,6 +35,7 @@ public class NightBorneSkill : MonoBehaviour  //Client
     private bool attackBlocked;
     
     private static Context context = new Context();
+
     public void ResetIsDeloySkill()
     {
         IsDeloyActiveSkill = false;
@@ -44,8 +45,6 @@ public class NightBorneSkill : MonoBehaviour  //Client
     public void SetTarget(Player target){     
         _target = target; 
         IsDeloyActiveSkill = true;
-        
-        //ActiveSkill();
     }
 
     void Update()
@@ -53,40 +52,40 @@ public class NightBorneSkill : MonoBehaviour  //Client
         if (!IsDeloyActiveSkill)
             return;
 
+        setSurface(); 
         if (_target != null && BossMelee._isBossEmployActiveSkill == true)
-        {     
-            setSurface();
+        {                 
             if (attackBlocked) 
                 return;
 
             attackBlocked = true;
             _animatorActiceSkill.SetTrigger("Attack");
                        
-            context.DeloySkill(_prefabHellfire ,this.transform);
+            context.DeloySkill(_prefabHellfire ,this.transform, _target);
 
             _animatorActiceSkill.SetTrigger("Attack");
-
             UnityEngine.Object.Destroy(this.gameObject, 1f);      
         }  
+
         else if (_target != null && BossMelee._isBossEmployInsticSkill == true)
-        {       
-            setSurface(); 
+        {                   
             if (attackBlocked) 
                 return;
 
             attackBlocked = true;
-            _animatorActiceSkill.SetBool("isDeployment", false);
+            //_animatorActiceSkill.SetBool("isDeployment", false);
             _animatorInsticSkill.SetBool("Attack", true);
 
-            context.DeloySkill(_prefabBurneSkill,this.transform);   
+            context.DeloySkill(_prefabBurneSkill,this.transform, _target);   
             
+            _animatorInsticSkill.SetBool("Attack", false);
             UnityEngine.Object.Destroy(this.gameObject, 0.4f);      
         }            
     }
 
     public void SetTypeSkill(SkillTypeEnum _skillTypeEnum){
         skillType = _skillTypeEnum;
-        Debug.Log(skillType);
+        //Debug.Log(skillType);
         #region Strategy
 		switch(skillType){		
 			case SkillTypeEnum.ActiveSkill:
@@ -164,8 +163,8 @@ public class Context
         this._iSkillable = iSkillable;
     }
 
-    public void DeloySkill(GameObject prefabs ,Transform transform){
-        _iSkillable.FetchSkill(prefabs ,transform);
+    public void DeloySkill(GameObject prefabs ,Transform transform, Player target){
+        _iSkillable.FetchSkill(prefabs ,transform, target);
     }
 
 }

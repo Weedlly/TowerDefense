@@ -44,7 +44,7 @@ public class BurneSkill : MonoBehaviour //Concrete Strategies
             Evil evil = item.GetComponent<Evil>();
             if(Vector2.Distance(evil.transform.position, transform.position) < _rangeExplore)
             {
-                evil._health -= _dame;
+                evil.HealthReduce(_dame);
             }
             if(evil._health <= 0f)
             {

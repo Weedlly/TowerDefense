@@ -4,48 +4,41 @@ using UnityEngine;
 
 public interface ISkillable //Strategy
 {
-    void FetchSkill(GameObject prefab, Transform transform);
+    void FetchSkill(GameObject prefab, Transform transform, Player target);
 
-    // void FetchInsticSkill(BurneSkill _prefabBurneSkill, Transform transform);
-    // void FetchActiveSkill(HellFire _prefabHellfire, Transform transform);
 } 
 
 
 public class InsticSkill: MonoBehaviour, ISkillable{
     
-    public void FetchSkill(GameObject prefab,Transform transform){
-        Debug.Log(prefab.GetComponent<BurneSkill>());
-        // BurneSkill burneskill = Instantiate(prefab,transform.position,Quaternion.identity) ;
+    public void FetchSkill(GameObject prefab,Transform transform, Player target){
+       
+        BurneSkill burneskill = Instantiate(prefab.GetComponent<BurneSkill>(),transform.position, Quaternion.identity);
 
-        // Vector3 initialPosition = new Vector3 (this.transform.position.x, this.transform.position.y +1f,0);
-        // Resources.Load("Prefabs/Skill/Skill",typeof(GameObject))
-        // GameObject skill = Resources.Load("Prefabs/Skill/Skill",typeof(GameObject));
-        //   Instantiate(Resources.Load("Prefabs/Skill/Skill",typeof(GameObject)),transform.position,Quaternion.identity) as GameObject;   
-        // GameObject burneskill = skill.GetComponent<BurneSkill>() 
-        // burneskill.transform.parent = transform;
-        // burneskill.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,3f);
+        burneskill.gameObject.SetActive(true);
+
+        burneskill._target = target;
+        burneskill.Employing();
+        
+        //burneskill.gameObject.SetActive(false);
+        Destroy(burneskill.gameObject, 1f);
+        Destroy(this.gameObject, 1f);
     } 
 }
 
 public class ActiveSkill: MonoBehaviour, ISkillable{
     
-    public void FetchSkill(GameObject prefab,Transform transform){
-        // Debug.Log("prefab");
-        // Debug.Log(prefab);
-        // // Debug.Log(transform.position);
-        // // //HellFire hellfire = Instantiate(_prefabHellfire,transform.position,Quaternion.identity);
+    public void FetchSkill(GameObject prefab,Transform transform, Player target){
+        HellFire hellfire = Instantiate(prefab.GetComponent<HellFire>(),transform.position, Quaternion.identity);
+
+        hellfire.gameObject.SetActive(true);
         
-        // // Vector3 initialPosition = new Vector3 (this.transform.position.x, this.transform.position.y +1f,0);
+        hellfire._target = target;
+        hellfire.Employing();
         
-        // // GameObject burneskill =  Instantiate(Resources.Load("HellFire",typeof(GameObject)),transform.position,Quaternion.identity) as GameObject;    
-        // // 
-        // // 
-        // HellFire hellfire = Instantiate(prefab.GetComponent<HellFire>(),transform.position,Quaternion.identity);
-        // // hellfire.transform.parent = transform;
-        // // hellfire.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,3f);
-         
-        // hellfire.gameObject.SetActive(true);
-        // Destroy(this.gameObject, 1f);
-        // Destroy(hellfire.gameObject, 1f);
+        hellfire.gameObject.SetActive(false);
+        Destroy(hellfire.gameObject, 1f);
+        Destroy(this.gameObject, 1f);
+        
     }
 }
