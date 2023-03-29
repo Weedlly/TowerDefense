@@ -181,10 +181,10 @@ public class Player : MonoBehaviour
         _target.HealthReduce(_dame);
     }
 
-    virtual protected void EmploySkill()
-    {
+    // virtual protected void EmploySkill()
+    // {
 
-    }
+    // }
     
     
     #endregion Attack control

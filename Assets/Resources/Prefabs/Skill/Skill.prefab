@@ -50,7 +50,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &394860004032411987
 Transform:
   m_ObjectHideFlags: 0
@@ -180,6 +180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rangeExplore: 10
   _target: {fileID: 0}
+  _range: 0
+  _movingSpeed: 0
 --- !u!1 &5102693651268811861
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +413,7 @@ MonoBehaviour:
   _prefabBurneSkill: {fileID: 5102693651268811861}
   _target: {fileID: 0}
   _animatorInsticSkill: {fileID: 1482511553906541244}
-  _animator: {fileID: 640168227949982514}
+  _animatorActiceSkill: {fileID: 640168227949982514}
   _characterRenderer: {fileID: 5313732755127005443, guid: d0eded5a55d7f454ab9c3287ae574e44, type: 3}
   _skillRenderer: {fileID: 5289599118188203905}
   circleOrigin: {fileID: 1195677979584391461}

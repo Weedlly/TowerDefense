@@ -11,13 +11,13 @@ public class HellFire : MonoBehaviour
 
     private bool _isExplored = false;
     private float _dame = 40f;
-    [SerializeField] private float _range;
+    // [SerializeField] private float _range;
     
-    [SerializeField] private float _movingSpeed;
+    // [SerializeField] private float _movingSpeed;
 
     void Start()
     {
-        _movingSpeed = 2f;
+        //_movingSpeed = 2f;
     }
     void Update()
     {
@@ -38,13 +38,13 @@ public class HellFire : MonoBehaviour
         
         Destroy(this.gameObject, 0.1f);
     }
-    void Moving(){
-        if(Vector2.Distance(transform.position,_target.transform.position) < 0.5f){
-            DameByExplored();
-        }
-        transform.position = Vector2.Lerp(transform.position,_target.transform.position,_movingSpeed * Time.deltaTime);
-        _movingSpeed += _movingSpeed * 0.01f;
-    }
+    // void Moving(){
+    //     if(Vector2.Distance(transform.position,_target.transform.position) < 0.5f){
+    //         DameByExplored();
+    //     }
+    //     transform.position = Vector2.Lerp(transform.position,_target.transform.position,_movingSpeed * Time.deltaTime);
+    //     _movingSpeed += _movingSpeed * 0.01f;
+    // }
     
     private void DameByExplored()
     {

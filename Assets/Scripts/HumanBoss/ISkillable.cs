@@ -30,19 +30,22 @@ public class InsticSkill: MonoBehaviour, ISkillable{
 public class ActiveSkill: MonoBehaviour, ISkillable{
     
     public void FetchSkill(GameObject prefab,Transform transform){
-        Debug.Log("prefab");
-        Debug.Log(prefab);
-        // Debug.Log(transform.position);
-        // //HellFire hellfire = Instantiate(_prefabHellfire,transform.position,Quaternion.identity);
+        // Debug.Log("prefab");
+        // Debug.Log(prefab);
+        // // Debug.Log(transform.position);
+        // // //HellFire hellfire = Instantiate(_prefabHellfire,transform.position,Quaternion.identity);
         
-        // Vector3 initialPosition = new Vector3 (this.transform.position.x, this.transform.position.y +1f,0);
-        // Debug.Log(Resources.Load("HellFire",typeof(GameObject)));
-        // GameObject burneskill =  Instantiate(Resources.Load("HellFire",typeof(GameObject)),transform.position,Quaternion.identity) as GameObject;    
-        // burneskill.transform.parent = transform;
-        // burneskill.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,3f);
-        // HellFire hellfire = Instantiate(prefab,transform.position,Quaternion.identity) as HellFire;
-        //    Debug.Log(prefab.GetComponent<HellFire>());
-        HellFire hellfire = Instantiate(prefab.GetComponent<HellFire>(),transform.position,Quaternion.identity); 
-        hellfire.gameObject.SetActive(true);
+        // // Vector3 initialPosition = new Vector3 (this.transform.position.x, this.transform.position.y +1f,0);
+        
+        // // GameObject burneskill =  Instantiate(Resources.Load("HellFire",typeof(GameObject)),transform.position,Quaternion.identity) as GameObject;    
+        // // 
+        // // 
+        // HellFire hellfire = Instantiate(prefab.GetComponent<HellFire>(),transform.position,Quaternion.identity);
+        // // hellfire.transform.parent = transform;
+        // // hellfire.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,3f);
+         
+        // hellfire.gameObject.SetActive(true);
+        // Destroy(this.gameObject, 1f);
+        // Destroy(hellfire.gameObject, 1f);
     }
 }

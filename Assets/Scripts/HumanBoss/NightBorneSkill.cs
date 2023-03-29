@@ -20,7 +20,7 @@ public class NightBorneSkill : MonoBehaviour  //Client
     [SerializeField] protected Player _target;
 
     [SerializeField] private Animator _animatorInsticSkill;
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _animatorActiceSkill;
     
 
     public bool IsDeloyInsticSkill { get; private set; }
@@ -33,6 +33,9 @@ public class NightBorneSkill : MonoBehaviour  //Client
 
     public Transform circleOrigin;
     public float radius;
+
+    private float delayActiveSkill = 1f;
+    private bool attackBlocked;
     
     private static Context context = new Context();
     public void ResetIsDeloySkill()
@@ -49,11 +52,66 @@ public class NightBorneSkill : MonoBehaviour  //Client
     }
 
     void Update()
-    {
-        
+    {       
         if (!IsDeloyActiveSkill)
             return;
 
+        if (_target != null && BossMelee._isBossEmployActiveSkill == true)
+        {     
+            setSurface();
+            if (attackBlocked) 
+                return;
+
+            attackBlocked = true;
+            _animatorActiceSkill.SetTrigger("Attack");
+                       
+            context.DeloySkill(_prefabHellfire ,this.transform);
+
+            _animatorActiceSkill.SetTrigger("Attack");
+
+            UnityEngine.Object.Destroy(this.gameObject, 1f);      
+        }  
+        else if (_target != null && BossMelee._isBossEmployInsticSkill == true)
+        {       
+            setSurface(); 
+            if (attackBlocked) 
+                return;
+
+            attackBlocked = true;
+            _animatorActiceSkill.SetBool("isDeployment", false);
+            _animatorInsticSkill.SetBool("Attack", true);
+
+            context.DeloySkill(_prefabBurneSkill,this.transform);   
+            
+            UnityEngine.Object.Destroy(this.gameObject, 0.4f);      
+        }            
+    }
+
+    public void SetTypeSkill(SkillTypeEnum _skillTypeEnum){
+        skillType = _skillTypeEnum;
+        Debug.Log(skillType);
+        #region Strategy
+		switch(skillType){		
+			case SkillTypeEnum.ActiveSkill:
+				iSkillable = gameObject.AddComponent<ActiveSkill>();
+                context.SetContext(iSkillable);  
+				break;
+				
+			case SkillTypeEnum.InsticSkill:
+				iSkillable = gameObject.AddComponent<InsticSkill> ();  
+                context.SetContext(iSkillable);  
+                       
+				break;
+				
+			default:
+				//do something
+				break;
+		}
+		#endregion
+    }
+
+    private void setSurface()
+    {
         Vector2 direction = (_pointerPosition - (Vector2)transform.position).normalized;
             transform.right = direction;
 
@@ -76,54 +134,7 @@ public class NightBorneSkill : MonoBehaviour  //Client
         }else{
             _skillRenderer.sortingOrder = _characterRenderer.sortingOrder + 1; 
         }  
-
-        if (_target != null && BossMelee._isBossEmploySkill == true)
-        {     
-            _animator.SetBool("isDeployment", true);
-            
-            Debug.Log(this.transform);
-            context.DeloySkill(_prefabHellfire ,this.transform);
-            _animator.SetBool("isDeployment", false);
-            UnityEngine.Object.Destroy(this.gameObject, 0.4f);      
-        }  
-        else if (_target != null && BossMelee._isBossEmployInsticSkill == true)
-        {        
-            _animator.SetBool("isDeployment", false);
-            _animatorInsticSkill.SetBool("Attack", true);
-            context.DeloySkill(_prefabBurneSkill,this.transform);   
-            //_animatorInsticSkill.SetBool("Attack", false);
-            UnityEngine.Object.Destroy(this.gameObject, 0.4f);      
-        }
-              
     }
-
-    public void SetTypeSkill(SkillTypeEnum _skillTypeEnum){
-        skillType = _skillTypeEnum;
-        Debug.Log(skillType);
-        #region Strategy
-		switch(skillType){		
-			case SkillTypeEnum.ActiveSkill:
-				iSkillable = gameObject.AddComponent<ActiveSkill>();
-                context.SetContext(iSkillable);  
-
-                // Debug.Log(this.transform);
-                // context.DeloySkill(this.transform); 
-				break;
-				
-			case SkillTypeEnum.InsticSkill:
-				iSkillable = gameObject.AddComponent<InsticSkill> ();  
-
-                context.SetContext(iSkillable);  
-                       
-				break;
-				
-			default:
-				//do something
-				break;
-		}
-		#endregion
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
@@ -137,6 +148,12 @@ public class NightBorneSkill : MonoBehaviour  //Client
         {
             Debug.Log(collider.name);
         }
+    }
+
+    private IEnumerator DelayAttack()
+    {
+        yield return new WaitForSeconds(delayActiveSkill);
+        attackBlocked = false;
     }
 }
 
@@ -155,8 +172,6 @@ public class Context
         _iSkillable.FetchSkill(prefabs ,transform);
     }
 
-     // Destructor
-    ~Context(){}
 }
 
 
