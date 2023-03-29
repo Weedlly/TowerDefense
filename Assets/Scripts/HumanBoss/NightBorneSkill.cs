@@ -2,80 +2,126 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NightBorneSkill : MonoBehaviour
-{ 
-    [SerializeField] private HellFire _prefab;
-    [SerializeField] protected Player _target;
-    [SerializeField] private Animator _animator;
+public enum SkillTypeEnum{
+    ActiveSkill,
+    InsticSkill
+}
 
-    public bool IsDeloySkill { get; private set; }
+public class NightBorneSkill : MonoBehaviour  //Client
+{ 
+    #region variables
+        public SkillTypeEnum skillType;       
+        private ISkillable iSkillable;
+	#endregion
+
+    public GameObject _prefabHellfire;
+    public GameObject _prefabBurneSkill;
+
+    [SerializeField] protected Player _target;
+
+    [SerializeField] private Animator _animatorInsticSkill;
+    [SerializeField] private Animator _animator;
+    
+
+    public bool IsDeloyInsticSkill { get; private set; }
+    public bool IsDeloyActiveSkill { get; private set; }
+
+
+
     [SerializeField] private SpriteRenderer _characterRenderer, _skillRenderer;
     [SerializeField] private Vector2 _pointerPosition { get; set; }
 
     public Transform circleOrigin;
     public float radius;
     
+    private static Context context = new Context();
     public void ResetIsDeloySkill()
     {
-        IsDeloySkill = false;
+        IsDeloyActiveSkill = false;
+        IsDeloyInsticSkill = false;
     }
     
     public void SetTarget(Player target){     
         _target = target; 
-        SkillAttack();
+        IsDeloyActiveSkill = true;
+        
+        //ActiveSkill();
     }
 
     void Update()
     {
-        if (!IsDeloySkill)
+        
+        if (!IsDeloyActiveSkill)
             return;
-        // Vector2 direction = _pointerPosition ;
 
         Vector2 direction = (_pointerPosition - (Vector2)transform.position).normalized;
             transform.right = direction;
 
-
         Vector2 scale = transform.localScale;
         if (direction.x < 0)
         {
-            Debug.Log("Left face");
             scale.y = -1;
         }
 
         else if (direction.x > 0)
         {
-            Debug.Log("right face");
             scale.y = 1;
         }
         transform.localScale = scale;
 
         if(transform.eulerAngles.z > 0 && transform.eulerAngles.z < 180)
         {
-            Debug.Log("Left face pos");
             _skillRenderer.sortingOrder = _characterRenderer.sortingOrder - 1;
 
         }else{
-            Debug.Log("Right face pos");
             _skillRenderer.sortingOrder = _characterRenderer.sortingOrder + 1; 
         }  
-        
-        
+
         if (_target != null && BossMelee._isBossEmploySkill == true)
-        {
+        {     
+            _animator.SetBool("isDeployment", true);
             
-            HellFire hellfire = Instantiate(_prefab,transform.position,Quaternion.identity);
-            hellfire._target = _target;
-            //hellfire.Employing();
-            //Destroy(hellfire.gameObject, 0.4f);
+            Debug.Log(this.transform);
+            context.DeloySkill(_prefabHellfire ,this.transform);
+            _animator.SetBool("isDeployment", false);
+            UnityEngine.Object.Destroy(this.gameObject, 0.4f);      
         }  
-        
+        else if (_target != null && BossMelee._isBossEmployInsticSkill == true)
+        {        
+            _animator.SetBool("isDeployment", false);
+            _animatorInsticSkill.SetBool("Attack", true);
+            context.DeloySkill(_prefabBurneSkill,this.transform);   
+            //_animatorInsticSkill.SetBool("Attack", false);
+            UnityEngine.Object.Destroy(this.gameObject, 0.4f);      
+        }
+              
     }
 
-    public void SkillAttack()    
-    {
-        IsDeloySkill = true;
-        _animator.SetTrigger("Attack");
-        
+    public void SetTypeSkill(SkillTypeEnum _skillTypeEnum){
+        skillType = _skillTypeEnum;
+        Debug.Log(skillType);
+        #region Strategy
+		switch(skillType){		
+			case SkillTypeEnum.ActiveSkill:
+				iSkillable = gameObject.AddComponent<ActiveSkill>();
+                context.SetContext(iSkillable);  
+
+                // Debug.Log(this.transform);
+                // context.DeloySkill(this.transform); 
+				break;
+				
+			case SkillTypeEnum.InsticSkill:
+				iSkillable = gameObject.AddComponent<InsticSkill> ();  
+
+                context.SetContext(iSkillable);  
+                       
+				break;
+				
+			default:
+				//do something
+				break;
+		}
+		#endregion
     }
 
     private void OnDrawGizmosSelected()
@@ -92,7 +138,26 @@ public class NightBorneSkill : MonoBehaviour
             Debug.Log(collider.name);
         }
     }
+}
+
+public class Context
+{
+    private ISkillable _iSkillable;
+
+    // Constructor
+    public void SetContext(ISkillable iSkillable)
+    {
+        this._iSkillable = iSkillable;
+    }
+
+    public void DeloySkill(GameObject prefabs ,Transform transform){
+        //Debug.Log(_prefabHellfire);
+        _iSkillable.FetchSkill(prefabs ,transform);
+    }
+
+     // Destructor
+    ~Context(){}
+}
+
 
     
-    
-}

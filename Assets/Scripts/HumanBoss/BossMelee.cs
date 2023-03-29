@@ -3,13 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class BossMelee : Human
+
+using Unity.Jobs;
+using UnityEngine.Jobs;
+
+public class BossMelee : Human 
 {
     [SerializeField] private InputActionReference _movingSpeed, _attack, _pointerPosition;
-    [SerializeField] private NightBorneSkill _skill_1;
+    [SerializeField] private NightBorneSkill _skill;
+    
+    public static ISkillable _iSkillable;
     
     private Vector2 _pointerInput, _movementInput;
+
     public static bool _isBossEmploySkill;
+    public static bool _isBossEmployInsticSkill;
 
     public static float delay = 1f;
     private bool attackBlocked;
@@ -17,12 +25,17 @@ public class BossMelee : Human
     {     
         base.Update();
         if(_health <= 0){
-            attackBlocked = false;
+            // attackBlocked = false;
             _isBossEmploySkill = false; 
+            _isBossEmployInsticSkill = true;
             
-           
+            EmploySkill();
+
+            _isBossEmployInsticSkill = false;
+            _animator.SetBool("isDie", true);
+             
         }
-        else if(_health <= 800 && _target != null)
+        else if(_health <= 900 && _target != null)
         {
             if (attackBlocked) 
                 return;
@@ -31,21 +44,32 @@ public class BossMelee : Human
             attackBlocked = true;
             _animator.SetBool("isAttack",false);
             _isBossEmploySkill = true; 
-            //Rotate();
             EmploySkill();   
-        }
-        
+        } 
     }
 
     protected override void EmploySkill()
     {      
         if(_isBossEmploySkill)
         {   
-            NightBorneSkill ndSkill = Instantiate(_skill_1, transform.position, Quaternion.identity);
-            ndSkill.SetTarget(this._target); //boss target 
+            NightBorneSkill nbSkill = Instantiate(_skill, transform.position, Quaternion.identity);
+            nbSkill.SetTypeSkill(SkillTypeEnum.ActiveSkill);
+            nbSkill.SetTarget(this._target); //boss target 
+            
+            
             StartCoroutine(DelayAttack()); 
-            Destroy(ndSkill.gameObject, 1f);
-        }           
+            Destroy(nbSkill.gameObject, 1f);
+        }  
+        else if(_isBossEmployInsticSkill)
+        {   
+            NightBorneSkill nbSkill = Instantiate(_skill, transform.position, Quaternion.identity);
+            nbSkill.SetTypeSkill(SkillTypeEnum.InsticSkill);
+            nbSkill.SetTarget(this._target); //boss target 
+            
+
+            StartCoroutine(DelayAttack()); 
+            Destroy(nbSkill.gameObject, 1f);
+        }             
     }
 
     private IEnumerator DelayAttack()
