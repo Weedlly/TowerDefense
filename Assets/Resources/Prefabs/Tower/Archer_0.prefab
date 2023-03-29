@@ -491,12 +491,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1f8a0bc375c40a9a5e2e45f7e9e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rangeToFire: 7
-  _towerPrice: 30
-  _updateAndSelllButton: {fileID: 447155501677397072}
-  _updateAndSelllContainer: {fileID: 5019490388854831636}
+  _id: 0
+  _name: 
   _attackSpeed: 1
   _attackDame: 10
+  _attackRange: 0
+  _health: 0
+  _price: 0
+  _level: 0
+  _controlButton: {fileID: 447155501677397072}
+  _updateAndSelllContainer: {fileID: 5019490388854831636}
   _humans: []
   _animator: {fileID: 2908929514955078256}
   _audioSound: {fileID: 2317798947326119177}
@@ -718,7 +722,7 @@ PrefabInstance:
     - target: {fileID: 6936175630762419841, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: _currentTower
       value: 
-      objectReference: {fileID: 1756600841644682380}
+      objectReference: {fileID: 8040301598731131431}
     - target: {fileID: 6936175630762419841, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: _controlButton
       value: 

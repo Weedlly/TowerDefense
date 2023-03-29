@@ -200,9 +200,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7837245abad446f8881074556f7cccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rangeToFire: 6
-  _towerPrice: 30
-  _updateAndSelllButton: {fileID: 5821852765198896712}
+  _id: 3
+  _name: 
+  _attackSpeed: 0
+  _attackDame: 0
+  _attackRange: 0
+  _health: 0
+  _price: 0
+  _sellPrice: 0
+  _level: 0
+  _controlButton: {fileID: 5821852765198896712}
   _updateAndSelllContainer: {fileID: 3568592351861500958}
   _numberEvils: 3
   _prefab: {fileID: 3294451137776983209, guid: 3d20a919de5134304b7c81cfecd669c7, type: 3}
@@ -285,7 +292,7 @@ SpriteRenderer:
   m_SortingLayerID: 2060961249
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1033442319, guid: 5793de93155e44b18ba37419aa564000, type: 3}
+  m_Sprite: {fileID: 1287498712, guid: 5793de93155e44b18ba37419aa564000, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -477,7 +484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 467434303, guid: 2e77f24de752f4776b7223d43f1a1115, type: 3}
+  m_Sprite: {fileID: 1287498712, guid: 5793de93155e44b18ba37419aa564000, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -871,7 +878,7 @@ PrefabInstance:
     - target: {fileID: 6936175630762419841, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: _currentTower
       value: 
-      objectReference: {fileID: 782404320946378058}
+      objectReference: {fileID: 1806016827985975134}
     - target: {fileID: 6936175630762419841, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: _assemblePoint
       value: 
