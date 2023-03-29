@@ -24,8 +24,6 @@ public class Spawner
 
         Human human = newInstance.GetComponent<Human>();
 
-
-    
         if(human != null){
             human.SetRoute(_route);
         }

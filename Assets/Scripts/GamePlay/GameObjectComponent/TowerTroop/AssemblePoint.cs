@@ -40,7 +40,7 @@ public class AssemblePoint : MonoBehaviour
         {
             Vector2 curMousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
-            if(Vector2.Distance(_towerPoint,curMousePoint) < 5f){
+            if(Vector2.Distance(_towerPoint,curMousePoint) < _rangeToFire){
                 transform.position = curMousePoint;
                 _settingAssemblePoint = false;
                 StartCoroutine(ShowAssemblePoint());

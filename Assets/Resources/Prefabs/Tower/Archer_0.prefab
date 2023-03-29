@@ -498,6 +498,7 @@ MonoBehaviour:
   _attackRange: 0
   _health: 0
   _price: 0
+  _sellPrice: 0
   _level: 0
   _controlButton: {fileID: 447155501677397072}
   _updateAndSelllContainer: {fileID: 5019490388854831636}

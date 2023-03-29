@@ -7,6 +7,7 @@ public class StageSystem : MonoBehaviour
 {
    
     [SerializeField] private  List<GameObject> _playerTypeInBattle;
+    // [SerializeField] private  GameObject _bossTypeInBattle;
     [SerializeField] private  int _maxWave;
 
     [SerializeField] private  List<int> _numbers;
@@ -17,16 +18,21 @@ public class StageSystem : MonoBehaviour
 
     [SerializeField] private float _spawnInterval;
     [SerializeField] private float _spawnWaveInterval;
+    private bool _isCalledBoss = false;
 
     [SerializeField] private List<ObjectPooler> _poolers = new List<ObjectPooler>();
 
-    bool isWaitingStart = true;
     private bool _enableSpawn = true;
     private void Start() {
         GameControl.CurrentWave = 1;
         GameControl.MaxWave = _maxWave;
         _gates = _routeSet.GetGates();
-        // _callWaveBt.onClick.AddListener(CallWave);
+
+
+        // Spawner instance = new Spawner(_poolers[0],_gates[1]);
+        // instance.SpawnerSingleObject();
+
+    
     }
    
     // void ShowCallWaveButton(){
@@ -38,11 +44,6 @@ public class StageSystem : MonoBehaviour
     //     }
     // }
     public void CallWave(){
-        // if( isWaitingStart == false){
-        //     GameControl.CurrentWave ++;
-        // }
-
-        // isWaitingStart = false;
         StartCoroutine(SpawnWaveOfStage());
         
     }
@@ -56,6 +57,11 @@ public class StageSystem : MonoBehaviour
             yield return new WaitForSeconds(20f);
             _enableSpawn = true;
             GameControl.CurrentWave ++;
+            if(_isCalledBoss == false && GameControl.CurrentWave + 1 == GameControl.MaxWave){
+                _isCalledBoss = true;
+                Spawner instance = new Spawner(_poolers[0],_gates[1]);
+                instance.SpawnerSingleObject();
+            }
         }
     }
     IEnumerator SpawnSubWaveOfWave(){
@@ -72,7 +78,7 @@ public class StageSystem : MonoBehaviour
     IEnumerator SpawnTurnOfWave(){
         for (int i = 0; i < _gates.Count; i++)
         {
-            int type = Random.Range(0,2);
+            int type = Random.Range(1,3);
             StartCoroutine(SpawnObject(type,_gates[i]));
             yield return new WaitForSeconds(_spawnInterval);
         }

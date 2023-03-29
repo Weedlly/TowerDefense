@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Human : Player
 {   
-    [SerializeField] private LineRenderer _route;
+    [SerializeField] protected LineRenderer _route;
     [SerializeField] private int _earningCoin;
     private int _currentPositionIndex;
     private int _lengthOfPath;

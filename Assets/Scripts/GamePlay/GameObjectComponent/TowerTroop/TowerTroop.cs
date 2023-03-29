@@ -45,6 +45,7 @@ public class TowerTroop : Tower
     protected new void Update()
     {
         base.Update();
+        _rangeTower._range = _attackRange;
         _assemblePoint._rangeToFire = _attackRange;
         if(_currentAssemblePoint != new Vector2(_assemblePoint.transform.position.x,_assemblePoint.transform.position.y)){
             _currentAssemblePoint =_assemblePoint.transform.position;
