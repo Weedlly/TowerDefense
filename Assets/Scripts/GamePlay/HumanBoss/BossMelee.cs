@@ -19,7 +19,7 @@ public class BossMelee : Human
     private bool attackBlocked;
 
     private float minHealth = 0;
-    private float healthToDesploySkill = 300;
+    private float healthToDesploySkill = 9000;
 
     new void Update()
     {     
@@ -40,8 +40,6 @@ public class BossMelee : Human
 
             // _isBossEmployInsticSkill = false;
             // _isBossEmploySkill = false;
-
-            //SelfDestroy();
              
         }
         else if((_health <= healthToDesploySkill && _health > minHealth) && _target != null)

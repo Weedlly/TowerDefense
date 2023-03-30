@@ -29,8 +29,8 @@ public class StageSystem : MonoBehaviour
         _gates = _routeSet.GetGates();
 
 
-        // Spawner instance = new Spawner(_poolers[0],_gates[1]);
-        // instance.SpawnerSingleObject();
+        Spawner instance = new Spawner(_poolers[0],_gates[1]);
+        instance.SpawnerSingleObject();
 
     
     }

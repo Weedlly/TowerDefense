@@ -17,6 +17,7 @@ public class NightBorneSkill : MonoBehaviour  //Client
     public GameObject _prefabHellfire;
     public GameObject _prefabBurneSkill;
 
+    //public HellFire _hellfire;
     [SerializeField] protected Player _target;
 
     [SerializeField] private Animator _animatorInsticSkill;
@@ -42,7 +43,8 @@ public class NightBorneSkill : MonoBehaviour  //Client
         IsDeloyInsticSkill = false;
     }
     
-    public void SetTarget(Player target){     
+    public void SetTarget(Player target){  
+        //_hellfire._target = target;  
         _target = target; 
         IsDeloyActiveSkill = true;
     }
@@ -52,9 +54,10 @@ public class NightBorneSkill : MonoBehaviour  //Client
         if (!IsDeloyActiveSkill)
             return;
 
-        setSurface(); 
+        
         if (_target != null && BossMelee._isBossEmployActiveSkill == true)
-        {                 
+        {       
+            setSurface();           
             if (attackBlocked) 
                 return;
 
