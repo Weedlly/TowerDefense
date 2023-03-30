@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HellFire : MonoBehaviour
-{ 
+public class BurneSkill : MonoBehaviour //Concrete Strategies 
+{
     [SerializeField] private float _rangeExplore;
     
     public Player _target;
-    protected bool _isTargetExist = false;
 
-    private bool _isExplored = false;
-    private float _dame = 40f;
+    private float _dame = 60f;
 
     void Start()
     {
+        
     }
     void Update()
     {
@@ -25,17 +24,14 @@ public class HellFire : MonoBehaviour
 
     public void Employing()
     {
-        Debug.Log("Hell fire attack");
-        if (_isExplored == false)
-        {
-            DameByExplored();
-        }
-        _isExplored = true;
+        Debug.Log("Burne skill attack");
         
-        Destroy(this.gameObject, 0.1f);
+            DameByExplored();
+        
+        
+        Destroy(this.gameObject, 1f);
     }
 
-    
     private void DameByExplored()
     {
         GameObject[] instanceList = GameObject.FindGameObjectsWithTag("Evil");
@@ -51,5 +47,7 @@ public class HellFire : MonoBehaviour
                 evil.SelfDestroy();
             }
         }
+
+
     }
 }

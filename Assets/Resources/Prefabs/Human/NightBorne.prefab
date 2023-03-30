@@ -276,7 +276,7 @@ MonoBehaviour:
   _health: 1000
   _speed: 2
   _attackSpeed: 1.5
-  _dame: 50
+  _dame: 100
   _animator: {fileID: 5313732755127005445}
   _healthBar: {fileID: 5313732755127005447}
   _spriteRenderer: {fileID: 5313732755127005443}

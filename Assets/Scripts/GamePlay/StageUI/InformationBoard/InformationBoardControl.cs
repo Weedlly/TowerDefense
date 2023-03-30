@@ -31,6 +31,8 @@ public class InformationBoardControl : MonoBehaviour
         _attackSpeedText.text = _attackSpeed.ToString();
         _attackRangeText.text = _attackRange.ToString();
         _towerInformationBoard.SetActive(_towerBoard.activeSelf);
+     
+   
     }
 
     public static void ShowTowerInformation(float attackDame, float attackSpeed, float attackRange){
