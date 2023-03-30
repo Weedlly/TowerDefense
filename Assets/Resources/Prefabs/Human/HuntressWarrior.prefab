@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBarImage: {fileID: 2425453398539830863}
   _healthObject: {fileID: 1796301989242085260}
-  _maxHealth: 50
+  _maxHealth: 100
 --- !u!58 &5733490937164861142
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rangeAttack: 2
   _rangeDetecting: 5
-  _health: 50
+  _health: 100
   _speed: 1
   _attackSpeed: 1
   _dame: 10
