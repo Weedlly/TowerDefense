@@ -16,7 +16,7 @@ public class BattleControler : MonoBehaviour {
         float  dis = float.MaxValue;
         foreach (var player in listPlayer)
         {   
-            if(player != null){
+            if(player != null && searcher != null){
                 float currentDis = Vector2.Distance(searcher.transform.position,player.transform.position);
                 if(currentDis < searcher._rangeDetecting && currentDis < dis){
                     dis = currentDis;

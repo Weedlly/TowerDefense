@@ -7,13 +7,11 @@ public class HellFire : MonoBehaviour
     [SerializeField] private float _rangeExplore;
     
     public Player _target;
-
-    private float _dame = 100f;
-    private float _movingSpeed = 4f;
-
-    protected float _angle;
-
     protected bool _isTargetExist = false;
+
+    private bool _isExplored = false;
+    private float _dame = 40f;
+
     void Start()
     {
     }
@@ -21,40 +19,22 @@ public class HellFire : MonoBehaviour
     {
         if (_target != null)
         {
-            _isTargetExist = true;
             Employing();
         }   
     }
 
     public void Employing()
     {
-        
-        if (_isTargetExist != false)
+        Debug.Log("Hell fire attack");
+        if (_isExplored == false)
         {
-            Debug.Log("Hell fire attack");
-            //Moving();
             DameByExplored();
         }
+        _isExplored = true;
         
-        Destroy(this.gameObject, 1f);
+        Destroy(this.gameObject, 0.1f);
     }
 
-    void Moving(){
-        Vector3 line = _target.transform.position - transform.position;
-        // Debug.Log(transform.up);
-        _angle = Vector3.SignedAngle(transform.up,line,transform.forward);
-        Rotate();
-
-        if(Vector2.Distance(transform.position,_target.transform.position) < 0.5f){
-            DameByExplored();
-        }
-        transform.position = Vector2.Lerp(transform.position,_target.transform.position,_movingSpeed * Time.deltaTime);
-        _movingSpeed += _movingSpeed * 0.01f;
-    }
-
-    virtual protected void Rotate(){
-        transform.Rotate(0f,0f,_angle); 
-    }
     
     private void DameByExplored()
     {

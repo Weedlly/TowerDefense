@@ -33,8 +33,8 @@ public abstract class WeaponBullet : MonoBehaviour
         }
     }
     void Moving(){
+
         Vector3 line = _target.transform.position - transform.position;
-        // Debug.Log(transform.up);
         _angle = Vector3.SignedAngle(transform.up,line,transform.forward);
         Rotate();
 
@@ -53,7 +53,7 @@ public abstract class WeaponBullet : MonoBehaviour
         Destroy(this.gameObject);
     }
     protected void SelfDestroy(){
-        if(_isTargetExist == true && _target == null){
+        if((_isTargetExist == true && _target == null) || (_target != null && _target.gameObject.activeSelf == false)){
             Destroy(this.gameObject);
         }
     }

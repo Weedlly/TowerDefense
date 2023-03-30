@@ -27,6 +27,10 @@ public class Human : Player
         }
         transform.position = Vector2.MoveTowards(transform.position,_route.GetPosition(_currentPositionIndex),Time.deltaTime * _speed);
     }
+    // void SetMoveDefaultPosition(int index){
+    //     _currentPositionIndex = index;
+    //     transform.position = _route.GetPosition(_currentPositionIndex);
+    // }
     void ArrivedDestination(){
         if(_currentPositionIndex == _lengthOfPath){
             _currentPositionIndex = 0;

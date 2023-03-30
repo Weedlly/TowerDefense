@@ -49,4 +49,17 @@ public class RouteSet : MonoBehaviour
         }
         return nearstPoint;
     }
+    // public static int FindNearestPointIndexWithGate(Vector2 point,LineRenderer gate){
+    //     int nearstIndex = 0;
+    //     float dis = float.MaxValue;
+    //     for (int i = 0; i < gate.positionCount; i++)
+    //     {
+    //         float tmpDis = Vector2.Distance(gate.GetPosition(i),point);
+    //         if(tmpDis< dis){
+    //             dis = tmpDis;
+    //             nearstIndex = i;
+    //         }
+    //     }
+    //     return nearstIndex;
+    // }
 }

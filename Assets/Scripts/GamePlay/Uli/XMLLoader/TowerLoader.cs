@@ -35,8 +35,9 @@ public class TowerLoader : MonoBehaviour
     private static List<TowerData> _towerDataList;
     // Start is called before the first frame update
     void Start()
-    {
-        _towerDataList = TowerLoader.LoadXML<TowerDataList>(Path.Combine(Application.dataPath, "XML/Tower.xml")).towerDataList;
+    {   Debug.Log(System.IO.Directory.GetCurrentDirectory());
+        Debug.Log(Application.dataPath );
+        _towerDataList = TowerLoader.LoadXML<TowerDataList>(System.IO.Directory.GetCurrentDirectory() + "/Assets/XML/Tower.xml").towerDataList;
     }
     public static TowerData FindTowerData(int towerId, int towerLevel){
         foreach (var item in _towerDataList)

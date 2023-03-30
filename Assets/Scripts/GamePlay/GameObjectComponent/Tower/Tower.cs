@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tower : MonoBehaviour
+public abstract class Tower : MonoBehaviour
 {
     [Header("Tower attribute")]
     [SerializeField] protected int _id;

@@ -8,7 +8,10 @@ public class RangeTower : MonoBehaviour{
     public float _range;
 
     [SerializeField] private Button _controlButton;
-    // Focus the target and remove target : start
+    
+    void SetRangeScale(){
+        transform.localScale = new Vector3(2*_range,2*_range,0f);
+    }
     private void OnTriggerStay2D(Collider2D other){
         if(Vector2.Distance(transform.position,other.transform.position) <= _range){
             Human human = other.GetComponent<Human>();
@@ -48,6 +51,7 @@ public class RangeTower : MonoBehaviour{
         else{
             ShowRange();
         }
+        SetRangeScale();
     }
 
     public void ShowRange(){

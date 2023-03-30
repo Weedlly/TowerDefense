@@ -273,10 +273,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rangeAttack: 2
   _rangeDetecting: 5
-  _health: 10000
+  _health: 1000
   _speed: 2
   _attackSpeed: 1.5
-  _dame: 100
+  _dame: 50
   _animator: {fileID: 5313732755127005445}
   _healthBar: {fileID: 5313732755127005447}
   _spriteRenderer: {fileID: 5313732755127005443}
@@ -290,8 +290,8 @@ MonoBehaviour:
   _maxMeleeCompetitor: 0
   _meleeCompetitorCounter: 0
   _route: {fileID: 0}
-  _earningCoin: 0
-  _skill: {fileID: 1793855463090927772, guid: 9b5774984408849ddbac9d42bd678bc5, type: 3}
+  _earningCoin: 100
+  _skill: {fileID: 7226370939601457650, guid: 9b5774984408849ddbac9d42bd678bc5, type: 3}
 --- !u!1 &5313732755374143926
 GameObject:
   m_ObjectHideFlags: 0

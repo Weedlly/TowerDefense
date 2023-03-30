@@ -7,7 +7,9 @@ public class BurneSkill : MonoBehaviour //Concrete Strategies
     [SerializeField] private float _rangeExplore;
     
     public Player _target;
+    protected bool _isTargetExist = false;
 
+    private bool _isExplored = false;
     private float _dame = 60f;
 
     void Start()
@@ -25,11 +27,13 @@ public class BurneSkill : MonoBehaviour //Concrete Strategies
     public void Employing()
     {
         Debug.Log("Burne skill attack");
-        
+        if (_isExplored == false)
+        {
             DameByExplored();
+        }
+        _isExplored = true;
         
-        
-        Destroy(this.gameObject, 1f);
+        Destroy(this.gameObject, 0.1f);
     }
 
     private void DameByExplored()
