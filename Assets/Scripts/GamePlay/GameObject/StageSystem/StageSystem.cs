@@ -19,6 +19,7 @@ public class StageSystem : MonoBehaviour
     [SerializeField] private List<ObjectPooler> _poolers = new List<ObjectPooler>();
     // private bool _enableSpawn = true;
     protected bool MapStageData(int stageId, string difficultyType){
+        
         return true;
     }
     private void Start() {
