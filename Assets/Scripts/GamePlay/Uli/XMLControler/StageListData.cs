@@ -77,6 +77,18 @@ public class WaveData{
     [XmlArray(ElementName = "SubwaveList")]
     [XmlArrayItem(ElementName = "Subwave")]
     public SubwaveData[] subwaveList;
+    public int totalTimeWave;
+    public float GetTotalTimeWave( float spawnTime){
+        float maxTime = 0f;
+        foreach (var subwave in subwaveList)
+        {
+            float tmpVal = subwave.appearTime * subwave.number;
+            if(tmpVal > maxTime){
+                maxTime = tmpVal;
+            }
+        }
+        return maxTime;
+    }
 }
 
 
@@ -86,10 +98,10 @@ public class SubwaveData{
     [XmlElement(ElementName = "AppearTime")]
     public float appearTime;
     [XmlElement(ElementName = "GateId")]
-    public float gateId;
+    public int gateId;
     [XmlElement(ElementName = "UnitID")]
-    public float unitID;
+    public int unitID;
     [XmlElement(ElementName = "Number")]
-    public float number;
+    public int number;
 }
 
