@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<StageList>
+	<Stage stageId="0">
+		<UnitList>
+			<!-- Danh sách các loại lính xuất hiện ở màn này -->
+			<Unit unitId="0"></Unit>
+			<Unit unitId="1"></Unit>
+		</UnitList>
+		<GateList>
+			<Gate gateId="0">
+				<PointList>
+					<Point>
+						<X>1</X>
+						<Y>1</Y>
+					</Point>
+				</PointList>
+			</Gate>/
+		</GateList>
+		<TowerPlaceList>
+			<!-- Vị trí đặt tháp -->
+			<TowerPlace towerPlaceId="0">
+				<X>1</X>
+				<Y>1</Y>
+			</TowerPlace>
+		</TowerPlaceList>
+		<WaveList>
+			<Wave waveId="0">
+				<SubwaveList>
+					<Subwave subwaveId="0">
+						<AppearTime>0</AppearTime>
+						<GateId>0</GateId>
+						<UnitID>0</UnitID>
+						<Number>5</Number>
+					</Subwave>
+					<Subwave subwaveId="1">
+						<AppearTime>5</AppearTime>
+						<GateId>0</GateId>
+						<UnitID>1</UnitID>
+						<Number>5</Number>
+					</Subwave>
+				</SubwaveList>
+			</Wave>
+			<Wave waveId="1">
+				<SubwaveList>
+					<Subwave subwaveId="0">
+						<AppearTime>0</AppearTime>
+						<GateId>0</GateId>
+						<UnitID>1</UnitID>
+						<Number>7</Number>
+					</Subwave>
+					<Subwave subwaveId="1">
+						<AppearTime>5</AppearTime>
+						<GateId>0</GateId>
+						<UnitID>0</UnitID>
+						<Number>7</Number>
+					</Subwave>
+				</SubwaveList>
+			</Wave>
+			<Wave waveId="2">
+				<SubwaveList>
+					<Subwave subwaveId="0">
+						<AppearTime>0</AppearTime>
+						<GateId>0</GateId>
+						<UnitID>0</UnitID>
+						<Number>7</Number>
+					</Subwave>
+					<Subwave subwaveId="1">
+						<AppearTime>5</AppearTime>
+						<GateId>0</GateId>
+						<UnitID>1</UnitID>
+						<Number>7</Number>
+					</Subwave>
+					<Subwave subwaveId="2">
+						<AppearTime>10</AppearTime>
+						<GateId>0</GateId>
+						<UnitID>0</UnitID>
+						<Number>7</Number>
+					</Subwave>
+				</SubwaveList>
+			</Wave>
+		</WaveList>
+	</Stage>
+	<!-- Các Stage tiếp theo -->
+</StageList>

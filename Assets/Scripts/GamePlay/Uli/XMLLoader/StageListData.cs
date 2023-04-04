@@ -1,0 +1,95 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Xml;
+using System.Xml.Serialization;
+
+
+[XmlRoot(ElementName = "StageList")]
+public class StageListData{
+    [XmlElement(ElementName = "Stage")]
+    public List<StageData> stageListData;
+    public  StageData FindStageData(int stageId){
+        foreach (var item in stageListData)
+        {
+            if(item.stageId == stageId){
+                return item;
+            }
+        }
+        return null;
+    }
+}
+[XmlRoot(ElementName = "Stage")]
+public class StageData{
+    [XmlAttribute(AttributeName = "stageId")]
+    public int stageId;
+
+    [XmlArray(ElementName = "UnitList")]
+    [XmlArrayItem(ElementName = "Unit")]
+    public UnitData[] unitList;
+
+    [XmlArray(ElementName = "GateList")]
+    [XmlArrayItem(ElementName = "Gate")]
+    public GateData[] gateList;
+
+    [XmlArray(ElementName = "TowerPlaceList")]
+    [XmlArrayItem(ElementName = "TowerPlace")]
+    public TowerPlaceData[] towerPlaceList;
+
+    [XmlArray(ElementName = "WaveList")]
+    [XmlArrayItem(ElementName = "Wave")]
+    public WaveData[] waveList;
+}
+
+public class UnitData{
+    [XmlAttribute(AttributeName = "unitId")]
+    public int unitId;
+}
+
+public class GateData{
+    [XmlAttribute(AttributeName = "gateId")]
+    public int gateId;
+
+    [XmlArray(ElementName = "PointList")]
+    [XmlArrayItem(ElementName = "Point")]
+    public PointData[] pointList;
+}
+
+public class PointData{
+    [XmlElement(ElementName = "X")]
+    public float x;
+    [XmlElement(ElementName = "Y")]
+    public float y;
+}
+
+
+public class TowerPlaceData{
+    [XmlAttribute(AttributeName = "towerPlaceId")]
+    public int towerPlaceId;
+    [XmlElement(ElementName = "X")]
+    public float x;
+    [XmlElement(ElementName = "Y")]
+    public float y;
+}
+
+public class WaveData{
+    [XmlArray(ElementName = "SubwaveList")]
+    [XmlArrayItem(ElementName = "Subwave")]
+    public SubwaveData[] subwaveList;
+}
+
+
+public class SubwaveData{
+    [XmlAttribute(AttributeName = "subwaveId")]
+    public int subwaveId;
+    [XmlElement(ElementName = "AppearTime")]
+    public float appearTime;
+    [XmlElement(ElementName = "GateId")]
+    public float gateId;
+    [XmlElement(ElementName = "UnitID")]
+    public float unitID;
+    [XmlElement(ElementName = "Number")]
+    public float number;
+}
+
