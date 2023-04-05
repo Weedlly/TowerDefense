@@ -7,10 +7,12 @@ public class BuidingPlaceController : MonoBehaviour
 {
     [SerializeField] private GameObject _buildingPlaces;
     [SerializeField] private GameObject _towerBuildingPlacePrefab;
+    private static GameObject towerBuildingPlacePrefab;
     public List<GameObject> buildingPlaceList = new List<GameObject>();
     public static List<GameObject> _buildingPlaceList = new List<GameObject>();
 
     void Start(){
+        towerBuildingPlacePrefab = _towerBuildingPlacePrefab;
         _buildingPlaceList = buildingPlaceList;
     }
     public static void ActiveInstance(Transform transform){
@@ -33,17 +35,20 @@ public class BuidingPlaceController : MonoBehaviour
         buildingPlace.gameObject.SetActive(false);
     }
 
-    private void MappingTowerPlaceData(int stageId){
+    public static void MappingTowerPlaceData(int stageId){
+        _buildingPlaceList.Clear();
         StageData tmpStageData = XMLControler._stageDataList.FindStageData(stageId);
+        Debug.Log(tmpStageData);
+         Debug.Log( tmpStageData.towerPlaceList);
         foreach (var place in tmpStageData.towerPlaceList)
         {
-            GameObject towerBuilding = Instantiate(_towerBuildingPlacePrefab);
+            GameObject towerBuilding = Instantiate(towerBuildingPlacePrefab);
             towerBuilding.transform.position = new Vector3(
                     place.x,
                     place.y,
                     0f
                 );
-            
+                Debug.Log(towerBuilding);
             _buildingPlaceList.Add(towerBuilding);
         }
     }

@@ -21,7 +21,6 @@ public class RouteSet : MonoBehaviour
             tmpLr.transform.parent = gameObject.transform;
             List<PointData> tmpPointList = gate.pointList;
             tmpLr.positionCount = tmpPointList.Count;
-            Debug.Log(tmpLr.positionCount);
             for (int i = 0; i < tmpPointList.Count; i++)
             {
                 Vector3 tmpV3 = new Vector3(

@@ -37,7 +37,9 @@ public class StageSystem : MonoBehaviour
         GameControl.MaxWave = _stageData.waveList.Count;
         _gates = _routeSet.GetGatesOfStage(_stageId);
 
-        BuidingPlaceController.WriteDownTowerPlaceSetForStage(_stageId);
+        BuidingPlaceController.MappingTowerPlaceData(_stageId);
+
+        // BuidingPlaceController.WriteDownTowerPlaceSetForStage(_stageId);
 
         // RouteSet.WriteDownGateSetForStage(_stageId);
 
