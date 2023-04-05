@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/GamePlay/GameLogic.meta
 guid: 8ef99f391f401485796baef0380eff59
-========
-guid: 54a36b1feef3445af95948cc092ea45c
->>>>>>>> StageSetting:Assets/Resources/Prefabs/Skill.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -71,7 +71,6 @@ public class Player : MonoBehaviour
         }
         else{
             Rotate();
-            
             if(IsTargetActive()){
                 AttackTargetProcess();
             }
@@ -180,11 +179,6 @@ public class Player : MonoBehaviour
     void Attack(){
         _target.HealthReduce(_dame);
     }
-
-    // virtual protected void EmploySkill()
-    // {
-
-    // }
     
     
     #endregion Attack control
@@ -192,7 +186,8 @@ public class Player : MonoBehaviour
     public void HealthReduce(float healthReduce){
         _health -= healthReduce;
     }
- 
+
+   
     virtual public void SelfDestroy(){
         CreateDieObject();
         ResetPlayer();

@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/XML/Stage.xml.meta
-guid: 4ca82f6a157984b41a531d656f526731
-========
 guid: 4fb40798e242a4d5db700a2c820fa5da
->>>>>>>> StageSetting:Assets/Resources/XML/Stage.xml.meta
 TextScriptImporter:
   externalObjects: {}
   userData: 
