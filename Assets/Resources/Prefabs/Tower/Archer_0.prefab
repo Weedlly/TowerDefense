@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6470331585215628902}
   - component: {fileID: 8513186429542876545}
   - component: {fileID: 6921441200728253903}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ControlButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 7391462975161807459}
   - component: {fileID: 1924394122721613918}
   - component: {fileID: 1208061616716268303}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Archer_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 1}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 2, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1924394122721613918
 Canvas:
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 2908929514955078256}
   - component: {fileID: 2317798947326119177}
   - component: {fileID: 8040301598731131431}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ArcherWeapon_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1f8a0bc375c40a9a5e2e45f7e9e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 0
+  _towerId: 0
   _name: 
   _attackSpeed: 1
   _attackDame: 10
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 2543921914083688239}
   - component: {fileID: 7322927242122739750}
   - component: {fileID: 7348245703675942756}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _humans: []
   _range: 0
-  _circleCollider2D: {fileID: 7348245703675942756}
   _controlButton: {fileID: 447155501677397072}
 --- !u!58 &7348245703675942756
 CircleCollider2D:
@@ -633,6 +632,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7391462975161807459}
     m_Modifications:
+    - target: {fileID: 327884205781453987, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642084843947421129, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179396702684981312, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362276624961580672, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -717,9 +732,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4046567459715152122, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375879428691569442, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496384229808528545, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372632554560031771, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6495729852197514521, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_Name
       value: UpdateSellMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495729852197514521, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6936175630762419841, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: _currentTower
@@ -729,6 +764,14 @@ PrefabInstance:
       propertyPath: _controlButton
       value: 
       objectReference: {fileID: 447155501677397072}
+    - target: {fileID: 7745464732885635091, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964457320144649247, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
 --- !u!224 &148126765366091568 stripped

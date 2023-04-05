@@ -13,7 +13,7 @@ public class CreatingTower : MonoBehaviour
     private Button _buildButton;
 
     [SerializeField]
-    private Canvas _buildingPlaceContainer;
+    private GameObject _buildingPlaceContainer;
 
     [SerializeField]
     private Image _buildingContainer;
@@ -62,16 +62,16 @@ public class CreatingTower : MonoBehaviour
         GameObject instance = Instantiate(_prefab);
 
         if(instance.GetComponentInChildren<Bow>() != null){
-            _towerPrice = (int) TowerLoader.FindTowerData(0,0).price;
+            _towerPrice = (int) XMLControler._towerDataList.FindTowerData(0,0).price;
         }
         else if(instance.GetComponentInChildren<Magic>() != null){
-            _towerPrice = (int) TowerLoader.FindTowerData(1,0).price;
+            _towerPrice = (int) XMLControler._towerDataList.FindTowerData(1,0).price;
         }
         else if(instance.GetComponentInChildren<Catapult>() != null){
-            _towerPrice = (int) TowerLoader.FindTowerData(2,0).price;
+            _towerPrice = (int) XMLControler._towerDataList.FindTowerData(2,0).price;
         }
         else if(instance.GetComponentInChildren<TowerTroop>() != null){
-            _towerPrice = (int) TowerLoader.FindTowerData(3,0).price;
+            _towerPrice = (int) XMLControler._towerDataList.FindTowerData(3,0).price;
         }
         _priceText.text = _towerPrice.ToString();
         Destroy(instance);

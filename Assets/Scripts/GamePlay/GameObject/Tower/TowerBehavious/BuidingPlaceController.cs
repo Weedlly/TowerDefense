@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class BuidingPlaceController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField]
-    private GameObject _buildingPlaces;
-
-    static List<Canvas> _buildingPlaceList = null;
+    [SerializeField] private GameObject _buildingPlaces;
+    [SerializeField] private GameObject _towerBuildingPlacePrefab;
+    private static GameObject towerBuildingPlacePrefab;
+    public List<GameObject> buildingPlaceList = new List<GameObject>();
+    public static List<GameObject> _buildingPlaceList = new List<GameObject>();
 
     void Start(){
-        _buildingPlaceList = new List<Canvas>(_buildingPlaces.GetComponentsInChildren<Canvas>()) ;
+        towerBuildingPlacePrefab = _towerBuildingPlacePrefab;
+        _buildingPlaceList = buildingPlaceList;
     }
     public static void ActiveInstance(Transform transform){
-        Canvas tmp = null;
+        GameObject tmp = null;
         float distance = float.MaxValue;
         foreach (var item in _buildingPlaceList)
         {
@@ -30,8 +31,41 @@ public class BuidingPlaceController : MonoBehaviour
         }
     }
 
-    public static void returnToBool(Canvas buildingPlace){
+    public static void returnToBool(GameObject buildingPlace){
         buildingPlace.gameObject.SetActive(false);
+    }
+
+    public static void MappingTowerPlaceData(int stageId){
+        _buildingPlaceList.Clear();
+        StageData tmpStageData = XMLControler._stageDataList.FindStageData(stageId);
+        Debug.Log(tmpStageData);
+         Debug.Log( tmpStageData.towerPlaceList);
+        foreach (var place in tmpStageData.towerPlaceList)
+        {
+            GameObject towerBuilding = Instantiate(towerBuildingPlacePrefab);
+            towerBuilding.transform.position = new Vector3(
+                    place.x,
+                    place.y,
+                    0f
+                );
+                Debug.Log(towerBuilding);
+            _buildingPlaceList.Add(towerBuilding);
+        }
+    }
+    public static void WriteDownTowerPlaceSetForStage(int stageId){
+        StageData tmpStageData = XMLControler._stageDataList.FindStageData(stageId);
+        tmpStageData.towerPlaceList.Clear();
+        for (int i = 0; i < _buildingPlaceList.Count; i++)
+        {
+            
+            TowerPlaceData tmpTL = new TowerPlaceData();
+            tmpTL.towerPlaceId = i;
+            tmpTL.x = _buildingPlaceList[i].transform.position.x;
+            tmpTL.y = _buildingPlaceList[i].transform.position.y;
+            tmpStageData.towerPlaceList.Add(tmpTL);
+        }
+
+        XMLControler.WriteDownXML<StageListData>("StageWrite.xml",XMLControler._stageDataList);
     }
   
 }

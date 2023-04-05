@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public abstract class Tower : MonoBehaviour
 {
     [Header("Tower attribute")]
-    [SerializeField] protected int _id;
+    [SerializeField] protected int _towerId;
     [SerializeField] protected string _name;
     [SerializeField] protected float _attackSpeed;
     [SerializeField] protected float _attackDame;
@@ -50,11 +50,12 @@ public abstract class Tower : MonoBehaviour
     {
         _level = 0;
         _controlButton.onClick.AddListener(OpenUpdateAndSell);
-        MapTowerData(_id,_level);
+        MapTowerData(_towerId,_level);
     }
     void OpenUpdateAndSell(){
         _controlButton.gameObject.SetActive(false);
         _updateAndSelllContainer.gameObject.SetActive(true);
+        InformationBoardControl.ShowTowerInformation(_attackDame,_attackSpeed,_attackRange);
     }
 
     public bool IsAbleUpdateTower(){
@@ -64,11 +65,11 @@ public abstract class Tower : MonoBehaviour
         return false;
     }
     public void UpdateTower(){
-        MapTowerData(_id,++_level);
+        MapTowerData(_towerId,++_level);
     }
 
     protected bool MapTowerData(int id, int level){
-        TowerData towerData = TowerLoader.FindTowerData(id,level);
+        TowerData towerData = XMLControler._towerDataList.FindTowerData(id,level);
         if(towerData != null){
             _name = towerData.name;
             _attackDame = towerData.attackDame;
@@ -82,12 +83,7 @@ public abstract class Tower : MonoBehaviour
         return false;
     }
     protected void Update(){
-        if(_controlButton.gameObject.activeSelf == false){
-            InformationBoardControl.ShowTowerInformation(_attackDame,_attackSpeed,_attackRange);
-        }
-        else{
-            InformationBoardControl.HideTowerInformation();
-        }
+ 
     }
 
 }

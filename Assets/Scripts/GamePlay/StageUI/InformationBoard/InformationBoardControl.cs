@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.EventSystems;
+
 
 public class InformationBoardControl : MonoBehaviour
 {
@@ -19,9 +21,11 @@ public class InformationBoardControl : MonoBehaviour
     private static float _attackRange;
     private static GameObject _towerBoard;
 
+    public EventSystem _eventSystem;
 
     void Start()
     {      
+        Debug.Log(SystemInfo.deviceUniqueIdentifier);
         _towerBoard = _towerInformationBoard;
     }
     
@@ -31,7 +35,10 @@ public class InformationBoardControl : MonoBehaviour
         _attackSpeedText.text = _attackSpeed.ToString();
         _attackRangeText.text = _attackRange.ToString();
         _towerInformationBoard.SetActive(_towerBoard.activeSelf);
-     
+
+        if(_eventSystem.currentSelectedGameObject == null){
+            HideTowerInformation();
+        } 
    
     }
 

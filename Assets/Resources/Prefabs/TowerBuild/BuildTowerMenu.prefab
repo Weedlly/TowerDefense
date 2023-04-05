@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 782404320946378058, guid: 447aa241e977c4a749b707c83e6fef03, type: 3}
   _buildButton: {fileID: 5296895573251057351}
-  _buildingPlaceContainer: {fileID: 0}
+  _buildingPlaceContainer: {fileID: 1960860099157236575}
   _buildingContainer: {fileID: 0}
   _priceText: {fileID: 8245206138417890074}
 --- !u!1 &1704574927789940307
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4047236609541253705, guid: d8951542ff2ab47029d25647174f2068, type: 3}
   _buildButton: {fileID: 4201255142265652461}
-  _buildingPlaceContainer: {fileID: 0}
+  _buildingPlaceContainer: {fileID: 1960860099157236575}
   _buildingContainer: {fileID: 0}
   _priceText: {fileID: 8951798607330999825}
 --- !u!1 &5016949304799247077
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 620864296716766465, guid: 1b32a41e1a5374275a6047f337453c53, type: 3}
   _buildButton: {fileID: 142641994993761474}
-  _buildingPlaceContainer: {fileID: 0}
+  _buildingPlaceContainer: {fileID: 1960860099157236575}
   _buildingContainer: {fileID: 0}
   _priceText: {fileID: 7996560263787658982}
 --- !u!1 &5021372324633351341
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 1756600841644682380, guid: 52e201f0b46ab4d8fa107891cae3fcc8, type: 3}
   _buildButton: {fileID: 114029009554758541}
-  _buildingPlaceContainer: {fileID: 0}
+  _buildingPlaceContainer: {fileID: 1960860099157236575}
   _buildingContainer: {fileID: 539384941616057220}
   _priceText: {fileID: 8102481833260681670}
 --- !u!1 &7999892671304544151

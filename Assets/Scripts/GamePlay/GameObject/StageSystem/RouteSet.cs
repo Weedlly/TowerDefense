@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +11,52 @@ public class RouteSet : MonoBehaviour
     
     private static List<LineRenderer> gates;
 
-    public List<LineRenderer> GetGates(){
-
+    private void MappingGateData(int stageId){
+        _gates = new List<LineRenderer>();
+        StageData tmpStageData = XMLControler._stageDataList.FindStageData(stageId);
+        foreach (var gate in tmpStageData.gateList)
+        {
+            LineRenderer tmpLr = new GameObject().AddComponent<LineRenderer>() as LineRenderer;
+            tmpLr.transform.name = "Gate" + gate.gateId;
+            tmpLr.transform.parent = gameObject.transform;
+            List<PointData> tmpPointList = gate.pointList;
+            tmpLr.positionCount = tmpPointList.Count;
+            for (int i = 0; i < tmpPointList.Count; i++)
+            {
+                Vector3 tmpV3 = new Vector3(
+                    tmpPointList[i].x,
+                    tmpPointList[i].y,
+                    0
+                );
+                tmpLr.SetPosition(i,tmpV3);
+            }
+            _gates.Add(tmpLr);
+        }
+    }
+    public static void WriteDownGateSetForStage(int stageId){
+        StageData tmpStageData = XMLControler._stageDataList.FindStageData(stageId);
+        tmpStageData.gateList.Clear();
+        for (int i = 0; i < gates.Count; i++)
+        {
+            LineRenderer tmpLr = gates[i];
+            List<PointData> tmpPointList = new List<PointData>();
+            for (int j = 0; j < tmpLr.positionCount; j++)
+            {
+                Vector3 tmpV3 = tmpLr.GetPosition(j);
+                PointData tmpPoint = new PointData{};
+                tmpPoint.x = tmpV3.x;
+                tmpPoint.y = tmpV3.y;
+                tmpPointList.Add(tmpPoint);
+            }
+            tmpStageData.gateList.Add(new GateData());
+            tmpStageData.gateList[i].pointList = tmpPointList;
+            tmpStageData.gateList[i].gateId = i;
+        }
+        XMLControler.WriteDownXML<StageListData>("StageWrite.xml",XMLControler._stageDataList);
+    }
+   
+    public List<LineRenderer> GetGatesOfStage(int stageId){
+        MappingGateData(stageId);
         float worldScreenHeight = Camera.main.orthographicSize * 2;
 
         float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
@@ -49,17 +94,4 @@ public class RouteSet : MonoBehaviour
         }
         return nearstPoint;
     }
-    // public static int FindNearestPointIndexWithGate(Vector2 point,LineRenderer gate){
-    //     int nearstIndex = 0;
-    //     float dis = float.MaxValue;
-    //     for (int i = 0; i < gate.positionCount; i++)
-    //     {
-    //         float tmpDis = Vector2.Distance(gate.GetPosition(i),point);
-    //         if(tmpDis< dis){
-    //             dis = tmpDis;
-    //             nearstIndex = i;
-    //         }
-    //     }
-    //     return nearstIndex;
-    // }
 }

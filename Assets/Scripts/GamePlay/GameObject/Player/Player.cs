@@ -10,6 +10,7 @@ public enum PlayerAction{
 public class Player : MonoBehaviour
 {   
     [Header("Player atribute")]
+    [SerializeField] public int _playerId;
     [SerializeField] public float _rangeAttack;
     [SerializeField] public float _rangeDetecting;
     [SerializeField] public float _health;

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+
 public class SettingController : MonoBehaviour
 {
     public Image _settingWindow;

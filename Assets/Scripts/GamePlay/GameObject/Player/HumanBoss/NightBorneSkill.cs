@@ -32,7 +32,7 @@ public class NightBorneSkill : MonoBehaviour  //Client
     public Transform circleOrigin;
     public float radius;
 
-    private float delayActiveSkill = 1f;
+    private float delayActiveSkill = 2f;
     private bool attackBlocked;
     
     private static Context context = new Context();
@@ -67,6 +67,8 @@ public class NightBorneSkill : MonoBehaviour  //Client
             context.DeloySkill(_prefabHellfire ,this.transform, _target);
 
             _animatorActiceSkill.SetTrigger("Attack");
+
+            StartCoroutine(DelayAttack()); 
             UnityEngine.Object.Destroy(this.gameObject, 1f);      
         }  
 
