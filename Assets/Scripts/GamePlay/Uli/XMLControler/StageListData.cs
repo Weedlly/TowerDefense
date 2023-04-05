@@ -27,19 +27,19 @@ public class StageData{
 
     [XmlArray(ElementName = "UnitList")]
     [XmlArrayItem(ElementName = "Unit")]
-    public UnitData[] unitList;
+    public List<UnitData> unitList;
 
     [XmlArray(ElementName = "GateList")]
     [XmlArrayItem(ElementName = "Gate")]
-    public GateData[] gateList;
+    public List<GateData> gateList;
 
     [XmlArray(ElementName = "TowerPlaceList")]
     [XmlArrayItem(ElementName = "TowerPlace")]
-    public TowerPlaceData[] towerPlaceList;
+    public List<TowerPlaceData> towerPlaceList;
 
     [XmlArray(ElementName = "WaveList")]
     [XmlArrayItem(ElementName = "Wave")]
-    public WaveData[] waveList;
+    public List<WaveData> waveList;
 }
 
 public class UnitData{
@@ -53,7 +53,7 @@ public class GateData{
 
     [XmlArray(ElementName = "PointList")]
     [XmlArrayItem(ElementName = "Point")]
-    public PointData[] pointList;
+    public List<PointData> pointList;
 }
 
 public class PointData{
@@ -76,7 +76,7 @@ public class TowerPlaceData{
 public class WaveData{
     [XmlArray(ElementName = "SubwaveList")]
     [XmlArrayItem(ElementName = "Subwave")]
-    public SubwaveData[] subwaveList;
+    public List<SubwaveData> subwaveList;
     public int totalTimeWave;
     public float GetTotalTimeWave( float spawnTime){
         float maxTime = 0f;

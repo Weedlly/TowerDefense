@@ -13,7 +13,7 @@ public class CreatingTower : MonoBehaviour
     private Button _buildButton;
 
     [SerializeField]
-    private Canvas _buildingPlaceContainer;
+    private GameObject _buildingPlaceContainer;
 
     [SerializeField]
     private Image _buildingContainer;

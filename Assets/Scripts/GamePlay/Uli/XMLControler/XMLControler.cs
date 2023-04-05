@@ -23,7 +23,7 @@ public class XMLControler : MonoBehaviour
         WriteDownXML("PlayerWrite.xml",_playerDataList);
 
         _stageDataList = XMLControler.LoadXML<StageListData>("XML/Stage");
-        WriteDownXML("StageWrite.xml",_stageDataList);
+        // WriteDownXML("StageWrite.xml",_stageDataList);
 
         _userData = XMLControler.LoadXML<UserData>("XML/User");
         WriteDownXML("UserWrite.xml",_userData);

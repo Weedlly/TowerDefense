@@ -15,15 +15,15 @@ public class UserData{
 
     [XmlArray(ElementName = "CompletetedStageList")]
     [XmlArrayItem(ElementName = "CompletetedStage")]
-    public CompletetedStageData[] completetedStageList;
+    public List<CompletetedStageData> completetedStageList;
 
     [XmlArray(ElementName = "TowerUpdateList")]
     [XmlArrayItem(ElementName = "TowerUpdate")]
-    public TowerUpdateData[] towerUpdateList;
+    public List<TowerUpdateData> towerUpdateList;
 
     [XmlArray(ElementName = "ChampionList")]
     [XmlArrayItem(ElementName = "Champion")]
-    public ChampionData[] championData;
+    public List<ChampionData> championData;
 }
 
 public class CompletetedStageData{
