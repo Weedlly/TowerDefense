@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2140857166, guid: a8f24677934ac414ba442f269ea013be, type: 3}
+  m_Sprite: {fileID: 1902583494, guid: a87a4ac90dd204e99a5f7226bc79fa1b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -196,8 +196,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: 44165901
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &6848114870629012801
 MonoBehaviour:
@@ -359,7 +359,7 @@ PrefabInstance:
     - target: {fileID: 1514899039404734103, guid: 649663d98236f446c88e28d35f459c7f, type: 3}
       propertyPath: _buildingPlaceContainer
       value: 
-      objectReference: {fileID: 5063536965753167398}
+      objectReference: {fileID: 992750308397236685}
     - target: {fileID: 1960860099157236575, guid: 649663d98236f446c88e28d35f459c7f, type: 3}
       propertyPath: m_Name
       value: BuildTowerMenu
@@ -387,7 +387,7 @@ PrefabInstance:
     - target: {fileID: 4221554700475438990, guid: 649663d98236f446c88e28d35f459c7f, type: 3}
       propertyPath: _buildingPlaceContainer
       value: 
-      objectReference: {fileID: 5063536965753167398}
+      objectReference: {fileID: 992750308397236685}
     - target: {fileID: 4257201509150629974, guid: 649663d98236f446c88e28d35f459c7f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.4
@@ -399,7 +399,7 @@ PrefabInstance:
     - target: {fileID: 5070251922552407633, guid: 649663d98236f446c88e28d35f459c7f, type: 3}
       propertyPath: _buildingPlaceContainer
       value: 
-      objectReference: {fileID: 5063536965753167398}
+      objectReference: {fileID: 992750308397236685}
     - target: {fileID: 7515441332369364199, guid: 649663d98236f446c88e28d35f459c7f, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -411,7 +411,7 @@ PrefabInstance:
     - target: {fileID: 7515441332369364199, guid: 649663d98236f446c88e28d35f459c7f, type: 3}
       propertyPath: _buildingPlaceContainer
       value: 
-      objectReference: {fileID: 5063536965753167398}
+      objectReference: {fileID: 992750308397236685}
     - target: {fileID: 8091045528422824112, guid: 649663d98236f446c88e28d35f459c7f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

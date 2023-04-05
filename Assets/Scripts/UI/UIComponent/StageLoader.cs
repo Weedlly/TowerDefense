@@ -8,7 +8,7 @@ public class StageLoader : MonoBehaviour
     [SerializeField] int _scene;
     public void load(){
         GlobalValue.Instance.nextScene = _scene;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
     }
     
 }
