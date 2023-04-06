@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class CreatingTower : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// 1) Control create a specific tower type
+    /// 2) Determine condition to decide the tower enough money to build or not
+    /// </summary>
+
     [SerializeField]
     private GameObject _prefab;
 

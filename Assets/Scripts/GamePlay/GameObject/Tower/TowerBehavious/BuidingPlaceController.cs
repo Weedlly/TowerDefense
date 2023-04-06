@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class BuidingPlaceController : MonoBehaviour
 {
+    /// <summary>
+    /// 1) Mapping tower building places for each stage
+    /// 2) Wirting tower building places of a stage down xml file
+    /// 3) Control towerBuildingKit action ( active,deactive)
+    /// </summary>
+
     [SerializeField] private GameObject _buildingPlaces;
     [SerializeField] private GameObject _towerBuildingPlacePrefab;
     private static GameObject towerBuildingPlacePrefab;
@@ -38,8 +44,6 @@ public class BuidingPlaceController : MonoBehaviour
     public static void MappingTowerPlaceData(int stageId){
         _buildingPlaceList.Clear();
         StageData tmpStageData = XMLControler._stageDataList.FindStageData(stageId);
-        Debug.Log(tmpStageData);
-         Debug.Log( tmpStageData.towerPlaceList);
         foreach (var place in tmpStageData.towerPlaceList)
         {
             GameObject towerBuilding = Instantiate(towerBuildingPlacePrefab);
@@ -48,7 +52,6 @@ public class BuidingPlaceController : MonoBehaviour
                     place.y,
                     0f
                 );
-                Debug.Log(towerBuilding);
             _buildingPlaceList.Add(towerBuilding);
         }
     }

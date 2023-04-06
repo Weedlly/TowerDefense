@@ -5,6 +5,9 @@ using UnityEngine;
 using System.Xml;
 using System.Xml.Serialization;
 
+/// <summary>
+/// Data class for XMLSerialize 
+/// </summary>
 
 [XmlRoot(ElementName = "PlayerList")]
 public class PlayerListData{

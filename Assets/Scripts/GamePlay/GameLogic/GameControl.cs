@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// 1) Control Coin, health of User in a stage
+    /// 2) Deterimine condition when User win or loss a game
+    /// </summary>
    
     private static int _healthPoint;
     private static int _coinPoint;

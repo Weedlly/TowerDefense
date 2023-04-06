@@ -5,6 +5,9 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class AnchorGameObject : MonoBehaviour
 {
+    /// <summary>
+    /// Anchoring a Object to specific position of screen
+    /// </summary>
     public enum AnchorType
     {
         BottomLeft,

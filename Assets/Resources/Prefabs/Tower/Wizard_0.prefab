@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bebaaa84c7bc46a89f30e13990166e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerId: 0
+  _towerId: 1
   _name: 
   _attackSpeed: 2
   _attackDame: 20
@@ -361,7 +361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3934771364942431212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -689,7 +689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

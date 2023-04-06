@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7837245abad446f8881074556f7cccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerId: 0
+  _towerId: 3
   _name: 
   _attackSpeed: 0
   _attackDame: 0
@@ -870,7 +870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3556158391770713846, guid: af11e13f0bb984d8fb593296a33ba654, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

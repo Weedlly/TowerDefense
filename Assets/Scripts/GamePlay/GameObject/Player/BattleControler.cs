@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleControler : MonoBehaviour {
+
+    /// <summary>
+    /// Determine the competitor for each player, who appered in a game when playing
+    /// </summary>
+
     public static List<Player> _evils = new List<Player>();
     public static List<Player> _humans = new List<Player>();
     static public void AddEvil(Player player){

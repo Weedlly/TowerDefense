@@ -6,6 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class CameraViewportHandler : MonoBehaviour
 {
+    /// <summary>
+    /// Determining and changing camera depend on real screen
+    /// </summary>
+    
     public enum Constraint { Landscape, Portrait }
 
     #region FIELDS

@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class BuildingPlace : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// Control towerBuildingPlaceKit action ( active,deactive)
+    /// </summary>
+    
     public Button _buildingButton;
     public Image _towerMenu;
 

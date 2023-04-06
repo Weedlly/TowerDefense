@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UpdateAndSell : MonoBehaviour
 {
+    /// <summary>
+    /// 1) Control Update and sell of a tower
+    /// 2) Control AssemblePoint of tower, if that tower is a TroopTower
+    /// </summary>
+    
     [SerializeField] private GameObject _updateContainer;
     [SerializeField] private Button _controlButton;
     [SerializeField] private Button _updateButton;

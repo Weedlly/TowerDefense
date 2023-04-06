@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class RouteSet : MonoBehaviour
 {
+    /// <summary>
+    /// 1) Collecting XML data to render gate and route 
+    /// 2) Writing down gate and route to XML
+    /// 3) Finding nearst point on specific route
+    /// </summary>
+
     [SerializeField] private  List<LineRenderer> _gates;
     [SerializeField] private  SpriteRenderer sr;
     

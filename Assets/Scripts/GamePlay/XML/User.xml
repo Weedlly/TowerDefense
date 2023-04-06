@@ -12,7 +12,9 @@
         </CompletetedStage>
     </CompletetedStageList>
 	<TowerUpdateList>
-		<TowerUpdate towerUpdateId="0"></TowerUpdate>
+		<TowerUpdate towerUpdateId="0">
+			<Tower>0</Tower>
+		</TowerUpdate>
 	</TowerUpdateList>
 
 	<ChampionList>

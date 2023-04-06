@@ -8,6 +8,10 @@ using TMPro;
 
 public class SettingController : MonoBehaviour
 {
+    /// <summary>
+    /// Control Setting window, it include ( sound, gamespeed, quit, reset a stage)
+    /// </summary>
+
     public Image _settingWindow;
     public Button _exitSettingWindowBt;
     [SerializeField] private TMP_Text _gameSpeedTxt;

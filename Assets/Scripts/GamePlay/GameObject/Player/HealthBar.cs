@@ -8,9 +8,6 @@ public class HealthBar : MonoBehaviour
 
     [SerializeField] private Image _healthBarImage;
     [SerializeField] private Canvas _healthObject;
-
-
-    // [SerializeField]
     public float _maxHealth;
 
     private float _currentHealth;

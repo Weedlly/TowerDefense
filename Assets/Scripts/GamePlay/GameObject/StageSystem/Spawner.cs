@@ -6,6 +6,9 @@ using UnityEngine;
 public class Spawner
 {
 
+    /// <summary>
+    /// Spawnning object exist in pooler
+    /// </summary>
     private LineRenderer _route;
     
     private ObjectPooler _pooler;
@@ -14,8 +17,6 @@ public class Spawner
         _pooler = pooler;
         _route = route;
     }
-
-  
     
     public void SpawnerSingleObject(){
 

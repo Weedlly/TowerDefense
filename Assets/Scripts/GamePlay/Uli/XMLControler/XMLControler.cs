@@ -9,6 +9,13 @@ using TMPro;
 
 public class XMLControler : MonoBehaviour
 {
+    /// <summary>
+    /// 1) Auto load all XMLDatas from direction resource/XML/filename.xml when start the game
+    /// 2) Provide Method to get XML data for using and edit : XMLControler._towerDataList
+    /// 3) Provide Function to write down XML file after edit with syntax : 
+    // XMLControler.LoadXML<ClassName>("XML/filename");
+    /// </summary>
+
     public static TowerListData _towerDataList = new TowerListData();
     public static PlayerListData _playerDataList = new PlayerListData();
     public static StageListData _stageDataList = new StageListData();
@@ -17,17 +24,19 @@ public class XMLControler : MonoBehaviour
     {
         Debug.Log(Application.persistentDataPath);
         _towerDataList = XMLControler.LoadXML<TowerListData>("XML/Tower");
-        WriteDownXML("TowerWrite.xml",_towerDataList);
+        // WriteDownXML("TowerWrite.xml",_towerDataList);
        
         _playerDataList = XMLControler.LoadXML<PlayerListData>("XML/Player");
-        WriteDownXML("PlayerWrite.xml",_playerDataList);
+        // WriteDownXML("PlayerWrite.xml",_playerDataList);
 
         _stageDataList = XMLControler.LoadXML<StageListData>("XML/Stage");
         // WriteDownXML("StageWrite.xml",_stageDataList);
 
         _userData = XMLControler.LoadXML<UserData>("XML/User");
-        WriteDownXML("UserWrite.xml",_userData);
+        // WriteDownXML("UserWrite.xml",_userData);
     }
+
+
     public static T LoadXML<T>(string path){
         try{
             XmlSerializer serializer = new XmlSerializer(typeof(T));

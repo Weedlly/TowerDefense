@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FitToScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// Scale the localSize following the runtime screen
+    /// </summary>
    
     [SerializeField] private SpriteRenderer sr;
     
@@ -15,8 +17,6 @@ public class FitToScreen : MonoBehaviour
         // world width is calculated by diving world height with screen heigh
         // then multiplying it with screen width
         float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
-
-        // sr = GetComponent<SpriteRenderer>();
 
         // world height is always camera's orthographicSize * 2
 

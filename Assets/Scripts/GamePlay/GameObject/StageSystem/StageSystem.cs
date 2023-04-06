@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class StageSystem : MonoBehaviour
 {
-   
+    /// <summary>
+    /// 1) Mapping data from Stage.xml to a stage and spawn object depend on data loaded
+    /// 2) Provide Method to draw route, determine tower place position then write down to XML for create a new stage
+    /// </summary>
+
     [SerializeField] private  List<GameObject> _playerTypeInBattle;
     [SerializeField] private  List<int> _numbers;
     private  List<LineRenderer> _gates;
