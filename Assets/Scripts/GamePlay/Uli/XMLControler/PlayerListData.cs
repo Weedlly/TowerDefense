@@ -13,6 +13,15 @@ using System.Xml.Serialization;
 public class PlayerListData{
     [XmlElement(ElementName = "Player")]
     public List<PlayerData> playerlist;
+    public PlayerData FindPlayerData(int playerId){
+        foreach (var item in playerlist)
+        {
+            if(item.id == playerId){
+                return item;
+            }
+        }
+        return null;
+    }
 }
 [XmlRoot(ElementName = "Player")]
 public class PlayerData{

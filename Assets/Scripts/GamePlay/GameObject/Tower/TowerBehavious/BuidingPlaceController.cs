@@ -13,11 +13,13 @@ public class BuidingPlaceController : MonoBehaviour
 
     [SerializeField] private GameObject _buildingPlaces;
     [SerializeField] private GameObject _towerBuildingPlacePrefab;
+    private static Transform _parentTransform;
     private static GameObject towerBuildingPlacePrefab;
     public List<GameObject> buildingPlaceList = new List<GameObject>();
     public static List<GameObject> _buildingPlaceList = new List<GameObject>();
 
     void Start(){
+        _parentTransform = gameObject.transform;
         towerBuildingPlacePrefab = _towerBuildingPlacePrefab;
         _buildingPlaceList = buildingPlaceList;
     }
@@ -52,6 +54,7 @@ public class BuidingPlaceController : MonoBehaviour
                     place.y,
                     0f
                 );
+            towerBuilding.transform.SetParent(_parentTransform);
             _buildingPlaceList.Add(towerBuilding);
         }
     }

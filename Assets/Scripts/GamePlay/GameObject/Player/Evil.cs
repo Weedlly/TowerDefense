@@ -13,7 +13,7 @@ public class Evil : Player
         BattleControler.AddEvil(this);
     }
     override protected void MoveDefault(){
-        transform.position = Vector2.MoveTowards(transform.position,_assemblePoint,Time.deltaTime * _speed);
+        transform.position = Vector2.MoveTowards(transform.position,_assemblePoint,Time.deltaTime * _movementSpeed);
     }
 
     override public void SelfDestroy(){

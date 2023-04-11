@@ -11,11 +11,11 @@
 			<Difficulty>Normal</Difficulty>
         </CompletetedStage>
     </CompletetedStageList>
-	<TowerUpdateList>
-		<TowerUpdate towerUpdateId="0">
+	<StarUpdateList>
+		<StarUpdate towerUpdateId="0">
 			<Tower>0</Tower>
-		</TowerUpdate>
-	</TowerUpdateList>
+		</StarUpdate>
+	</StarUpdateList>
 
 	<ChampionList>
 		<Champion championId="0">

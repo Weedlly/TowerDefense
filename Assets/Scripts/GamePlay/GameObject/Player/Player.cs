@@ -7,16 +7,20 @@ public enum PlayerAction{
     Attack = 1,
     Walk = 2
 }
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour,IInformationToBoard
 {   
     [Header("Player atribute")]
     [SerializeField] public int _playerId;
-    [SerializeField] public float _rangeAttack;
+    [SerializeField] public string _playerName;
+    [SerializeField] public float _attackRange;
     [SerializeField] public float _rangeDetecting;
     [SerializeField] public float _health;
-    [SerializeField] protected float _speed;
-    [SerializeField] protected float _attackSpeed;
-    [SerializeField] protected float _dame;
+    [SerializeField] public float _movementSpeed;
+    [SerializeField] public float _attackSpeed;
+    [SerializeField] public float _attackDame;
+    [SerializeField] public int _dropCoin;
+    [SerializeField] public string _difficulty;
+
 
     [SerializeField] protected Animator _animator;
     [SerializeField] protected HealthBar _healthBar;
@@ -48,15 +52,11 @@ public class Player : MonoBehaviour
 
     public int _maxMeleeCompetitor;
     public int _meleeCompetitorCounter = 0;
-    protected int _playerSide;
 
     protected void Start()
     {
 
-        SetUpPlayerSide();
-
         SetUpUnitType();
-
         _healthBar = GetComponent<HealthBar>();
         // _animator.speed = 1.2f;
     }
@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
         return true;
     }
     void AttackTargetProcess(){
-        if(Vector2.Distance(this.transform.position,_target.transform.position) > _rangeAttack){
+        if(Vector2.Distance(this.transform.position,_target.transform.position) > _attackRange){
             _animator.SetBool("isAttack",false);
             MoveToTarget();
         }
@@ -129,21 +129,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    void SetUpPlayerSide(){
-        if(gameObject.tag == "Enemy"){
-            _playerSide = (int)PlayerSide.Enemy;
-        }
-        else if(gameObject.tag == "Ally"){
-            _playerSide = (int)PlayerSide.Ally;
-        }
-    }
-
 
     #endregion Set up for start
 
     protected void MoveToTarget(){
         _animator.SetFloat("movingSpeed",0.5f);
-        transform.position = Vector2.MoveTowards(transform.position,_target.transform.position,Time.deltaTime * _speed);
+        transform.position = Vector2.MoveTowards(transform.position,_target.transform.position,Time.deltaTime * _movementSpeed);
     }
  
     virtual protected void MoveDefault(){
@@ -177,7 +168,7 @@ public class Player : MonoBehaviour
     }
   
     void Attack(){
-        _target.HealthReduce(_dame);
+        _target.HealthReduce(_attackDame);
     }
     
     
@@ -215,6 +206,9 @@ public class Player : MonoBehaviour
         _target = null;
         _health = _healthBar._maxHealth;;
     }
- 
+    public void SendInformation(){
+        Debug.Log(_playerName);
+        PlayerInformationBoard.UpdatePlayerBoardInformation(_playerName,_health,_attackDame,_attackSpeed,_attackRange,_movementSpeed);
+    }
 
 }

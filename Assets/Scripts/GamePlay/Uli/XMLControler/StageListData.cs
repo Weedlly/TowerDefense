@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 public class StageListData{
     [XmlElement(ElementName = "Stage")]
     public List<StageData> stageListData;
-    public  StageData FindStageData(int stageId){
+    public StageData FindStageData(int stageId){
         foreach (var item in stageListData)
         {
             if(item.stageId == stageId){
