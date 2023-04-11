@@ -6,7 +6,7 @@
 	<Player id="0">
 		<name>ShieldMan</name>
 		<difficulty>Normal</difficulty>
-		<heath>150</heath>
+		<health>150</health>
 		<attackDame>10</attackDame>
 		<attackSpeed>1</attackSpeed>
 		<attackRange>5</attackRange>
@@ -16,7 +16,7 @@
 	<Player id="0">
 		<name>ShieldMan</name>
 		<difficulty>Nightmare</difficulty>
-		<heath>250</heath>
+		<health>250</health>
 		<attackDame>15</attackDame>
 		<attackSpeed>1</attackSpeed>
 		<attackRange>5</attackRange>
@@ -26,7 +26,7 @@
 	<Player id="0">
 		<name>ShieldMan</name>
 		<difficulty>Hell</difficulty>
-		<heath>400</heath>
+		<health>400</health>
 		<attackDame>25</attackDame>
 		<attackSpeed>1</attackSpeed>
 		<attackRange>5</attackRange>
@@ -39,7 +39,7 @@
 	<Player id="1">
 		<name>HunstressWarrior</name>
 		<difficulty>Normal</difficulty>
-		<heath>100</heath>
+		<health>100</health>
 		<attackDame>15</attackDame>
 		<attackSpeed>1</attackSpeed>
 		<attackRange>5</attackRange>
@@ -49,7 +49,7 @@
 	<Player id="1">
 		<name>HunstressWarrior</name>
 		<difficulty>Nightmare</difficulty>
-		<heath>200</heath>
+		<health>200</health>
 		<attackDame>30</attackDame>
 		<attackSpeed>1</attackSpeed>
 		<attackRange>5</attackRange>
@@ -59,7 +59,7 @@
 	<Player id="1">
 		<name>HunstressWarrior</name>
 		<difficulty>Hell</difficulty>
-		<heath>300</heath>
+		<health>300</health>
 		<attackDame>45</attackDame>
 		<attackSpeed>1</attackSpeed>
 		<attackRange>5</attackRange>
@@ -72,7 +72,7 @@
 	<Player id="2">
 		<name>NightBorne</name>
 		<difficulty>Normal</difficulty>
-		<heath>1000</heath>
+		<health>1000</health>
 		<attackDame>40</attackDame>
 		<attackSpeed>1</attackSpeed>
 		<attackRange>5</attackRange>
@@ -82,7 +82,7 @@
 	<Player id="2">
 		<name>NightBorne</name>
 		<difficulty>Nightmare</difficulty>
-		<heath>2000</heath>
+		<health>2000</health>
 		<attackDame>90</attackDame>
 		<attackSpeed>1</attackSpeed>
 		<attackRange>5</attackRange>
@@ -92,7 +92,7 @@
 	<Player id="2">
 		<name>NightBorne</name>
 		<difficulty>Hell</difficulty>
-		<heath>3000</heath>
+		<health>3000</health>
 		<attackDame>150</attackDame>
 		<attackSpeed>1</attackSpeed>
 		<attackRange>5</attackRange>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class Tower : MonoBehaviour
+public abstract class Tower : MonoBehaviour,IInformationToBoard
 {
     [Header("Tower attribute")]
     [SerializeField] protected int _towerId;
@@ -19,6 +19,7 @@ public abstract class Tower : MonoBehaviour
 
     [SerializeField] protected Button _controlButton;
     [SerializeField] protected Image _updateAndSelllContainer;
+
 
     
     public int Level{
@@ -55,7 +56,6 @@ public abstract class Tower : MonoBehaviour
     void OpenUpdateAndSell(){
         _controlButton.gameObject.SetActive(false);
         _updateAndSelllContainer.gameObject.SetActive(true);
-        InformationBoardControl.ShowTowerInformation(_attackDame,_attackSpeed,_attackRange);
     }
 
     public bool IsAbleUpdateTower(){
@@ -82,8 +82,9 @@ public abstract class Tower : MonoBehaviour
         }
         return false;
     }
-    protected void Update(){
- 
+    protected void Update(){}
+    public void SendInformation(){
+          TowerInformationBoard.UpdateTowerBoardInformation(_name,_attackDame,_attackSpeed,_attackRange);
     }
 
 }

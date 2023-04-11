@@ -37,17 +37,21 @@ public class StageSystem : MonoBehaviour
 
     private void Start() {
         MappingStageData(_stageId,"");
+
         GameControl.CurrentWave = 1;
         GameControl.MaxWave = _stageData.waveList.Count;
+
         _gates = _routeSet.GetGatesOfStage(_stageId);
 
         BuidingPlaceController.MappingTowerPlaceData(_stageId);
 
+        foreach (var item in _poolers)
+        {
+            item.CreatePooler();
+        }
         // BuidingPlaceController.WriteDownTowerPlaceSetForStage(_stageId);
 
         // RouteSet.WriteDownGateSetForStage(_stageId);
-
-
 
         // Spawner instance = new Spawner(_poolers[0],_gates[1]);
         // instance.SpawnerSingleObject();

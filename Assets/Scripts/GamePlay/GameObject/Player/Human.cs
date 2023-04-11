@@ -1,31 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Human : Player
 {   
     [SerializeField] protected LineRenderer _route;
-    [SerializeField] private int _earningCoin;
-    private int _currentPositionIndex;
-    private int _lengthOfPath;
+    [SerializeField] private int _currentPositionIndex;
+    [SerializeField]private int _lengthOfPath;
     new void Start() {
         base.Start();
         _maxMeleeCompetitor = 1; 
        _currentPositionIndex = 0;
-        _lengthOfPath = _route.positionCount; 
         BattleControler.AddHuman(this);
     }
     public void SetRoute(LineRenderer route){
         _route = route;
+        _lengthOfPath = _route.positionCount; 
         transform.position = _route.GetPosition(0);
     }
 
     override protected void MoveDefault(){
-        if(Vector2.Distance(transform.position,_route.GetPosition(_currentPositionIndex)) < 0.1f ){
+        float dis = Vector2.Distance(transform.position,_route.GetPosition(_currentPositionIndex));
+        if(dis < 0.1f ){
             _currentPositionIndex += 1;
             ArrivedDestination();
         }
-        transform.position = Vector2.MoveTowards(transform.position,_route.GetPosition(_currentPositionIndex),Time.deltaTime * _speed);
+        transform.position = Vector2.MoveTowards(transform.position,_route.GetPosition(_currentPositionIndex),Time.deltaTime * _movementSpeed);
+  
     }
     // void SetMoveDefaultPosition(int index){
     //     _currentPositionIndex = index;
@@ -39,7 +41,6 @@ public class Human : Player
             GameControl.ReduceHealth();
         }
     }
-
     
 
     override public void SelfDestroy(){
@@ -49,7 +50,7 @@ public class Human : Player
 
         _currentPositionIndex = 0; // reset position
         //Earning Coin
-        GameControl.IncreaseCoin(_earningCoin);
+        GameControl.IncreaseCoin(_dropCoin);
     }       
     
 }
