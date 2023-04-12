@@ -25,20 +25,17 @@ public class HealthBar : MonoBehaviour
     }
 
     IEnumerator ShowHeathObject(){
+        _healthObject.overrideSorting = true;
         _healthObject.sortingLayerName = "GameObject";
         yield return new WaitForSeconds(3f);
         _healthObject.sortingLayerName = "Invisible";
     }
     
-    // Start is called before the first frame update
     void Start()
     {
     }
-
-    // Update is called once per frame
     void Update()
     {
-
         _healthBarImage.fillAmount = CurrentHealth /_maxHealth;
     }
 }

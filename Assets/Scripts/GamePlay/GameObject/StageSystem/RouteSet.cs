@@ -24,6 +24,7 @@ public class RouteSet : MonoBehaviour
         {
             LineRenderer tmpLr = new GameObject().AddComponent<LineRenderer>() as LineRenderer;
             tmpLr.transform.name = "Gate" + gate.gateId;
+            tmpLr.widthMultiplier  = 0f;
             tmpLr.transform.parent = gameObject.transform;
             List<PointData> tmpPointList = gate.pointList;
             tmpLr.positionCount = tmpPointList.Count;

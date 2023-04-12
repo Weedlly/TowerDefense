@@ -7,49 +7,97 @@ using TMPro;
 using UnityEngine.EventSystems;
 
 
+
+public enum InformationBoard{
+    TowerBoard,
+    PlayerBoard,
+    none
+}
+
 public class InformationBoardControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    ///<summary>
+    /// Control Which information board should be show 
+    /// In one time just have only one board will be show
+    ///</summary>
 
-    [SerializeField] private TMP_Text _attackDameText;
-    [SerializeField] private TMP_Text _attackSpeedText;
-    [SerializeField] private TMP_Text _attackRangeText;
     [SerializeField] private GameObject _towerInformationBoard;
-
-    private static float _attackDame;
-    private static float _attackSpeed;
-    private static float _attackRange;
-    private static GameObject _towerBoard;
+    [SerializeField] private GameObject _playerInformationBoard;
+    // private static GameObject _towerBoard;
+    // private static GameObject _playerBoard;
 
     public EventSystem _eventSystem;
 
     void Start()
     {      
         Debug.Log(SystemInfo.deviceUniqueIdentifier);
-        _towerBoard = _towerInformationBoard;
+        // _towerBoard = _towerInformationBoard;
     }
     
     void Update()
     {
-        _attackDameText.text = _attackDame.ToString();
-        _attackSpeedText.text = _attackSpeed.ToString();
-        _attackRangeText.text = _attackRange.ToString();
-        _towerInformationBoard.SetActive(_towerBoard.activeSelf);
 
-        if(_eventSystem.currentSelectedGameObject == null){
-            HideTowerInformation();
-        } 
+        if(_eventSystem.currentSelectedGameObject != null){
+            GameObject go = _eventSystem.currentSelectedGameObject;
+            // go.transform.parent.gameObject.GetComponent<Tower>(); 
+            Debug.Log(go.transform.parent.gameObject.GetComponentInChildren<Tower>());
+
+            CheckObjectHasInformationBoard(go);
+        }else{
+            ActiveBoard(InformationBoard.none);
+        }
+        // else{
+        //     CheckObjectHasInformationBoard();
+        // }
+
+        
+        
    
     }
 
-    public static void ShowTowerInformation(float attackDame, float attackSpeed, float attackRange){
-        _attackDame = attackDame;
-        _attackSpeed = attackSpeed;
-        _attackRange = attackRange;
-        _towerBoard.SetActive(true);
+    private void CheckObjectHasInformationBoard(GameObject go){
+        if((Player)go.gameObject.GetComponent<Player>() != null){
+            Debug.Log((Player)_eventSystem.currentSelectedGameObject.gameObject.GetComponent<Player>());
+            ((Player)go.gameObject.GetComponent<Player>()).SendInformation();
+            ActiveBoard(InformationBoard.PlayerBoard);
+        }
+        else if((Tower)go.transform.parent.gameObject.GetComponentInChildren<Tower>() != null){
+            Debug.Log((Tower)_eventSystem.currentSelectedGameObject.gameObject.GetComponent<Tower>());
+            ((Tower)go.transform.parent.gameObject.GetComponentInChildren<Tower>()).SendInformation();
+            ActiveBoard(InformationBoard.TowerBoard);
+        }
+        else{
+            ActiveBoard(InformationBoard.none);
+        }
     }
-    public static void HideTowerInformation(){
-        _towerBoard.SetActive(false);
+    void ActiveBoard(InformationBoard activeBoard ){
+        switch (activeBoard)
+        {
+            case InformationBoard.TowerBoard:{
+                _towerInformationBoard.gameObject.SetActive(true);
+                _playerInformationBoard.gameObject.SetActive(false);
+                break;
+            } 
+            case InformationBoard.PlayerBoard:{
+                _towerInformationBoard.gameObject.SetActive(false);
+                _playerInformationBoard.gameObject.SetActive(true);
+                break;
+            } 
+            default:{
+                _towerInformationBoard.gameObject.SetActive(false);
+                _playerInformationBoard.gameObject.SetActive(false);
+                break;
+            }
+        }
     }
+    // public static void ShowTroopInformation(float attackDame, float attackSpeed, float attackRange){
+    //     // _attackDame = attackDame;
+    //     // _attackSpeed = attackSpeed;
+    //     // _attackRange = attackRange;
+    //     // _towerBoard.SetActive(true);
+    // }
+    // public static void HideTowerInformation(){
+    //     _towerBoard.SetActive(false);
+    // }
    
 }

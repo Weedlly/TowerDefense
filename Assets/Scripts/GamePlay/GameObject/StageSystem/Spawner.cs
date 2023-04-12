@@ -21,7 +21,7 @@ public class Spawner
     public void SpawnerSingleObject(){
 
         GameObject newInstance = _pooler.GetInstanceFromPool();
-        newInstance.SetActive(true);
+        newInstance.gameObject.SetActive(true);
 
         Human human = newInstance.GetComponent<Human>();
 

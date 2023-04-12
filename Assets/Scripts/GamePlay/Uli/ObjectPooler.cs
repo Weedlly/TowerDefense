@@ -8,10 +8,21 @@ public class ObjectPooler : MonoBehaviour
     [Range(1,100)] public int _poolSize = 10;
 
     private List<GameObject> _pool = new List<GameObject>();
-    private void Awake(){        
-        CreatePooler();
+    void MappingPlayerData(int playerId, Player player){
+        PlayerData playerData = XMLControler._playerDataList.FindPlayerData(playerId);
+        player._attackDame = playerData.attackDame;
+        player._attackRange = playerData.attackRange;
+        player._attackSpeed = playerData.attackSpeed;
+        player._health = playerData.health;
+        player._movementSpeed = playerData.movementSpeed;
+        player._playerName = playerData.name;
+        player._difficulty = playerData.difficulty;
+        player._dropCoin = playerData.dropCoin;
     }
-    private void CreatePooler(){
+    public void CreatePooler(){
+        Player instance =_prefab.GetComponent<Player>();
+        MappingPlayerData(instance._playerId,instance);
+
         for (int i = 0; i < _poolSize; i++)
         {
             _pool.Add(CreateInstance());   
