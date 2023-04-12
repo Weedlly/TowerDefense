@@ -49,7 +49,7 @@ public class StageSystem : MonoBehaviour
 
 
 
-        // Spawner instance = new Spawner(_poolers[0],_gates[1]);
+        // Spawner instance = new Spawner(_poolers[2],_gates[1]);
         // instance.SpawnerSingleObject();
 
     
