@@ -163,8 +163,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8285943020831988775}
   - component: {fileID: 4182245437840627490}
-  - component: {fileID: 5696051542251506005}
-  - component: {fileID: 5980007985289931947}
   m_Layer: 5
   m_Name: 'Heath '
   m_TagString: Untagged
@@ -188,9 +186,9 @@ RectTransform:
   m_Father: {fileID: 4037542182919545410}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.049999952, y: 1.2}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1.2}
   m_SizeDelta: {x: 1.2326, y: 1.2}
   m_Pivot: {x: 0.49999994, y: 0.5000001}
 --- !u!223 &4182245437840627490
@@ -214,46 +212,6 @@ Canvas:
   m_SortingLayerID: 463921499
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &5696051542251506005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2519116565417495587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
---- !u!114 &5980007985289931947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2519116565417495587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &4080470935116052550
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,12 +424,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerId: 0
-  _rangeAttack: 2
+  _playerName: 
+  _attackRange: 0
   _rangeDetecting: 5
   _health: 50
-  _speed: 1
+  _movementSpeed: 0
   _attackSpeed: 1
-  _dame: 15
+  _attackDame: 0
+  _dropCoin: 0
+  _difficulty: 
   _animator: {fileID: 217707183971276469}
   _healthBar: {fileID: 3823644132258618772}
   _spriteRenderer: {fileID: 8170785233974009862}

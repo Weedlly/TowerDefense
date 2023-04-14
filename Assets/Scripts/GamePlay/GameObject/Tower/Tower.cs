@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public abstract class Tower : MonoBehaviour,IInformationToBoard
 {
     [Header("Tower attribute")]
-    [SerializeField] protected int _towerId;
-    [SerializeField] protected string _name;
-    [SerializeField] protected float _attackSpeed;
-    [SerializeField] protected float _attackDame;
-    [SerializeField] protected float _attackRange;
-    [SerializeField] protected float _health;
-    [SerializeField] protected int _price;
-    [SerializeField] protected int _sellPrice;
-    [SerializeField] protected int _level;
+    [SerializeField] public int _towerId;
+    [SerializeField] public string _name;
+    [SerializeField] public float _attackSpeed;
+    [SerializeField] public float _attackDame;
+    [SerializeField] public float _attackRange;
+    [SerializeField] public float _health;
+    [SerializeField] public int _price;
+    [SerializeField] public int _sellPrice;
+    [SerializeField] public int _level;
 
 
     [SerializeField] protected Button _controlButton;

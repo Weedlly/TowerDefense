@@ -12,7 +12,6 @@ public class DemonChampion : Evil
     public static bool _isChampEmployInsticSkill;
     public static bool _isChampEmployActiveSkill;
 
-    private bool _setMoving = false;
     // new void Start()
     // {
     //     base.Start();
@@ -23,41 +22,31 @@ public class DemonChampion : Evil
     new void Update()
     {
         base.Update();
-        if(transform.position.x > _lastPosition.x){
-            _spriteRenderer.flipX = true;
-        }
-        else if(transform.position.x < _lastPosition.x){
-            _spriteRenderer.flipX = false;
-        }
-    }
 
-    override protected void MoveDefault()
-    {
-        if (_setMoving)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                moving = true;
-            }
-
-            if (moving && (Vector2) transform.position != lastClickedPos)
-            {
-                _animator.SetBool("isWalking", true);
-                float step = _movementSpeed * Time.deltaTime;
-                transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, step);
-
-            } else {
-                moving = false;
-                _animator.SetBool("isWalking", false);
-                
-            }
-        }
         
     }
 
-    public void SetMovement()
+    
+
+
+    override protected void MoveDefault()
     {
-        _setMoving = true;
+        if (Input.GetMouseButton(0))
+        {
+            lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            moving = true;
+        }
+
+        if (moving && (Vector2) transform.position != lastClickedPos)
+        {
+            _animator.SetBool("isWalking", true);
+            float step = _movementSpeed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, step);
+
+        } else {
+            moving = false;
+            _animator.SetBool("isWalking", false);
+            
+        }
     }
 }
