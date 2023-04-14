@@ -40,7 +40,7 @@ public class DemonChampion : Evil
         if (moving && (Vector2) transform.position != lastClickedPos)
         {
             _animator.SetBool("isWalking", true);
-            float step = _speed * Time.deltaTime;
+            float step = _movementSpeed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, step);
 
         } else {
