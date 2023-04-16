@@ -30,9 +30,18 @@ public class TowerTroop : Tower
                 _assemblePoint.transform.position.x + Random.value * 2,
                 _assemblePoint.transform.position.y + Random.value * 2
             );
+            MappingTowerTroopData(_evils[i]);
         }
     }
-  
+    void MappingTowerTroopData(Evil evil){
+        evil._attackRange = 2f;
+        evil._attackDame = _attackDame;
+        evil._attackRange = 2f;
+        evil._attackSpeed = _attackSpeed;
+        evil._health = _health;
+        evil._movementSpeed = 1f;
+        evil._playerName = _name;
+    }
     void InitEvil(){
         
         for (int i = 0; i < _numberEvils; i++)

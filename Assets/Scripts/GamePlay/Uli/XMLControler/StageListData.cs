@@ -80,7 +80,6 @@ public class WaveData{
     [XmlArray(ElementName = "SubwaveList")]
     [XmlArrayItem(ElementName = "Subwave")]
     public List<SubwaveData> subwaveList;
-    public int totalTimeWave;
     public float GetTotalTimeWave( float spawnTime){
         float maxTime = 0f;
         foreach (var subwave in subwaveList)

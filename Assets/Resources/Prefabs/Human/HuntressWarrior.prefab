@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5772058310936515721}
   - component: {fileID: 8131058314836457832}
-  - component: {fileID: 8498599242317928331}
   m_Layer: 5
   m_Name: 'Heath '
   m_TagString: Untagged
@@ -60,14 +59,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!222 &8498599242317928331
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5170033368237197}
-  m_CullTransparentMesh: 1
 --- !u!1 &1893574009027752168
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,12 +244,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerId: 1
-  _rangeAttack: 2
+  _playerName: 
+  _attackRange: 0
   _rangeDetecting: 5
   _health: 100
-  _speed: 1
+  _movementSpeed: 0
   _attackSpeed: 1
-  _dame: 10
+  _attackDame: 0
+  _dropCoin: 0
+  _difficulty: 
   _animator: {fileID: 2441688438186941979}
   _healthBar: {fileID: 1622364154828007552}
   _spriteRenderer: {fileID: 6017821564486035624}
@@ -272,7 +266,6 @@ MonoBehaviour:
   _maxMeleeCompetitor: 0
   _meleeCompetitorCounter: 0
   _route: {fileID: 0}
-  _earningCoin: 20
   _currentPositionIndex: 0
   _lengthOfPath: 0
 --- !u!114 &6658046892401112057
