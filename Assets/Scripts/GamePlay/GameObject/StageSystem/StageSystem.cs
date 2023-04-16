@@ -13,7 +13,7 @@ public class StageSystem : MonoBehaviour
     [SerializeField] private  List<GameObject> _playerTypeInBattle;
     [SerializeField] private  List<int> _numbers;
     private  List<LineRenderer> _gates;
-    [SerializeField] private int _stageId = 1;
+    [SerializeField] private int _stageId = 0;
     [SerializeField] private  RouteSet _routeSet;
     [SerializeField] private float _spawnInterval;
     [SerializeField] private float _spawnWaveInterval;
@@ -25,10 +25,6 @@ public class StageSystem : MonoBehaviour
     private WaveData _currentWaveData;
     private SubwaveData _currentSubwaveData;
 
-    
-    public void SaveGateSet(){
-
-    }
     protected bool MappingStageData(int stageId, string difficultyType){
         _stageData = XMLControler._stageDataList.FindStageData(stageId);
         return true;
@@ -49,8 +45,8 @@ public class StageSystem : MonoBehaviour
         {
             item.CreatePooler();
         }
-        // BuidingPlaceController.WriteDownTowerPlaceSetForStage(_stageId);
 
+        // BuidingPlaceController.WriteDownTowerPlaceSetForStage(_stageId);
         // RouteSet.WriteDownGateSetForStage(_stageId);
 
 
