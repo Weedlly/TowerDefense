@@ -49,7 +49,7 @@ public abstract class Tower : MonoBehaviour,IInformationToBoard
     
     protected void Start()
     {
-        _level = 0;
+        _level = User.Instance.getTowerLevelById(_towerId); //khoi update
         _controlButton.onClick.AddListener(OpenUpdateAndSell);
         MapTowerData(_towerId,_level);
     }
