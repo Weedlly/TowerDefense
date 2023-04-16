@@ -23,6 +23,5 @@
 			<Level>1</Level>
 			<ExperiencePercent>0</ExperiencePercent>
 		</Champion>
-		<!-- Các Champion tiếp theo -->
 	</ChampionList>
 </User>
