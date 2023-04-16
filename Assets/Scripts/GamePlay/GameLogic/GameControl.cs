@@ -27,6 +27,12 @@ public class GameControl : MonoBehaviour
     [SerializeField] private GameObject _defeatContainer;
     [SerializeField] private GameObject _winContainer;
 
+    [SerializeField] GameObject _threeStart;
+    [SerializeField] GameObject _twoStart;
+    [SerializeField] GameObject _oneStart;
+
+    private StageRating _stageRating;
+
     public static int CurrentWave 
     { 
         get {
@@ -48,6 +54,7 @@ public class GameControl : MonoBehaviour
 
     void Start()
     {      
+        _stageRating = new StageRating(_oneStart,_twoStart,_threeStart);
         Time.timeScale = 1;
         _healthPoint = _healthPointMax;
         _coinPoint = _coinPointMax;
@@ -93,6 +100,7 @@ public class GameControl : MonoBehaviour
     void CheckWinning(){
         if(_currentWave == _maxWave){
             if(GameObject.FindWithTag("Human") == null){
+                Debug.Log(_stageRating.GetRatingStar(_healthPoint,_healthPointMax));
                 PlayWinning();
             }
         }
