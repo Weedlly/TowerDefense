@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StageList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Stage stageId="0">
-    <UnitList>
-      <Unit unitId="0" />
-      <Unit unitId="1" />
-    </UnitList>
     <GateList>
       <Gate gateId="0">
         <PointList>
@@ -82,11 +78,6 @@
     </WaveList>
   </Stage>
   <Stage stageId="1">
-    <UnitList>
-      <Unit unitId="0" />
-      <Unit unitId="1" />
-      <Unit unitId="2" />
-    </UnitList>
     <GateList>
       <Gate gateId="0">
         <PointList>
