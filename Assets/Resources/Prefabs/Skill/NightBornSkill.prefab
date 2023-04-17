@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 2051355664523675013}
   - component: {fileID: 7226370939601457650}
   m_Layer: 0
-  m_Name: Skill
+  m_Name: NightBornSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
