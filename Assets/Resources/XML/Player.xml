@@ -9,7 +9,7 @@
 		<health>150</health>
 		<attackDame>10</attackDame>
 		<attackSpeed>1</attackSpeed>
-		<attackRange>5</attackRange>
+		<attackRange>2</attackRange>
 		<movementSpeed>1</movementSpeed>
 		<dropCoin>30</dropCoin>
 	</Player>
@@ -19,7 +19,7 @@
 		<health>250</health>
 		<attackDame>15</attackDame>
 		<attackSpeed>1</attackSpeed>
-		<attackRange>5</attackRange>
+		<attackRange>2</attackRange>
 		<movementSpeed>1</movementSpeed>
 		<dropCoin>30</dropCoin>
 	</Player>
@@ -29,7 +29,7 @@
 		<health>400</health>
 		<attackDame>25</attackDame>
 		<attackSpeed>1</attackSpeed>
-		<attackRange>5</attackRange>
+		<attackRange>2</attackRange>
 		<movementSpeed>1</movementSpeed>
 		<dropCoin>30</dropCoin>
 	</Player>
@@ -42,7 +42,7 @@
 		<health>100</health>
 		<attackDame>15</attackDame>
 		<attackSpeed>1</attackSpeed>
-		<attackRange>5</attackRange>
+		<attackRange>2</attackRange>
 		<movementSpeed>1</movementSpeed>
 		<dropCoin>30</dropCoin>
 	</Player>
@@ -52,7 +52,7 @@
 		<health>200</health>
 		<attackDame>30</attackDame>
 		<attackSpeed>1</attackSpeed>
-		<attackRange>5</attackRange>
+		<attackRange>2</attackRange>
 		<movementSpeed>1</movementSpeed>
 		<dropCoin>30</dropCoin>
 	</Player>
@@ -62,7 +62,7 @@
 		<health>300</health>
 		<attackDame>45</attackDame>
 		<attackSpeed>1</attackSpeed>
-		<attackRange>5</attackRange>
+		<attackRange>2</attackRange>
 		<movementSpeed>1</movementSpeed>
 		<dropCoin>30</dropCoin>
 	</Player>
@@ -75,7 +75,7 @@
 		<health>1000</health>
 		<attackDame>40</attackDame>
 		<attackSpeed>1</attackSpeed>
-		<attackRange>5</attackRange>
+		<attackRange>2</attackRange>
 		<movementSpeed>1</movementSpeed>
 		<dropCoin>200</dropCoin>
 	</Player>
@@ -85,7 +85,7 @@
 		<health>2000</health>
 		<attackDame>90</attackDame>
 		<attackSpeed>1</attackSpeed>
-		<attackRange>5</attackRange>
+		<attackRange>2</attackRange>
 		<movementSpeed>1</movementSpeed>
 		<dropCoin>200</dropCoin>
 	</Player>
@@ -95,7 +95,7 @@
 		<health>3000</health>
 		<attackDame>150</attackDame>
 		<attackSpeed>1</attackSpeed>
-		<attackRange>5</attackRange>
+		<attackRange>2</attackRange>
 		<movementSpeed>1</movementSpeed>
 		<dropCoin>200</dropCoin>
 	</Player>
