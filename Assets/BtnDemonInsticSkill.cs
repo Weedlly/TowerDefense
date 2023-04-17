@@ -5,26 +5,24 @@ using UnityEngine.UI;
 
 public class BtnDemonInsticSkill : MonoBehaviour
 {
-    [SerializeField] private DemonChampion _champ;
-    [SerializeField] private FireRain FR_Skill;
-    // Start is called before the first frame update
+    [SerializeField] private DemonSkill _champSkill;
+    
+
     void Start()
-    {
+    {  
         Button btn = gameObject.GetComponent<Button>();
-        btn.onClick.AddListener(Click);
+        btn.onClick.AddListener(ClickToDeploySkill);        
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    public void Click()
-    {
-        
-        Debug.Log("Test Button");
-        FireRain fr = Instantiate(FR_Skill, _champ.transform.position * Random.value * 2, Quaternion.identity);
-
+    public void ClickToDeploySkill()
+    { 
+        Debug.Log("Explode Skill");
+        _champSkill.setDeploySkill();
+               
     }
 }
