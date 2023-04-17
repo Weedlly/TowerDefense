@@ -98,4 +98,27 @@ public class UIString: Singleton<UIString>
         }
     }
 
+    public string upgradeBtnText
+    {
+        get
+        {
+            switch(language)
+            {
+                case "vn": return "Nâng Cấp";
+                default: return "Upgrade";
+            };
+        }
+    }
+
+    public string upgradeTitleText
+    {
+        get
+        {
+            switch(language)
+            {
+                case "vn": return "Các nâng cấp";
+                default: return "Upgrades";
+            }
+        }
+    }
 }

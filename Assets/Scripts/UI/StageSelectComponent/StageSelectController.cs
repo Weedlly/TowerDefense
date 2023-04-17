@@ -12,8 +12,8 @@ public class StageSelectController: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        user = User.Instance;
-        user.saveUserData();
+        // user = User.Instance;
+        // user.saveUserData();
     } 
 
     // Update is called once per frame

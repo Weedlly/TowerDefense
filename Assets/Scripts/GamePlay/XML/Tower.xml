@@ -83,8 +83,8 @@
 	</Tower>
 	<Tower id="3">
 		<level>1</level>
-		<name>Sekeleton</name>
-		<health>150</health>
+			<name>Sekeleton</name>
+			<health>150</health>
 		<attackDame>15</attackDame>
 		<attackSpeed>1.5</attackSpeed>
 		<attackRange>10</attackRange>
