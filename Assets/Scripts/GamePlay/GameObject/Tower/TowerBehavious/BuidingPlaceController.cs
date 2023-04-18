@@ -70,7 +70,6 @@ public class BuidingPlaceController : MonoBehaviour
             tmpTL.y = _buildingPlaceList[i].transform.position.y;
             tmpStageData.towerPlaceList.Add(tmpTL);
         }
-
         XMLControler.WriteDownXML<StageListData>("StageWrite.xml",XMLControler._stageDataList);
     }
   

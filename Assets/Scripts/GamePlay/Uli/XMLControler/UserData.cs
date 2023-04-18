@@ -14,6 +14,8 @@ using System.Xml.Serialization;
 public class UserData{
     [XmlAttribute(AttributeName = "userId")]
     public string userId;
+    [XmlElement(ElementName = "Username")]
+     public string username;
     [XmlElement(ElementName = "CurrentStar")]
     public int currentStar;
 
@@ -21,8 +23,8 @@ public class UserData{
     [XmlArrayItem(ElementName = "CompletetedStage")]
     public List<CompletetedStageData> completetedStageList;
 
-    [XmlArray(ElementName = "TowerUpdateList")]
-    [XmlArrayItem(ElementName = "TowerUpdate")]
+    [XmlArray(ElementName = "TowerUpdateList")]//khoi update
+    [XmlArrayItem(ElementName = "TowerUpdate")]//khoi update
     public List<TowerUpdateData> towerUpdateList;
 
     [XmlArray(ElementName = "ChampionList")]
@@ -43,6 +45,8 @@ public class CompletetedStageData{
 public class TowerUpdateData{
     [XmlAttribute(AttributeName = "towerUpdateId")]
     public int towerUpdateId;
+    [XmlElement(ElementName = "Level")]//khoi update
+    public int level;
 }
 
 public class ChampionData{

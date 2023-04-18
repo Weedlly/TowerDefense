@@ -23,15 +23,12 @@ public class InformationBoardControl : MonoBehaviour
 
     [SerializeField] private GameObject _towerInformationBoard;
     [SerializeField] private GameObject _playerInformationBoard;
-    // private static GameObject _towerBoard;
-    // private static GameObject _playerBoard;
 
     public EventSystem _eventSystem;
 
     void Start()
     {      
         Debug.Log(SystemInfo.deviceUniqueIdentifier);
-        // _towerBoard = _towerInformationBoard;
     }
     
     void Update()
@@ -39,20 +36,10 @@ public class InformationBoardControl : MonoBehaviour
 
         if(_eventSystem.currentSelectedGameObject != null){
             GameObject go = _eventSystem.currentSelectedGameObject;
-            // go.transform.parent.gameObject.GetComponent<Tower>(); 
-            Debug.Log(go.transform.parent.gameObject.GetComponentInChildren<Tower>());
-
             CheckObjectHasInformationBoard(go);
         }else{
             ActiveBoard(InformationBoard.none);
         }
-        // else{
-        //     CheckObjectHasInformationBoard();
-        // }
-
-        
-        
-   
     }
 
     private void CheckObjectHasInformationBoard(GameObject go){
@@ -90,14 +77,4 @@ public class InformationBoardControl : MonoBehaviour
             }
         }
     }
-    // public static void ShowTroopInformation(float attackDame, float attackSpeed, float attackRange){
-    //     // _attackDame = attackDame;
-    //     // _attackSpeed = attackSpeed;
-    //     // _attackRange = attackRange;
-    //     // _towerBoard.SetActive(true);
-    // }
-    // public static void HideTowerInformation(){
-    //     _towerBoard.SetActive(false);
-    // }
-   
 }
