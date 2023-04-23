@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StageLoader : MonoBehaviour
 {
-    [SerializeField] int _scene;
+    [SerializeField] int _stageId;
     public void load(){
-        GlobalValue.Instance.nextScene = _scene;
+        GlobalValue.Instance.nextScene = 4;
+        GlobalValue.Instance.stageId = _stageId;
         SceneManager.LoadScene(2);
     }
     

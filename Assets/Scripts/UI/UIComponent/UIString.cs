@@ -121,4 +121,52 @@ public class UIString: Singleton<UIString>
             }
         }
     }
+
+    public string profileBtnText 
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông tin các nhân";
+                default: return "Profile";
+            }
+        }
+    }
+
+    public string profileTitle 
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông tin các nhân";
+                default: return "Profile";
+            }
+        }
+    }
+
+    public string usernameTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Tên";
+                default: return "Username";
+            }
+        }
+    }
+
+    public string saveBtnText
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Lưu";
+                default: return "Save";
+            }
+        }
+    }
 }

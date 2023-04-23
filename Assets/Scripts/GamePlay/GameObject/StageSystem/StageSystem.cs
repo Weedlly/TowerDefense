@@ -32,6 +32,7 @@ public class StageSystem : MonoBehaviour
 
 
     private void Start() {
+        _stageId = GlobalValue.Instance.stageId; //khoi update
         MappingStageData(_stageId,"");
 
         GameControl.CurrentWave = 1;

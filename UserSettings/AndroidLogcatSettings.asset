@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "BKG00259073",
+    "m_SelectedDeviceId": "RF8R708A0VY",
     "m_SelectedPackage": {
-        "deviceId": "BKG00259073",
-        "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 25885,
+        "deviceId": "RF8R708A0VY",
+        "name": "com.DefaultCompany.MinimalTD",
+        "processId": 28302,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,12 @@
             "deviceId": "BKG00259073",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 25885,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8R708A0VY",
+            "name": "com.DefaultCompany.MinimalTD",
+            "processId": 28302,
             "exited": false
         }
     ],

@@ -8,24 +8,26 @@ using TMPro;
 public class UserController: MonoBehaviour
 {
     [SerializeField] TMP_Text _username;
+    [SerializeField] TMP_Text _star;
+    [SerializeField] TMP_Text _profileBtnText;
     [SerializeField] Image _expBar;
+    User _user;
+
+    void Awake(){
+        _user = User.Instance;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        // user = User.Instance;
-        // float expVal = Mathf.Clamp01(user.exp /0.9f);
-        // _username.text = user.username;
-        // _expBar.fillAmount = expVal;
-        // User.Instance.loadUserData();
-        _username.text = User.Instance.getUsername();
+        _profileBtnText.text = UIString.Instance.profileBtnText;
     } 
 
     // Update is called once per frame
     void Update()
     {
-
-       
+          _username.text = _user.getUsername();
+        _star.text = _user.getStar().ToString();
     }
     
 }

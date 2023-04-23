@@ -33,6 +33,15 @@ public class User : Singleton<User>
         return _data.username;
     }
 
+    public bool saveUsername(string nUsername){
+        if (_data.username != nUsername)
+        {
+            _data.username = nUsername;
+            saveUserData();
+        }
+        return true;
+    }
+
     public int getStar(){
         return _data.currentStar;
     }
@@ -45,7 +54,7 @@ public class User : Singleton<User>
                     _data.currentStar += star - _data.completetedStageList[i].star;
                     _data.completetedStageList[i].star = star;
                 }
-                //saveUserData();
+                saveUserData();
                 return;
             }
         }
@@ -55,7 +64,7 @@ public class User : Singleton<User>
         newStage.star = star;
         _data.currentStar +=  star;
         _data.completetedStageList.Add(newStage);
-        //saveUserData();
+        saveUserData();
 
     }
 
@@ -76,9 +85,9 @@ public class User : Singleton<User>
     public bool upgradeTowerById(int id){
         if (_data.currentStar > 0) {
             for(int i = 0; i < _data.towerUpdateList.Count; i++){
-                Debug.Log(i);
                 if (_data.towerUpdateList[i].towerUpdateId == id && _data.towerUpdateList[i].level < levelCap) {
                     _data.towerUpdateList[i].level++;
+                    _data.currentStar--; //currency down
                     break;
                 }
             }
