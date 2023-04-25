@@ -20,9 +20,7 @@ public class BtnDemonInsticSkill : MonoBehaviour
     }
 
     public void ClickToDeploySkill()
-    { 
-        Debug.Log("Explode Skill");
-        _champSkill.setDeploySkill();
-               
+    {
+        _champSkill.setDeploySkill();         
     }
 }
