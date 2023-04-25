@@ -21,7 +21,7 @@ public class DemonSkillPoint : MonoBehaviour
 
     public void  ClickToMovingDemon()
     {
-        Debug.Log("Boss Moving");
+        _champion.StopAttacking();
         _champion.SetMovement();
     }
 }
