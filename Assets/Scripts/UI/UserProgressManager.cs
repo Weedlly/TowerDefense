@@ -9,7 +9,8 @@ using System.IO;
 public class UserProgressManager: MonoBehaviour
 {
     void Awake(){
-        UIString.Instance.language =  PlayerPrefs.GetString("Language");
+        UIString temp = UIString.Instance;
+        ChampionSkillDescription temp2 = ChampionSkillDescription.Instance;
         if (File.Exists(Application.persistentDataPath + "/" + "User.xml")){
            User user = User.Instance;
         }

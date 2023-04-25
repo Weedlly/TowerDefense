@@ -1,7 +1,12 @@
+using UnityEngine;
 
 public class UIString: Singleton<UIString>
 {
     public string language = "en";
+
+    void Start(){
+        language = PlayerPrefs.GetString("Language");
+    }
 
     public string startBtnText
     {
@@ -166,6 +171,29 @@ public class UIString: Singleton<UIString>
             {
                 case "vn": return "Lưu";
                 default: return "Save";
+            }
+        }
+    }
+
+    public string skillTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Kỹ năng";
+                default : return "Skill";
+            }
+        }
+    }
+    public string skillDescTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Mô tả";
+                default: return "Description";
             }
         }
     }

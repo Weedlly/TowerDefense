@@ -96,4 +96,28 @@ public class User : Singleton<User>
         }
         return false;
     }
+
+    public ChampionData getSelectedHero()
+    {
+        int id = 0;
+        foreach(var i in _data.championData){
+            if (i.championId == id) return i;
+        }
+        return null;
+    }
+
+    public int getHeroExp(int id){
+        foreach(var i in _data.championData){
+            if (i.championId == id) return i.experiencePercent;
+        }
+        return -1;
+    }
+
+    public int getHeroLevel(int id){
+        foreach(var i in _data.championData){
+            if (i.championId == id) return i.level;
+        }
+        return -1;
+    }
+
 }
