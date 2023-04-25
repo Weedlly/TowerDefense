@@ -14,17 +14,8 @@ public class DemonSkill : MonoBehaviour
 
     #endregion
 
-    //public GameObject _prefabFireRain;
-
-    //[SerializeField] protected Player _target;
-
     //Fire Rain Skill
-    //[SerializeField] private Animator _animatorActiceSkill;
     [SerializeField] private FireRain FR_Skill;
-
-    //public bool IsDeloyActiveSkill { get; private set; }
-
-    //[SerializeField] private SpriteRenderer _characterRenderer, _skillRenderer;
     [SerializeField] private Vector2 _pointerPosition { get; set; }
 
     public float delayActiveSkill = 2f;
@@ -57,7 +48,6 @@ public class DemonSkill : MonoBehaviour
             {
                 deploy = false;
                 FireRain fr = Instantiate(FR_Skill, lastClickedPos , Quaternion.identity);
-                Debug.Log("Deploy SKill");
                 Destroy(fr.gameObject, 0.6f);
                 return true;
             }

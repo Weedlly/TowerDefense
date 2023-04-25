@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum DemonBehavior {
+    Idle,
+    Moving,
+    Attack,
+    DeploySkill
+}
+
 public class DemonChampion : Evil
 {
     Vector2 lastClickedPos;
@@ -13,12 +20,6 @@ public class DemonChampion : Evil
     public static bool _isChampEmployActiveSkill;
 
     private bool _setMoving = false;
-    // new void Start()
-    // {
-    //     base.Start();
-    //     _maxMeleeCompetitor = 1;
-    //     BattleControler.AddEvil(this);
-    // }
 
     new void Update()
     {
@@ -54,6 +55,18 @@ public class DemonChampion : Evil
             }
         }
         
+    }
+
+    public void StopAttacking()
+    {
+        //Stop attacking then moving
+        _target = null;
+        _animator.SetBool("isAttack", false);
+    }
+
+    public void StopDeploySkill()
+    {
+       //Stopping skill
     }
 
     public void SetMovement()
