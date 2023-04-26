@@ -197,4 +197,16 @@ public class UIString: Singleton<UIString>
             }
         }
     }
+
+    public string enemyTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Kẻ thù";
+                default: return "Enemy";
+            }
+        }
+    }
 }

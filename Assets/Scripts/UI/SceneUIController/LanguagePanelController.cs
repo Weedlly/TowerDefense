@@ -14,7 +14,6 @@ public class LanguagePanelController : MonoBehaviour
     public void langToVietnamese(){
         PlayerPrefs.SetString("Language", "vn");
         UIString.Instance.language = "vn";
-        StageString.Instance.language = "vn";
         ChampionSkillDescription.Instance.language = "vn";
         GlobalValue.Instance.nextScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(1);
@@ -23,7 +22,6 @@ public class LanguagePanelController : MonoBehaviour
     public void langToEnglish(){
         PlayerPrefs.SetString("Language", "en");
         UIString.Instance.language = "en";
-        StageString.Instance.language = "en";
         ChampionSkillDescription.Instance.language = "en";
         GlobalValue.Instance.nextScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(1);
