@@ -7,7 +7,7 @@ public enum SkillTypeEnum{
     InsticSkill
 }
 
-public class NightBorneSkill : MonoBehaviour  //Client
+public class NightBorneSkill : MonoBehaviour  
 { 
     #region variables
         public SkillTypeEnum skillType;       
@@ -35,7 +35,7 @@ public class NightBorneSkill : MonoBehaviour  //Client
     private float delayActiveSkill = 2f;
     private bool attackBlocked;
     
-    private static Context context = new Context();
+    private static ListSkill ListSkill = new ListSkill();
 
     public void ResetIsDeloySkill()
     {
@@ -64,7 +64,7 @@ public class NightBorneSkill : MonoBehaviour  //Client
             attackBlocked = true;
             _animatorActiceSkill.SetTrigger("Attack");
                        
-            context.DeloySkill(_prefabHellfire ,this.transform, _target);
+            ListSkill.DeloySkill(_prefabHellfire ,this.transform, _target);
 
             _animatorActiceSkill.SetTrigger("Attack");
 
@@ -81,7 +81,7 @@ public class NightBorneSkill : MonoBehaviour  //Client
             //_animatorActiceSkill.SetBool("isDeployment", false);
             _animatorInsticSkill.SetBool("Attack", true);
 
-            context.DeloySkill(_prefabBurneSkill,this.transform, _target);   
+            ListSkill.DeloySkill(_prefabBurneSkill,this.transform, _target);   
             
             _animatorInsticSkill.SetBool("Attack", false);
             UnityEngine.Object.Destroy(this.gameObject, 0.4f);      
@@ -95,12 +95,12 @@ public class NightBorneSkill : MonoBehaviour  //Client
 		switch(skillType){		
 			case SkillTypeEnum.ActiveSkill:
 				iSkillable = gameObject.AddComponent<ActiveSkill>();
-                context.SetContext(iSkillable);  
+                ListSkill.SetListSkill(iSkillable);  
 				break;
 				
 			case SkillTypeEnum.InsticSkill:
 				iSkillable = gameObject.AddComponent<InsticSkill> ();  
-                context.SetContext(iSkillable);  
+                ListSkill.SetListSkill(iSkillable);  
                        
 				break;
 				
@@ -158,12 +158,12 @@ public class NightBorneSkill : MonoBehaviour  //Client
     }
 }
 
-public class Context
+public class ListSkill
 {
     private ISkillable _iSkillable;
 
     // Constructor
-    public void SetContext(ISkillable iSkillable)
+    public void SetListSkill(ISkillable iSkillable)
     {
         this._iSkillable = iSkillable;
     }

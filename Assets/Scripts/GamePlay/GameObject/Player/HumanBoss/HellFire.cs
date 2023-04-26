@@ -12,8 +12,8 @@ public class HellFire : MonoBehaviour
     private float _movingSpeed = 4f;
 
     protected float _angle;
-
     protected bool _isTargetExist = false;
+
     void Start()
     {
     }
@@ -53,7 +53,7 @@ public class HellFire : MonoBehaviour
     }
 
     virtual protected void Rotate(){
-        transform.Rotate(0f,0f,_angle); 
+        transform.Rotate(0f ,0f ,_angle); 
     }
     
     private void DameByExplored()
