@@ -27,11 +27,6 @@ public class StageListData{
 public class StageData{
     [XmlAttribute(AttributeName = "stageId")]
     public int stageId;
-
-    [XmlArray(ElementName = "UnitList")]
-    [XmlArrayItem(ElementName = "Unit")]
-    public List<UnitData> unitList;
-
     [XmlArray(ElementName = "GateList")]
     [XmlArrayItem(ElementName = "Gate")]
     public List<GateData> gateList;

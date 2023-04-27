@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StageList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Stage stageId="0">
-    <UnitList />
+  <Stage stageId="1">
     <GateList>
       <Gate gateId="0">
         <PointList>
@@ -318,7 +317,6 @@
             <Number>5</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
       <Wave>
         <SubwaveList>
@@ -335,7 +333,6 @@
             <Number>7</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
       <Wave>
         <SubwaveList>
@@ -358,12 +355,10 @@
             <Number>7</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
     </WaveList>
   </Stage>
-  <Stage stageId="1">
-    <UnitList />
+  <Stage stageId="2">
     <GateList>
       <Gate gateId="0">
         <PointList>
@@ -1176,7 +1171,6 @@
             <Number>5</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
       <Wave>
         <SubwaveList>
@@ -1199,7 +1193,6 @@
             <Number>5</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
       <Wave>
         <SubwaveList>
@@ -1234,104 +1227,528 @@
             <Number>5</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
-      </Wave>
-    </WaveList>
-  </Stage>
-  <Stage stageId="2">
-    <UnitList />
-    <GateList>
-      <Gate gateId="0">
-        <PointList>
-          <Point>
-            <X>1</X>
-            <Y>1</Y>
-          </Point>
-        </PointList>
-      </Gate>
-    </GateList>
-    <TowerPlaceList>
-      <TowerPlace towerPlaceId="0">
-        <X>1</X>
-        <Y>1</Y>
-      </TowerPlace>
-    </TowerPlaceList>
-    <WaveList>
-      <Wave>
-        <SubwaveList>
-          <Subwave subwaveId="0">
-            <AppearTime>0</AppearTime>
-            <GateId>0</GateId>
-            <UnitID>0</UnitID>
-            <Number>5</Number>
-          </Subwave>
-          <Subwave subwaveId="1">
-            <AppearTime>5</AppearTime>
-            <GateId>0</GateId>
-            <UnitID>1</UnitID>
-            <Number>5</Number>
-          </Subwave>
-        </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
-      </Wave>
-      <Wave>
-        <SubwaveList>
-          <Subwave subwaveId="0">
-            <AppearTime>0</AppearTime>
-            <GateId>0</GateId>
-            <UnitID>1</UnitID>
-            <Number>7</Number>
-          </Subwave>
-          <Subwave subwaveId="1">
-            <AppearTime>5</AppearTime>
-            <GateId>0</GateId>
-            <UnitID>0</UnitID>
-            <Number>7</Number>
-          </Subwave>
-        </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
-      </Wave>
-      <Wave>
-        <SubwaveList>
-          <Subwave subwaveId="0">
-            <AppearTime>0</AppearTime>
-            <GateId>0</GateId>
-            <UnitID>0</UnitID>
-            <Number>7</Number>
-          </Subwave>
-          <Subwave subwaveId="1">
-            <AppearTime>5</AppearTime>
-            <GateId>0</GateId>
-            <UnitID>1</UnitID>
-            <Number>7</Number>
-          </Subwave>
-          <Subwave subwaveId="2">
-            <AppearTime>10</AppearTime>
-            <GateId>0</GateId>
-            <UnitID>0</UnitID>
-            <Number>7</Number>
-          </Subwave>
-        </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
     </WaveList>
   </Stage>
   <Stage stageId="3">
-    <UnitList />
     <GateList>
       <Gate gateId="0">
         <PointList>
           <Point>
-            <X>1</X>
-            <Y>1</Y>
+            <X>-27.9225178</X>
+            <Y>0.436425358</Y>
+          </Point>
+          <Point>
+            <X>-27.310009</X>
+            <Y>0.436425358</Y>
+          </Point>
+          <Point>
+            <X>-26.4678116</X>
+            <Y>0.436425358</Y>
+          </Point>
+          <Point>
+            <X>-25.3193588</X>
+            <Y>0.9723686</Y>
+          </Point>
+          <Point>
+            <X>-24.170908</X>
+            <Y>1.50831282</Y>
+          </Point>
+          <Point>
+            <X>-23.1755848</X>
+            <Y>2.12082</Y>
+          </Point>
+          <Point>
+            <X>-21.95057</X>
+            <Y>2.80989265</Y>
+          </Point>
+          <Point>
+            <X>-20.64899</X>
+            <Y>3.6520896</Y>
+          </Point>
+          <Point>
+            <X>-19.347414</X>
+            <Y>4.03490734</Y>
+          </Point>
+          <Point>
+            <X>-18.0458336</X>
+            <Y>4.87710476</Y>
+          </Point>
+          <Point>
+            <X>-16.82082</X>
+            <Y>5.64274025</Y>
+          </Point>
+          <Point>
+            <X>-15.9786205</X>
+            <Y>5.94899273</Y>
+          </Point>
+          <Point>
+            <X>-14.677042</X>
+            <Y>6.255247</Y>
+          </Point>
+          <Point>
+            <X>-13.3089447</X>
+            <Y>7.05414438</Y>
+          </Point>
+          <Point>
+            <X>-12.1050606</X>
+            <Y>7.85673571</Y>
+          </Point>
+          <Point>
+            <X>-10.9814339</X>
+            <Y>8.338291</Y>
+          </Point>
+          <Point>
+            <X>-9.617031</X>
+            <Y>8.819843</Y>
+          </Point>
+          <Point>
+            <X>-7.93159246</X>
+            <Y>8.980362</Y>
+          </Point>
+          <Point>
+            <X>-5.36330366</X>
+            <Y>9.622435</Y>
+          </Point>
+          <Point>
+            <X>-3.03579283</X>
+            <Y>9.782951</Y>
+          </Point>
+          <Point>
+            <X>-0.3872447</X>
+            <Y>9.863211</Y>
+          </Point>
+          <Point>
+            <X>1.94026637</X>
+            <Y>9.863211</Y>
+          </Point>
+          <Point>
+            <X>4.187518</X>
+            <Y>9.863211</Y>
+          </Point>
+          <Point>
+            <X>6.83606434</X>
+            <Y>9.863211</Y>
+          </Point>
+          <Point>
+            <X>8.9228</X>
+            <Y>9.622435</Y>
+          </Point>
+          <Point>
+            <X>10.0464249</X>
+            <Y>7.85673571</Y>
+          </Point>
+          <Point>
+            <X>10.2069435</X>
+            <Y>5.77000046</Y>
+          </Point>
+          <Point>
+            <X>10.2069435</X>
+            <Y>3.84378481</Y>
+          </Point>
+          <Point>
+            <X>11.250309</X>
+            <Y>2.55964136</Y>
+          </Point>
+          <Point>
+            <X>12.13316</X>
+            <Y>1.7570498</Y>
+          </Point>
+          <Point>
+            <X>13.2567844</X>
+            <Y>0.232129812</Y>
+          </Point>
+          <Point>
+            <X>13.4173031</X>
+            <Y>-1.37305093</Y>
+          </Point>
+          <Point>
+            <X>12.0529</X>
+            <Y>-3.37952638</Y>
+          </Point>
+          <Point>
+            <X>10.9292755</X>
+            <Y>-4.66367054</Y>
+          </Point>
+          <Point>
+            <X>10.1266842</X>
+            <Y>-5.947814</Y>
+          </Point>
+          <Point>
+            <X>10.2069435</X>
+            <Y>-7.55299473</Y>
+          </Point>
+          <Point>
+            <X>11.1700535</X>
+            <Y>-9.077915</Y>
+          </Point>
+          <Point>
+            <X>13.0962677</X>
+            <Y>-10.2818012</Y>
+          </Point>
+          <Point>
+            <X>15.42378</X>
+            <Y>-10.2015419</Y>
+          </Point>
+          <Point>
+            <X>18.9551773</X>
+            <Y>-10.2818012</Y>
+          </Point>
+          <Point>
+            <X>21.3629456</X>
+            <Y>-10.44232</Y>
+          </Point>
+          <Point>
+            <X>23.610199</X>
+            <Y>-10.44232</Y>
+          </Point>
+          <Point>
+            <X>26.4995232</X>
+            <Y>-10.6028366</Y>
+          </Point>
+          <Point>
+            <X>27.9441853</X>
+            <Y>-10.6028366</Y>
+          </Point>
+        </PointList>
+      </Gate>
+      <Gate gateId="1">
+        <PointList>
+          <Point>
+            <X>-8.172369</X>
+            <Y>-15.89993</Y>
+          </Point>
+          <Point>
+            <X>-8.332887</X>
+            <Y>-15.01708</Y>
+          </Point>
+          <Point>
+            <X>-8.81444</X>
+            <Y>-13.0106058</Y>
+          </Point>
+          <Point>
+            <X>-9.61703</X>
+            <Y>-11.5659428</Y>
+          </Point>
+          <Point>
+            <X>-10.1788425</X>
+            <Y>-10.5225763</Y>
+          </Point>
+          <Point>
+            <X>-11.3024693</X>
+            <Y>-9.158174</Y>
+          </Point>
+          <Point>
+            <X>-12.426096</X>
+            <Y>-7.79377</Y>
+          </Point>
+          <Point>
+            <X>-13.2286873</X>
+            <Y>-6.188589</Y>
+          </Point>
+          <Point>
+            <X>-13.7102394</X>
+            <Y>-4.021596</Y>
+          </Point>
+          <Point>
+            <X>-13.8707581</X>
+            <Y>-2.33615685</Y>
+          </Point>
+          <Point>
+            <X>-14.0312767</X>
+            <Y>-0.730977058</Y>
+          </Point>
+          <Point>
+            <X>-14.9141264</X>
+            <Y>1.4360168</Y>
+          </Point>
+          <Point>
+            <X>-14.9141264</X>
+            <Y>2.960937</Y>
+          </Point>
+          <Point>
+            <X>-14.8338671</X>
+            <Y>4.164822</Y>
+          </Point>
+          <Point>
+            <X>-14.111536</X>
+            <Y>5.850261</Y>
+          </Point>
+          <Point>
+            <X>-13.7102394</X>
+            <Y>6.97388744</Y>
+          </Point>
+          <Point>
+            <X>-11.9445419</X>
+            <Y>8.418551</Y>
+          </Point>
+          <Point>
+            <X>-10.49988</X>
+            <Y>8.739586</Y>
+          </Point>
+          <Point>
+            <X>-7.85133171</X>
+            <Y>9.22114</Y>
+          </Point>
+          <Point>
+            <X>-5.7646</X>
+            <Y>9.622437</Y>
+          </Point>
+          <Point>
+            <X>-3.35682774</X>
+            <Y>9.782953</Y>
+          </Point>
+          <Point>
+            <X>-0.78854084</X>
+            <Y>9.782953</Y>
+          </Point>
+          <Point>
+            <X>1.37845373</X>
+            <Y>9.782953</Y>
+          </Point>
+          <Point>
+            <X>3.465189</X>
+            <Y>9.622437</Y>
+          </Point>
+          <Point>
+            <X>5.792698</X>
+            <Y>9.622437</Y>
+          </Point>
+          <Point>
+            <X>8.120212</X>
+            <Y>9.702695</Y>
+          </Point>
+          <Point>
+            <X>9.484613</X>
+            <Y>9.702695</Y>
+          </Point>
+          <Point>
+            <X>10.0464287</X>
+            <Y>8.258032</Y>
+          </Point>
+          <Point>
+            <X>10.2872028</X>
+            <Y>6.010779</Y>
+          </Point>
+          <Point>
+            <X>10.3674622</X>
+            <Y>4.164822</Y>
+          </Point>
+          <Point>
+            <X>11.0095348</X>
+            <Y>2.88067818</Y>
+          </Point>
+          <Point>
+            <X>12.3739376</X>
+            <Y>1.83731055</Y>
+          </Point>
+          <Point>
+            <X>13.01601</X>
+            <Y>0.312390566</Y>
+          </Point>
+          <Point>
+            <X>13.4173031</X>
+            <Y>-0.8112358</Y>
+          </Point>
+          <Point>
+            <X>13.1765289</X>
+            <Y>-1.93486214</Y>
+          </Point>
+          <Point>
+            <X>11.2503128</X>
+            <Y>-4.26237345</Y>
+          </Point>
+          <Point>
+            <X>10.5279789</X>
+            <Y>-5.54651737</Y>
+          </Point>
+          <Point>
+            <X>10.2872028</X>
+            <Y>-6.99117947</Y>
+          </Point>
+          <Point>
+            <X>10.8490162</X>
+            <Y>-8.43584251</Y>
+          </Point>
+          <Point>
+            <X>11.8923817</X>
+            <Y>-9.39895</Y>
+          </Point>
+          <Point>
+            <X>13.6580811</X>
+            <Y>-9.880505</Y>
+          </Point>
+          <Point>
+            <X>16.0658531</X>
+            <Y>-10.20154</Y>
+          </Point>
+          <Point>
+            <X>19.51699</X>
+            <Y>-10.5225763</Y>
+          </Point>
+          <Point>
+            <X>22.2457924</X>
+            <Y>-10.6028357</Y>
+          </Point>
+          <Point>
+            <X>24.17201</X>
+            <Y>-10.6028357</Y>
+          </Point>
+          <Point>
+            <X>25.77719</X>
+            <Y>-10.6028357</Y>
+          </Point>
+          <Point>
+            <X>27.5428886</X>
+            <Y>-10.6028357</Y>
+          </Point>
+          <Point>
+            <X>27.9441814</X>
+            <Y>-10.6028357</Y>
+          </Point>
+        </PointList>
+      </Gate>
+      <Gate gateId="2">
+        <PointList>
+          <Point>
+            <X>11.5713387</X>
+            <Y>15.722126</Y>
+          </Point>
+          <Point>
+            <X>11.4108238</X>
+            <Y>14.0366859</Y>
+          </Point>
+          <Point>
+            <X>11.0897875</X>
+            <Y>12.1907291</Y>
+          </Point>
+          <Point>
+            <X>10.5279722</X>
+            <Y>10.6658077</Y>
+          </Point>
+          <Point>
+            <X>9.805644</X>
+            <Y>9.542181</Y>
+          </Point>
+          <Point>
+            <X>9.8859</X>
+            <Y>7.776483</Y>
+          </Point>
+          <Point>
+            <X>9.966158</X>
+            <Y>6.17130232</Y>
+          </Point>
+          <Point>
+            <X>10.3674545</X>
+            <Y>3.92404938</Y>
+          </Point>
+          <Point>
+            <X>12.0528936</X>
+            <Y>1.91757512</Y>
+          </Point>
+          <Point>
+            <X>13.1765194</X>
+            <Y>-0.008640528</Y>
+          </Point>
+          <Point>
+            <X>13.1765194</X>
+            <Y>-1.45330274</Y>
+          </Point>
+          <Point>
+            <X>12.2134123</X>
+            <Y>-3.0584836</Y>
+          </Point>
+          <Point>
+            <X>11.3305645</X>
+            <Y>-4.42288637</Y>
+          </Point>
+          <Point>
+            <X>10.5279722</X>
+            <Y>-5.385995</Y>
+          </Point>
+          <Point>
+            <X>10.5279722</X>
+            <Y>-6.9911747</Y>
+          </Point>
+          <Point>
+            <X>11.0897875</X>
+            <Y>-8.516096</Y>
+          </Point>
+          <Point>
+            <X>12.9357452</X>
+            <Y>-10.4423122</Y>
+          </Point>
+          <Point>
+            <X>16.5473976</X>
+            <Y>-10.4423122</Y>
+          </Point>
+          <Point>
+            <X>19.2761917</X>
+            <Y>-10.5225706</Y>
+          </Point>
+          <Point>
+            <X>20.8011131</X>
+            <Y>-10.5225706</Y>
+          </Point>
+          <Point>
+            <X>23.0483627</X>
+            <Y>-10.5225706</Y>
+          </Point>
+          <Point>
+            <X>25.05484</X>
+            <Y>-10.5225706</Y>
+          </Point>
+          <Point>
+            <X>26.6600189</X>
+            <Y>-10.5225706</Y>
+          </Point>
+          <Point>
+            <X>28.18494</X>
+            <Y>-10.7633467</Y>
           </Point>
         </PointList>
       </Gate>
     </GateList>
     <TowerPlaceList>
       <TowerPlace towerPlaceId="0">
-        <X>1</X>
-        <Y>1</Y>
+        <X>-15.4648867</X>
+        <Y>-11.3520737</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="1">
+        <X>0.06293823</X>
+        <Y>6.740651</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="2">
+        <X>20.40429</X>
+        <Y>-6.677208</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="3">
+        <X>8.187617</X>
+        <Y>-10.8646946</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="4">
+        <X>-7.864061</X>
+        <Y>-5.941165</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="5">
+        <X>-19.53711</X>
+        <Y>-2.3405242</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="6">
+        <X>-10.5129833</X>
+        <Y>2.66257668</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="7">
+        <X>16.65824</X>
+        <Y>7.108672</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="8">
+        <X>17.5379181</X>
+        <Y>0.195839047</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="9">
+        <X>-19.3295441</X>
+        <Y>2.54321837</Y>
       </TowerPlace>
     </TowerPlaceList>
     <WaveList>
@@ -1350,7 +1767,6 @@
             <Number>5</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
       <Wave>
         <SubwaveList>
@@ -1361,25 +1777,30 @@
             <Number>7</Number>
           </Subwave>
           <Subwave subwaveId="1">
+            <AppearTime>2</AppearTime>
+            <GateId>1</GateId>
+            <UnitID>0</UnitID>
+            <Number>7</Number>
+          </Subwave>
+          <Subwave subwaveId="2">
             <AppearTime>5</AppearTime>
-            <GateId>0</GateId>
+            <GateId>2</GateId>
             <UnitID>0</UnitID>
             <Number>7</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
       <Wave>
         <SubwaveList>
           <Subwave subwaveId="0">
             <AppearTime>0</AppearTime>
-            <GateId>0</GateId>
+            <GateId>2</GateId>
             <UnitID>0</UnitID>
             <Number>7</Number>
           </Subwave>
           <Subwave subwaveId="1">
             <AppearTime>5</AppearTime>
-            <GateId>0</GateId>
+            <GateId>1</GateId>
             <UnitID>1</UnitID>
             <Number>7</Number>
           </Subwave>
@@ -1390,12 +1811,10 @@
             <Number>7</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
     </WaveList>
   </Stage>
   <Stage stageId="4">
-    <UnitList />
     <GateList>
       <Gate gateId="0">
         <PointList>
@@ -2116,7 +2535,6 @@
             <Number>5</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
       <Wave>
         <SubwaveList>
@@ -2145,7 +2563,6 @@
             <Number>7</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
       </Wave>
       <Wave>
         <SubwaveList>
@@ -2176,8 +2593,8 @@
           <Subwave subwaveId="4">
             <AppearTime>7</AppearTime>
             <GateId>1</GateId>
-            <UnitID>2</UnitID>
-            <Number>1</Number>
+            <UnitID>1</UnitID>
+            <Number>7</Number>
           </Subwave>
           <Subwave subwaveId="5">
             <AppearTime>9</AppearTime>
@@ -2186,7 +2603,672 @@
             <Number>7</Number>
           </Subwave>
         </SubwaveList>
-        <totalTimeWave>0</totalTimeWave>
+      </Wave>
+    </WaveList>
+  </Stage>
+  <Stage stageId="5">
+    <GateList>
+      <Gate gateId="0">
+        <PointList>
+          <Point>
+            <X>-28.2485371</X>
+            <Y>0.17878294</Y>
+          </Point>
+          <Point>
+            <X>-26.7617416</X>
+            <Y>0.2613821</Y>
+          </Point>
+          <Point>
+            <X>-25.4401455</X>
+            <Y>0.0961833</Y>
+          </Point>
+          <Point>
+            <X>-24.1185513</X>
+            <Y>0.0961833</Y>
+          </Point>
+          <Point>
+            <X>-22.3839569</X>
+            <Y>0.0961833</Y>
+          </Point>
+          <Point>
+            <X>-20.4841652</X>
+            <Y>0.0961833</Y>
+          </Point>
+          <Point>
+            <X>-18.41917</X>
+            <Y>0.2613821</Y>
+          </Point>
+          <Point>
+            <X>-16.8497772</X>
+            <Y>0.17878294</Y>
+          </Point>
+          <Point>
+            <X>-14.619585</X>
+            <Y>0.17878294</Y>
+          </Point>
+          <Point>
+            <X>-12.96759</X>
+            <Y>0.17878294</Y>
+          </Point>
+          <Point>
+            <X>-10.5721989</X>
+            <Y>0.0961833</Y>
+          </Point>
+          <Point>
+            <X>-8.259406</X>
+            <Y>0.0961833</Y>
+          </Point>
+          <Point>
+            <X>-6.690012</X>
+            <Y>0.0961833</Y>
+          </Point>
+          <Point>
+            <X>-5.285817</X>
+            <Y>0.0961833</Y>
+          </Point>
+          <Point>
+            <X>-3.5512228</X>
+            <Y>-0.06901741</Y>
+          </Point>
+          <Point>
+            <X>-1.65142894</X>
+            <Y>-0.06901741</Y>
+          </Point>
+          <Point>
+            <X>-0.6602339</X>
+            <Y>-0.06901741</Y>
+          </Point>
+          <Point>
+            <X>-0.41243422</X>
+            <Y>1.66557646</Y>
+          </Point>
+          <Point>
+            <X>-0.577634</X>
+            <Y>4.30876875</Y>
+          </Point>
+          <Point>
+            <X>-0.577634</X>
+            <Y>5.217365</Y>
+          </Point>
+          <Point>
+            <X>-0.577634</X>
+            <Y>6.45636034</Y>
+          </Point>
+          <Point>
+            <X>-0.4950341</X>
+            <Y>8.521355</Y>
+          </Point>
+          <Point>
+            <X>-0.3298343</X>
+            <Y>10.0081482</Y>
+          </Point>
+          <Point>
+            <X>-0.164641947</X>
+            <Y>10.5863457</Y>
+          </Point>
+          <Point>
+            <X>-0.164641947</X>
+            <Y>11.90794</Y>
+          </Point>
+          <Point>
+            <X>-0.164641947</X>
+            <Y>13.6425343</Y>
+          </Point>
+          <Point>
+            <X>-0.164641947</X>
+            <Y>14.96413</Y>
+          </Point>
+          <Point>
+            <X>-0.164641947</X>
+            <Y>15.6249275</Y>
+          </Point>
+        </PointList>
+      </Gate>
+      <Gate gateId="1">
+        <PointList>
+          <Point>
+            <X>28.9104424</X>
+            <Y>0.261387825</Y>
+          </Point>
+          <Point>
+            <X>29.0756435</X>
+            <Y>0.0135896206</Y>
+          </Point>
+          <Point>
+            <X>28.0018444</X>
+            <Y>0.0135896206</Y>
+          </Point>
+          <Point>
+            <X>26.76285</X>
+            <Y>0.0135896206</Y>
+          </Point>
+          <Point>
+            <X>25.7716541</X>
+            <Y>0.178788424</Y>
+          </Point>
+          <Point>
+            <X>24.11966</X>
+            <Y>0.178788424</Y>
+          </Point>
+          <Point>
+            <X>22.7154617</X>
+            <Y>0.178788424</Y>
+          </Point>
+          <Point>
+            <X>21.8894672</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>20.4026718</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>18.9158783</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>17.5116825</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>16.272686</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>15.03369</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>12.8034964</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>11.5645018</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>10.2429075</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>8.673512</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>7.847518</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>6.691119</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>5.53472471</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>4.46092939</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>2.065536</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>0.909141243</X>
+            <Y>0.09618902</Y>
+          </Point>
+          <Point>
+            <X>0.0005442202</X>
+            <Y>0.261387825</Y>
+          </Point>
+          <Point>
+            <X>0.0005442202</X>
+            <Y>2.49158072</Y>
+          </Point>
+          <Point>
+            <X>-0.08205566</X>
+            <Y>3.647977</Y>
+          </Point>
+          <Point>
+            <X>-0.329855353</X>
+            <Y>5.465171</Y>
+          </Point>
+          <Point>
+            <X>-0.329855353</X>
+            <Y>6.786765</Y>
+          </Point>
+          <Point>
+            <X>-0.329855353</X>
+            <Y>7.86056232</Y>
+          </Point>
+          <Point>
+            <X>-0.495055169</X>
+            <Y>8.521359</Y>
+          </Point>
+          <Point>
+            <X>-0.495055169</X>
+            <Y>9.677755</Y>
+          </Point>
+          <Point>
+            <X>-0.164661169</X>
+            <Y>10.9993544</Y>
+          </Point>
+          <Point>
+            <X>-0.247261167</X>
+            <Y>12.8165483</Y>
+          </Point>
+          <Point>
+            <X>-0.247261167</X>
+            <Y>13.9729443</Y>
+          </Point>
+          <Point>
+            <X>-0.247261167</X>
+            <Y>14.5511417</Y>
+          </Point>
+          <Point>
+            <X>-0.247261167</X>
+            <Y>15.3771391</Y>
+          </Point>
+        </PointList>
+      </Gate>
+      <Gate gateId="2">
+        <PointList>
+          <Point>
+            <X>29.2408276</X>
+            <Y>-9.402775</Y>
+          </Point>
+          <Point>
+            <X>26.43244</X>
+            <Y>-9.402775</Y>
+          </Point>
+          <Point>
+            <X>25.1934414</X>
+            <Y>-9.402775</Y>
+          </Point>
+          <Point>
+            <X>23.8718472</X>
+            <Y>-9.402775</Y>
+          </Point>
+          <Point>
+            <X>22.63285</X>
+            <Y>-9.402775</Y>
+          </Point>
+          <Point>
+            <X>20.4852581</X>
+            <Y>-9.402775</Y>
+          </Point>
+          <Point>
+            <X>18.6680641</X>
+            <Y>-9.402775</Y>
+          </Point>
+          <Point>
+            <X>16.6030731</X>
+            <Y>-9.402775</Y>
+          </Point>
+          <Point>
+            <X>14.4554806</X>
+            <Y>-9.237576</Y>
+          </Point>
+          <Point>
+            <X>12.4730854</X>
+            <Y>-9.237576</Y>
+          </Point>
+          <Point>
+            <X>10.5732918</X>
+            <Y>-9.237576</Y>
+          </Point>
+          <Point>
+            <X>8.260502</X>
+            <Y>-9.402775</Y>
+          </Point>
+          <Point>
+            <X>6.19550848</X>
+            <Y>-11.2199688</Y>
+          </Point>
+          <Point>
+            <X>3.96531677</X>
+            <Y>-13.1197624</Y>
+          </Point>
+          <Point>
+            <X>0.6613283</X>
+            <Y>-13.6153593</Y>
+          </Point>
+          <Point>
+            <X>-1.48626518</X>
+            <Y>-13.5327606</Y>
+          </Point>
+          <Point>
+            <X>-3.716457</X>
+            <Y>-13.5327606</Y>
+          </Point>
+          <Point>
+            <X>-5.12065172</X>
+            <Y>-12.7067642</Y>
+          </Point>
+          <Point>
+            <X>-7.598643</X>
+            <Y>-11.0547695</Y>
+          </Point>
+          <Point>
+            <X>-9.168037</X>
+            <Y>-9.237576</Y>
+          </Point>
+          <Point>
+            <X>-9.333237</X>
+            <Y>-7.75078058</Y>
+          </Point>
+          <Point>
+            <X>-7.02044535</X>
+            <Y>-5.68578768</Y>
+          </Point>
+          <Point>
+            <X>-3.38605738</X>
+            <Y>-3.95119452</Y>
+          </Point>
+          <Point>
+            <X>-0.9906659</X>
+            <Y>-2.216599</Y>
+          </Point>
+          <Point>
+            <X>-0.164669037</X>
+            <Y>-0.5646064</Y>
+          </Point>
+          <Point>
+            <X>-0.164669037</X>
+            <Y>2.49158287</Y>
+          </Point>
+          <Point>
+            <X>-0.164669037</X>
+            <Y>5.382573</Y>
+          </Point>
+          <Point>
+            <X>-0.164669037</X>
+            <Y>9.182159</Y>
+          </Point>
+          <Point>
+            <X>-0.164676189</X>
+            <Y>10.2559643</Y>
+          </Point>
+          <Point>
+            <X>-0.164676189</X>
+            <Y>12.155757</Y>
+          </Point>
+          <Point>
+            <X>-0.164676189</X>
+            <Y>14.7989464</Y>
+          </Point>
+          <Point>
+            <X>-0.164676189</X>
+            <Y>15.790144</Y>
+          </Point>
+        </PointList>
+      </Gate>
+      <Gate gateId="3">
+        <PointList>
+          <Point>
+            <X>-29.57019</X>
+            <Y>-9.733162</Y>
+          </Point>
+          <Point>
+            <X>-23.37521</X>
+            <Y>-9.733162</Y>
+          </Point>
+          <Point>
+            <X>-20.6494179</X>
+            <Y>-9.898362</Y>
+          </Point>
+          <Point>
+            <X>-18.1714268</X>
+            <Y>-9.898362</Y>
+          </Point>
+          <Point>
+            <X>-15.3630371</X>
+            <Y>-9.898362</Y>
+          </Point>
+          <Point>
+            <X>-12.6372471</X>
+            <Y>-9.898362</Y>
+          </Point>
+          <Point>
+            <X>-9.994056</X>
+            <Y>-9.898362</Y>
+          </Point>
+          <Point>
+            <X>-8.342061</X>
+            <Y>-9.898362</Y>
+          </Point>
+          <Point>
+            <X>-6.0292697</X>
+            <Y>-11.4677563</Y>
+          </Point>
+          <Point>
+            <X>-3.63387632</X>
+            <Y>-13.119751</Y>
+          </Point>
+          <Point>
+            <X>0.2483077</X>
+            <Y>-13.4501505</Y>
+          </Point>
+          <Point>
+            <X>3.22189617</X>
+            <Y>-13.4501505</Y>
+          </Point>
+          <Point>
+            <X>4.873891</X>
+            <Y>-12.7067528</Y>
+          </Point>
+          <Point>
+            <X>6.443285</X>
+            <Y>-11.5503559</Y>
+          </Point>
+          <Point>
+            <X>8.425679</X>
+            <Y>-10.393961</Y>
+          </Point>
+          <Point>
+            <X>8.673478</X>
+            <Y>-9.567964</Y>
+          </Point>
+          <Point>
+            <X>8.838679</X>
+            <Y>-8.659367</Y>
+          </Point>
+          <Point>
+            <X>7.104084</X>
+            <Y>-6.92477226</Y>
+          </Point>
+          <Point>
+            <X>5.86508942</X>
+            <Y>-4.942379</Y>
+          </Point>
+          <Point>
+            <X>4.04789543</X>
+            <Y>-3.70338345</Y>
+          </Point>
+          <Point>
+            <X>2.89150047</X>
+            <Y>-3.12518525</Y>
+          </Point>
+          <Point>
+            <X>0.5787077</X>
+            <Y>-2.5469873</Y>
+          </Point>
+          <Point>
+            <X>0.2483077</X>
+            <Y>-1.1427927</Y>
+          </Point>
+          <Point>
+            <X>0.08310795</X>
+            <Y>1.417798</Y>
+          </Point>
+          <Point>
+            <X>0.0005042553</X>
+            <Y>3.15239143</Y>
+          </Point>
+          <Point>
+            <X>-0.24729538</X>
+            <Y>5.795583</Y>
+          </Point>
+          <Point>
+            <X>-0.24729538</X>
+            <Y>8.273574</Y>
+          </Point>
+          <Point>
+            <X>-0.24729538</X>
+            <Y>10.3385677</Y>
+          </Point>
+          <Point>
+            <X>-0.329895258</X>
+            <Y>12.7339573</Y>
+          </Point>
+          <Point>
+            <X>-0.24729538</X>
+            <Y>15.37715</Y>
+          </Point>
+          <Point>
+            <X>-0.24729538</X>
+            <Y>15.9553471</Y>
+          </Point>
+        </PointList>
+      </Gate>
+    </GateList>
+    <TowerPlaceList>
+      <TowerPlace towerPlaceId="0">
+        <X>-2.73424459</X>
+        <Y>-8.477529</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="1">
+        <X>2.84035325</X>
+        <Y>-8.457636</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="2">
+        <X>12.2400732</X>
+        <Y>-4.538706</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="3">
+        <X>-13.7747154</X>
+        <Y>-4.37956142</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="4">
+        <X>5.074146</X>
+        <Y>4.184395</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="5">
+        <X>16.07508</X>
+        <Y>3.97551775</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="6">
+        <X>20.8787251</X>
+        <Y>-4.29998875</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="7">
+        <X>-19.53711</X>
+        <Y>-2.3405242</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="8">
+        <X>-6.183774</X>
+        <Y>4.1446085</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="9">
+        <X>-17.5504189</X>
+        <Y>4.15455532</Y>
+      </TowerPlace>
+    </TowerPlaceList>
+    <WaveList>
+      <Wave>
+        <SubwaveList>
+          <Subwave subwaveId="0">
+            <AppearTime>0</AppearTime>
+            <GateId>2</GateId>
+            <UnitID>0</UnitID>
+            <Number>10</Number>
+          </Subwave>
+          <Subwave subwaveId="1">
+            <AppearTime>5</AppearTime>
+            <GateId>3</GateId>
+            <UnitID>1</UnitID>
+            <Number>10</Number>
+          </Subwave>
+        </SubwaveList>
+      </Wave>
+      <Wave>
+        <SubwaveList>
+          <Subwave subwaveId="0">
+            <AppearTime>0</AppearTime>
+            <GateId>0</GateId>
+            <UnitID>1</UnitID>
+            <Number>7</Number>
+          </Subwave>
+          <Subwave subwaveId="1">
+            <AppearTime>5</AppearTime>
+            <GateId>1</GateId>
+            <UnitID>0</UnitID>
+            <Number>7</Number>
+          </Subwave>
+          <Subwave subwaveId="2">
+            <AppearTime>5</AppearTime>
+            <GateId>2</GateId>
+            <UnitID>1</UnitID>
+            <Number>7</Number>
+          </Subwave>
+          <Subwave subwaveId="3">
+            <AppearTime>5</AppearTime>
+            <GateId>3</GateId>
+            <UnitID>1</UnitID>
+            <Number>7</Number>
+          </Subwave>
+        </SubwaveList>
+      </Wave>
+      <Wave>
+        <SubwaveList>
+          <Subwave subwaveId="0">
+            <AppearTime>0</AppearTime>
+            <GateId>1</GateId>
+            <UnitID>0</UnitID>
+            <Number>5</Number>
+          </Subwave>
+          <Subwave subwaveId="1">
+            <AppearTime>5</AppearTime>
+            <GateId>0</GateId>
+            <UnitID>1</UnitID>
+            <Number>5</Number>
+          </Subwave>
+          <Subwave subwaveId="2">
+            <AppearTime>10</AppearTime>
+            <GateId>2</GateId>
+            <UnitID>0</UnitID>
+            <Number>7</Number>
+          </Subwave>
+        </SubwaveList>
+      </Wave>
+      <Wave>
+        <SubwaveList>
+          <Subwave subwaveId="0">
+            <AppearTime>0</AppearTime>
+            <GateId>0</GateId>
+            <UnitID>0</UnitID>
+            <Number>7</Number>
+          </Subwave>
+          <Subwave subwaveId="1">
+            <AppearTime>5</AppearTime>
+            <GateId>0</GateId>
+            <UnitID>1</UnitID>
+            <Number>7</Number>
+          </Subwave>
+          <Subwave subwaveId="2">
+            <AppearTime>10</AppearTime>
+            <GateId>2</GateId>
+            <UnitID>2</UnitID>
+            <Number>1</Number>
+          </Subwave>
+          <Subwave subwaveId="3">
+            <AppearTime>10</AppearTime>
+            <GateId>0</GateId>
+            <UnitID>0</UnitID>
+            <Number>7</Number>
+          </Subwave>
+        </SubwaveList>
       </Wave>
     </WaveList>
   </Stage>
