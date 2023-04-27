@@ -10,6 +10,8 @@ public enum DemonBehavior {
     DeploySkill
 }
 
+private DemonBehavior behavior;
+
 public class DemonChampion : Evil
 {
     Vector2 lastClickedPos;
@@ -24,6 +26,28 @@ public class DemonChampion : Evil
     new void Update()
     {
         base.Update();
+        switch (behavior)
+        {
+            case DemonBehavior.Idle:
+                DirectionCorrection();
+
+            case DemonBehavior.Moving:
+                MoveDefault();
+
+            case DemonBehavior.Attack:
+                _maxMeleeCompetitor = 1;
+                BattleControler.AddEvil(this);
+
+            case DemonBehavior.DemonSkill:
+                
+
+            default:
+        }
+        
+    }
+
+    public void DirectionCorrection()
+    {
         if(transform.position.x > _lastPosition.x){
             _spriteRenderer.flipX = true;
         }
@@ -69,8 +93,19 @@ public class DemonChampion : Evil
        //Stopping skill
     }
 
+    public void Idle()
+    {
+
+    }
+
     public void SetMovement()
     {
+        this._animator.SetBool("isAttack", false);
+        Debug.log("is click to move");
         _setMoving = true;
+    }
+
+    public DemonBehavior CurrentBehavior {
+        get { return crrentBehavior; }
     }
 }

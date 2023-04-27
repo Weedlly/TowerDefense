@@ -37,9 +37,6 @@ public class BossMelee : Human
             this._animator.SetBool("isAttack",false);
 
             EmploySkill();
-
-            // _isBossEmployInsticSkill = false;
-            // _isBossEmploySkill = false;
              
         }
         else if((_health <= healthToDesploySkill && _health > minHealth) && _target != null)
