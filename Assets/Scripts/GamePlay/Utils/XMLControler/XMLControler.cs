@@ -55,11 +55,13 @@ public class XMLControler : MonoBehaviour
             XmlSerializer xs = new XmlSerializer(typeof(T));
             TextWriter tw = new StreamWriter(Application.persistentDataPath + "/" + filename);
             xs.Serialize(tw, dataList);
+            tw.Close();
             return true;
         }
         catch(Exception e){
             Debug.LogError("Exception write  down xml file " + filename +": " + e);
         }
+       
         return false;
     }
     //khoi update
