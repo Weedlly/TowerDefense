@@ -209,4 +209,16 @@ public class UIString: Singleton<UIString>
             }
         }
     }
+
+    public string stageText 
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Màn";
+                default: return "Stage";
+            }
+        }
+    }
 }

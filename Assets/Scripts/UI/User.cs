@@ -69,16 +69,18 @@ public class User : Singleton<User>
     }
 
     public CompletetedStageData getStageData(int id){
-        foreach (var i in _data.completetedStageList){
-            if (i.completetedStageId == id) return i;
-        }
+        if (_data.completetedStageList != null) 
+            foreach (var i in _data.completetedStageList){
+                if (i.completetedStageId == id) return i;
+            }
         return null;
     }
 
     public int getTowerLevelById(int id){
-        foreach (var i in _data.towerUpdateList){
-            if (i.towerUpdateId == id) return i.level;
-        }
+        if (_data.towerUpdateList != null)
+            foreach (var i in _data.towerUpdateList){
+                if (i.towerUpdateId == id) return i.level;
+            }
         return 0;
     }
 
@@ -100,23 +102,26 @@ public class User : Singleton<User>
     public ChampionData getSelectedHero()
     {
         int id = 0;
-        foreach(var i in _data.championData){
-            if (i.championId == id) return i;
-        }
+        if (_data.championData != null)
+            foreach(var i in _data.championData){
+                if (i.championId == id) return i;
+            }
         return null;
     }
 
     public int getHeroExp(int id){
-        foreach(var i in _data.championData){
-            if (i.championId == id) return i.experiencePercent;
-        }
+        if (_data.championData != null)
+            foreach(var i in _data.championData){
+                if (i.championId == id) return i.experiencePercent;
+            }
         return -1;
     }
 
     public int getHeroLevel(int id){
-        foreach(var i in _data.championData){
-            if (i.championId == id) return i.level;
-        }
+        if (_data.championData != null)
+            foreach(var i in _data.championData){
+                if (i.championId == id) return i.level;
+            }
         return -1;
     }
 
