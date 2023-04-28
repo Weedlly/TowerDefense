@@ -7,7 +7,6 @@ public class BtnDemonInsticSkill : MonoBehaviour
 {
     [SerializeField] private DemonSkill _champSkill;
     
-
     void Start()
     {  
         Button btn = gameObject.GetComponent<Button>();

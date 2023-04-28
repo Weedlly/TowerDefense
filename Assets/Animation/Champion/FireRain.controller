@@ -49,7 +49,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fire_Totem-full_Sheet_49
+  m_Name: FireRain
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isDeploySkill

@@ -88,7 +88,7 @@ public class Player : MonoBehaviour,IInformationToBoard
                 MoveDefault();
             }
         }
-        
+     
     }
     bool IsTargetActive(){
         

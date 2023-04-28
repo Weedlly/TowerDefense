@@ -81,6 +81,8 @@ public class BattleControler : MonoBehaviour {
         _humans.RemoveAll(IsPlayerDeadActive);
         _humans.RemoveAll(IsPlayerDie);
     }
+
+    
     private void Update() {
         RunningBattle();
     }
