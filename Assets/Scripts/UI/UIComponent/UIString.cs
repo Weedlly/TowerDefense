@@ -233,4 +233,40 @@ public class UIString: Singleton<UIString>
             }
         }
     }
+
+    public string championTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Danh sách tướng";
+                default: return "Champion list";
+            }
+        }
+    }
+
+    public string statTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông số";
+                default: return "Stat";
+            }
+        }
+    }
+
+    public string championBtnText
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Tướng";
+                default: return "Champion";
+            }
+        }
+    }
 }
