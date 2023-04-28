@@ -15,6 +15,7 @@ public class LanguagePanelController : MonoBehaviour
         PlayerPrefs.SetString("Language", "vn");
         UIString.Instance.language = "vn";
         ChampionSkillDescription.Instance.language = "vn";
+        EnemyTowerDesc.Instance.language = "vn";
         GlobalValue.Instance.nextScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(1);
     }
@@ -23,6 +24,7 @@ public class LanguagePanelController : MonoBehaviour
         PlayerPrefs.SetString("Language", "en");
         UIString.Instance.language = "en";
         ChampionSkillDescription.Instance.language = "en";
+        EnemyTowerDesc.Instance.language = "en";
         GlobalValue.Instance.nextScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(1);
     }

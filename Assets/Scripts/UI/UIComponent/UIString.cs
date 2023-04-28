@@ -204,8 +204,8 @@ public class UIString: Singleton<UIString>
         {
             switch(language)
             {
-                case "vn": return "Kẻ thù";
-                default: return "Enemy";
+                case "vn": return "Thông tin kẻ thù";
+                default: return "Enemy information";
             }
         }
     }
@@ -218,6 +218,18 @@ public class UIString: Singleton<UIString>
             {
                 case "vn": return "Màn";
                 default: return "Stage";
+            }
+        }
+    }
+
+    public string towerTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông tin tháp";
+                default: return "Tower infromation";
             }
         }
     }
