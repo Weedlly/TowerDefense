@@ -46,7 +46,7 @@ public class User : Singleton<User>
         return _data.currentStar;
     }
 
-    public void StageSuccess(int id, int star, GameObjectEnum.DifficultyTypeEnum difficulty){
+    public void StageSuccess(int id, int star, DifficultyTypeEnum difficulty){
         for(int i = 0; i <=  _data.completetedStageList.Count; i++){
             if (_data.completetedStageList[i].completetedStageId == id){
                 _data.completetedStageList[i].difficulty = difficulty.ToString();

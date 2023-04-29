@@ -9,6 +9,7 @@ public class StageLoader : MonoBehaviour
     [SerializeField] int _stageId;
     public void updateStageId(){
         GlobalValue.Instance.stageId = _stageId;
+        GlobalValue.Instance.StageDifficulty = DifficultyTypeEnum.Normal;
         //SceneManager.LoadScene(2);
     }
 

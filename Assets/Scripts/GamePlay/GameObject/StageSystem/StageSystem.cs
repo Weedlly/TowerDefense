@@ -19,7 +19,7 @@ public class StageSystem : MonoBehaviour
     [SerializeField] private float _spawnWaveInterval;
     [SerializeField] private List<ObjectPooler> _poolers = new List<ObjectPooler>();
     [SerializeField] private List<GameObject> _callWaveBt;
-
+    [SerializeField] private MapController _mapController;
 
     private StageData _stageData;
     private WaveData _currentWaveData;
@@ -34,6 +34,9 @@ public class StageSystem : MonoBehaviour
 
     private void Start() {
         _stageId = GlobalValue.Instance.stageId;
+
+        _mapController.ActiveMap(_stageId);
+
         MappingStageData(_stageId,"");
 
         GameControl.CurrentWave = 1;

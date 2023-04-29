@@ -2743,7 +2743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1c132f7c4d47847a0835235442fef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stageId: 2
+  _stageId: 3
   _star1: {fileID: 1917539852}
   _star2: {fileID: 208453161}
   _star3: {fileID: 1729184445}
@@ -6690,7 +6690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1c132f7c4d47847a0835235442fef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stageId: 4
+  _stageId: 5
   _star1: {fileID: 231528045}
   _star2: {fileID: 1415407556}
   _star3: {fileID: 546158453}
@@ -10350,7 +10350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726459287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27, y: 47, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14326,7 +14326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1c132f7c4d47847a0835235442fef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stageId: 1
+  _stageId: 2
   _star1: {fileID: 1474593252}
   _star2: {fileID: 1049664915}
   _star3: {fileID: 1408829905}
@@ -23650,7 +23650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1c132f7c4d47847a0835235442fef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stageId: 0
+  _stageId: 1
   _star1: {fileID: 1583209039}
   _star2: {fileID: 1687924572}
   _star3: {fileID: 2142725652}
@@ -24489,7 +24489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1c132f7c4d47847a0835235442fef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stageId: 3
+  _stageId: 4
   _star1: {fileID: 201695968}
   _star2: {fileID: 861511682}
   _star3: {fileID: 2124592778}
