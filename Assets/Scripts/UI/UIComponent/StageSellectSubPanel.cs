@@ -38,7 +38,7 @@ public class StageSellectSubPanel : MonoBehaviour {
 
     void OnEnable() {
         _stageId = GlobalValue.Instance.stageId;
-        _title.text = UIString.Instance.stageText + " " +  (_stageId + 1).ToString(); 
+        _title.text = UIString.Instance.stageText + " " +  (_stageId).ToString(); 
         stageInfoUpdate();
     }
 

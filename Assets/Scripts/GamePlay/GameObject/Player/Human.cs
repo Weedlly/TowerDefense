@@ -12,7 +12,10 @@ public class Human : Player
         base.Start();
         _maxMeleeCompetitor = 1; 
        _currentPositionIndex = 0;
-        BattleControler.AddHuman(this);
+    }
+    void OnEnable()
+    {
+       BattleControler.AddHuman(this);
     }
     public void SetRoute(LineRenderer route){
         _route = route;
