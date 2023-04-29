@@ -14,10 +14,14 @@ public class UpgradeController: MonoBehaviour
     [SerializeField] GameObject _level2;
     [SerializeField] GameObject _level3;
 
+    void Awake()
+    {
+        _user = User.Instance;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        _user = User.Instance;
         _upgradeText.text = UIString.Instance.upgradeBtnText;
         int level = _user.getTowerLevelById(_towerId);
         if (level < 2){
@@ -26,8 +30,6 @@ public class UpgradeController: MonoBehaviour
         if (level < 1){
             _level2.gameObject.SetActive(false);
         }
-
-       
     } 
 
     public void UpgradeTower(){
@@ -45,8 +47,6 @@ public class UpgradeController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       
     }
     
 }

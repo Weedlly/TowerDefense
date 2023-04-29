@@ -33,7 +33,7 @@ public class StageSystem : MonoBehaviour
 
 
     private void Start() {
-        Debug.Log(_stageId);
+        _stageId = GlobalValue.Instance.stageId;
         MappingStageData(_stageId,"");
 
         GameControl.CurrentWave = 1;
@@ -56,13 +56,6 @@ public class StageSystem : MonoBehaviour
         // BuidingPlaceController.WriteDownTowerPlaceSetForStage(_stageId);
         // RouteSet.WriteDownGateSetForStage(_stageId);
 
-
-
-        // Spawner instance = new Spawner(_poolers[2],_gates[1]);
-        // Spawner instance = new Spawner(_poolers[0],_gates[1]);
-        // instance.SpawnerSingleObject();
-
-    
     }
    
     public void CallWave(){
