@@ -18,7 +18,7 @@ public class StageSystem : MonoBehaviour
     [SerializeField] private float _spawnInterval;
     [SerializeField] private float _spawnWaveInterval;
     [SerializeField] private List<ObjectPooler> _poolers = new List<ObjectPooler>();
-
+    [SerializeField] private List<GameObject> _callWaveBt;
 
 
     private StageData _stageData;
@@ -40,12 +40,17 @@ public class StageSystem : MonoBehaviour
         GameControl.MaxWave = _stageData.waveList.Count;
 
         _gates = _routeSet.GetGatesOfStage(_stageId);
-
+        
         BuidingPlaceController.MappingTowerPlaceData(_stageId);
 
         foreach (var item in _poolers)
         {
             item.CreatePooler();
+        }
+        for (int i = 0; i < _gates.Count; i++)
+        {
+            _callWaveBt[i].SetActive(true);
+            _callWaveBt[i].transform.position = _gates[i].GetPosition(1);
         }
 
         // BuidingPlaceController.WriteDownTowerPlaceSetForStage(_stageId);
@@ -61,8 +66,11 @@ public class StageSystem : MonoBehaviour
     }
    
     public void CallWave(){
+        foreach (var item in _callWaveBt)
+        {
+            item.SetActive(false);
+        }
         StartCoroutine(SpawnWaveOfStage());
-        
     }
     IEnumerator SpawnWaveOfStage(){
         foreach (var wave in _stageData.waveList)
