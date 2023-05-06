@@ -21,7 +21,6 @@ public class Player : MonoBehaviour,IInformationToBoard
     [SerializeField] public int _dropCoin;
     [SerializeField] public string _difficulty;
 
-
     [SerializeField] protected Animator _animator;
     [SerializeField] protected HealthBar _healthBar;
     [SerializeField] protected SpriteRenderer _spriteRenderer;
@@ -31,6 +30,7 @@ public class Player : MonoBehaviour,IInformationToBoard
     [SerializeField] protected GameObject _dieSmoke;
     [SerializeField] protected PlayerWeapon _playerWeapon;
     
+    [SerializeField] protected PlayerSkin _playerSkin;
 
     [Header("Control atribute")]
     public int _unitType;
@@ -55,7 +55,9 @@ public class Player : MonoBehaviour,IInformationToBoard
 
     protected void Start()
     {
-
+        if(_playerSkin != null){
+            _playerSkin.ChangingSkin(_animator,(int)SkinSystem.Instance.SkinType);
+        }
         SetUpUnitType();
         _healthBar = GetComponent<HealthBar>();
         // _animator.speed = 1.2f;

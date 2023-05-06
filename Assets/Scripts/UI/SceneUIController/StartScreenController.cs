@@ -17,6 +17,7 @@ public class StartScreenController : MonoBehaviour
     void Start()
     {
         _startBtn.text = UIString.Instance.startBtnText;
+        SkinTypeEnum skinType = SkinSystem.Instance.SkinType;
     }
 
     // Update is called once per frame

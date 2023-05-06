@@ -65,7 +65,6 @@ public class User : Singleton<User>
         _data.currentStar +=  star;
         _data.completetedStageList.Add(newStage);
         saveUserData();
-
     }
 
     public CompletetedStageData getStageData(int id){
