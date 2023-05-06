@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 1599346109180168067}
   - component: {fileID: 5935826015328092164}
   - component: {fileID: 411660234352488736}
+  - component: {fileID: 7074578658982670299}
   m_Layer: 0
   m_Name: SkeletonWarrior
   m_TagString: Evil
@@ -440,6 +441,7 @@ MonoBehaviour:
   _hurtBlood: {fileID: 133798936192239942, guid: 0e4ec2e3b798645b1be30a58fcbc7f67, type: 3}
   _dieSmoke: {fileID: 8177676253926904881, guid: 71477f488518e4dd28c29eeb3cb71a02, type: 3}
   _playerWeapon: {fileID: 0}
+  _playerSkin: {fileID: 7074578658982670299}
   _unitType: 0
   _isDie: 0
   _target: {fileID: 0}
@@ -566,3 +568,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7074578658982670299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4080470935116052550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc4a3223d856460ca6eada8f98fe6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animatorControllers:
+  - {fileID: 9100000, guid: a988ca9c57313415abdc3a9476f6635d, type: 2}
+  - {fileID: 9100000, guid: d8aefe95fa17f424597b9a39caaa906e, type: 2}
