@@ -13,6 +13,13 @@ public class StageSellectSubPanel : MonoBehaviour {
 
     [SerializeField] TMP_Text _title;
     [SerializeField] TMP_Text _startBtn;
+    [SerializeField] TMP_Text _curDiffText;
+
+    [SerializeField]  DifficultyTypeEnum _curDiff;
+    [SerializeField] Image normalSelect;
+    [SerializeField] Image hardSelect;
+    [SerializeField] Image hellSelect;
+
 
     void stageInfoUpdate()
     {
@@ -26,7 +33,33 @@ public class StageSellectSubPanel : MonoBehaviour {
             if (star >= 1) _star1.gameObject.SetActive(true);
             if (star >= 2) _star2.gameObject.SetActive(true);
             if (star == 3) _star3.gameObject.SetActive(true); 
+            _curDiffText.text = "~~ < " + stage.difficulty + " > ~~";
         }
+        else {
+             _curDiffText.text = "~~ < " + "None" + " > ~~";
+        }
+         
+    }
+
+    public void normalDiffSelect(){
+        normalSelect.gameObject.SetActive(true);
+        hardSelect.gameObject.SetActive(false);
+        hellSelect.gameObject.SetActive(false);
+        _curDiff = DifficultyTypeEnum.Normal;
+    }
+
+    public void hardDiffSelect(){
+        normalSelect.gameObject.SetActive(false);
+        hardSelect.gameObject.SetActive(true);
+        hellSelect.gameObject.SetActive(false);
+        _curDiff = DifficultyTypeEnum.Nightmare;
+    }
+
+    public void hellDiffSelect(){
+        normalSelect.gameObject.SetActive(false);
+        hardSelect.gameObject.SetActive(false);
+        hellSelect.gameObject.SetActive(true);
+        _curDiff = DifficultyTypeEnum.Hell;
     }
 
     void Start() 
@@ -34,6 +67,7 @@ public class StageSellectSubPanel : MonoBehaviour {
         // _stageId = GlobalValue.Instance.stageId;
         // stageInfoUpdate();
         _startBtn.text = UIString.Instance.startBtnText;
+        normalDiffSelect();
     }
 
     void OnEnable() {
@@ -46,6 +80,7 @@ public class StageSellectSubPanel : MonoBehaviour {
     public void loadStage()
     {
         GlobalValue.Instance.nextScene = 4;
+        GlobalValue.Instance.StageDifficulty = _curDiff;
         SceneManager.LoadScene(2);
     }
 
