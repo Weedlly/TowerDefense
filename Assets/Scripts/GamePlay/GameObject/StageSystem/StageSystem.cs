@@ -20,6 +20,7 @@ public class StageSystem : MonoBehaviour
     [SerializeField] private List<ObjectPooler> _poolers = new List<ObjectPooler>();
     [SerializeField] private List<GameObject> _callWaveBt;
     [SerializeField] private MapController _mapController;
+    [SerializeField] private BuidingPlaceController _buidingPlaceController;
 
     private StageData _stageData;
     private WaveData _currentWaveData;
@@ -34,7 +35,6 @@ public class StageSystem : MonoBehaviour
 
     private void Start() {
         _stageId = GlobalValue.Instance.stageId;
-
         _mapController.ActiveMap(_stageId);
 
         MappingStageData(_stageId,"");
@@ -44,7 +44,7 @@ public class StageSystem : MonoBehaviour
 
         _gates = _routeSet.GetGatesOfStage(_stageId);
         
-        BuidingPlaceController.MappingTowerPlaceData(_stageId);
+        _buidingPlaceController.MappingTowerPlaceData(_stageId);
 
         foreach (var item in _poolers)
         {
