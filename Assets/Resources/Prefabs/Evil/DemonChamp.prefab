@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3442599318193223494}
   - component: {fileID: 3442599318193223495}
   - component: {fileID: 3442599318193223492}
-  - component: {fileID: 3442599318193223489}
+  - component: {fileID: 2195052024601069290}
   m_Layer: 0
   m_Name: DemonMoveBtn
   m_TagString: Untagged
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3442599318193223489
+--- !u!114 &2195052024601069290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3442599318193223498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ef3dc0675bf455cba33ee25a1b2991, type: 3}
+  m_Script: {fileID: 11500000, guid: a9c3c808c25b44d479e8521af7e130af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _champion: {fileID: 3442599318803464858}
@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 3442599318803464857}
   - component: {fileID: 3442599318803464862}
   - component: {fileID: 3442599318803464863}
+  - component: {fileID: 4313842503724926702}
   m_Layer: 0
   m_Name: DemonChamp
   m_TagString: Untagged
@@ -282,12 +283,16 @@ MonoBehaviour:
   _hurtBlood: {fileID: 133798936192239942, guid: 0e4ec2e3b798645b1be30a58fcbc7f67, type: 3}
   _dieSmoke: {fileID: 8177676253926904881, guid: 71477f488518e4dd28c29eeb3cb71a02, type: 3}
   _playerWeapon: {fileID: 0}
+  _playerSkin: {fileID: 0}
   _unitType: 0
   _isDie: 0
   _target: {fileID: 0}
   _maxMeleeCompetitor: 0
   _meleeCompetitorCounter: 0
   _timeReviveCounter: 0
+  currentBehavior: 0
+  _isAttackState: 0
+  _expSystem: {fileID: 4313842503724926702}
 --- !u!114 &3442599318803464859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +383,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4313842503724926702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442599318803464860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2722e6975f74771911304d4739b1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentExpText: {fileID: 0}
+  _slashText: {fileID: 0}
+  _expToNextLevelText: {fileID: 0}
+  _champLevel: 0
+  delayUpExp: 6
+  isLevelUp: 0
 --- !u!1 &3442599319067089132
 GameObject:
   m_ObjectHideFlags: 0

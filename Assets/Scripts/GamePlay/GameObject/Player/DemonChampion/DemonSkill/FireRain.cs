@@ -16,7 +16,6 @@ public class FireRain : MonoBehaviour
         _animatorFireRain.SetBool("isDeploySkill", true);
         
     }
-
     
     void Update()
     {
@@ -38,7 +37,7 @@ public class FireRain : MonoBehaviour
         }
     }
 
-     private void DameByExplored()
+    private void DameByExplored()
     {
         GameObject[] instanceList = GameObject.FindGameObjectsWithTag("Human");
         foreach (GameObject item in instanceList)

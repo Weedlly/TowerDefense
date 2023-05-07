@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.EventSystems;
 
-
-
 public enum InformationBoard{
     TowerBoard,
     PlayerBoard,

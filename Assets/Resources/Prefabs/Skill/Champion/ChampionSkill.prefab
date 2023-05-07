@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   executeInUpdate: 0
   anchorType: 0
-  anchorOffset: {x: 8, y: 4, z: 0}
+  anchorOffset: {x: 6, y: 4, z: 0}
 --- !u!1 &1336072586073555299
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 1336072586073555298}
   - component: {fileID: 1336072586073555296}
   - component: {fileID: 1336072586073555297}
+  - component: {fileID: 1336072586348361105}
   m_Layer: 5
   m_Name: FireRainImage
   m_TagString: Untagged
@@ -193,6 +194,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1336072586348361105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336072586073555299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec1ecab2a47f41d8918562185ddf514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillType: 0
+  FR_Skill: {fileID: 711687120092072830, guid: d0386a8b0bb7a4accb85a105d04d67a4, type: 3}
+  delayActiveSkill: 2
 --- !u!1 &1336072586246398047
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,4 +344,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839de3e3be03a47c7b7b4b890f4258b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FR_Skill: {fileID: 1321296786939490335, guid: d0386a8b0bb7a4accb85a105d04d67a4, type: 3}
+  _champSkill: {fileID: 1336072586348361105}
