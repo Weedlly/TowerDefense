@@ -13,6 +13,7 @@ public class BuidingPlaceController : MonoBehaviour
 
     [SerializeField] private GameObject _buildingPlaces;
     [SerializeField] private GameObject _towerBuildingPlacePrefab;
+    [SerializeField] private  SpriteRenderer sr;
     private static Transform _parentTransform;
     private static GameObject towerBuildingPlacePrefab;
     public List<GameObject> buildingPlaceList = new List<GameObject>();
@@ -43,32 +44,45 @@ public class BuidingPlaceController : MonoBehaviour
         buildingPlace.gameObject.SetActive(false);
     }
 
-    public static void MappingTowerPlaceData(int stageId){
+    public void MappingTowerPlaceData(int stageId){
         _buildingPlaceList.Clear();
         StageData tmpStageData = XMLControler._stageDataList.FindStageData(stageId);
+        float worldScreenHeight = Camera.main.orthographicSize * 2;
+
+        float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
+       
+        transform.localScale = new Vector3(
+            worldScreenWidth  / (sr.sprite.bounds.size.x * sr.transform.localScale.x * transform.localScale.x),
+            worldScreenHeight / (sr.sprite.bounds.size.y * sr.transform.localScale.y * transform.localScale.y), 1);
+
         foreach (var place in tmpStageData.towerPlaceList)
         {
             GameObject towerBuilding = Instantiate(towerBuildingPlacePrefab);
+            towerBuilding.name = "BuildingContainer" + place.towerPlaceId;
             towerBuilding.transform.position = new Vector3(
-                    place.x,
-                    place.y,
+                    place.x = place.x * transform.localScale.x,
+                    place.y = place.y * transform.localScale.y,
                     0f
                 );
             towerBuilding.transform.SetParent(_parentTransform);
             _buildingPlaceList.Add(towerBuilding);
         }
+        buildingPlaceList = _buildingPlaceList;
     }
-    public static void WriteDownTowerPlaceSetForStage(int stageId){
+    public void WriteDownTowerPlaceSetForStage(int stageId){
+        _buildingPlaceList = buildingPlaceList;
         StageData tmpStageData = XMLControler._stageDataList.FindStageData(stageId);
         tmpStageData.towerPlaceList.Clear();
+
         for (int i = 0; i < _buildingPlaceList.Count; i++)
         {
-            
-            TowerPlaceData tmpTL = new TowerPlaceData();
-            tmpTL.towerPlaceId = i;
-            tmpTL.x = _buildingPlaceList[i].transform.position.x;
-            tmpTL.y = _buildingPlaceList[i].transform.position.y;
-            tmpStageData.towerPlaceList.Add(tmpTL);
+            if(_buildingPlaceList[i].activeSelf){
+                TowerPlaceData tmpTL = new TowerPlaceData();
+                tmpTL.towerPlaceId = i;
+                tmpTL.x = _buildingPlaceList[i].transform.position.x;
+                tmpTL.y = _buildingPlaceList[i].transform.position.y;
+                tmpStageData.towerPlaceList.Add(tmpTL);
+            }
         }
         XMLControler.WriteDownXML<StageListData>("StageWrite.xml",XMLControler._stageDataList);
     }

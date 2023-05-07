@@ -141,32 +141,36 @@
     </GateList>
     <TowerPlaceList>
       <TowerPlace towerPlaceId="0">
-        <X>-22.1168423</X>
-        <Y>-3.14619255</Y>
+        <X>6.58</X>
+        <Y>-7.13</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="1">
-        <X>-8.842581</X>
-        <Y>1.09102607</Y>
+        <X>-9.3</X>
+        <Y>8.43</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="2">
-        <X>-8.832696</X>
-        <Y>8.451453</Y>
+        <X>19.61</X>
+        <Y>1.05</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="3">
-        <X>-1.20221865</X>
-        <Y>4.094876</Y>
+        <X>-9.64</X>
+        <Y>1.97</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="4">
-        <X>6.388723</X>
-        <Y>1.36952877</Y>
-      </TowerPlace>
-      <TowerPlace towerPlaceId="5">
-        <X>19.6531029</X>
-        <Y>0.613593</Y>
+        <X>-0.98</X>
+        <Y>3.42</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="6">
-        <X>6.55675125</X>
-        <Y>-7.12480164</Y>
+        <X>6.37</X>
+        <Y>0.27</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="7">
+        <X>10.03</X>
+        <Y>8.23</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="9">
+        <X>-21.95</X>
+        <Y>-2.96</Y>
       </TowerPlace>
     </TowerPlaceList>
     <WaveList>
@@ -467,44 +471,40 @@
     </GateList>
     <TowerPlaceList>
       <TowerPlace towerPlaceId="0">
-        <X>-9.159217</X>
-        <Y>-8.149294</Y>
+        <X>10.27</X>
+        <Y>-9.17</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="1">
-        <X>-4.197064</X>
-        <Y>4.69166756</Y>
+        <X>-3.63</X>
+        <Y>5.2</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="2">
-        <X>18.2338963</X>
-        <Y>-4.13089848</Y>
+        <X>18.14</X>
+        <Y>-4</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="3">
-        <X>10.3957176</X>
-        <Y>-8.72619152</Y>
+        <X>2.66</X>
+        <Y>-11.64</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="4">
-        <X>11.0235815</X>
-        <Y>1.36952877</Y>
-      </TowerPlace>
-      <TowerPlace towerPlaceId="5">
-        <X>1.0688951</X>
-        <Y>-10.3872614</Y>
+        <X>-8.74</X>
+        <Y>-7.86</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="6">
-        <X>-14.1112432</X>
-        <Y>-0.6197758</Y>
+        <X>10.94</X>
+        <Y>1.33</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="7">
-        <X>17.06931</X>
-        <Y>7.108672</Y>
+        <X>16.89</X>
+        <Y>7.38</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="8">
-        <X>-0.602034152</X>
-        <Y>-2.35047078</Y>
+        <X>-0.6</X>
+        <Y>-2.86</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="9">
-        <X>-19.8025284</X>
-        <Y>2.54321837</Y>
+        <X>-17.16</X>
+        <Y>2.45</Y>
       </TowerPlace>
     </TowerPlaceList>
     <WaveList>
@@ -899,44 +899,44 @@
     </GateList>
     <TowerPlaceList>
       <TowerPlace towerPlaceId="0">
-        <X>-15.4648867</X>
-        <Y>-11.3520737</Y>
+        <X>7.6</X>
+        <Y>-11.21</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="1">
-        <X>0.06293823</X>
-        <Y>6.740651</Y>
+        <X>-18.26</X>
+        <Y>10.13</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="2">
-        <X>20.40429</X>
-        <Y>-6.677208</Y>
+        <X>17.91</X>
+        <Y>1.16</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="3">
-        <X>8.187617</X>
-        <Y>-10.8646946</Y>
+        <X>-15.65</X>
+        <Y>-11.18</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="4">
-        <X>-7.864061</X>
-        <Y>-5.941165</Y>
+        <X>19.37</X>
+        <Y>-6.9</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="5">
-        <X>-19.53711</X>
-        <Y>-2.3405242</Y>
+        <X>-6.72</X>
+        <Y>-7.45</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="6">
-        <X>-10.5129833</X>
-        <Y>2.66257668</Y>
+        <X>-10.81</X>
+        <Y>2.03</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="7">
-        <X>16.65824</X>
-        <Y>7.108672</Y>
-      </TowerPlace>
-      <TowerPlace towerPlaceId="8">
-        <X>17.5379181</X>
-        <Y>0.195839047</Y>
+        <X>-0.63</X>
+        <Y>7.04</Y>
       </TowerPlace>
       <TowerPlace towerPlaceId="9">
-        <X>-19.3295441</X>
-        <Y>2.54321837</Y>
+        <X>-19.23</X>
+        <Y>-0.41</Y>
+      </TowerPlace>
+      <TowerPlace towerPlaceId="9">
+        <X>14.13</X>
+        <Y>7.13</Y>
       </TowerPlace>
     </TowerPlaceList>
     <WaveList>
