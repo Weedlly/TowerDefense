@@ -100,7 +100,10 @@ public class GameControl : MonoBehaviour
     void CheckWinning(){
         if(_currentWave == _maxWave){
             if(GameObject.FindWithTag("Human") == null){
-                Debug.Log(_stageRating.GetRatingStar(_healthPoint,_healthPointMax));
+                int stageId = GlobalValue.Instance.stageId;
+                int starts = _stageRating.GetRatingStar(_healthPoint,_healthPointMax);
+                DifficultyTypeEnum diff = GlobalValue.Instance.StageDifficulty;
+                User.Instance.StageSuccess(stageId,starts,diff);
                 PlayWinning();
             }
         }

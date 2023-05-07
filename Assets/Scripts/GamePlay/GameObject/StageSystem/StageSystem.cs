@@ -13,18 +13,20 @@ public class StageSystem : MonoBehaviour
     [SerializeField] private  List<GameObject> _playerTypeInBattle;
     [SerializeField] private  List<int> _numbers;
     private  List<LineRenderer> _gates;
-    [SerializeField] private int _stageId = 0;
+    [SerializeField] private int _stageId = 1;
     [SerializeField] private  RouteSet _routeSet;
     [SerializeField] private float _spawnInterval;
     [SerializeField] private float _spawnWaveInterval;
     [SerializeField] private List<ObjectPooler> _poolers = new List<ObjectPooler>();
-
-
+    [SerializeField] private List<GameObject> _callWaveBt;
+    [SerializeField] private MapController _mapController;
+    [SerializeField] private BuidingPlaceController _buidingPlaceController;
 
     private StageData _stageData;
     private WaveData _currentWaveData;
     private SubwaveData _currentSubwaveData;
-
+    
+    // [SerializeField] private SettingUpStage _settingUpStage;
     protected bool MappingStageData(int stageId, string difficultyType){
         _stageData = XMLControler._stageDataList.FindStageData(stageId);
         return true;
@@ -32,35 +34,39 @@ public class StageSystem : MonoBehaviour
 
 
     private void Start() {
+        _stageId = GlobalValue.Instance.stageId;
+        _mapController.ActiveMap(_stageId);
+
         MappingStageData(_stageId,"");
 
         GameControl.CurrentWave = 1;
         GameControl.MaxWave = _stageData.waveList.Count;
 
         _gates = _routeSet.GetGatesOfStage(_stageId);
-
-        BuidingPlaceController.MappingTowerPlaceData(_stageId);
+        
+        _buidingPlaceController.MappingTowerPlaceData(_stageId);
 
         foreach (var item in _poolers)
         {
             item.CreatePooler();
         }
+        for (int i = 0; i < _gates.Count; i++)
+        {
+            _callWaveBt[i].SetActive(true);
+            _callWaveBt[i].transform.position = _gates[i].GetPosition(1);
+        }
 
         // BuidingPlaceController.WriteDownTowerPlaceSetForStage(_stageId);
         // RouteSet.WriteDownGateSetForStage(_stageId);
 
-
-
-        // Spawner instance = new Spawner(_poolers[2],_gates[1]);
-        // Spawner instance = new Spawner(_poolers[0],_gates[1]);
-        // instance.SpawnerSingleObject();
-
-    
     }
    
     public void CallWave(){
+        foreach (var item in _callWaveBt)
+        {
+            item.SetActive(false);
+        }
         StartCoroutine(SpawnWaveOfStage());
-        
     }
     IEnumerator SpawnWaveOfStage(){
         foreach (var wave in _stageData.waveList)

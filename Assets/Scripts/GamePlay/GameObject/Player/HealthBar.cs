@@ -30,9 +30,13 @@ public class HealthBar : MonoBehaviour
         yield return new WaitForSeconds(3f);
         _healthObject.sortingLayerName = "Invisible";
     }
-    
+    void OnEnable()
+    {
+        _healthObject.sortingLayerName = "Invisible";
+    }
     void Start()
     {
+        
     }
     void Update()
     {

@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <User userId ="">
 	<Username>Guest</Username>
-    <CurrentStar>6</CurrentStar>
+    <CurrentStar>0</CurrentStar>
     <CompletetedStageList>
-        <CompletetedStage completetedStageId="0">
-            <Star>3</Star>
-			<Difficulty>Normal</Difficulty>
-        </CompletetedStage>
-		<CompletetedStage completetedStageId="1">
-            <Star>3</Star>
+        <CompletetedStage completetedStageId="1">
+            <Star>0</Star>
 			<Difficulty>Normal</Difficulty>
         </CompletetedStage>
     </CompletetedStageList>
