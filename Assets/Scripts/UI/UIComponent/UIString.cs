@@ -269,4 +269,36 @@ public class UIString: Singleton<UIString>
             }
         }
     }
+
+    public string skinTitle
+    {
+        get 
+        {
+            return "skin";
+        }
+    }
+
+    public string normalSkin
+    {
+        get
+        {
+            switch(language)
+            {
+                case "vn": return "Mặc định";
+                default: return "Default";
+            }
+        }
+    }
+
+    public string summerSkin
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Skin Mùa hè";
+                default: return "Summer";
+            }
+        }
+    }
 }

@@ -49,7 +49,8 @@ public class User : Singleton<User>
     public void StageSuccess(int id, int star, DifficultyTypeEnum difficulty){
         for(int i = 0; i <  _data.completetedStageList.Count; i++){
             if (_data.completetedStageList[i].completetedStageId == id){
-                _data.completetedStageList[i].difficulty = difficulty.ToString();
+                if (System.Enum.Parse<DifficultyTypeEnum>(_data.completetedStageList[i].difficulty).CompareTo(difficulty) == -1)
+                    _data.completetedStageList[i].difficulty = difficulty.ToString();
                 if (_data.completetedStageList[i].star < star){
                     _data.currentStar += star - _data.completetedStageList[i].star;
                     _data.completetedStageList[i].star = star;
