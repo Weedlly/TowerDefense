@@ -14,7 +14,7 @@ public class ExpSystem : MonoBehaviour
     // [SerializeField] private TMP_Text _slashText;
     // [SerializeField] private TMP_Text _expToNextLevelText;
 
-    private static int _currentExp;
+    public int _currentExp;
     private static int _expToNextLevel;
 
     public int _champLevel;
@@ -54,6 +54,13 @@ public class ExpSystem : MonoBehaviour
     {
         return _champLevel;
     }
+
+    public int GetCurrentExp()
+    {
+        return _currentExp;
+    }
+
+    
 
     public float GetAttackDameIncrease(float baseDame)
     {
