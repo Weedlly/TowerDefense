@@ -10,9 +10,9 @@ using System;
 
 public class ExpSystem : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _currentExpText;
-    [SerializeField] private TMP_Text _slashText;
-    [SerializeField] private TMP_Text _expToNextLevelText;
+    // [SerializeField] private TMP_Text _currentExpText;
+    // [SerializeField] private TMP_Text _slashText;
+    // [SerializeField] private TMP_Text _expToNextLevelText;
 
     private static int _currentExp;
     private static int _expToNextLevel;
@@ -28,14 +28,14 @@ public class ExpSystem : MonoBehaviour
         _currentExp = 0;
         _expToNextLevel = 20;
 
-        _currentExpText.text = _currentExp.ToString();
-        _expToNextLevelText.text = _expToNextLevel.ToString();
+        // _currentExpText.text = _currentExp.ToString();
+        // _expToNextLevelText.text = _expToNextLevel.ToString();
     }
 
     public void AddExperience(int amount)
     {
         _currentExp += amount;
-        _currentExpText.text = _currentExp.ToString();
+        // _currentExpText.text = _currentExp.ToString();
 
         if (_currentExp >= _expToNextLevel)
         {
@@ -45,8 +45,8 @@ public class ExpSystem : MonoBehaviour
             _expToNextLevel += _expToNextLevel;
             isLevelUp = true;
 
-            _currentExpText.text = _currentExp.ToString();
-            _expToNextLevelText.text = _expToNextLevel.ToString();
+            // _currentExpText.text = _currentExp.ToString();
+            // _expToNextLevelText.text = _expToNextLevel.ToString();
         }
     }
 

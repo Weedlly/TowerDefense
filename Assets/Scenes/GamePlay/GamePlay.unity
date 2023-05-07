@@ -14306,7 +14306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &512276998
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24653,9 +24653,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 733489974}
-  - component: {fileID: 733489977}
-  - component: {fileID: 733489976}
   - component: {fileID: 733489975}
+  - component: {fileID: 760191187}
+  - component: {fileID: 760191191}
   m_Layer: 5
   m_Name: RenderOldTowerPlace
   m_TagString: Untagged
@@ -24696,28 +24696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 1617023816}
---- !u!1 &760191185
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 760191189}
-  - component: {fileID: 760191188}
-  - component: {fileID: 760191187}
-  - component: {fileID: 760191186}
-  - component: {fileID: 760191190}
-  m_Layer: 5
-  m_Name: ExpBar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &760191186
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0
@@ -24746,18 +24724,18 @@ GameObject:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 733489976}
+  m_TargetGraphic: {fileID: 760191187}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 728288821}
-        m_TargetAssemblyTypeName: BuidingPlaceController, Assembly-CSharp
-        m_MethodName: MappingTowerPlaceData
-        m_Mode: 3
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -24779,8 +24757,40 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!222 &733489977
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760191185}
+  m_CullTransparentMesh: 1
+--- !u!1 &760191185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760191189}
+  - component: {fileID: 760191188}
+  - component: {fileID: 760191190}
+  - component: {fileID: 733489977}
+  - component: {fileID: 733489976}
+  m_Layer: 5
+  m_Name: ExpBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!114 &760191187
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733489973}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -24805,29 +24815,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &733489977
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760191185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
 --- !u!223 &760191188
 Canvas:
   m_ObjectHideFlags: 0
@@ -24887,10 +24874,15 @@ MonoBehaviour:
   _currentExpText: {fileID: 1877247939}
   _slashText: {fileID: 1534404469}
   _expToNextLevelText: {fileID: 666940470}
-  expIncreasedPerEnemy: 0
   _champLevel: 1
   delayUpExp: 6
   isLevelUp: 0
+--- !u!222 &760191191
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733489973}
   m_CullTransparentMesh: 1
 --- !u!1 &765018259 stripped
@@ -31441,7 +31433,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1930547145}
+  m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -66686,6 +66678,17 @@ GameObject:
   m_PrefabInstance: {fileID: 3442599319320267005}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1911056250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1930547144
 GameObject:
   m_ObjectHideFlags: 0
@@ -66696,7 +66699,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1930547149}
   - component: {fileID: 1930547148}
-  - component: {fileID: 1930547145}
   - component: {fileID: 1930547147}
   - component: {fileID: 1930547146}
   m_Layer: 5
@@ -66719,30 +66721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _champion: {fileID: 1442941656}
-  m_GameObject: {fileID: 1930547144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 1343268412, guid: 5793de93155e44b18ba37419aa564000, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &1930547146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71444,52 +71422,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1336072585303293741, guid: d26ac80aa0e474fa9ac8bb249f783faa, type: 3}
-      propertyPath: anchorOffset.x
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 1336072585303293742, guid: d26ac80aa0e474fa9ac8bb249f783faa, type: 3}
       propertyPath: m_Name
       value: ChampionSkill
       objectReference: {fileID: 0}
-    - target: {fileID: 1336072585303293742, guid: d26ac80aa0e474fa9ac8bb249f783faa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1336072586246398045, guid: d26ac80aa0e474fa9ac8bb249f783faa, type: 3}
-      propertyPath: _champ
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1336072586246398045, guid: d26ac80aa0e474fa9ac8bb249f783faa, type: 3}
-      propertyPath: FR_Skill
-      value: 
-      objectReference: {fileID: 8145740842995604745, guid: d0386a8b0bb7a4accb85a105d04d67a4, type: 3}
-    - target: {fileID: 1336072586246398045, guid: d26ac80aa0e474fa9ac8bb249f783faa, type: 3}
-      propertyPath: _champSkill
-      value: 
-      objectReference: {fileID: 1336072586348361105}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d26ac80aa0e474fa9ac8bb249f783faa, type: 3}
---- !u!1 &1336072586348361104 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1336072586073555299, guid: d26ac80aa0e474fa9ac8bb249f783faa, type: 3}
-  m_PrefabInstance: {fileID: 1336072586348361103}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1336072586348361105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336072586348361104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec1ecab2a47f41d8918562185ddf514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillType: 0
-  FR_Skill: {fileID: 711687120092072830, guid: d0386a8b0bb7a4accb85a105d04d67a4, type: 3}
-  delayActiveSkill: 2
 --- !u!1001 &2510081731876272268
 PrefabInstance:
   m_ObjectHideFlags: 0
