@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 6724233529353033997}
   - component: {fileID: 8820738139511553501}
   - component: {fileID: 6070483087332737402}
+  - component: {fileID: 5265508796114984328}
   m_Layer: 0
   m_Name: HuntressWarrior
   m_TagString: Human
@@ -260,6 +261,7 @@ MonoBehaviour:
   _hurtBlood: {fileID: 133798936192239942, guid: 0e4ec2e3b798645b1be30a58fcbc7f67, type: 3}
   _dieSmoke: {fileID: 8177676253926904881, guid: 71477f488518e4dd28c29eeb3cb71a02, type: 3}
   _playerWeapon: {fileID: 0}
+  _playerSkin: {fileID: 5265508796114984328}
   _unitType: 0
   _isDie: 0
   _target: {fileID: 0}
@@ -388,6 +390,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5265508796114984328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893574009027752168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc4a3223d856460ca6eada8f98fe6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animatorControllers:
+  - {fileID: 9100000, guid: b2f13712ec2cc43d387faa8a86d26578, type: 2}
+  - {fileID: 9100000, guid: 4bbc1db1fff8a40a3849196f7772196a, type: 2}
 --- !u!1 &3444888293928447913
 GameObject:
   m_ObjectHideFlags: 0

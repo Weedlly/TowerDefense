@@ -10,7 +10,10 @@ public class Evil : Player
     new void Start() {
         base.Start();
         _maxMeleeCompetitor = 1;
-        BattleControler.AddEvil(this);
+    }
+    void OnEnable()
+    {
+       BattleControler.AddEvil(this);
     }
     override protected void MoveDefault(){
         transform.position = Vector2.MoveTowards(transform.position,_assemblePoint,Time.deltaTime * _movementSpeed);

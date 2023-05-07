@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 3323268971258360504}
   - component: {fileID: 8985361255618402082}
   - component: {fileID: 5534599897482782223}
+  - component: {fileID: 2000241134104898159}
   m_Layer: 0
   m_Name: ShieldMan
   m_TagString: Human
@@ -111,7 +112,7 @@ Animator:
   m_GameObject: {fileID: 5279944588984134482}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 25cde048b37ab4aec991cb64e319ee8f, type: 2}
+  m_Controller: {fileID: 9100000, guid: e65f7d50102724762bf7415d1e6cc491, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -212,12 +213,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerId: 0
-  _rangeAttack: 2
+  _playerName: 
+  _attackRange: 0
   _rangeDetecting: 5
   _health: 150
-  _speed: 1
+  _movementSpeed: 0
   _attackSpeed: 1
-  _dame: 10
+  _attackDame: 0
+  _dropCoin: 0
+  _difficulty: 
   _animator: {fileID: 8278720664234902945}
   _healthBar: {fileID: 5008769953247949626}
   _spriteRenderer: {fileID: 36850072222692114}
@@ -225,13 +229,13 @@ MonoBehaviour:
   _hurtBlood: {fileID: 133798936192239942, guid: 0e4ec2e3b798645b1be30a58fcbc7f67, type: 3}
   _dieSmoke: {fileID: 8177676253926904881, guid: 71477f488518e4dd28c29eeb3cb71a02, type: 3}
   _playerWeapon: {fileID: 0}
+  _playerSkin: {fileID: 2000241134104898159}
   _unitType: 0
   _isDie: 0
   _target: {fileID: 0}
   _maxMeleeCompetitor: 0
   _meleeCompetitorCounter: 0
   _route: {fileID: 0}
-  _earningCoin: 20
   _currentPositionIndex: 0
   _lengthOfPath: 0
 --- !u!223 &1256783075578657313
@@ -354,6 +358,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2000241134104898159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5279944588984134482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc4a3223d856460ca6eada8f98fe6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animatorControllers:
+  - {fileID: 9100000, guid: 25cde048b37ab4aec991cb64e319ee8f, type: 2}
+  - {fileID: 9100000, guid: e65f7d50102724762bf7415d1e6cc491, type: 2}
 --- !u!1 &5986176950786580279
 GameObject:
   m_ObjectHideFlags: 0

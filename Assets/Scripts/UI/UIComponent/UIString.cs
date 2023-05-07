@@ -1,7 +1,12 @@
+using UnityEngine;
 
 public class UIString: Singleton<UIString>
 {
     public string language = "en";
+
+    void Start(){
+        language = PlayerPrefs.GetString("Language");
+    }
 
     public string startBtnText
     {
@@ -118,6 +123,181 @@ public class UIString: Singleton<UIString>
             {
                 case "vn": return "Các nâng cấp";
                 default: return "Upgrades";
+            }
+        }
+    }
+
+    public string profileBtnText 
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông tin các nhân";
+                default: return "Profile";
+            }
+        }
+    }
+
+    public string profileTitle 
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông tin các nhân";
+                default: return "Profile";
+            }
+        }
+    }
+
+    public string usernameTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Tên";
+                default: return "Username";
+            }
+        }
+    }
+
+    public string saveBtnText
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Lưu";
+                default: return "Save";
+            }
+        }
+    }
+
+    public string skillTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Kỹ năng";
+                default : return "Skill";
+            }
+        }
+    }
+    public string skillDescTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Mô tả";
+                default: return "Description";
+            }
+        }
+    }
+
+    public string enemyTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông tin kẻ thù";
+                default: return "Enemy information";
+            }
+        }
+    }
+
+    public string stageText 
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Màn";
+                default: return "Stage";
+            }
+        }
+    }
+
+    public string towerTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông tin tháp";
+                default: return "Tower infromation";
+            }
+        }
+    }
+
+    public string championTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Danh sách tướng";
+                default: return "Champion list";
+            }
+        }
+    }
+
+    public string statTitle
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông số";
+                default: return "Stat";
+            }
+        }
+    }
+
+    public string championBtnText
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Tướng";
+                default: return "Champion";
+            }
+        }
+    }
+
+    public string skinTitle
+    {
+        get 
+        {
+            return "skin";
+        }
+    }
+
+    public string normalSkin
+    {
+        get
+        {
+            switch(language)
+            {
+                case "vn": return "Mặc định";
+                default: return "Default";
+            }
+        }
+    }
+
+    public string summerSkin
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Skin Mùa hè";
+                default: return "Summer";
             }
         }
     }
