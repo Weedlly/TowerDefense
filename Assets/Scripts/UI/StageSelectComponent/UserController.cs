@@ -25,10 +25,10 @@ public class UserController: MonoBehaviour
     } 
 
      void updateExp(){
-        ChampionData _curChamp = _user.getSelectedHero();
-        float progressVal = Mathf.Clamp01(_curChamp.experiencePercent / 100f);
+        ChampionData _curChamp = _user.GetChampionData(0);
+        _level.text  = "LV: " + _curChamp.level.ToString();
+        float progressVal = Mathf.Clamp01((float)_curChamp.currentExp / (float)_curChamp.expCap);
         _expBar.fillAmount = progressVal;
-        _level.text = "Lv: " + _curChamp.level.ToString();
     }
 
 

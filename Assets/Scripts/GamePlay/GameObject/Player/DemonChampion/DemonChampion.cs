@@ -32,6 +32,26 @@ public class DemonChampion : Evil
     public ExpSystem _expSystem;
     private bool upgrageBlock;
 
+    private int _baseHp; //base hp for champion, health is current hp
+
+    void getChampionLvl(){
+        ChampionData data = User.Instance.GetChampionData(0); 
+        _expSystem.SetAll(data.currentExp, data.expCap, data.level);
+    }
+    void getChampionStat(){
+        ChampionData data = User.Instance.GetChampionData(0); 
+        _attackDame = data.attackDamage;
+        _attackSpeed = data.attackSpeed;
+        _baseHp = data.health;
+        _health = data.health;
+    }
+
+    void Start() {
+        base.Start();
+        getChampionLvl();
+        getChampionStat();
+    }
+
     new void Update()
     {
         if (_expSystem.isLevelUp)
@@ -159,5 +179,16 @@ public class DemonChampion : Evil
 
     public DemonBehavior CurrentBehavior {
         get { return currentBehavior; }
+    }
+
+    public ChampionData GetChampionState(){ //khoi update
+        ChampionData result = new ChampionData();
+        result.level = _expSystem.GetLevelNumber();
+        result.expCap = _expSystem.GetExpToNextLevel();
+        result.currentExp = _expSystem.GetCurrentExp();
+        result.health = _baseHp;
+        result.attackDamage = _attackDame;
+        result.attackSpeed = _attackSpeed;
+        return result;
     }
 }

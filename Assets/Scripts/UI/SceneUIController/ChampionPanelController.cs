@@ -32,14 +32,14 @@ public class ChampionPanelController : MonoBehaviour {
     }
 
     public void statLoad(int id){
-        _stat.text = "Atk: " + 1.ToString() + "\nAtk spd: " + 1.ToString() + "\nHp: " + 100.ToString();
+        _stat.text = "Atk: " + _curChamp.attackDamage.ToString() + "\nAtk spd: " + _curChamp.attackSpeed.ToString() + "\nHp: " + _curChamp.health.ToString();
     }
 
     void Start()
     {
         _championTitle.text = UIString.Instance.championTitle;
         _saveBtnText.text = UIString.Instance.saveBtnText;
-        _curChamp = _user.getSelectedHero();
+        _curChamp = _user.GetChampionData(0);
         _heroName.text = _curChamp.name;
         _heroLevel.text = "Lv: " + _curChamp.level.ToString();
         _skillTitle.text = UIString.Instance.skillTitle;

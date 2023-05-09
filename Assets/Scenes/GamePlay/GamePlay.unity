@@ -1477,6 +1477,7 @@ MonoBehaviour:
   _threeStart: {fileID: 2100005987}
   _twoStart: {fileID: 1254359870}
   _oneStart: {fileID: 415656482}
+  _championObj: {fileID: 720309172}
 --- !u!114 &128749132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24423,6 +24424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff2f2fb5633d417a9b2516a2fecbe8f, type: 3}
+--- !u!1 &720309172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3442599318803464860, guid: e48a7339d66484f72a86c715347b4d74, type: 3}
+  m_PrefabInstance: {fileID: 3442599319320267005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &724125979 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 992750308397236685, guid: e1df7ff6b882a45239508b8f388a5524, type: 3}
@@ -24871,6 +24877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2722e6975f74771911304d4739b1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentExp: 0
   _champLevel: 1
   delayUpExp: 6
   isLevelUp: 0
@@ -48592,7 +48599,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3442599318803464858, guid: e48a7339d66484f72a86c715347b4d74, type: 3}
   m_PrefabInstance: {fileID: 3442599319320267005}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 720309172}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1de30d2eabe4a4ba828bd5d889bc6e, type: 3}
@@ -48603,7 +48610,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4313842503724926702, guid: e48a7339d66484f72a86c715347b4d74, type: 3}
   m_PrefabInstance: {fileID: 3442599319320267005}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 720309172}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c2722e6975f74771911304d4739b1c6, type: 3}

@@ -50,13 +50,23 @@ public class TowerUpdateData{
 }
 
 public class ChampionData{
+    //identifier
     [XmlAttribute(AttributeName = "championId")]
     public int championId;
     [XmlElement(ElementName = "Name")]
+    //exp
     public string name;
     [XmlElement(ElementName = "Level")]
     public int level;
-    [XmlElement(ElementName = "ExperiencePercent")]
-    public int experiencePercent;
-    
+    [XmlElement(ElementName = "CurrentExp")]
+    public int currentExp;
+    [XmlElement(ElementName = "ExpCap")]
+    public int expCap;
+    //stat
+    [XmlElement(ElementName = "Health")]
+    public int health;
+    [XmlElement(ElementName = "AttackSpeed")]
+    public float attackSpeed;
+    [XmlElement(ElementName = "AttackDamage")]
+    public float attackDamage;    
 }

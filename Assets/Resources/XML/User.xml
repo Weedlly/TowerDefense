@@ -27,7 +27,11 @@
 		<Champion championId="0">
 			<Name>Satan</Name>
 			<Level>1</Level>
-			<ExperiencePercent>0</ExperiencePercent>
+			<CurrentExp>0</CurrentExp>
+			<ExpCap>20</ExpCap>
+			<Health>1000</Health>
+			<AttackSpeed>1</AttackSpeed>
+			<AttackDamage>100</AttackDamage>
 		</Champion>
 		<!-- Các Champion tiếp theo -->
 	</ChampionList>

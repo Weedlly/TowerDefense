@@ -30,6 +30,7 @@ public class GameControl : MonoBehaviour
     [SerializeField] GameObject _threeStart;
     [SerializeField] GameObject _twoStart;
     [SerializeField] GameObject _oneStart;
+    [SerializeField] GameObject _championObj;
 
     private StageRating _stageRating;
 
@@ -97,6 +98,14 @@ public class GameControl : MonoBehaviour
         Time.timeScale = 0;
         _defeatContainer.SetActive(true);
     }
+
+    void SaveChampionStat() //khoi update
+    {
+        DemonChampion state = (DemonChampion) _championObj.GetComponent(typeof(DemonChampion));
+        ChampionData cData = state.GetChampionState();
+        User.Instance.UpdateChampionData(cData);
+    }
+
     void CheckWinning(){
         if(_currentWave == _maxWave){
             if(GameObject.FindWithTag("Human") == null){
@@ -104,6 +113,7 @@ public class GameControl : MonoBehaviour
                 int starts = _stageRating.GetRatingStar(_healthPoint,_healthPointMax);
                 DifficultyTypeEnum diff = GlobalValue.Instance.StageDifficulty;
                 User.Instance.StageSuccess(stageId,starts,diff);
+                SaveChampionStat(); //khoi update 
                 PlayWinning();
             }
         }
