@@ -301,4 +301,29 @@ public class UIString: Singleton<UIString>
             }
         }
     }
+    public string skinNewsTemplate
+    {
+        get
+        {
+            SkinSystem _skinController = SkinSystem.Instance;
+            string skinName = UIString.Instance.summerSkin;
+            if (_skinController.SkinType == SkinTypeEnum.DEFAULT){
+                skinName = UIString.Instance.normalSkin;
+            }
+            else {
+                skinName = UIString.Instance.summerSkin;
+            }
+            switch(language)
+            {
+                case "vn" : return $"Thông báo quan trọng về việc sử dụng trang phục {skinName}: \n\n"
+                                    + "Kính gửi toàn thể cộng đồng, \n"
+                                    + "Chúng tôi xin gửi đến mọi người một thông báo quan trọng vì đang bước vào mùa đặc biệt. \n"
+                                    + $"Trong thời gian này, chúng ta sẽ sử dụng trang phục {skinName} để tạo thêm không khí lễ hội và niềm vui cho trò chơi.";
+                default: return $"Important announcement regarding the use of costume {skinName}: \n\n"
+                                    + "Dear community members, \n"
+                                    + "We would like to inform you about an important announcement as we enter a special season. \n"
+                                    + $"During this time, we will be using costume {skinName} to create a festive and joyful atmosphere in the game.";
+            }
+        }
+    }
 }

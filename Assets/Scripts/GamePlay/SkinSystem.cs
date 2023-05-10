@@ -9,7 +9,7 @@ public enum SkinTypeEnum{
     SUMMER = 1,    
 }
 public static class SpecialEventTimeEnum{
-    public static readonly string SUMMER = "5/27/2023 11:59:59 AM-8/15/2023 11:59:59 AM";
+    public static readonly string SUMMER = "5/1/2023 11:59:59 AM-8/15/2023 11:59:59 AM";
 }
 
 public class SpecialEvent{
