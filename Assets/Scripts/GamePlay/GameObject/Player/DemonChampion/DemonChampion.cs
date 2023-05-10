@@ -22,10 +22,8 @@ public class DemonChampion : Evil
     public static bool _isChampEmploySkill;
     public static bool _isChampEmployInsticSkill;
     public static bool _isChampEmployActiveSkill;
-
     private bool _setMoving = false;
-    bool _moving;
-
+    private bool _moving;
     private Vector2 lastClickedPos;
     private Vector3 lastPosition; 
 
@@ -81,9 +79,9 @@ public class DemonChampion : Evil
             _spriteRenderer.flipX = false;
         }
     }
-
     override protected void MoveDefault()
     {
+        
         if (_setMoving)
         {
             if (Input.GetMouseButtonDown(0))

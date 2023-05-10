@@ -42,12 +42,10 @@ public class InformationBoardControl : MonoBehaviour
 
     private void CheckObjectHasInformationBoard(GameObject go){
         if((Player)go.gameObject.GetComponent<Player>() != null){
-            Debug.Log((Player)_eventSystem.currentSelectedGameObject.gameObject.GetComponent<Player>());
             ((Player)go.gameObject.GetComponent<Player>()).SendInformation();
             ActiveBoard(InformationBoard.PlayerBoard);
         }
         else if((Tower)go.transform.parent.gameObject.GetComponentInChildren<Tower>() != null){
-            Debug.Log((Tower)_eventSystem.currentSelectedGameObject.gameObject.GetComponent<Tower>());
             ((Tower)go.transform.parent.gameObject.GetComponentInChildren<Tower>()).SendInformation();
             ActiveBoard(InformationBoard.TowerBoard);
         }
