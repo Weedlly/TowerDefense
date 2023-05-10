@@ -209,7 +209,6 @@ public class Player : MonoBehaviour,IInformationToBoard
         _health = _healthBar._maxHealth;;
     }
     public void SendInformation(){
-        Debug.Log(_playerName);
         PlayerInformationBoard.UpdatePlayerBoardInformation(_playerName,_health,_attackDame,_attackSpeed,_attackRange,_movementSpeed);
     }
 
