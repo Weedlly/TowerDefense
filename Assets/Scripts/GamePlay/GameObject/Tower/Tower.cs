@@ -49,7 +49,6 @@ public abstract class Tower : MonoBehaviour,IInformationToBoard
     
     protected void Start()
     {
-        _level = User.Instance.getTowerLevelById(_towerId); //khoi update
         _controlButton.onClick.AddListener(OpenUpdateAndSell);
         MapTowerData(_towerId,_level);
     }
@@ -78,10 +77,21 @@ public abstract class Tower : MonoBehaviour,IInformationToBoard
             _health = towerData.health;
             _price = towerData.price;
             _sellPrice +=(int)(_price * 0.3f);
+            User userData = User.Instance;
+            int levelUpdate = userData.getTowerLevelById(id);
+            UpdateTree updateTree = new UpdateTree();
+            if(id != 3){
+                updateTree.ApplyTroopTowerUpdateTreeBranchUpdate(this,levelUpdate);
+            }
+            else{
+                updateTree.ApplyWeaponTowerUpdateTreeBranchUpdate(this,levelUpdate);
+            }
             return true;
         }
+
         return false;
     }
+
     protected void Update(){}
     public void SendInformation(){
           TowerInformationBoard.UpdateTowerBoardInformation(_name,_attackDame,_attackSpeed,_attackRange);
