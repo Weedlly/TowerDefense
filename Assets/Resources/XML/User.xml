@@ -3,10 +3,6 @@
 	<Username>Guest</Username>
     <CurrentStar>0</CurrentStar>
     <CompletetedStageList>
-        <CompletetedStage completetedStageId="1">
-            <Star>0</Star>
-			<Difficulty>Normal</Difficulty>
-        </CompletetedStage>
     </CompletetedStageList>
 	<TowerUpdateList>
 		<TowerUpdate towerUpdateId="0">

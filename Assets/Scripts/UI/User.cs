@@ -76,6 +76,11 @@ public class User : Singleton<User>
         return null;
     }
 
+    public int getMaxAvailableStage() {
+        if (_data.completetedStageList != null) return _data.completetedStageList.Count;
+        return -1;
+    }
+
     public int getTowerLevelById(int id){
         if (_data.towerUpdateList != null)
             foreach (var i in _data.towerUpdateList){
@@ -89,7 +94,7 @@ public class User : Singleton<User>
             for(int i = 0; i < _data.towerUpdateList.Count; i++){
                 if (_data.towerUpdateList[i].towerUpdateId == id && _data.towerUpdateList[i].level < levelCap) {
                     _data.towerUpdateList[i].level++;
-                    _data.currentStar--; //currency down
+                    _data.currentStar-= _data.towerUpdateList[i].level;//currency down
                     break;
                 }
             }
