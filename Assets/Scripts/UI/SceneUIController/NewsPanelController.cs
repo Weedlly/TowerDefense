@@ -7,16 +7,12 @@ using TMPro;
 public class NewsPanelController : MonoBehaviour
 {
     [SerializeField] TMP_Text _newsTitle;
+    [SerializeField] TMP_Text _newsContent;
 
     // Start is called before the first frame update
     void Start()
     {
         _newsTitle.text = UIString.Instance.newsTitle;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _newsContent.text = UIString.Instance.skinNewsTemplate;
     }
 }

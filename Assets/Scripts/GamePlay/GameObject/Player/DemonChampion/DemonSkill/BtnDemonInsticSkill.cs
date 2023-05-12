@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BtnDemonInsticSkill : MonoBehaviour
 {
-    [SerializeField] private DemonSkill _champSkill;
-    
+    [SerializeField] private Abilities _abilitySkill;
+
     void Start()
     {  
         Button btn = gameObject.GetComponent<Button>();
@@ -20,6 +20,6 @@ public class BtnDemonInsticSkill : MonoBehaviour
 
     public void ClickToDeploySkill()
     {
-        _champSkill.setDeploySkill();         
+        _abilitySkill.SetAbility();   
     }
 }
