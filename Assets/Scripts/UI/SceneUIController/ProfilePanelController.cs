@@ -46,9 +46,9 @@ public class ProfilePanelController : MonoBehaviour
         _saveBtnText.text = UIString.Instance.saveBtnText;
         _championBtnText.text = UIString.Instance.championBtnText;
         _username.text = _user.getUsername();
-        _curChamp = _user.getSelectedHero();
+        _curChamp = _user.GetChampionData(0);
         _heroName.text = _curChamp.name;
-        _heroLevel.text = "Lv: " + _curChamp.level.ToString();
+        _heroLevel.text = "LV: " + _curChamp.level.ToString();
         updateExp();
         _skillTitle.text = UIString.Instance.skillTitle;
         _skillDescriptionTitle.text = UIString.Instance.skillDescTitle;
@@ -56,9 +56,8 @@ public class ProfilePanelController : MonoBehaviour
     }
 
     void updateExp(){
-    
-        float progressVal = Mathf.Clamp01(_curChamp.experiencePercent / 100f);
-        Debug.Log(progressVal);
+        
+        float progressVal = Mathf.Clamp01((float)_curChamp.currentExp / (float)_curChamp.expCap);
         _heroExp.fillAmount = progressVal;
     }
 

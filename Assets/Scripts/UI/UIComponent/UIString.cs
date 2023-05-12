@@ -133,7 +133,7 @@ public class UIString: Singleton<UIString>
         {
             switch(language)
             {
-                case "vn": return "Thông tin các nhân";
+                case "vn": return "Thông tin cá nhân";
                 default: return "Profile";
             }
         }
@@ -145,7 +145,7 @@ public class UIString: Singleton<UIString>
         {
             switch(language)
             {
-                case "vn": return "Thông tin các nhân";
+                case "vn": return "Thông tin cá nhân";
                 default: return "Profile";
             }
         }
@@ -323,6 +323,74 @@ public class UIString: Singleton<UIString>
                                     + "Dear community members, \n"
                                     + "We would like to inform you about an important announcement as we enter a special season. \n"
                                     + $"During this time, we will be using costume {skinName} to create a festive and joyful atmosphere in the game.";
+            }
+        }
+    }
+
+    public string soundText {
+        get 
+        {
+            switch(language){
+                case "vn": return "Âm thanh";
+                default: return "Sound";
+            }
+        }
+    }
+
+    public string musicText {
+        get 
+        {
+            switch(language) {
+                case "vn": return "Âm nhạc";
+                default : return "Music";
+            }
+        }
+    }
+
+    public string onText 
+    {
+        get
+        {
+            switch(language)
+            {
+                case "vn": return "Bật";
+                default : return "On";
+            }
+        }
+    }
+
+    public string offText 
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Tặt";
+                default: return "Off";
+            }
+        }
+    }
+
+    public string quitText 
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Bỏ chơi";
+                default: return "Quit";
+            }
+        }
+    }
+
+    public string restartText
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Chơi lại";
+                default: return "Restart";
             }
         }
     }

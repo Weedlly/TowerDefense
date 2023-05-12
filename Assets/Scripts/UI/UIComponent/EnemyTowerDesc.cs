@@ -23,14 +23,14 @@ public class EnemyTowerDesc: Singleton<EnemyTowerDesc>
 
     Description[] tower_en = {
         new Description("Bow tower", "+ Decent range\n+ Single target attack\n+ Low Damage\n+ High attack speed"),
-        new Description("Magic tower", "+ Short range\n+ AOE attack\n + High Damage\n+ Medium attack speed"),
+        new Description("Magic tower", "+ Short range\n+ Single target attack\n + High Damage\n+ Medium attack speed"),
         new Description("Catapult tower", "+ Long range\n+ AOE attack\n + Decent Damage\n+ Low attack speed "),
         new Description("Guard tower", "+ Provide infantry to stall and attack the enemy\n+ The tower it self do not perform attack")
     };
 
      Description[] tower_vn = {
         new Description("Tháp cung", "+ Tầm đánh trung bình\n+ Sát thương đơn mục tiêu\n+ Sát thương thấp\n+ Tốc đánh nhanh"),
-        new Description("Tháp phép", "+ Tầm đánh gần\n+ Sát thương diện rộng\n + Sát thương lớn\n+ Tốc đánh trung bình"),
+        new Description("Tháp phép", "+ Tầm đánh gần\n+ Sát thương đơn mục tiêu\n + Sát thương lớn\n+ Tốc đánh trung bình"),
         new Description("Tháp bắn đá", "+ Tầm đánh xa\n+ Sát thương diện rộng\n + Sát thương trung bình\n+ Tốc đánh chậm"),
         new Description("Tháp lính canh", "+ Sinh ra các lính để đánh lạc hướng và gây sát thương kẻ địch\n+ Bản thân trụ không gây sát thương")
     };

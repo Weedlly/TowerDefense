@@ -24,12 +24,18 @@ public class ExpSystem : MonoBehaviour
 
     void Start()
     {
-        _champLevel = 1;
-        _currentExp = 0;
-        _expToNextLevel = 20;
+        // _champLevel = 1;
+        // _currentExp = 0;
+        // _expToNextLevel = 20;
 
         // _currentExpText.text = _currentExp.ToString();
         // _expToNextLevelText.text = _expToNextLevel.ToString();
+    }
+
+    public void SetAll(int currentExp, int expToNextLevel, int champLevel){ //khoi update
+        _champLevel = champLevel;
+        _currentExp = currentExp;
+        _expToNextLevel = expToNextLevel;
     }
 
     public void AddExperience(int amount)
@@ -60,7 +66,10 @@ public class ExpSystem : MonoBehaviour
         return _currentExp;
     }
 
-    
+    public int GetExpToNextLevel() 
+    {
+        return _expToNextLevel;
+    }
 
     public float GetAttackDameIncrease(float baseDame)
     {

@@ -99,9 +99,7 @@ public class User : Singleton<User>
         return false;
     }
 
-    public ChampionData getSelectedHero()
-    {
-        int id = 0;
+    public ChampionData GetChampionData(int id){
         if (_data.championData != null)
             foreach(var i in _data.championData){
                 if (i.championId == id) return i;
@@ -109,20 +107,14 @@ public class User : Singleton<User>
         return null;
     }
 
-    public int getHeroExp(int id){
-        if (_data.championData != null)
-            foreach(var i in _data.championData){
-                if (i.championId == id) return i.experiencePercent;
+    public bool UpdateChampionData(ChampionData nData){
+        for(int i = 0; i < _data.championData.Count; i++){
+            if (_data.championData[i].championId == nData.championId) {
+                _data.championData[i] = nData;
+                saveUserData();
+                return true;
             }
-        return -1;
+        }
+        return false;
     }
-
-    public int getHeroLevel(int id){
-        if (_data.championData != null)
-            foreach(var i in _data.championData){
-                if (i.championId == id) return i.level;
-            }
-        return -1;
-    }
-
 }

@@ -15,7 +15,7 @@ class SkinPanel : MonoBehaviour
     [SerializeField] Image _normalSelect;
     [SerializeField] Image _summerSelect;
 
-    SkinTypeEnum skinType = SkinSystem.Instance.SkinType;
+    // SkinTypeEnum skinType = SkinSystem.Instance.SkinType;
 
     SkinSystem _skinController; 
 
