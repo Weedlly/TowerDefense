@@ -35,7 +35,7 @@ public class StageSystem : MonoBehaviour
 
     private void Start() {
         _stageId = GlobalValue.Instance.stageId;
-        // _stageId = 2;
+        _stageId = 2;
         _mapController.ActiveMap(_stageId);
         
         MappingStageData(_stageId,"");

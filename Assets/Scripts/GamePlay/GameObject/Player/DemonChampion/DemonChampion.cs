@@ -44,7 +44,7 @@ public class DemonChampion : Evil
         _health = data.health;
     }
 
-    void Start() {
+    new void Start() {
         base.Start();
         getChampionLvl();
         getChampionStat();

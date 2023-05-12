@@ -71449,9 +71449,17 @@ PrefabInstance:
       propertyPath: abilityImage
       value: 
       objectReference: {fileID: 645806760}
+    - target: {fileID: 1941909690594331967, guid: e48a7339d66484f72a86c715347b4d74, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1941909691059300265, guid: e48a7339d66484f72a86c715347b4d74, type: 3}
       propertyPath: m_Name
       value: DemonChamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941909691708124596, guid: e48a7339d66484f72a86c715347b4d74, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48a7339d66484f72a86c715347b4d74, type: 3}
