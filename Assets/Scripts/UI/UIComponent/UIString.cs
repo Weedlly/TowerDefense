@@ -394,4 +394,16 @@ public class UIString: Singleton<UIString>
             }
         }
     }
+
+    public string infoText 
+    {
+        get 
+        {
+            switch(language)
+            {
+                case "vn": return "Thông tin";
+                default: return "Info";
+            }
+        }
+    }
 }
