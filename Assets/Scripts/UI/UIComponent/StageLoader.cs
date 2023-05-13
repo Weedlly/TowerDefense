@@ -19,17 +19,17 @@ public class StageLoader : MonoBehaviour
 
     void stageInfoUpdate()
     {
-        CompletetedStageData stage = User.Instance.getStageData(_stageId);
+        CompletetedStageData stage = User.Instance.getStageData(_stageId,DifficultyTypeEnum.Normal);
         _star3.gameObject.SetActive(false);
         _star2.gameObject.SetActive(false);
         _star1.gameObject.SetActive(false); 
-        if (stage != null)
-        {    
-            var star = stage.star;
-            if (star >= 1) _star1.gameObject.SetActive(true);
-            if (star >= 2) _star2.gameObject.SetActive(true);
-            if (star == 3) _star3.gameObject.SetActive(true); 
-        }
+        // if (stage != null)
+        // {    
+        //     var star = stage.star;
+        //     if (star >= 1) _star1.gameObject.SetActive(true);
+        //     if (star >= 2) _star2.gameObject.SetActive(true);
+        //     if (star == 3) _star3.gameObject.SetActive(true); 
+        // }
     }
 
     void Awake() {
@@ -37,7 +37,6 @@ public class StageLoader : MonoBehaviour
     }
 
     void Start() {
-        
         stageInfoUpdate();
     }
     
