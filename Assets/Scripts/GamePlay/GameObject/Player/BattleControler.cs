@@ -23,7 +23,7 @@ public class BattleControler : MonoBehaviour {
         {   
             if(player != null && searcher != null){
                 float currentDis = Vector2.Distance(searcher.transform.position,player.transform.position);
-                if(currentDis < searcher._rangeDetecting && currentDis < dis){
+                if(currentDis < searcher._rangeDetecting && currentDis < dis && IsNotInBattle(searcher,player)){
                     dis = currentDis;
                     target = player;
                 }
@@ -31,14 +31,21 @@ public class BattleControler : MonoBehaviour {
         }
         return target;
     }
-    void RemovePlayer(Player player){
-        if(_evils.Contains(player)){
-            _evils.Remove(player);
+    bool IsInFightingRange(Player searcher,Player player ){
+        float currentDis = Vector2.Distance(searcher.transform.position,player.transform.position);
+        if(currentDis < searcher._rangeDetecting){
+            return true;
         }
-        else if(_humans.Contains(player)){
-            _humans.Remove(player);
+        return false;
+    }
+    bool IsNotInBattle(Player searcher, Player player){
+        if(player._target == searcher){
+            return true;
         }
-        
+        else if(player._target == null){
+            return true;
+        }
+        return false;
     }
     bool IsPlayerDeadActive(Player player){
         if(player != null && player.gameObject.activeSelf == false){
@@ -51,7 +58,6 @@ public class BattleControler : MonoBehaviour {
             return true;
         }
         return false;
-        
     }
     void ActionControl(Player player, Player target){
         if(target != null){
@@ -60,20 +66,32 @@ public class BattleControler : MonoBehaviour {
     }
     void RunningBattle(){
         RemovePlayer();
-        foreach (var human in _humans){
-            //Find target mode
-            if(human._target == null){
-                Player target = FindTarget(human,_evils);
-                ActionControl(human,target);
-            }
- 
-        }
         foreach (var evil in _evils){
             if(evil._target == null){
                 Player target = FindTarget(evil,_humans);
                 ActionControl(evil,target);
             }
+            else{
+                if(!IsInFightingRange(evil,evil._target)){
+                    StopBattleWithTargetPlayer(evil);
+                }
+            }
         }
+        foreach (var human in _humans){
+            if(human._target == null){
+                Player target = FindTarget(human,_evils);
+                ActionControl(human,target);
+            }
+            else{
+                if(!IsInFightingRange(human,human._target)){
+                    StopBattleWithTargetPlayer(human);
+                }
+            }
+        }
+        
+    }
+    void StopBattleWithTargetPlayer(Player player){
+        player.SetTarget(null);
     }
     void RemovePlayer(){
         _evils.RemoveAll(IsPlayerDeadActive);

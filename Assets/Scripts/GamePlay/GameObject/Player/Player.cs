@@ -45,8 +45,6 @@ public class Player : MonoBehaviour,IInformationToBoard
 
     protected const float TIME_ATTACK = 0.4f / 1;
     protected const float WAIT_SHOT_ANIMATION = TIME_ATTACK   / (2f * 1);
-
-    public int _maxMeleeCompetitor;
     public int _meleeCompetitorCounter = 0;
 
     protected void Start()
@@ -110,7 +108,6 @@ public class Player : MonoBehaviour,IInformationToBoard
             MoveToTarget();
         }
         else{
-            
             AttackAnimator();
         }
     }

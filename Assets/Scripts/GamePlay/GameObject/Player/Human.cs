@@ -10,7 +10,6 @@ public class Human : Player
     [SerializeField]private int _lengthOfPath;
     new void Start() {
         base.Start();
-        _maxMeleeCompetitor = 1; 
        _currentPositionIndex = 0;
     }
     void OnEnable()

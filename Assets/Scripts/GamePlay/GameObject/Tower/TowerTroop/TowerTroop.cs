@@ -77,7 +77,6 @@ public class TowerTroop : Tower
     }
   
     void SetupAfterRevive(Evil evil){
-        
         evil.gameObject.SetActive(true);
         evil._isDie = false;
         evil._timeReviveCounter = _timeRevive;
