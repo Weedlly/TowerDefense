@@ -25,15 +25,11 @@ public class Player : MonoBehaviour,IInformationToBoard
     [SerializeField] protected HealthBar _healthBar;
     [SerializeField] protected SpriteRenderer _spriteRenderer;
 
-    [SerializeField] protected RangeWeapon _weapon;
     [SerializeField] protected GameObject _hurtBlood;
-    [SerializeField] protected GameObject _dieSmoke;
-    [SerializeField] protected PlayerWeapon _playerWeapon;
-    
+    [SerializeField] protected GameObject _dieSmoke;    
     [SerializeField] protected PlayerSkin _playerSkin;
 
     [Header("Control atribute")]
-    public int _unitType;
     public bool _isDie = false;
     public Player _target;
 
@@ -58,7 +54,6 @@ public class Player : MonoBehaviour,IInformationToBoard
         if(_playerSkin != null){
             _playerSkin.ChangingSkin(_animator,(int)SkinSystem.Instance.SkinType);
         }
-        SetUpUnitType();
         _healthBar = GetComponent<HealthBar>();
     }
     public void SetTarget(Player target){
@@ -119,20 +114,6 @@ public class Player : MonoBehaviour,IInformationToBoard
             AttackAnimator();
         }
     }
-
-    #region Set up on start
-    void SetUpUnitType(){
-        if(_weapon != null){
-            _unitType = (int)UnitType.Range;
-        }
-        else{
-            _unitType = (int)UnitType.Melee;
-        }
-    }
-
-
-    #endregion Set up for start
-
     protected void MoveToTarget(){
         _animator.SetFloat("movingSpeed",0.5f);
         transform.position = Vector2.MoveTowards(transform.position,_target.transform.position,Time.deltaTime * _movementSpeed);
