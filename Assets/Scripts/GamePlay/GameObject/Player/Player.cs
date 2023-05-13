@@ -60,7 +60,6 @@ public class Player : MonoBehaviour,IInformationToBoard
         }
         SetUpUnitType();
         _healthBar = GetComponent<HealthBar>();
-        // _animator.speed = 1.2f;
     }
     public void SetTarget(Player target){
         _target = target;

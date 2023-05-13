@@ -41,21 +41,22 @@ public class SettingController : MonoBehaviour
         _settingWindow.gameObject.SetActive(true);
     }
     public void TurnoffSettingWindow(){
-        Time.timeScale = 1;
+        Time.timeScale = GameControler.GAME_SPEED;
         _settingWindow.gameObject.SetActive(false);
     }
     public void RestartStage(){
-        Time.timeScale = 1;
+        GameControler.GAME_SPEED = (float)GameSpeed.Default;
+        Time.timeScale = (float)GameSpeed.Default;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void QuitStage(){
-        Time.timeScale = 1;
+        GameControler.GAME_SPEED = (float)GameSpeed.Default;
+        Time.timeScale = (float)GameSpeed.Default;
         SceneManager.LoadScene("StageSelectScene");
     }
     public void ChangeGameSpeed(){
         switch(GameControler.GAME_SPEED){
             case (float)GameSpeed.Default:{
-                
                 GameControler.GAME_SPEED = (float)GameSpeed.Double;
                 _gameSpeedTxt.text = "X" + ((int)GameControler.GAME_SPEED).ToString();
                 break;

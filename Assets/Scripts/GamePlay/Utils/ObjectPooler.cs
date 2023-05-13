@@ -9,7 +9,8 @@ public class ObjectPooler : MonoBehaviour
 
     private List<GameObject> _pool = new List<GameObject>();
     void MappingPlayerData(int playerId, Player player){
-        PlayerData playerData = XMLControler._playerDataList.FindPlayerData(playerId);
+        DifficultyTypeEnum stageDiff = GlobalValue.Instance.StageDifficulty;
+        PlayerData playerData = XMLControler._playerDataList.FindPlayerDataByIdAndStageDifficulty(playerId,stageDiff);
         player._attackDame = playerData.attackDame;
         player._attackRange = playerData.attackRange;
         player._attackSpeed = playerData.attackSpeed;

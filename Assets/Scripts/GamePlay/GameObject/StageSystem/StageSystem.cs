@@ -56,7 +56,7 @@ public class StageSystem : MonoBehaviour
             _callWaveBt[i].SetActive(true);
             _callWaveBt[i].transform.position = _gates[i].GetPosition(1);
         }
-
+        // todo: for creating map xml data
         // BuidingPlaceController.WriteDownTowerPlaceSetForStage(_stageId);
         // RouteSet.WriteDownGateSetForStage(_stageId);
 
