@@ -83,5 +83,16 @@ public class TowerTroop : Tower
         evil.transform.position = transform.position;
         BattleControler.AddEvil(evil);
     }
+
+    void OnDestroy()
+    {
+        foreach (var evil in _evils)
+            {
+                Destroy(evil.gameObject); // Destroy the evil game objects
+
+            }
+            _evils.Clear(); // Clear the list
+        Debug.Log("OnDestroy2");
+    }
     
 }
