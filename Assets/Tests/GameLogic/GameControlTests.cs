@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using System;
+using System.Reflection;
 
 public class GameControlTest
 {
@@ -18,65 +20,68 @@ public class GameControlTest
         Assert.IsNotNull(gameControlObj);
     }
 
-    // Reduce health test
-    // [Test]
-    // public void Test_ReduceHealth()
-    // {
-    //     GameControl.ReduceHealth();
-    //     Assert.AreEqual(GameControl.CurrentHealth, GameControl.MaxHealth - 1);
-    // }
-
-    // Check winning test
-    // [Test]
-    // public void Test_CheckWinning()
-    // {
-    //     GameControl.MaxWave = 3;
-    //     GameControl.CurrentWave = 3;
-    //     GameControl.ReduceHealth();
-    //     GameControl.CheckWinning();
-    //     Assert.IsTrue(GameControl.WinContainer.activeSelf);
-    // }
-
-    // Check defeat test
-    // [Test]
-    // public void Test_CheckDefeat()
-    // {
-    //     GameControl.ReduceHealth();
-    //     GameControl.CheckDefeat();
-    //     Assert.IsTrue(GameControl.DefeatContainer.activeSelf);
-    // }
-
-    // Coin is enough test
     [Test]
-    public void Test_CoinIsEnough()
+    public void Test_CoinIsEnough_EnoughCoin_ReturnsTrue()
     {
-        GameControl.IncreaseCoin(10);
-        bool result = GameControl.CoinIsEnough(5);
+        // Arrange
+        GameControl.IncreaseCoin(50);
+        int coinToCheck = 30;
+        
+        // Act
+        bool result = GameControl.CoinIsEnough(coinToCheck);
+        
+        // Assert
         Assert.IsTrue(result);
     }
-
-    // // Coin is not enough test
-    // [Test]
-    // public void Test_CoinIsNotEnough()
-    // {
-    //     bool result = GameControl.CoinIsEnough(GameControl.CoinPointMax + 1);
-    //     Assert.IsFalse(result);
-    // }
-
-    // // Decrease coin test
-    // [Test]
-    // public void Test_DecreaseCoin()
-    // {
-    //     GameControl.IncreaseCoin(10);
-    //     GameControl.DecreaseCoin(5);
-    //     Assert.AreEqual(GameControl.CoinPoint, 5);
-    // }
-
-    // // Increase coin test
-    // [Test]
-    // public void Test_IncreaseCoin()
-    // {
-    //     GameControl.IncreaseCoin(10);
-    //     Assert.AreEqual(GameControl.CoinPoint, 10);
-    // }
+    
+    [Test]
+    public void Test_CoinIsEnough_NotEnoughCoin_ReturnsFalse()
+    {
+        // Arrange
+        GameControl.IncreaseCoin(20);
+        int coinToCheck = 30;
+        
+        // Act
+        bool result = GameControl.CoinIsEnough(coinToCheck);
+        
+        // Assert
+        Assert.IsFalse(result);
+    }
+    
+    [Test]
+    public void Test_ReduceHealth_DecreasesHealthPoint()
+    {
+        // Arrange
+        Type gameControlType = typeof(GameControl);
+        FieldInfo healthPointField = gameControlType.GetField("_healthPoint", BindingFlags.NonPublic | BindingFlags.Static);
+        GameControl gameControl = new GameControl();
+        int initialHealthPoint = 10;
+        
+        // Act
+        healthPointField.SetValue(gameControl, initialHealthPoint);
+        GameControl.ReduceHealth();
+        
+        // Assert
+        int updatedHealthPoint = (int)healthPointField.GetValue(gameControl);
+        Assert.AreEqual(initialHealthPoint - 1, updatedHealthPoint);
+    }
+    
+    [Test]
+    public void Test_IncreaseCoin_IncreasesCoinPoint()
+    {
+        // Arrange
+        Type gameControlType = typeof(GameControl);
+        FieldInfo coinPointField = gameControlType.GetField("_coinPoint", BindingFlags.NonPublic | BindingFlags.Static);
+        GameControl gameControl = new GameControl();
+        int initialCoinPoint = 50;
+        int coinToAdd = 30;
+        
+        // Act
+        coinPointField.SetValue(gameControl, initialCoinPoint);
+        GameControl.IncreaseCoin(coinToAdd);
+        
+        // Assert
+        int updatedCoinPoint = (int)coinPointField.GetValue(gameControl);
+        Assert.AreEqual(initialCoinPoint + coinToAdd, updatedCoinPoint);
+    }
 }

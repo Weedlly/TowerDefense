@@ -19,12 +19,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1280
-    height: 697
+    width: 1536
+    height: 722.8
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 23
+  controlID: 15
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -33,63 +33,26 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 13974, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
+  m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Simulator
-    m_Image: {fileID: 3038311277492192215, guid: 0000000000000000d000000000000000, type: 0}
+    m_Text: Console
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 239
-    y: 83
-    width: 754
-    height: 484
+    x: 0
+    y: 488.80002
+    width: 1195.8
+    height: 286.59998
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
-  m_SerializedViewNames:
-  - UnityEditor.GameView
-  m_SerializedViewValues:
-  - /Users/weed/VNTowerDefense/BetaOneStageV3/TowerDefense/Library/PlayModeViewStates/0644fd7333bef42e8921b4486fabb4e1
-  m_PlayModeViewName: Device Simulator
-  m_ShowGizmos: 0
-  m_TargetDisplay: 0
-  m_ClearColor: {r: 0, g: 0, b: 0, a: 1}
-  m_TargetSize: {x: 1334, y: 750}
-  m_TextureFilterMode: 0
-  m_TextureHideFlags: 61
-  m_RenderIMGUI: 1
-  m_EnterPlayModeBehavior: 2
-  m_UseMipMap: 0
-  m_SimulatorState:
-    controlPanelVisible: 0
-    controlPanelWidth: 0
-    controlPanelFoldoutKeys:
-    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
-    - UnityEditor.AdaptivePerformance.Samsung.Android.Editor.AdaptivePerformanceVRRUIExtension
-    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
-    controlPanelFoldoutValues: 000000
-    pluginNames:
-    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
-    - UnityEditor.AdaptivePerformance.Samsung.Android.Editor.AdaptivePerformanceVRRUIExtension
-    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
-    pluginStates:
-    - '{"m_SerializationStates":{"thermalFoldout":false,"performanceFoldout":false,"developerFoldout":false,"indexerFoldout":false,"scalersFoldout":false,"deviceSettingsFoldout":false}}'
-    - '{"m_SerializationStates":{"settingsFoldout":false,"vrrFoldout":false,"androidSystemFoldout":false}}'
-    - '{}'
-    scale: 43
-    fitToScreenEnabled: 0
-    rotationDegree: 270
-    highlightSafeAreaEnabled: 0
-    friendlyName: Apple iPhone 6
-    networkReachability: 1
-    systemLanguage: 10
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -104,17 +67,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 4}
-  - {fileID: 10}
+  - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 995
-    height: 697
+    width: 1196.8
+    height: 722.8
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 24
+  controlID: 16
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,17 +92,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 5}
-  - {fileID: 7}
+  - {fileID: 8}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 995
-    height: 505
+    width: 1196.8
+    height: 415.2
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 25
+  controlID: 58
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,21 +113,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 239
-    height: 505
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 6}
+    width: 546.4
+    height: 415.2
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 6}
-  m_Selected: 0
+  - {fileID: 7}
+  m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -187,9 +151,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 83
-    width: 238
-    height: 484
+    y: 73.6
+    width: 287.8
+    height: 411
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -199,7 +163,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b621ffff7224ffff9e3dffff944affff385fffff2e6cffff5c8affff5297ffff1ec4fffff0d0fffffcfafffff4ffffffd0e0000028e10000bc050100c81e0100f41e0100
+      m_ExpandedIDs: 8a28ffffdc28ffff122bffff642bffff9c2bffffec2bffffe02cffff302dffff242effff742effffac2efffff02effff282fffff722fffff6430ffffae30ffffa231fffffe31ffff3632ffff9632ffff5035ffffa035ffff9436ffffe436ffffd837ffff2438ffff1839ffff6c39ffff603affffaa3affffe23affff2c3bffff423cffff863cffff783efffff43effff9c42ffffee42ffff8a44ffffce44ffff0646ffff5846ffff4c47ffff9e47ffff9048ffffe248ffffd649ffff284affff1a4bffff6c4bffff1a4dffff784dffff6c4effff2e4fffff6650ffffbe50ffffb251ffff0a52ffff2053ffff9053ffffa654fffffa54ffffae57fffff857ffff5259ffff9659ffff125bffff665bffff025dffff465dffff7c5effffc05efffffa5fffff4a60ffff3c61ffff8c61ffff8062ffffd062ffffc463ffffbe72ffff2673ffffaa77ffff0678fffffa78ffff5479ffff8c79ffffd879ffff107affff807affff767bffffc67bffffba7cffff0a7dfffffe7dffff4e7effffa67ffffff67fffffea80ffff3a81ffff2e82ffff7e82ffffbe84ffff0885fffffc85ffff5086ffff8887ffffd287ffff0a88ffff5488ffff8c88ffffe088ffffd489ffff188affff508affff988affff568dffffa88dffffe08dffff3c8effff0891ffff5491ffff8c91ffffd891ffffee92ffff3a93ffff7293ffffc893ffff0095ffff4a95ffff6096ffffaa96ffffe296ffff2c97ffff6497ffffae97ffffa298ffffec98ffff029affff4c9affffa49bffffee9bffffbc9dffff069effff3e9effff889effffc09effff0a9fffffb6a0ffff00a1fffff4a1ffff3ea2ffff30a3ffff7aa3ffff6ea4ffffb8a4ffffa8a6ffff06a7ffff90adffffdaadffffceaeffff18afffff4eb0ffffa2b0ffff96b1ffff16b2ffff4eb2ffffb6b2ffffeeb2ffff32b3ffff6ab3ffffaeb3ffffa2b4ffffe6b4ffff94b6ffffd8b6ffff10b7ffff54b7ffff8cb7ffffd0b7ffff08b8ffff4cb8ffff40b9ffff84b9ffffbcb9ffff78c7ffffc4c7fffffcc7ffff5ac8ffffb4c9fffffec9fffff2caffff42cbffff36ccffff80ccffff30ceffff7aceffffb2cefffffcceffff34cfffff7ecfffffb6cfffff00d0ffff36d0ffff82d0ffffbcd1ffff24d2ffff1ad3ffff5ed3ffff94d3ffff54e1ffff9ee1ffff92e2ffffd6e2ffffcae3ffff0ee4ffff02e5ffff46e5ffff3ae6ffff7ee6ffff72e7ffffb6e7ffffaae8ffffeee8ffffe2e9ffff26eaffff5eeaffffa2eaffffdaeaffff32ebffff6aebffffaeebfffff0edffff3aeeffff72eeffffbceefffff4efffff3ef0ffff32f1ffff7cf1ffff78f2ffffc2f2fffffaf2ffff44f3ffff7cf3ffffc6f3fffffef3ffff48f4ffff3cf5ffff86f5ffffbef5ffff08f6fffffcf6ffff46f7ffff9ef8ffffe8f8ffff20f9ffff6af9ffffc6f9ffff12faffff00fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -215,7 +179,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 5}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -231,27 +195,168 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 73.6
+    width: 545.4
+    height: 394.2
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_VersionControlStates: []
+    m_SoftLockControlStates: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets/Tests/GameObject/Tower/TowerWeapon
+    m_Globs: []
+    m_OriginalText: 
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Tests/GameObject/Tower/TowerWeapon
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\HP\Desktop\An_vs_code\TowerDefense
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 109.79999}
+    m_SelectedIDs: 4a780000
+    m_LastClickedID: 30794
+    m_ExpandedIDs: 000000004a710000e0770000ec7700003e78000042780000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: PlayerWeapon
+      m_OriginalName: PlayerWeapon
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 36314
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 0
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 5}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 000000004a710000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: 447a0000448d0000468d0000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: SkinTest
+      m_OriginalName: SkinTest
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 45454
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 0
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 5}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 16
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 236.8
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SimulatorWindow
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 239
+    x: 546.4
     y: 0
-    width: 756
-    height: 505
-  m_MinSize: {x: 202, y: 221}
+    width: 650.4
+    height: 415.2
+  m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 2}
+  m_ActualView: {fileID: 12}
   m_Panes:
-  - {fileID: 8}
-  - {fileID: 2}
   - {fileID: 9}
-  m_Selected: 1
-  m_LastSelected: 0
---- !u!114 &8
+  - {fileID: 10}
+  - {fileID: 11}
+  - {fileID: 12}
+  m_Selected: 3
+  m_LastSelected: 2
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,10 +376,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 239
-    y: 83
-    width: 754
-    height: 484
+    x: 361
+    y: 73
+    width: 1133
+    height: 546
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -491,20 +596,20 @@ MonoBehaviour:
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.18237782, y: 0.20629014, z: -10.066049}
+    m_Target: {x: 5.0829997, y: -5.55, z: 0}
     speed: 2
-    m_Value: {x: -0.18237782, y: 0.20629014, z: -10.066049}
+    m_Value: {x: 5.0829997, y: -5.55, z: 0}
   m_RenderMode: 0
   m_CameraMode:
-    drawMode: 0
-    name: Shaded
+    drawMode: 2
+    name: Shaded Wireframe
     section: Shading Mode
   m_ValidateTrueMetals: 0
   m_DoValidateTrueMetals: 0
@@ -512,7 +617,7 @@ MonoBehaviour:
   m_SceneViewState:
     m_AlwaysRefresh: 0
     showFog: 1
-    showSkybox: 1
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -551,9 +656,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 18.729385
+    m_Target: 3.5794551
     speed: 2
-    m_Value: 18.729385
+    m_Value: 3.5794551
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -578,7 +683,72 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &9
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13974, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Simulator
+    m_Image: {fileID: 3038311277492192215, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 288.80002
+    y: 217.6
+    width: 906.00006
+    height: 267
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SerializedViewNames:
+  - UnityEditor.GameView
+  m_SerializedViewValues:
+  - /Users/weed/VNTowerDefense/BetaOneStageV3/TowerDefense/Library/PlayModeViewStates/0644fd7333bef42e8921b4486fabb4e1
+  m_PlayModeViewName: Device Simulator
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 1}
+  m_TargetSize: {x: 1334, y: 750}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 2
+  m_UseMipMap: 0
+  m_SimulatorState:
+    controlPanelVisible: 0
+    controlPanelWidth: NaN
+    controlPanelFoldoutKeys:
+    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
+    - UnityEditor.AdaptivePerformance.Samsung.Android.Editor.AdaptivePerformanceVRRUIExtension
+    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
+    controlPanelFoldoutValues: 000000
+    pluginNames:
+    - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
+    - UnityEditor.AdaptivePerformance.Samsung.Android.Editor.AdaptivePerformanceVRRUIExtension
+    - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
+    pluginStates:
+    - '{"m_SerializationStates":{"thermalFoldout":false,"performanceFoldout":false,"developerFoldout":false,"indexerFoldout":false,"scalersFoldout":false,"deviceSettingsFoldout":false}}'
+    - '{"m_SerializationStates":{"settingsFoldout":false,"vrrFoldout":false,"androidSystemFoldout":false}}'
+    - '{}'
+    scale: 10
+    fitToScreenEnabled: 1
+    rotationDegree: 270
+    highlightSafeAreaEnabled: 0
+    friendlyName: Apple iPhone 6
+    networkReachability: 1
+    systemLanguage: 10
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -598,10 +768,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 239
-    y: 83
-    width: 754
-    height: 484
+    x: 289.8
+    y: 19
+    width: 906.00006
+    height: 411
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -619,7 +789,1518 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &10
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 546.4
+    y: 73.6
+    width: 648.4
+    height: 394.2
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_Spl:
+    ID: 162
+    splitterInitialOffset: 213.6
+    currentActiveSplitter: -1
+    realSizes:
+    - 146.4
+    - 177.6
+    relativeSizes:
+    - 0.45185184
+    - 0.54814816
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 324
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 1
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 0}
+    m_NewResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories: []
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 12}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Minimal TD][suite]'
+      name: Minimal TD
+      fullName: Minimal TD
+      resultStatus: 2
+      duration: 0.2233776
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1016
+      uniqueId: '[GameLogic][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/GameLogic.dll][suite]'
+      name: GameLogic.dll
+      fullName: C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/GameLogic.dll
+      resultStatus: 1
+      duration: 0.007995
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Minimal TD][suite]'
+    - id: 1006
+      uniqueId: GameLogic.dll/[GameLogic][ExpSystemTests][suite]
+      name: ExpSystemTests
+      fullName: ExpSystemTests
+      resultStatus: 1
+      duration: 0.0789628
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1026
+      parentUniqueId: '[GameLogic][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/GameLogic.dll][suite]'
+    - id: 1007
+      uniqueId: GameLogic.dll/ExpSystemTests/[GameLogic][ExpSystemTests.AddExperience_EnoughExpToLevelUp_IncreaseLevelAndResetExp]
+      name: AddExperience_EnoughExpToLevelUp_IncreaseLevelAndResetExp
+      fullName: ExpSystemTests.AddExperience_EnoughExpToLevelUp_IncreaseLevelAndResetExp
+      resultStatus: 1
+      duration: 0.0439439
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][ExpSystemTests][suite]
+    - id: 1008
+      uniqueId: GameLogic.dll/ExpSystemTests/[GameLogic][ExpSystemTests.AddExperience_NotEnoughExpToLevelUp_KeepExpAndLevel]
+      name: AddExperience_NotEnoughExpToLevelUp_KeepExpAndLevel
+      fullName: ExpSystemTests.AddExperience_NotEnoughExpToLevelUp_KeepExpAndLevel
+      resultStatus: 1
+      duration: 0.0015742
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][ExpSystemTests][suite]
+    - id: 1009
+      uniqueId: GameLogic.dll/ExpSystemTests/[GameLogic][ExpSystemTests.GetAttackDameIncrease_Level1_ReturnBaseDame]
+      name: GetAttackDameIncrease_Level1_ReturnBaseDame
+      fullName: ExpSystemTests.GetAttackDameIncrease_Level1_ReturnBaseDame
+      resultStatus: 1
+      duration: 0.0018734
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][ExpSystemTests][suite]
+    - id: 1010
+      uniqueId: GameLogic.dll/ExpSystemTests/[GameLogic][ExpSystemTests.GetAttackDameIncrease_Level2_ReturnIncreasedDame]
+      name: GetAttackDameIncrease_Level2_ReturnIncreasedDame
+      fullName: ExpSystemTests.GetAttackDameIncrease_Level2_ReturnIncreasedDame
+      resultStatus: 1
+      duration: 0.0013301
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][ExpSystemTests][suite]
+    - id: 1011
+      uniqueId: GameLogic.dll/ExpSystemTests/[GameLogic][ExpSystemTests.GetAttackSpeedIncrease_Level1_ReturnBaseAttackSpeed]
+      name: GetAttackSpeedIncrease_Level1_ReturnBaseAttackSpeed
+      fullName: ExpSystemTests.GetAttackSpeedIncrease_Level1_ReturnBaseAttackSpeed
+      resultStatus: 1
+      duration: 0.0016911
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][ExpSystemTests][suite]
+    - id: 1012
+      uniqueId: GameLogic.dll/ExpSystemTests/[GameLogic][ExpSystemTests.GetAttackSpeedIncrease_Level3_ReturnIncreasedAttackSpeed]
+      name: GetAttackSpeedIncrease_Level3_ReturnIncreasedAttackSpeed
+      fullName: ExpSystemTests.GetAttackSpeedIncrease_Level3_ReturnIncreasedAttackSpeed
+      resultStatus: 1
+      duration: 0.0033293
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][ExpSystemTests][suite]
+    - id: 1003
+      uniqueId: GameLogic.dll/[GameLogic][GameControlTest][suite]
+      name: GameControlTest
+      fullName: GameControlTest
+      resultStatus: 1
+      duration: 0.0075712
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1016
+      parentUniqueId: '[GameLogic][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/GameLogic.dll][suite]'
+    - id: 1016
+      uniqueId: GameLogic.dll/GameControlTest/[GameLogic][GameControlTest.Test_CoinIsEnough_EnoughCoin_ReturnsTrue]
+      name: Test_CoinIsEnough_EnoughCoin_ReturnsTrue
+      fullName: GameControlTest.Test_CoinIsEnough_EnoughCoin_ReturnsTrue
+      resultStatus: 1
+      duration: 0.0013788
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: GameLogic.dll/[GameLogic][GameControlTest][suite]
+    - id: 1017
+      uniqueId: GameLogic.dll/GameControlTest/[GameLogic][GameControlTest.Test_CoinIsEnough_NotEnoughCoin_ReturnsFalse]
+      name: Test_CoinIsEnough_NotEnoughCoin_ReturnsFalse
+      fullName: GameControlTest.Test_CoinIsEnough_NotEnoughCoin_ReturnsFalse
+      resultStatus: 1
+      duration: 0.0034341
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: GameLogic.dll/[GameLogic][GameControlTest][suite]
+    - id: 1019
+      uniqueId: GameLogic.dll/GameControlTest/[GameLogic][GameControlTest.Test_IncreaseCoin_IncreasesCoinPoint]
+      name: Test_IncreaseCoin_IncreasesCoinPoint
+      fullName: GameControlTest.Test_IncreaseCoin_IncreasesCoinPoint
+      resultStatus: 1
+      duration: 0.0016387
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: GameLogic.dll/[GameLogic][GameControlTest][suite]
+    - id: 1004
+      uniqueId: GameLogic.dll/GameControlTest/[GameLogic][GameControlTest.Test_LoadScene]
+      name: Test_LoadScene
+      fullName: GameControlTest.Test_LoadScene
+      resultStatus: 1
+      duration: 2.6717865
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: GameLogic.dll/[GameLogic][GameControlTest][suite]
+    - id: 1018
+      uniqueId: GameLogic.dll/GameControlTest/[GameLogic][GameControlTest.Test_ReduceHealth_DecreasesHealthPoint]
+      name: Test_ReduceHealth_DecreasesHealthPoint
+      fullName: GameControlTest.Test_ReduceHealth_DecreasesHealthPoint
+      resultStatus: 1
+      duration: 0.0056787
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: GameLogic.dll/[GameLogic][GameControlTest][suite]
+    - id: 1006
+      uniqueId: GameLogic.dll/[GameLogic][GameSpeedControllerTests][suite]
+      name: GameSpeedControllerTests
+      fullName: GameSpeedControllerTests
+      resultStatus: 1
+      duration: 0.0110718
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1016
+      parentUniqueId: '[GameLogic][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/GameLogic.dll][suite]'
+    - id: 1009
+      uniqueId: GameLogic.dll/GameSpeedControllerTests/[GameLogic][GameSpeedControllerTests.Test_ChangeGameSpeed_SetToDefault_ShouldSetGameSpeedToDouble]
+      name: Test_ChangeGameSpeed_SetToDefault_ShouldSetGameSpeedToDouble
+      fullName: GameSpeedControllerTests.Test_ChangeGameSpeed_SetToDefault_ShouldSetGameSpeedToDouble
+      resultStatus: 1
+      duration: 0.002784
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][GameSpeedControllerTests][suite]
+    - id: 1007
+      uniqueId: GameLogic.dll/GameSpeedControllerTests/[GameLogic][GameSpeedControllerTests.Test_ChangeGameSpeed_SetToDefault_ShouldSetTimeScaleToOne]
+      name: Test_ChangeGameSpeed_SetToDefault_ShouldSetTimeScaleToOne
+      fullName: GameSpeedControllerTests.Test_ChangeGameSpeed_SetToDefault_ShouldSetTimeScaleToOne
+      resultStatus: 1
+      duration: 0.0004522
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][GameSpeedControllerTests][suite]
+    - id: 1010
+      uniqueId: GameLogic.dll/GameSpeedControllerTests/[GameLogic][GameSpeedControllerTests.Test_ChangeGameSpeed_SetToDouble_ShouldSetGameSpeedToDefault]
+      name: Test_ChangeGameSpeed_SetToDouble_ShouldSetGameSpeedToDefault
+      fullName: GameSpeedControllerTests.Test_ChangeGameSpeed_SetToDouble_ShouldSetGameSpeedToDefault
+      resultStatus: 1
+      duration: 0.0002698
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][GameSpeedControllerTests][suite]
+    - id: 1008
+      uniqueId: GameLogic.dll/GameSpeedControllerTests/[GameLogic][GameSpeedControllerTests.Test_ChangeGameSpeed_SetToDouble_ShouldSetTimeScaleToTwo]
+      name: Test_ChangeGameSpeed_SetToDouble_ShouldSetTimeScaleToTwo
+      fullName: GameSpeedControllerTests.Test_ChangeGameSpeed_SetToDouble_ShouldSetTimeScaleToTwo
+      resultStatus: 1
+      duration: 0.0002457
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: GameLogic.dll/[GameLogic][GameSpeedControllerTests][suite]
+    - id: 1011
+      uniqueId: GameLogic.dll/[GameLogic][StageRatingTests][suite]
+      name: StageRatingTests
+      fullName: StageRatingTests
+      resultStatus: 1
+      duration: 0.0092887
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1016
+      parentUniqueId: '[GameLogic][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/GameLogic.dll][suite]'
+    - id: 1015
+      uniqueId: GameLogic.dll/StageRatingTests/[GameLogic][StageRatingTests.Test_GetRatingStar_Returns_0_When_HealthPoint_Is_Negative]
+      name: Test_GetRatingStar_Returns_0_When_HealthPoint_Is_Negative
+      fullName: StageRatingTests.Test_GetRatingStar_Returns_0_When_HealthPoint_Is_Negative
+      resultStatus: 1
+      duration: 0.0015427
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1011
+      parentUniqueId: GameLogic.dll/[GameLogic][StageRatingTests][suite]
+    - id: 1012
+      uniqueId: GameLogic.dll/StageRatingTests/[GameLogic][StageRatingTests.Test_GetRatingStar_Returns_1_When_HealthPoint_Is_Less_Than_50_Percent]
+      name: Test_GetRatingStar_Returns_1_When_HealthPoint_Is_Less_Than_50_Percent
+      fullName: StageRatingTests.Test_GetRatingStar_Returns_1_When_HealthPoint_Is_Less_Than_50_Percent
+      resultStatus: 1
+      duration: 0.0003443
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1011
+      parentUniqueId: GameLogic.dll/[GameLogic][StageRatingTests][suite]
+    - id: 1013
+      uniqueId: GameLogic.dll/StageRatingTests/[GameLogic][StageRatingTests.Test_GetRatingStar_Returns_2_When_HealthPoint_Is_Less_Than_70_Percent]
+      name: Test_GetRatingStar_Returns_2_When_HealthPoint_Is_Less_Than_70_Percent
+      fullName: StageRatingTests.Test_GetRatingStar_Returns_2_When_HealthPoint_Is_Less_Than_70_Percent
+      resultStatus: 1
+      duration: 0.0003086
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1011
+      parentUniqueId: GameLogic.dll/[GameLogic][StageRatingTests][suite]
+    - id: 1014
+      uniqueId: GameLogic.dll/StageRatingTests/[GameLogic][StageRatingTests.Test_GetRatingStar_Returns_3_When_HealthPoint_Is_Full]
+      name: Test_GetRatingStar_Returns_3_When_HealthPoint_Is_Full
+      fullName: StageRatingTests.Test_GetRatingStar_Returns_3_When_HealthPoint_Is_Full
+      resultStatus: 1
+      duration: 0.0002419
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1011
+      parentUniqueId: GameLogic.dll/[GameLogic][StageRatingTests][suite]
+    - id: 1028
+      uniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+      name: Tests.dll
+      fullName: C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll
+      resultStatus: 2
+      duration: 0.1743506
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Minimal TD][suite]'
+    - id: 1017
+      uniqueId: Tests.dll/[Tests][BattleControlerTests][suite]
+      name: BattleControlerTests
+      fullName: BattleControlerTests
+      resultStatus: 1
+      duration: 0.1251796
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1028
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1018
+      uniqueId: Tests.dll/BattleControlerTests/[Tests][BattleControlerTests.Test_AddEvil]
+      name: Test_AddEvil
+      fullName: BattleControlerTests.Test_AddEvil
+      resultStatus: 1
+      duration: 0.003791
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Tests.dll/[Tests][BattleControlerTests][suite]
+    - id: 1019
+      uniqueId: Tests.dll/BattleControlerTests/[Tests][BattleControlerTests.Test_AddHuman]
+      name: Test_AddHuman
+      fullName: BattleControlerTests.Test_AddHuman
+      resultStatus: 1
+      duration: 0.0640179
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Tests.dll/[Tests][BattleControlerTests][suite]
+    - id: 1022
+      uniqueId: Tests.dll/BattleControlerTests/[Tests][BattleControlerTests.Test_FindTarget]
+      name: Test_FindTarget
+      fullName: BattleControlerTests.Test_FindTarget
+      resultStatus: 1
+      duration: 0.0093649
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Tests.dll/[Tests][BattleControlerTests][suite]
+    - id: 1021
+      uniqueId: Tests.dll/BattleControlerTests/[Tests][BattleControlerTests.Test_IsPlayerDie]
+      name: Test_IsPlayerDie
+      fullName: BattleControlerTests.Test_IsPlayerDie
+      resultStatus: 1
+      duration: 0.0067643
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Tests.dll/[Tests][BattleControlerTests][suite]
+    - id: 1030
+      uniqueId: Tests.dll/[Tests][DemonChampionTests][suite]
+      name: DemonChampionTests
+      fullName: DemonChampionTests
+      resultStatus: 1
+      duration: 0.0146212
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1045
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1031
+      uniqueId: Tests.dll/DemonChampionTests/[Tests][DemonChampionTests.Start_GetsChampionLevelAndStats]
+      name: Start_GetsChampionLevelAndStats
+      fullName: DemonChampionTests.Start_GetsChampionLevelAndStats
+      resultStatus: 1
+      duration: 0.0015157
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1030
+      parentUniqueId: Tests.dll/[Tests][DemonChampionTests][suite]
+    - id: 1033
+      uniqueId: Tests.dll/DemonChampionTests/[Tests][DemonChampionTests.Test_GetChampionState]
+      name: Test_GetChampionState
+      fullName: DemonChampionTests.Test_GetChampionState
+      resultStatus: 1
+      duration: 0.0053164
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1030
+      parentUniqueId: Tests.dll/[Tests][DemonChampionTests][suite]
+    - id: 1032
+      uniqueId: Tests.dll/DemonChampionTests/[Tests][DemonChampionTests.Test_SetAttack]
+      name: Test_SetAttack
+      fullName: DemonChampionTests.Test_SetAttack
+      resultStatus: 1
+      duration: 0.0005098
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1030
+      parentUniqueId: Tests.dll/[Tests][DemonChampionTests][suite]
+    - id: 1034
+      uniqueId: Tests.dll/[Tests][DemonSkillTests][suite]
+      name: DemonSkillTests
+      fullName: DemonSkillTests
+      resultStatus: 1
+      duration: 0.0078471
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1045
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1035
+      uniqueId: Tests.dll/DemonSkillTests/[Tests][DemonSkillTests.DeployActiveSkill_WhenIsDeploySkillAndMouseButtonDown_ShouldInstantiateFireRain]
+      name: DeployActiveSkill_WhenIsDeploySkillAndMouseButtonDown_ShouldInstantiateFireRain
+      fullName: DemonSkillTests.DeployActiveSkill_WhenIsDeploySkillAndMouseButtonDown_ShouldInstantiateFireRain
+      resultStatus: 1
+      duration: 0.0026166
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1034
+      parentUniqueId: Tests.dll/[Tests][DemonSkillTests][suite]
+    - id: 1036
+      uniqueId: Tests.dll/DemonSkillTests/[Tests][DemonSkillTests.DeployActiveSkill_WhenNotIsDeploySkill_ShouldNotInstantiateFireRain]
+      name: DeployActiveSkill_WhenNotIsDeploySkill_ShouldNotInstantiateFireRain
+      fullName: DemonSkillTests.DeployActiveSkill_WhenNotIsDeploySkill_ShouldNotInstantiateFireRain
+      resultStatus: 1
+      duration: 0.0007191
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1034
+      parentUniqueId: Tests.dll/[Tests][DemonSkillTests][suite]
+    - id: 1037
+      uniqueId: Tests.dll/[Tests][EvilTests][suite]
+      name: EvilTests
+      fullName: EvilTests
+      resultStatus: 1
+      duration: 0.008171
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1046
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1038
+      uniqueId: Tests.dll/EvilTests/[Tests][EvilTests.Test_MoveDefault]
+      name: Test_MoveDefault
+      fullName: EvilTests.Test_MoveDefault
+      resultStatus: 1
+      duration: 0.0031916
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1037
+      parentUniqueId: Tests.dll/[Tests][EvilTests][suite]
+    - id: 1039
+      uniqueId: Tests.dll/[Tests][HumanTests][suite]
+      name: HumanTests
+      fullName: HumanTests
+      resultStatus: 1
+      duration: 0.0154628
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1047
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1040
+      uniqueId: Tests.dll/HumanTests/[Tests][HumanTests.Test_MoveDefault]
+      name: Test_MoveDefault
+      fullName: HumanTests.Test_MoveDefault
+      resultStatus: 1
+      duration: 0.0035196
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1039
+      parentUniqueId: Tests.dll/[Tests][HumanTests][suite]
+    - id: 1042
+      uniqueId: Tests.dll/HumanTests/[Tests][HumanTests.Test_ResetsPositionAndIndex]
+      name: Test_ResetsPositionAndIndex
+      fullName: HumanTests.Test_ResetsPositionAndIndex
+      resultStatus: 1
+      duration: 0.0008663
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1039
+      parentUniqueId: Tests.dll/[Tests][HumanTests][suite]
+    - id: 1041
+      uniqueId: Tests.dll/HumanTests/[Tests][HumanTests.Test_SetRoute_InitialPosition]
+      name: Test_SetRoute_InitialPosition
+      fullName: HumanTests.Test_SetRoute_InitialPosition
+      resultStatus: 1
+      duration: 0.0068814
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1039
+      parentUniqueId: Tests.dll/[Tests][HumanTests][suite]
+    - id: 1047
+      uniqueId: Tests.dll/[Tests][PlayerSkinTests][suite]
+      name: PlayerSkinTests
+      fullName: PlayerSkinTests
+      resultStatus: 1
+      duration: 0.1213759
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1052
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1049
+      uniqueId: Tests.dll/PlayerSkinTests/[Tests][PlayerSkinTests.ChangingSkin_InvalidSkinOrder_ReturnsFalse]
+      name: ChangingSkin_InvalidSkinOrder_ReturnsFalse
+      fullName: PlayerSkinTests.ChangingSkin_InvalidSkinOrder_ReturnsFalse
+      resultStatus: 1
+      duration: 0.0642374
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1047
+      parentUniqueId: Tests.dll/[Tests][PlayerSkinTests][suite]
+    - id: 1048
+      uniqueId: Tests.dll/PlayerSkinTests/[Tests][PlayerSkinTests.ChangingSkin_ValidSkinOrder_ChangesAnimatorController]
+      name: ChangingSkin_ValidSkinOrder_ChangesAnimatorController
+      fullName: PlayerSkinTests.ChangingSkin_ValidSkinOrder_ChangesAnimatorController
+      resultStatus: 1
+      duration: 0.019252
+      messages: 
+      output: 'The Animator Controller () you have used is not valid. Animations
+        will not play
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1047
+      parentUniqueId: Tests.dll/[Tests][PlayerSkinTests][suite]
+    - id: 1024
+      uniqueId: Tests.dll/[Tests][PlayerWeaponTests][suite]
+      name: PlayerWeaponTests
+      fullName: PlayerWeaponTests
+      resultStatus: 1
+      duration: 0.0091884
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1028
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1040
+      uniqueId: Tests.dll/PlayerWeaponTests/[Tests][PlayerWeaponTests.Attack_WhenFlipYIsFalse_ShouldMoveToNewPosition]
+      name: Attack_WhenFlipYIsFalse_ShouldMoveToNewPosition
+      fullName: PlayerWeaponTests.Attack_WhenFlipYIsFalse_ShouldMoveToNewPosition
+      resultStatus: 1
+      duration: 0.0017653
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1037
+      parentUniqueId: Tests.dll/[Tests][PlayerWeaponTests][suite]
+    - id: 1039
+      uniqueId: Tests.dll/PlayerWeaponTests/[Tests][PlayerWeaponTests.Default_ShouldMoveToNewPosition]
+      name: Default_ShouldMoveToNewPosition
+      fullName: PlayerWeaponTests.Default_ShouldMoveToNewPosition
+      resultStatus: 1
+      duration: 0.0009294
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1037
+      parentUniqueId: Tests.dll/[Tests][PlayerWeaponTests][suite]
+    - id: 1025
+      uniqueId: Tests.dll/PlayerWeaponTests/[Tests][PlayerWeaponTests.Test_Attack_ChangesPosition]
+      name: Test_Attack_ChangesPosition
+      fullName: PlayerWeaponTests.Test_Attack_ChangesPosition
+      resultStatus: 1
+      duration: 0.0005208
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1024
+      parentUniqueId: Tests.dll/[Tests][PlayerWeaponTests][suite]
+    - id: 1050
+      uniqueId: Tests.dll/[Tests][RangeTowerTests][suite]
+      name: RangeTowerTests
+      fullName: RangeTowerTests
+      resultStatus: 1
+      duration: 0.1322977
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1064
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1057
+      uniqueId: Tests.dll/RangeTowerTests/[Tests][RangeTowerTests.HideRange_ChangesSortingLayerNameToInvisible]
+      name: HideRange_ChangesSortingLayerNameToInvisible
+      fullName: RangeTowerTests.HideRange_ChangesSortingLayerNameToInvisible
+      resultStatus: 1
+      duration: 0.0615129
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][RangeTowerTests][suite]
+    - id: 1055
+      uniqueId: Tests.dll/RangeTowerTests/[Tests][RangeTowerTests.IsTargetInRange_MultipleTargetsInRange_ReturnsTrue]
+      name: IsTargetInRange_MultipleTargetsInRange_ReturnsTrue
+      fullName: RangeTowerTests.IsTargetInRange_MultipleTargetsInRange_ReturnsTrue
+      resultStatus: 1
+      duration: 0.1034786
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][RangeTowerTests][suite]
+    - id: 1053
+      uniqueId: Tests.dll/RangeTowerTests/[Tests][RangeTowerTests.IsTargetInRange_TargetAtExactRange_ReturnsTrue]
+      name: IsTargetInRange_TargetAtExactRange_ReturnsTrue
+      fullName: RangeTowerTests.IsTargetInRange_TargetAtExactRange_ReturnsTrue
+      resultStatus: 1
+      duration: 0.0672927
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][RangeTowerTests][suite]
+    - id: 1054
+      uniqueId: Tests.dll/RangeTowerTests/[Tests][RangeTowerTests.IsTargetInRange_TargetOutsideRange_ReturnsFalse]
+      name: IsTargetInRange_TargetOutsideRange_ReturnsFalse
+      fullName: RangeTowerTests.IsTargetInRange_TargetOutsideRange_ReturnsFalse
+      resultStatus: 1
+      duration: 0.0019753
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][RangeTowerTests][suite]
+    - id: 1056
+      uniqueId: Tests.dll/RangeTowerTests/[Tests][RangeTowerTests.ShowRange_ChangesSortingLayerNameToGameObject]
+      name: ShowRange_ChangesSortingLayerNameToGameObject
+      fullName: RangeTowerTests.ShowRange_ChangesSortingLayerNameToGameObject
+      resultStatus: 1
+      duration: 0.0009991
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][RangeTowerTests][suite]
+    - id: 1052
+      uniqueId: Tests.dll/RangeTowerTests/[Tests][RangeTowerTests.Test_HideRange]
+      name: Test_HideRange
+      fullName: RangeTowerTests.Test_HideRange
+      resultStatus: 1
+      duration: 0.0009244
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][RangeTowerTests][suite]
+    - id: 1051
+      uniqueId: Tests.dll/RangeTowerTests/[Tests][RangeTowerTests.Test_ShowRange]
+      name: Test_ShowRange
+      fullName: RangeTowerTests.Test_ShowRange
+      resultStatus: 1
+      duration: 0.0009191
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][RangeTowerTests][suite]
+    - id: 1050
+      uniqueId: Tests.dll/[Tests][TowerTests][suite]
+      name: TowerTests
+      fullName: TowerTests
+      resultStatus: 2
+      duration: 0.1287599
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1058
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1052
+      uniqueId: Tests.dll/TowerTests/[Tests][TowerTests.IsAbleUpdateTower_Level2_ReturnsFalse]
+      name: IsAbleUpdateTower_Level2_ReturnsFalse
+      fullName: TowerTests.IsAbleUpdateTower_Level2_ReturnsFalse
+      resultStatus: 1
+      duration: 0.0465448
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][TowerTests][suite]
+    - id: 1051
+      uniqueId: Tests.dll/TowerTests/[Tests][TowerTests.IsAbleUpdateTower_LevelBelow2_ReturnsTrue]
+      name: IsAbleUpdateTower_LevelBelow2_ReturnsTrue
+      fullName: TowerTests.IsAbleUpdateTower_LevelBelow2_ReturnsTrue
+      resultStatus: 1
+      duration: 0.003261
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][TowerTests][suite]
+    - id: 1055
+      uniqueId: Tests.dll/TowerTests/[Tests][TowerTests.MapTowerData_InvalidIdAndLevel_ReturnsFalse]
+      name: MapTowerData_InvalidIdAndLevel_ReturnsFalse
+      fullName: TowerTests.MapTowerData_InvalidIdAndLevel_ReturnsFalse
+      resultStatus: 2
+      duration: 0.0123392
+      messages: 'System.NullReferenceException : Object reference not set to an instance
+        of an object'
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: "  at TowerListData.FindTowerData (System.Int32 towerId, System.Int32
+        towerLevel) [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\Utils\\XMLControler\\TowerListData.cs:18
+        \r\n  at Tower.MapTowerData (System.Int32 id, System.Int32 level) [0x00000]
+        in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\GameObject\\Tower\\Tower.cs:71
+        \r\n  at TowerTests+TowerForTesting.TestMapTowerData (System.Int32 id, System.Int32
+        level) [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerTests.cs:89
+        \r\n  at TowerTests.MapTowerData_InvalidIdAndLevel_ReturnsFalse () [0x00004]
+        in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerTests.cs:78
+        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
+        System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][TowerTests][suite]
+    - id: 1054
+      uniqueId: Tests.dll/TowerTests/[Tests][TowerTests.MapTowerData_ValidIdAndLevel_ReturnsTrue]
+      name: MapTowerData_ValidIdAndLevel_ReturnsTrue
+      fullName: TowerTests.MapTowerData_ValidIdAndLevel_ReturnsTrue
+      resultStatus: 2
+      duration: 0.0042185
+      messages: 'System.NullReferenceException : Object reference not set to an instance
+        of an object'
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: "  at TowerListData.FindTowerData (System.Int32 towerId, System.Int32
+        towerLevel) [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\Utils\\XMLControler\\TowerListData.cs:18
+        \r\n  at Tower.MapTowerData (System.Int32 id, System.Int32 level) [0x00000]
+        in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\GameObject\\Tower\\Tower.cs:71
+        \r\n  at TowerTests+TowerForTesting.TestMapTowerData (System.Int32 id, System.Int32
+        level) [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerTests.cs:89
+        \r\n  at TowerTests.MapTowerData_ValidIdAndLevel_ReturnsTrue () [0x00004]
+        in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerTests.cs:64
+        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
+        System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][TowerTests][suite]
+    - id: 1053
+      uniqueId: Tests.dll/TowerTests/[Tests][TowerTests.UpdateTower_IncreasesLevelBy1]
+      name: UpdateTower_IncreasesLevelBy1
+      fullName: TowerTests.UpdateTower_IncreasesLevelBy1
+      resultStatus: 2
+      duration: 0.0027886
+      messages: 'System.NullReferenceException : Object reference not set to an instance
+        of an object'
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: "  at TowerListData.FindTowerData (System.Int32 towerId, System.Int32
+        towerLevel) [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\Utils\\XMLControler\\TowerListData.cs:18
+        \r\n  at Tower.MapTowerData (System.Int32 id, System.Int32 level) [0x00000]
+        in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\GameObject\\Tower\\Tower.cs:71
+        \r\n  at Tower.UpdateTower () [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\GameObject\\Tower\\Tower.cs:67
+        \r\n  at TowerTests.UpdateTower_IncreasesLevelBy1 () [0x0000b] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerTests.cs:50
+        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
+        System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Tests.dll/[Tests][TowerTests][suite]
+    - id: 1064
+      uniqueId: Tests.dll/[Tests][TowerWeaponTests][suite]
+      name: TowerWeaponTests
+      fullName: TowerWeaponTests
+      resultStatus: 2
+      duration: 0.1633126
+      messages: One or more child tests had errors
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1071
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1065
+      uniqueId: Tests.dll/TowerWeaponTests/[Tests][TowerWeaponTests.Rotate_RotatesAccordingToTarget]
+      name: Rotate_RotatesAccordingToTarget
+      fullName: TowerWeaponTests.Rotate_RotatesAccordingToTarget
+      resultStatus: 2
+      duration: 0.0572559
+      messages: 'System.NullReferenceException : Object reference not set to an instance
+        of an object'
+      output: 
+      stacktrace: "  at TowerWeapon.Rotate () [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\GameObject\\Tower\\TowerWeapon\\TowerWeapon.cs:99
+        \r\n  at TowerWeaponTests.Rotate () [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerWeapon\\TowerWeaponTest.cs:28
+        \r\n  at TowerWeaponTests.Rotate_RotatesAccordingToTarget () [0x0004c] in
+        C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerWeapon\\TowerWeaponTest.cs:19
+        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
+        System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1064
+      parentUniqueId: Tests.dll/[Tests][TowerWeaponTests][suite]
+    - id: 1066
+      uniqueId: Tests.dll/[Tests][WeaponBulletTests][suite]
+      name: WeaponBulletTests
+      fullName: WeaponBulletTests
+      resultStatus: 2
+      duration: 0.0175127
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1068
+      parentUniqueId: '[Tests][C:/Users/HP/Desktop/An_vs_code/TowerDefense/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1068
+      uniqueId: Tests.dll/WeaponBulletTests/[Tests][WeaponBulletTests.Hitting_ReducesTargetHealthAndDestroysBullet]
+      name: Hitting_ReducesTargetHealthAndDestroysBullet
+      fullName: WeaponBulletTests.Hitting_ReducesTargetHealthAndDestroysBullet
+      resultStatus: 2
+      duration: 0.0132768
+      messages: "  Expected: True\r\n  But was:  False\r\n"
+      output: 'Destroy may not be called from edit mode! Use DestroyImmediate instead.
+
+        Destroying
+        an object in edit mode destroys it permanently.
+
+'
+      stacktrace: 'at WeaponBulletTests.Hitting_ReducesTargetHealthAndDestroysBullet
+        () [0x00051] in C:\Users\HP\Desktop\An_vs_code\TowerDefense\Assets\Tests\GameObject\Tower\WeaponBullet\WeaponBulletTests.cs:63
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1066
+      parentUniqueId: Tests.dll/[Tests][WeaponBulletTests][suite]
+    - id: 1067
+      uniqueId: Tests.dll/WeaponBulletTests/[Tests][WeaponBulletTests.Rotate_ChangesRotationAccordingToTarget]
+      name: Rotate_ChangesRotationAccordingToTarget
+      fullName: WeaponBulletTests.Rotate_ChangesRotationAccordingToTarget
+      resultStatus: 1
+      duration: 0.0085536
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1066
+      parentUniqueId: Tests.dll/[Tests][WeaponBulletTests][suite]
+    - id: 1070
+      uniqueId: Tests.dll/WeaponBulletTests/[Tests][WeaponBulletTests.SetDamage_ChangesDamage]
+      name: SetDamage_ChangesDamage
+      fullName: WeaponBulletTests.SetDamage_ChangesDamage
+      resultStatus: 1
+      duration: 0.0005585
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1066
+      parentUniqueId: Tests.dll/[Tests][WeaponBulletTests][suite]
+    - id: 1069
+      uniqueId: Tests.dll/WeaponBulletTests/[Tests][WeaponBulletTests.SetTarget_ChangesTarget]
+      name: SetTarget_ChangesTarget
+      fullName: WeaponBulletTests.SetTarget_ChangesTarget
+      resultStatus: 1
+      duration: 0.0006428
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1066
+      parentUniqueId: Tests.dll/[Tests][WeaponBulletTests][suite]
+    m_ResultText: "Rotate_RotatesAccordingToTarget (0.057s)\n---\nSystem.NullReferenceException
+      : Object reference not set to an instance of an object\n---\nat TowerWeapon.Rotate
+      () [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\GameObject\\Tower\\TowerWeapon\\TowerWeapon.cs:99
+      \r\n  at TowerWeaponTests.Rotate () [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerWeapon\\TowerWeaponTest.cs:28
+      \r\n  at TowerWeaponTests.Rotate_RotatesAccordingToTarget () [0x0004c] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerWeapon\\TowerWeaponTest.cs:19
+      \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+      culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0"
+    m_ResultStacktrace: "  at TowerWeapon.Rotate () [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Scripts\\GamePlay\\GameObject\\Tower\\TowerWeapon\\TowerWeapon.cs:99
+      \r\n  at TowerWeaponTests.Rotate () [0x00000] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerWeapon\\TowerWeaponTest.cs:28
+      \r\n  at TowerWeaponTests.Rotate_RotatesAccordingToTarget () [0x0004c] in C:\\Users\\HP\\Desktop\\An_vs_code\\TowerDefense\\Assets\\Tests\\GameObject\\Tower\\TowerWeapon\\TowerWeaponTest.cs:19
+      \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+      culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 "
+    m_TestListState:
+      scrollPos: {x: 0, y: 82}
+      m_SelectedIDs: 02a0048c
+      m_LastClickedID: -1945853950
+      m_ExpandedIDs: c54c60b1f75507fd4db8040bd173da0ef3d9c21171b0f06e69291174ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -635,20 +2316,18 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 505
-    width: 995
-    height: 192
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 12}
+    y: 415.2
+    width: 1196.8
+    height: 307.59998
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 2}
   m_Panes:
-  - {fileID: 11}
-  - {fileID: 12}
-  - {fileID: 13}
   - {fileID: 14}
+  - {fileID: 2}
   m_Selected: 1
-  m_LastSelected: 3
---- !u!114 &11
+  m_LastSelected: 0
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -669,9 +2348,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 588
-    width: 994
-    height: 171
+    y: 488.80002
+    width: 1195.8
+    height: 286.59998
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -689,22 +2368,22 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/UI
+    - Assets/Tests/GameObject/Player/PlayerWeapon
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes/UI
+  - Assets/Tests/GameObject/Player/PlayerWeapon
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/weed/VNTowerDefense/MergeOneStage/TowerDefense
+  m_LastProjectPath: C:\Users\HP\Desktop\An_vs_code\TowerDefense
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 335}
-    m_SelectedIDs: a2b50000
-    m_LastClickedID: 46498
-    m_ExpandedIDs: 00000000b0780000b2780000b47800003a8d0000b09400000a9f000002a10000daa30000f6a40000a6b1000034b4000072b50000c4ba000000ca9a3b
+    scrollPos: {x: 0, y: 153.40002}
+    m_SelectedIDs: da8d0000
+    m_LastClickedID: 36314
+    m_ExpandedIDs: 000000004a710000e0770000ec7700003e780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -720,7 +2399,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 13}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -732,7 +2411,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b0780000b2780000b4780000
+    m_ExpandedIDs: 000000004a710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -757,10 +2436,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ae21ffff
-    m_LastClickedInstanceID: -56914
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000000000000447a00004a900000d2840000d87d0000
+    m_ExpandedInstanceIDs: c623000000000000447a00004a9000004cda0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -788,314 +2467,6 @@ MonoBehaviour:
     m_GridSize: 64
   m_SkipHiddenPackages: 1
   m_DirectoriesAreaWidth: 207
---- !u!114 &12
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Console
-    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 588
-    width: 994
-    height: 171
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
---- !u!114 &13
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
-  m_TitleContent:
-    m_Text: Project
-    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 588
-    width: 994
-    height: 171
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-  m_SearchFilter:
-    m_NameFilter: 
-    m_ClassNames: []
-    m_AssetLabels: []
-    m_AssetBundleNames: []
-    m_VersionControlStates: []
-    m_SoftLockControlStates: []
-    m_ReferencingInstanceIDs: 
-    m_SceneHandles: 
-    m_ShowAllHits: 0
-    m_SkipHidden: 0
-    m_SearchArea: 1
-    m_Folders:
-    - Assets/Source/Boss/boss_demon/individual sprites/01_demon_idle
-    m_Globs: []
-    m_OriginalText: 
-  m_ViewMode: 1
-  m_StartGridSize: 16
-  m_LastFolders:
-  - Assets/Source/Boss/boss_demon/individual sprites/01_demon_idle
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/weed/VNTowerDefense/MergeOneStage/TowerDefense
-  m_LockTracker:
-    m_IsLocked: 0
-  m_FolderTreeState:
-    scrollPos: {x: 0, y: 489}
-    m_SelectedIDs: 80a30000
-    m_LastClickedID: 41856
-    m_ExpandedIDs: 00000000b0780000b2780000b47800003a8d00000a9f000002a1000080ae0000a6b1000034b4000000ca9a3b
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b0780000b2780000b4780000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_ListAreaState:
-    m_SelectedInstanceIDs: ae21ffff
-    m_LastClickedInstanceID: -56914
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 447a0000448d0000468d0000d87d0000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: DemonChamp
-      m_OriginalName: DemonChamp
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 30430
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 0
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-    m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 16
-  m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 200
---- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
-  m_TitleContent:
-    m_Text: Project
-    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 588
-    width: 994
-    height: 171
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-  m_SearchFilter:
-    m_NameFilter: 
-    m_ClassNames: []
-    m_AssetLabels: []
-    m_AssetBundleNames: []
-    m_VersionControlStates: []
-    m_SoftLockControlStates: []
-    m_ReferencingInstanceIDs: 
-    m_SceneHandles: 
-    m_ShowAllHits: 0
-    m_SkipHidden: 0
-    m_SearchArea: 1
-    m_Folders:
-    - Assets/Resources/Prefabs/Evil
-    m_Globs: []
-    m_OriginalText: 
-  m_ViewMode: 1
-  m_StartGridSize: 16
-  m_LastFolders:
-  - Assets/Resources/Prefabs/Evil
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/weed/VNTowerDefense/MergeOneStage/TowerDefense
-  m_LockTracker:
-    m_IsLocked: 0
-  m_FolderTreeState:
-    scrollPos: {x: 0, y: 232.99982}
-    m_SelectedIDs: 1e8e0000
-    m_LastClickedID: 36382
-    m_ExpandedIDs: 00000000b0780000b2780000b47800003a8d000002a1000080ae0000a6b1000034b4000072b5000000ca9a3b
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b0780000b2780000b4780000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_ListAreaState:
-    m_SelectedInstanceIDs: 1a240100
-    m_LastClickedInstanceID: 74778
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: d87d0000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: GamePlay
-      m_OriginalName: GamePlay
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 38898
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 0
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-    m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 16
-  m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 200
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1111,12 +2482,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 995
+    x: 1196.8
     y: 0
-    width: 285
-    height: 697
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 339.19995
+    height: 722.8
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -1143,10 +2514,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 995
-    y: 83
-    width: 284
-    height: 676
+    x: 1196.8
+    y: 73.6
+    width: 338.19995
+    height: 701.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1194,4 +2565,4 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 62834
+  m_LastSelectedObjectID: 111562

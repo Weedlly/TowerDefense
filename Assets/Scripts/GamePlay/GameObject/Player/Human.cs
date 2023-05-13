@@ -8,15 +8,7 @@ public class Human : Player
     [SerializeField] protected LineRenderer _route;
     [SerializeField] private int _currentPositionIndex;
     [SerializeField]private int _lengthOfPath;
-    new void Start() {
-        base.Start();
-        _maxMeleeCompetitor = 1; 
-       _currentPositionIndex = 0;
-    }
-    void OnEnable()
-    {
-       BattleControler.AddHuman(this);
-    }
+
     public void SetRoute(LineRenderer route){
         _route = route;
         _lengthOfPath = _route.positionCount; 

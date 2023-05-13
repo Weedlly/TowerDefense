@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerSkin : MonoBehaviour {
     [SerializeField] private List<AnimatorController> _animatorControllers;
     public bool ChangingSkin(Animator animator,int skinOrder){
-        if(skinOrder <= _animatorControllers.Count){
+        if(skinOrder < _animatorControllers.Count){
             animator.runtimeAnimatorController = _animatorControllers[skinOrder];
             return true;
         }

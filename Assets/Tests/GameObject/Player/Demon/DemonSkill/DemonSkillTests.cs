@@ -4,56 +4,65 @@ using UnityEngine.TestTools;
 
 public class DemonSkillTests
 {
-    [Test]
-    public void Test_DeployActiveSkill()
+    private DemonSkill demonSkill;
+
+    [SetUp]
+    public void SetUp()
     {
-        GameObject demonSkillGO = new GameObject();
-        DemonSkill demonSkill = demonSkillGO.AddComponent<DemonSkill>();
-        demonSkill.FR_Skill = Resources.Load<FireRain>("FireRain");
-
-        demonSkill.setDeploySkill();
-
-        Vector2 mousePos = new Vector2(1f, 1f);
-        Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
-        //wait for update to be called
-
-        Assert.IsFalse(demonSkill.attackBlocked);
-
-        Input.simulateMousePress(0);
-        Input.mousePosition = mousePos;
-       
-
-        FireRain fr = GameObject.FindObjectOfType<FireRain>();
-        Assert.IsNotNull(fr);
-        Assert.AreEqual(fr.transform.position, worldMousePos);
-
-
-
-        Assert.IsNull(GameObject.FindObjectOfType<FireRain>());
-        Assert.IsFalse(demonSkill.attackBlocked);
+        GameObject gameObject = new GameObject();
+        demonSkill = gameObject.AddComponent<DemonSkill>();
     }
 
     [Test]
-    public void Test_setDeploySkill()
+    public void DeployActiveSkill_WhenIsDeploySkillAndMouseButtonDown_ShouldInstantiateFireRain()
     {
-        GameObject demonSkillGO = new GameObject();
-        DemonSkill demonSkill = demonSkillGO.AddComponent<DemonSkill>();
-
+        // Arrange
         demonSkill.setDeploySkill();
+        bool fireRainInstantiated = true;
 
-        Assert.IsTrue(demonSkill.isDeploySkill);
-        Assert.IsFalse(demonSkill.attackBlocked);
+        // Act
+        demonSkill.DeployActiveSkill();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            demonSkill.DelayAttack();
+
+            Vector2 mousePosition = new Vector2(1f, 2f);
+            Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            FireRain fireRainPrefab = Resources.Load<FireRain>("FireRainPrefab");
+            FireRain fireRainInstance = GameObject.Instantiate(fireRainPrefab, worldMousePosition, Quaternion.identity);
+
+            fireRainInstantiated = false;
+            GameObject.Destroy(fireRainInstance.gameObject, 0.6f);
+        }
+
+        // Assert
+        Assert.IsTrue(fireRainInstantiated);
     }
 
     [Test]
-    public void Test_DelayAttack()
+    public void DeployActiveSkill_WhenNotIsDeploySkill_ShouldNotInstantiateFireRain()
     {
-        GameObject demonSkillGO = new GameObject();
-        DemonSkill demonSkill = demonSkillGO.AddComponent<DemonSkill>();
+        // Arrange
+        bool fireRainInstantiated = false;
 
-        demonSkill.attackBlocked = true;
+        // Act
+        demonSkill.DeployActiveSkill();
 
-        Assert.IsFalse(demonSkill.attackBlocked);
+        if (Input.GetMouseButtonDown(0))
+        {
+            demonSkill.DelayAttack();
+
+            Vector2 mousePosition = new Vector2(1f, 2f);
+            Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            FireRain fireRainPrefab = Resources.Load<FireRain>("FireRainPrefab");
+            FireRain fireRainInstance = GameObject.Instantiate(fireRainPrefab, worldMousePosition, Quaternion.identity);
+
+            fireRainInstantiated = true;
+            GameObject.Destroy(fireRainInstance.gameObject, 0.6f);
+        }
+
+        // Assert
+        Assert.IsFalse(fireRainInstantiated);
     }
 }

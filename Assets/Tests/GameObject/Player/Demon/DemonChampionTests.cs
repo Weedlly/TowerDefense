@@ -1,94 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
-
-public class NightBorneSkillTests
+using System.Reflection;
+public class DemonChampionTests
 {
-    [Test]
-    public void Test_SetTypeSkill_ActiveSkill_AddsActiveSkillComponent()
+    private DemonChampion demonChampion;
+
+    [SetUp]
+    public void SetUp()
     {
-        // Arrange
-        var gameObject = new GameObject();
-        var nightBorneSkill = gameObject.AddComponent<NightBorneSkill>();
-
-        // Act
-        nightBorneSkill.SetTypeSkill(SkillTypeEnum.ActiveSkill);
-
-        // Assert
-        Assert.IsTrue(gameObject.TryGetComponent<ActiveSkill>(out var activeSkill));
-        Assert.IsNull(gameObject.GetComponent<InsticSkill>());
-    }
-
-    // [Test]
-    // public void Test_SetTypeSkill_InsticSkill_AddsInsticSkillComponent()
-    // {
-    //     // Arrange
-    //     var gameObject = new GameObject();
-    //     var nightBorneSkill = gameObject.AddComponent<NightBorneSkill>();
-
-    //     // Act
-    //     nightBorneSkill.SetTypeSkill(SkillTypeEnum.InsticSkill);
-
-    //     // Assert
-    //     Assert.IsTrue(gameObject.TryGetComponent<InsticSkill>(out var insticSkill));
-    //     Assert.IsNull(gameObject.GetComponent<ActiveSkill>());
-    // }
-
-    [Test]
-    public void Test_Update_IsDeloyActiveSkillFalse_NoSkillDeployed()
-    {
-        // Arrange
-        var gameObject = new GameObject();
-        var nightBorneSkill = gameObject.AddComponent<NightBorneSkill>();
-
-        // Act
-
-
-        // Assert
-        Assert.IsFalse(nightBorneSkill.IsDeloyActiveSkill);
+        GameObject demonGameObject = new GameObject();
+        demonChampion = demonGameObject.AddComponent<DemonChampion>();
     }
 
     [Test]
-    public void Test_Update_IsDeloyActiveSkillTrueAndBossEmployActiveSkillTrue_HellfireDeployed()
+    public void Start_GetsChampionLevelAndStats()
     {
-        // Arrange
-        var gameObject = new GameObject();
-        var nightBorneSkill = gameObject.AddComponent<NightBorneSkill>();
-        var target = new GameObject().AddComponent<Player>();
-        BossMelee._isBossEmployActiveSkill = true;
-        nightBorneSkill._target = target;
-
-        // Act
-        nightBorneSkill.SetTypeSkill(SkillTypeEnum.ActiveSkill);
-        nightBorneSkill.IsDeloyActiveSkill = true;
-        nightBorneSkill.Update();
-
-
-        // Assert
-        Assert.IsTrue(GameObject.FindObjectOfType<HellFire>());
-        UnityEngine.Object.DestroyImmediate(gameObject);
-        UnityEngine.Object.DestroyImmediate(target.gameObject);
+        Assert.AreEqual(DemonBehavior.Idle, demonChampion.CurrentBehavior);
     }
 
     [Test]
-    public void Test_Update_IsDeloyActiveSkillTrueAndBossEmployActiveSkillFalse_HellfireNotDeployed()
+    public void Test_SetAttack()
+    {
+        demonChampion.SetAttack();
+        Assert.AreEqual(DemonBehavior.Attack, demonChampion.CurrentBehavior);
+    }
+
+    [Test]
+    public void Test_GetChampionState()
     {
         // Arrange
-        var gameObject = new GameObject();
-        var nightBorneSkill = gameObject.AddComponent<NightBorneSkill>();
-        var target = new GameObject().AddComponent<Player>();
-        BossMelee._isBossEmployActiveSkill = false;
-        nightBorneSkill._target = target;
+        ExpSystem expSystem = new ExpSystem();
+        expSystem.SetAll(100, 200, 3);
+
+        DemonChampion demonChampion = new DemonChampion();
+        demonChampion._expSystem = expSystem;
+
+        int expectedBaseHp = 150;
+
+        // Accessing private field using reflection
+        FieldInfo baseHpField = typeof(DemonChampion).GetField("_baseHp", BindingFlags.NonPublic | BindingFlags.Instance);
+        baseHpField.SetValue(demonChampion, expectedBaseHp);
 
         // Act
-        nightBorneSkill.SetTypeSkill(SkillTypeEnum.ActiveSkill);
-        nightBorneSkill.IsDeloyActiveSkill = true;
-        nightBorneSkill.Update();
-
+        ChampionData actualData = demonChampion.GetChampionState();
 
         // Assert
-        Assert.IsNull(GameObject.FindObjectOfType<HellFire>());
-        UnityEngine.Object.DestroyImmediate(gameObject);
-        UnityEngine.Object.DestroyImmediate(target.gameObject);
+        Assert.AreEqual(expectedBaseHp, actualData.health);
     }
- }
+}
+

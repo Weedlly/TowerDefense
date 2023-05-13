@@ -1,53 +1,92 @@
-using System;
-using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
-using NUnit.Framework;
-
+using System.Collections;
+using System.Collections.Generic;
 public class TowerTests
 {
-    [Test]
-    public void Test_IsAbleUpdateTower()
+    private TowerForTesting tower;
+
+    [SetUp]
+    public void Setup()
     {
-        Tower tower = new Tower();
+        // Create an instance of the TowerForTesting class for testing
+        tower = new TowerForTesting();
+    }
+
+    [Test]
+    public void IsAbleUpdateTower_LevelBelow2_ReturnsTrue()
+    {
+        // Arrange
         tower.Level = 1;
 
-        bool result1 = tower.IsAbleUpdateTower();
-        Assert.IsTrue(result1);
+        // Act
+        bool result = tower.IsAbleUpdateTower();
 
-        tower.Level = 2;
-        bool result2 = tower.IsAbleUpdateTower();
-        Assert.IsFalse(result2);
+        // Assert
+        Assert.IsTrue(result);
     }
 
     [Test]
-    public void Test_MapTowerData()
+    public void IsAbleUpdateTower_Level2_ReturnsFalse()
     {
-        Tower tower = new Tower();
-        int id = 1;
-        int level = 1;
+        // Arrange
+        tower.Level = 2;
 
-        TowerData towerData = new TowerData();
-        towerData.name = "Tower";
-        towerData.attackDame = 10f;
-        towerData.attackSpeed = 0.5f;
-        towerData.attackRange = 3f;
-        towerData.health = 100f;
-        towerData.price = 100;
-        XMLControler._towerDataList.Add(towerData);
+        // Act
+        bool result = tower.IsAbleUpdateTower();
 
-        bool result1 = tower.MapTowerData(id, level);
-        Assert.IsTrue(result1);
-        Assert.AreEqual("Tower", tower._name);
-        Assert.AreEqual(10f, tower._attackDame);
-        Assert.AreEqual(0.5f, tower._attackSpeed);
-        Assert.AreEqual(3f, tower._attackRange);
-        Assert.AreEqual(100f, tower._health);
-        Assert.AreEqual(100, tower._price);
-        Assert.AreEqual(30, tower._sellPrice);
-
-        bool result2 = tower.MapTowerData(2, 1);
-        Assert.IsFalse(result2);
+        // Assert
+        Assert.IsFalse(result);
     }
 
+    [Test]
+    public void UpdateTower_IncreasesLevelBy1()
+    {
+        // Arrange
+        int initialLevel = tower.Level;
+
+        // Act
+        tower.UpdateTower();
+
+        // Assert
+        Assert.AreEqual(initialLevel + 1, tower.Level);
+    }
+
+    [Test]
+    public void MapTowerData_ValidIdAndLevel_ReturnsTrue()
+    {
+        // Arrange
+        int validId = 1;
+        int validLevel = 1;
+
+        // Act
+        bool result = tower.TestMapTowerData(validId, validLevel);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+
+    [Test]
+    public void MapTowerData_InvalidIdAndLevel_ReturnsFalse()
+    {
+        // Arrange
+        int invalidId = -1;
+        int invalidLevel = 0;
+
+        // Act
+        bool result = tower.TestMapTowerData(invalidId, invalidLevel);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+
+    // Derived class solely for testing the protected method
+    public class TowerForTesting : Tower
+    {
+        public bool TestMapTowerData(int id, int level)
+        {
+            return MapTowerData(id, level);
+        }
+    }
 }

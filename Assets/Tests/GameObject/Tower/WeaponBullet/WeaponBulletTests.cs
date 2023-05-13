@@ -1,49 +1,91 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.TestTools;
 
-public class WeaponBulletTest
+public class WeaponBulletTests
 {
-    // Dummy human for testing
-    private GameObject _humanGameObject;
-    private Human _human;
+    private class TestWeaponBullet : WeaponBullet
+    {
+        public bool RotateCalled { get; private set; } = false;
 
-    // Bullet and animator components for testing
-    private WeaponBullet _bullet;
-    private Animator _animator;
+        public void CallRotate()
+        {
+            Rotate();
+        }
+
+        protected override void Rotate()
+        {
+            base.Rotate();
+            RotateCalled = true;
+        }
+    }
+
+    private TestWeaponBullet weaponBullet;
 
     [SetUp]
-    public void Setup()
+    public void SetUp()
     {
-        // Create a dummy human
-        _humanGameObject = new GameObject();
-        _human = _humanGameObject.AddComponent<Human>();
-
-        // Create a bullet object and animator
-        GameObject bulletObject = new GameObject();
-        _bullet = bulletObject.AddComponent<WeaponBullet>();
-        _animator = bulletObject.AddComponent<Animator>();
-        _bullet._animator = _animator;
-
-        // Set default values for the bullet
-        _bullet._target = _human;
-        _bullet._movingSpeed = 1.0f;
-        _bullet._dame = 10.0f;
-        _bullet._isTargetExist = true;
+        GameObject gameObject = new GameObject();
+        weaponBullet = gameObject.AddComponent<TestWeaponBullet>();
     }
+
     [Test]
-    public void Test_HittingTarget_ReduceTargetHealth()
+    public void Rotate_ChangesRotationAccordingToTarget()
     {
         // Arrange
-        float targetHealth = _human.GetHealth();
-        float expectedHealth = targetHealth - _bullet._dame;
+        Human target = new GameObject().AddComponent<Human>();
+        Vector3 line = target.transform.position - weaponBullet.transform.position;
+        float expectedAngle = Vector3.SignedAngle(weaponBullet.transform.up, line, weaponBullet.transform.forward);
 
         // Act
-        _bullet.Hitting();
+        weaponBullet.SetTarget(target);
+        weaponBullet.CallRotate();
 
         // Assert
-        Assert.AreEqual(expectedHealth, _human.GetHealth());
+        Assert.AreEqual(expectedAngle, weaponBullet.transform.rotation.eulerAngles.z);
+        Assert.IsTrue(weaponBullet.RotateCalled);
+    }
+
+    [Test]
+    public void Hitting_ReducesTargetHealthAndDestroysBullet()
+    {
+        // Arrange
+        Human target = new GameObject().AddComponent<Human>();
+        float initialHealth = target._health;
+        float damage = 10f;
+
+        // Act
+        weaponBullet.SetTarget(target);
+        weaponBullet.SetDamage(damage);
+        weaponBullet.Hitting();
+
+        // Assert
+        Assert.AreEqual(initialHealth - damage, target._health);
+        Assert.IsTrue(weaponBullet.gameObject == null);
+    }
+
+    [Test]
+    public void SetTarget_ChangesTarget()
+    {
+        // Arrange
+        Human target = new GameObject().AddComponent<Human>();
+
+        // Act
+        weaponBullet.SetTarget(target);
+
+        // Assert
+        Assert.AreEqual(target, weaponBullet.GetTarget());
+    }
+
+    [Test]
+    public void SetDamage_ChangesDamage()
+    {
+        // Arrange
+        float damage = 20f;
+
+        // Act
+        weaponBullet.SetDamage(damage);
+
+        // Assert
+        Assert.AreEqual(damage, weaponBullet.GetDamage());
     }
 }

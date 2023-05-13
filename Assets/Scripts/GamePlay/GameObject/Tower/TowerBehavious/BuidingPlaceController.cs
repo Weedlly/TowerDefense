@@ -19,11 +19,6 @@ public class BuidingPlaceController : MonoBehaviour
     public List<GameObject> buildingPlaceList = new List<GameObject>();
     public static List<GameObject> _buildingPlaceList = new List<GameObject>();
 
-    void Start(){
-        _parentTransform = gameObject.transform;
-        towerBuildingPlacePrefab = _towerBuildingPlacePrefab;
-        _buildingPlaceList = buildingPlaceList;
-    }
     public static void ActiveInstance(Transform transform){
         GameObject tmp = null;
         float distance = float.MaxValue;
