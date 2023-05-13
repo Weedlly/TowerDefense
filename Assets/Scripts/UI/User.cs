@@ -47,38 +47,53 @@ public class User : Singleton<User>
     }
 
     public void StageSuccess(int id, int star, DifficultyTypeEnum difficulty){
-        for(int i = 0; i <  _data.completetedStageList.Count; i++){
-            if (_data.completetedStageList[i].completetedStageId == id){
-                if (System.Enum.Parse<DifficultyTypeEnum>(_data.completetedStageList[i].difficulty).CompareTo(difficulty) == -1)
-                    _data.completetedStageList[i].difficulty = difficulty.ToString();
-                if (_data.completetedStageList[i].star < star){
-                    _data.currentStar += star - _data.completetedStageList[i].star;
-                    _data.completetedStageList[i].star = star;
-                }
+        CompletetedStageData newStage = getStageData(id,difficulty);
+        if(newStage != null){
+            if(star > newStage.star){
+                UpdateStarOfStage(newStage,star);
                 saveUserData();
                 return;
             }
         }
+        else{
+            newStage = CreateNewCompletedStageData(id,star,difficulty);
+            _data.currentStar += star;
+            _data.completetedStageList.Add(newStage);
+            saveUserData();
+        }
+        
+    }
+    void UpdateStarOfStage(CompletetedStageData stageData, int updateStar){
+        int increStar = updateStar - stageData.star;
+        stageData.star = updateStar;
+        _data.currentStar += increStar;
+    }
+    private CompletetedStageData CreateNewCompletedStageData(int id, int star, DifficultyTypeEnum difficulty){
         CompletetedStageData newStage = new CompletetedStageData();
         newStage.completetedStageId = id;
         newStage.difficulty = difficulty.ToString();
         newStage.star = star;
-        _data.currentStar +=  star;
-        _data.completetedStageList.Add(newStage);
-        saveUserData();
+        return newStage;
     }
 
-    public CompletetedStageData getStageData(int id){
+    public CompletetedStageData getStageData(int id, DifficultyTypeEnum difficulty){
         if (_data.completetedStageList != null) 
             foreach (var i in _data.completetedStageList){
-                if (i.completetedStageId == id) return i;
+                if (i.completetedStageId == id && i.difficulty == difficulty.ToString()) return i;
             }
         return null;
     }
 
     public int getMaxAvailableStage() {
-        if (_data.completetedStageList != null) return _data.completetedStageList.Count;
-        return -1;
+        int maxStage = -1;
+        foreach (var stage in _data.completetedStageList)
+        {
+            int id = stage.completetedStageId;
+            if(id > maxStage){
+                maxStage = id;
+            }
+        }
+        return maxStage;
     }
 
     public int getTowerLevelById(int id){
