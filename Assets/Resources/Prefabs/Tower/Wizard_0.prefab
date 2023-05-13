@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 5102232409343303252}
   - component: {fileID: 6813407164068755842}
   - component: {fileID: 2363249853767557359}
+  - component: {fileID: 1323241597681057530}
   m_Layer: 0
   m_Name: MagicDiamond_0
   m_TagString: Untagged
@@ -334,6 +335,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1323241597681057530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480959171893343057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef628c4632f64978b7ca24e016332b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 2363249853767557359}
 --- !u!1 &3934771364942431212
 GameObject:
   m_ObjectHideFlags: 0

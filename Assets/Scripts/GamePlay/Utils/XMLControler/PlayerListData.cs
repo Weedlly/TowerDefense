@@ -22,6 +22,15 @@ public class PlayerListData{
         }
         return null;
     }
+    public PlayerData FindPlayerDataByIdAndStageDifficulty(int playerId,DifficultyTypeEnum difficulty){
+        foreach (var item in playerlist)
+        {
+            if(item.id == playerId && item.difficulty == difficulty.ToString()){
+                return item;
+            }
+        }
+        return null;
+    }
 }
 [XmlRoot(ElementName = "Player")]
 public class PlayerData{
