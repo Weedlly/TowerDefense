@@ -9,7 +9,6 @@ public class Evil : Player
 
     new void Start() {
         base.Start();
-        _maxMeleeCompetitor = 1;
     }
     void OnEnable()
     {
@@ -21,7 +20,6 @@ public class Evil : Player
 
     override public void SelfDestroy(){
         base.SelfDestroy();
-
         _isDie = true;
         _target = null;
         gameObject.SetActive(false);

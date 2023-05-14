@@ -25,15 +25,11 @@ public class Player : MonoBehaviour,IInformationToBoard
     [SerializeField] protected HealthBar _healthBar;
     [SerializeField] protected SpriteRenderer _spriteRenderer;
 
-    [SerializeField] protected RangeWeapon _weapon;
     [SerializeField] protected GameObject _hurtBlood;
-    [SerializeField] protected GameObject _dieSmoke;
-    [SerializeField] protected PlayerWeapon _playerWeapon;
-    
+    [SerializeField] protected GameObject _dieSmoke;    
     [SerializeField] protected PlayerSkin _playerSkin;
 
     [Header("Control atribute")]
-    public int _unitType;
     public bool _isDie = false;
     public Player _target;
 
@@ -49,8 +45,6 @@ public class Player : MonoBehaviour,IInformationToBoard
 
     protected const float TIME_ATTACK = 0.4f / 1;
     protected const float WAIT_SHOT_ANIMATION = TIME_ATTACK   / (2f * 1);
-
-    public int _maxMeleeCompetitor;
     public int _meleeCompetitorCounter = 0;
 
     protected void Start()
@@ -58,9 +52,7 @@ public class Player : MonoBehaviour,IInformationToBoard
         if(_playerSkin != null){
             _playerSkin.ChangingSkin(_animator,(int)SkinSystem.Instance.SkinType);
         }
-        SetUpUnitType();
         _healthBar = GetComponent<HealthBar>();
-        // _animator.speed = 1.2f;
     }
     public void SetTarget(Player target){
         _target = target;
@@ -116,24 +108,9 @@ public class Player : MonoBehaviour,IInformationToBoard
             MoveToTarget();
         }
         else{
-            
             AttackAnimator();
         }
     }
-
-    #region Set up on start
-    void SetUpUnitType(){
-        if(_weapon != null){
-            _unitType = (int)UnitType.Range;
-        }
-        else{
-            _unitType = (int)UnitType.Melee;
-        }
-    }
-
-
-    #endregion Set up for start
-
     protected void MoveToTarget(){
         _animator.SetFloat("movingSpeed",0.5f);
         transform.position = Vector2.MoveTowards(transform.position,_target.transform.position,Time.deltaTime * _movementSpeed);

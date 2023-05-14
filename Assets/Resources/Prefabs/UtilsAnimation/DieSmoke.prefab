@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8177676253926904886}
   - component: {fileID: 8177676253926904887}
   - component: {fileID: 8177676253926904880}
+  - component: {fileID: -7228388689386682149}
   m_Layer: 0
   m_Name: DieSmoke
   m_TagString: Untagged
@@ -202,3 +203,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-7228388689386682149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177676253926904881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef628c4632f64978b7ca24e016332b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 8177676253926904880}

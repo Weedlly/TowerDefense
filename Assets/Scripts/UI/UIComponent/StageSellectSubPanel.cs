@@ -23,7 +23,7 @@ public class StageSellectSubPanel : MonoBehaviour {
 
     void stageInfoUpdate()
     {
-        CompletetedStageData stage = User.Instance.getStageData(_stageId);
+        CompletetedStageData stage = User.Instance.getStageData(_stageId, _curDiff);
         _star3.gameObject.SetActive(false);
         _star2.gameObject.SetActive(false);
         _star1.gameObject.SetActive(false); 
@@ -46,6 +46,7 @@ public class StageSellectSubPanel : MonoBehaviour {
         hardSelect.gameObject.SetActive(false);
         hellSelect.gameObject.SetActive(false);
         _curDiff = DifficultyTypeEnum.Normal;
+        stageInfoUpdate();
     }
 
     public void hardDiffSelect(){
@@ -53,6 +54,7 @@ public class StageSellectSubPanel : MonoBehaviour {
         hardSelect.gameObject.SetActive(true);
         hellSelect.gameObject.SetActive(false);
         _curDiff = DifficultyTypeEnum.Nightmare;
+        stageInfoUpdate();
     }
 
     public void hellDiffSelect(){
@@ -60,6 +62,7 @@ public class StageSellectSubPanel : MonoBehaviour {
         hardSelect.gameObject.SetActive(false);
         hellSelect.gameObject.SetActive(true);
         _curDiff = DifficultyTypeEnum.Hell;
+        stageInfoUpdate();
     }
 
     void Start() 

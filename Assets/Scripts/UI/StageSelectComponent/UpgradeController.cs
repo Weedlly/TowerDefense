@@ -13,6 +13,7 @@ public class UpgradeController: MonoBehaviour
     [SerializeField] GameObject _level1;
     [SerializeField] GameObject _level2;
     [SerializeField] GameObject _level3;
+    [SerializeField] TMP_Text _upgradeDescText;
 
     void Awake()
     {
@@ -31,6 +32,10 @@ public class UpgradeController: MonoBehaviour
             _level2.gameObject.SetActive(false);
         }
     } 
+
+    public void Select(int type) {
+        _upgradeDescText.text = EnemyTowerDesc.Instance.GetTowerUpgradeDescription(type);
+    }
 
     public void UpgradeTower(){
         if (_user.upgradeTowerById(_towerId)){

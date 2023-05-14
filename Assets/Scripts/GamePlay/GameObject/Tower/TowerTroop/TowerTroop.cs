@@ -77,12 +77,22 @@ public class TowerTroop : Tower
     }
   
     void SetupAfterRevive(Evil evil){
-        
         evil.gameObject.SetActive(true);
         evil._isDie = false;
         evil._timeReviveCounter = _timeRevive;
         evil.transform.position = transform.position;
         BattleControler.AddEvil(evil);
+    }
+
+    void OnDestroy()
+    {
+        foreach (var evil in _evils)
+            {
+                Destroy(evil.gameObject); // Destroy the evil game objects
+
+            }
+            _evils.Clear(); // Clear the list
+        Debug.Log("OnDestroy2");
     }
     
 }

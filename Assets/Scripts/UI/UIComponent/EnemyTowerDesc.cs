@@ -11,14 +11,14 @@ public class EnemyTowerDesc: Singleton<EnemyTowerDesc>
     }
     
    Description[] enemy_en = {
-        new Description("spearman", "basic enemy"), 
-        new Description("knight", "elite enemy"),
-        new Description("Dark Knight", "boss enemy")
+        new Description("Hunstress Warrior", "+ Basic enemy\n+ Lowest stat\n+ Spawn at every wave"), 
+        new Description("Shield Man", "+ Elite enemy\n+ An upgrade on stat from spear man\n+ Spawn more at mid to end wave"),
+        new Description("NightBorne", "+ Boss enemy\n+ High stat\n+ Have huge penalty upon entering players base\n+ Show up at finale stage")
     };
     Description[] enemy_vn = {
-        new Description("Lính giáo", "kẻ địch cơ bản"), 
-        new Description("Kị sĩ", "kẻ đich tinh anh"),
-        new Description("Hắc kị sĩ", "Trùm")
+        new Description("Hunstress Warrior", "+ Kẻ địch cơ bản\n+ Chỉ số địch thấp\n+ Xuất hiện ở tất cả các trận"), 
+        new Description("Shield Man", "+ Kẻ đich tinh anh\n+ Là nâng cấp của Hunstress Warrior\n + xuất hiện chủ yếu ở từ các trận giữa"),
+        new Description("NightBorne", "+ Trùm\n+ Chỉ số cao\n+ Phạt máu nặng nếu đi vào thành ta\n+ Xuất hiện ở màn cuối")
     };
 
     Description[] tower_en = {
@@ -35,6 +35,23 @@ public class EnemyTowerDesc: Singleton<EnemyTowerDesc>
         new Description("Tháp lính canh", "+ Sinh ra các lính để đánh lạc hướng và gây sát thương kẻ địch\n+ Bản thân trụ không gây sát thương")
     };
 
+    string[] tower_up_en = {
+        "Tower damage up",
+        "Tower atk speed up",
+        "Tower range up",
+        "Troop damage up",
+        "Troop atk speed up",
+        "Troop health up"
+    };
+    string[] tower_up_vn = {
+        "Tăng sát thương trụ",
+        "Tăng tốc đánh trụ",
+        "Tăng tầm đánh trụ",
+        "Tăng sát thương lính",
+        "Tăng tốc đánh lính",
+        "Tăng máu lính"
+    };
+
     public Description GetEnemyDescription(int id){
         switch (language){
             case "vn": return enemy_vn[id];
@@ -46,6 +63,13 @@ public class EnemyTowerDesc: Singleton<EnemyTowerDesc>
         switch (language){
             case "vn": return tower_vn[id];
             default: return tower_en[id];
+        }
+    }
+
+    public string GetTowerUpgradeDescription(int id) {
+        switch (language){
+            case "vn": return tower_up_vn[id];
+            default: return tower_up_en[id];
         }
     }
 
