@@ -87,11 +87,16 @@ public class TowerTroop : Tower
     void OnDestroy()
     {
         foreach (var evil in _evils)
+        {
+
+            BattleControler.RemoveEvil(evil);
+            if (evil != null)
             {
-                BattleControler.RemoveEvil(evil);
                 Destroy(evil.gameObject);
             }
-            _evils.Clear();
+            
+        }
+        _evils.Clear();
     }
     
 }
