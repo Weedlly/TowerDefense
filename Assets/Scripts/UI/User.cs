@@ -85,7 +85,7 @@ public class User : Singleton<User>
     }
 
     public int getMaxAvailableStage() {
-        int maxStage = -1;
+        int maxStage = 0;
         foreach (var stage in _data.completetedStageList)
         {
             int id = stage.completetedStageId;
