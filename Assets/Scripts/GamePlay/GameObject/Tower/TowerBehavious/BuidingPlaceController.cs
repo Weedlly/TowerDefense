@@ -24,6 +24,7 @@ public class BuidingPlaceController : MonoBehaviour
         towerBuildingPlacePrefab = _towerBuildingPlacePrefab;
         _buildingPlaceList = buildingPlaceList;
     }
+    
     public static void ActiveInstance(Transform transform){
         GameObject tmp = null;
         float distance = float.MaxValue;

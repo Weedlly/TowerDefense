@@ -16,6 +16,12 @@ public class BattleControler : MonoBehaviour {
     static public void AddHuman(Player player){
         _humans.Add(player);
     }
+    static public void RemoveEvil(Player player){
+        if(_evils.Contains(player)){
+            _evils.Remove(player);
+            Debug.Log("remove");
+        }
+    }
     Player FindTarget(Player searcher, List<Player> listPlayer){
         Player target = null;
         float  dis = float.MaxValue;
@@ -32,9 +38,11 @@ public class BattleControler : MonoBehaviour {
         return target;
     }
     bool IsInFightingRange(Player searcher,Player player ){
-        float currentDis = Vector2.Distance(searcher.transform.position,player.transform.position);
-        if(currentDis < searcher._rangeDetecting){
-            return true;
+        if(searcher != null && player != null){
+            float currentDis = Vector2.Distance(searcher.transform.position,player.transform.position);
+            if(currentDis < searcher._rangeDetecting){
+                return true;
+            }
         }
         return false;
     }

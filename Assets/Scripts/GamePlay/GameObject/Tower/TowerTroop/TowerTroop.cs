@@ -88,11 +88,10 @@ public class TowerTroop : Tower
     {
         foreach (var evil in _evils)
             {
-                Destroy(evil.gameObject); // Destroy the evil game objects
-
+                BattleControler.RemoveEvil(evil);
+                Destroy(evil.gameObject);
             }
-            _evils.Clear(); // Clear the list
-        Debug.Log("OnDestroy2");
+            _evils.Clear();
     }
     
 }

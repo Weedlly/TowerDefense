@@ -60,8 +60,13 @@ public abstract class WeaponBullet : MonoBehaviour
     public void SetTarget(Human human){
         _target = human;
     }
+    public Human GetTarget(){
+        return _target;
+    }
     public void SetDamage(float damage){
         _dame = damage;
     }
-
+    public float GetDamage(){
+        return _dame;
+    }
 }
